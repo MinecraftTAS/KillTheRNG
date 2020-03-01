@@ -1,0 +1,16 @@
+[
+    {
+        "modid": "KillTheRNG",
+        "name": "KillTheRNG",
+        "description": "Makes Minecraft RNG predictable",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": ["MCPfannkuchenYT", "ScribbleLP"],
+        "credits": "",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
