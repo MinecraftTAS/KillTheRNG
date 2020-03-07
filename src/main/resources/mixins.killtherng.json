@@ -5,7 +5,8 @@
   "refmap": "mixins.killtherng.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinEntity"
+    "MixinEntity",
+	"MixinEntityAgeable"
   ],
   "client": [
   ]
