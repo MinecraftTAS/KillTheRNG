@@ -41,6 +41,10 @@ public class CommandKillTheRNG extends CommandBase{
 				notifyCommandListener(sender, this, "Set pseudorandmomness to %s for everything",  new Object[] {args[0]});
 			}
 			else if(UltimateRandomness.isRandomInList(args[0])) {
+				if(args.length==1) {
+					sendHelp(sender, args);
+					return;
+				}
 				if(isNumeric(args[1])) {
 					UltimateRandomness.getRandomFromString(args[0]).setSeed(Long.parseLong(args[1]));
 					notifyCommandListener(sender, this, "Set seed %s for %s",  new Object[] {args[1],args[0]});
@@ -50,15 +54,21 @@ public class CommandKillTheRNG extends CommandBase{
 					notifyCommandListener(sender, this, "Set pseudorandmomness to %s for %s",  new Object[] {args[1],args[0]});
 				}
 				else if(args[1].equalsIgnoreCase("help")) {
-					sender.sendMessage(new TextComponentString(UltimateRandomness.getNameFromRandom(args[0])));
-					sender.sendMessage(new TextComponentString(UltimateRandomness.getDescriptionFromRandom(args[0])));
-					sender.sendMessage(new TextComponentString(UltimateRandomness.getRandomVariableFromRandom(args[0])));
+					sendHelp(sender, args);
 				}
 				else {
 					throw new CommandException("Can't understand what you just typed in...", new Object[] {});
 				}
 			}
 		}
+	}
+	
+	private void sendHelp(ICommandSender sender, String[] args) {
+		String theimportantone=args[0];
+		sender.sendMessage(new TextComponentString(UltimateRandomness.getNameFromRandom(theimportantone)));
+		sender.sendMessage(new TextComponentString(UltimateRandomness.getDescriptionFromRandom(theimportantone)));
+		sender.sendMessage(new TextComponentString(UltimateRandomness.getRandomVariableFromRandom(theimportantone)));
+		sender.sendMessage(new TextComponentString("Current Seed: "+UltimateRandomness.getSeedFromRandom(theimportantone)));
 	}
 	
 	@Override
@@ -77,7 +87,7 @@ public class CommandKillTheRNG extends CommandBase{
 	        return false;
 	    }
 	    try {
-	        int d = Integer.parseInt(strNum);
+	        long d = Long.parseLong(strNum);
 	    } catch (NumberFormatException nfe) {
 	        return false;
 	    }

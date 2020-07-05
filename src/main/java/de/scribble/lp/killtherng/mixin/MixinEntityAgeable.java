@@ -13,24 +13,15 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
 @Mixin(EntityAgeable.class)
-public abstract class MixinEntityAgeable{
+public abstract class MixinEntityAgeable extends EntityCreature{
+	public MixinEntityAgeable(World worldIn) {
+		super(worldIn);
+	}
 	@Shadow
 	private int forcedAgeTimer;
-	@Shadow
-	private World world;
-	@Shadow
-	private double posX;
-	@Shadow
-	private float width;
-	@Shadow
-	private double posY;
-	@Shadow
-	private float height;
-	@Shadow
-	private double posZ;
 
-	@Inject(method="onEntityLiving", at=@At("HEAD"), cancellable=true)
-	public void redoOnEntityLiving(CallbackInfo ci) {
+	@Inject(method="onLivingUpdate", at=@At("HEAD"), cancellable=true)
+	public void redoOnLivingUpdate(CallbackInfo ci) {
 
         if (this.world.isRemote)
         {
@@ -46,6 +37,7 @@ public abstract class MixinEntityAgeable{
                     	UltimateRandomness.entityAgeableParticleVillagerHappy.pseudoRandom=true;
                     }
                     this.world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, this.posX + (double)(UltimateRandomness.entityAgeableParticleVillagerHappy.nextFloat() * this.width * 2.0F) - (double)this.width, this.posY + 0.5D + (double)(UltimateRandomness.entityAgeableParticleVillagerHappy.nextFloat() * this.height), this.posZ + (double)(UltimateRandomness.entityAgeableParticleVillagerHappy.nextFloat() * this.width * 2.0F) - (double)this.width, 0.0D, 0.0D, 0.0D);
+                    System.out.println("Particles: "+UltimateRandomness.entityAgeableParticleVillagerHappy.getSeed());
                     if(!save) {
                     	UltimateRandomness.entityAgeableParticleVillagerHappy.setSeed(seedsave);
                 		UltimateRandomness.entityAgeableParticleVillagerHappy.pseudoRandom=false;
