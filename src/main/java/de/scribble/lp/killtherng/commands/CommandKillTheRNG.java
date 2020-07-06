@@ -2,6 +2,8 @@ package de.scribble.lp.killtherng.commands;
 
 import java.util.List;
 
+import com.mojang.realmsclient.gui.ChatFormatting;
+
 import de.scribble.lp.killtherng.UltimateRandomness;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -68,7 +70,8 @@ public class CommandKillTheRNG extends CommandBase{
 		sender.sendMessage(new TextComponentString(UltimateRandomness.getNameFromRandom(theimportantone)));
 		sender.sendMessage(new TextComponentString(UltimateRandomness.getDescriptionFromRandom(theimportantone)));
 		sender.sendMessage(new TextComponentString(UltimateRandomness.getRandomVariableFromRandom(theimportantone)));
-		sender.sendMessage(new TextComponentString("Current Seed: "+UltimateRandomness.getSeedFromRandom(theimportantone)));
+		sender.sendMessage(new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+UltimateRandomness.getSeedFromRandom(theimportantone)));
+		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+UltimateRandomness.getCallsFromRandom(theimportantone)+" times"));
 	}
 	
 	@Override

@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
 import net.minecraft.util.text.TextFormatting;
-import java.lang.reflect.*;
 
 
 public class CustomRandom extends Random {
@@ -15,7 +14,7 @@ public class CustomRandom extends Random {
     private String description;
     private String randomvariable;
     
-    private long timesCalled;
+    private static long timesCalled=0;
 
     public CustomRandom() {
     	setSeed(0);
@@ -58,13 +57,16 @@ public class CustomRandom extends Random {
         this.randomvariable=randomVariable;
     }
     public void setSeed(long seedIn) {
+    	timesCalled=0;
     	super.setSeed(seedIn ^ 0x5deece66dL);
     }
 
     public long getSeed() {
+    	long saved=timesCalled;
         long seed = reverse(super.nextLong()) ^ 0x5deece66dL;
         super.setSeed(seed);
-        return seed;
+        timesCalled=saved;
+        return seed^ 0x5deece66dL;
     }
 
     public static long reverse(long in) {
@@ -103,5 +105,10 @@ public class CustomRandom extends Random {
 	public int nextInt() {
 		timesCalled++;
 		return super.nextInt();
+	}
+	@Override
+	public float nextFloat() {
+		timesCalled++;
+		return super.nextFloat();
 	}
 }

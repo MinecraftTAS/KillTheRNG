@@ -78,4 +78,7 @@ public class UltimateRandomness {
 	public static long getSeedFromRandom(String stringIn) {
 		return getRandomFromString(stringIn).getSeed();
 	}
+	public static long getCallsFromRandom(String stringIn) {
+		return getRandomFromString(stringIn).getTimesCalled();
+	}
 }

@@ -14,14 +14,13 @@ import net.minecraft.world.gen.structure.template.BlockRotationProcessor;
 import net.minecraft.world.gen.structure.template.Template;
 
 @Mixin(BlockRotationProcessor.class)
-public class MixinPlacementSettings {
+public class MixinBlockRotationProcessor {
 	@Shadow
 	private float chance;
 
 	@Inject(method="processBlock", at=@At("HEAD"), cancellable= true)
 	public void redoProcessBlock(World worldIn, BlockPos pos, Template.BlockInfo blockInfoIn, CallbackInfoReturnable<Template.BlockInfo> ci) {
 		float out=UltimateRandomness.blockrotationprocessorProcessBlock.nextFloat();
-		System.out.println(chance+" "+out);
 		ci.setReturnValue(this.chance < 1.0F && out > this.chance ? null : blockInfoIn);
 		
 		ci.cancel();
