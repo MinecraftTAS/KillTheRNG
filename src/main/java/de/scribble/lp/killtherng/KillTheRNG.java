@@ -1,5 +1,8 @@
 package de.scribble.lp.killtherng;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -18,8 +21,9 @@ public class KillTheRNG {
 
     public static final String MOD_ID = "killtherng";
     public static final String MOD_NAME = "KillTheRNG";
-    public static final String VERSION = "1.0";
-
+    public static final String VERSION = "Alpha";
+    
+    public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {

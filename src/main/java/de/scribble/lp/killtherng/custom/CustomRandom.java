@@ -1,22 +1,23 @@
 package de.scribble.lp.killtherng.custom;
 
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicLong;
 
 import net.minecraft.util.text.TextFormatting;
 
 
-
 public class CustomRandom extends Random {
 
-    private static long seed = 0;
-    private static Random random = new Random(seed);
     public boolean pseudoRandom;
     
     private String name;
     private String description;
     private String randomvariable;
+    
+    private static long timesCalled=0;
 
     public CustomRandom() {
+    	setSeed(0);
         pseudoRandom=true;
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
@@ -25,7 +26,7 @@ public class CustomRandom extends Random {
     }
     
     public CustomRandom(long seedIn) {
-        CustomRandom.seed=seedIn;
+        setSeed(seedIn);
         pseudoRandom=true;
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
@@ -33,6 +34,7 @@ public class CustomRandom extends Random {
         this.randomvariable=nothing;
     }
     public CustomRandom(boolean isPseudoRandom) {
+    	setSeed(0);
     	this.pseudoRandom=isPseudoRandom;
     	String nothing="Nothing here yet :(";
         this.name=nothing;
@@ -40,7 +42,7 @@ public class CustomRandom extends Random {
         this.randomvariable=nothing;
     }
     public CustomRandom(long seedIn, boolean isPseudoRandom) {
-    	CustomRandom.seed=seedIn;
+    	setSeed(seedIn);
         pseudoRandom=isPseudoRandom;
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
@@ -48,23 +50,29 @@ public class CustomRandom extends Random {
         this.randomvariable=nothing;
     }
     public CustomRandom(long seedIn, boolean isPseudoRandom, String name, String description, String randomVariable) {
-    	CustomRandom.seed=seedIn;
+    	setSeed(seedIn);
         pseudoRandom=isPseudoRandom;
         this.name=name;
         this.description=description;
         this.randomvariable=randomVariable;
     }
     public void setSeed(long seedIn) {
-        seed = seedIn;
-        random.setSeed(seedIn);
+    	timesCalled=0;
+    	super.setSeed(seedIn ^ 0x5deece66dL);
     }
-	public Random getRandom() {
-		return random;
-	}
 
-	public long getSeed() {
-		return seed;
-	}
+    public long getSeed() {
+    	long saved=timesCalled;
+        long seed = reverse(super.nextLong()) ^ 0x5deece66dL;
+        super.setSeed(seed);
+        timesCalled=saved;
+        return seed^ 0x5deece66dL;
+    }
+
+    public static long reverse(long in) {
+        return (((7847617*((24667315*(in >>> 32) + 18218081*(in & 0xffffffffL) + 67552711) >> 32) - 18218081*((-4824621*(in >>> 32) + 7847617*(in & 0xffffffffL) + 7847617) >> 32)) - 11) * 246154705703781L) & 0xffffffffffffL;
+    }
+    
 	public String getName() {
 		return this.name;
 	}
@@ -74,100 +82,33 @@ public class CustomRandom extends Random {
 	public String getRandomvariable() {
 		return randomvariable;
 	}
+	public long getTimesCalled() {
+		return timesCalled;
+	}
 	
 	@Override
+	public long nextLong() {
+		timesCalled++;
+		return super.nextLong();
+	}
+	@Override	
+	public double nextDouble() {
+		timesCalled++;
+		return super.nextDouble();
+	}
+	@Override
 	public boolean nextBoolean() {
-		if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextBoolean();
+		timesCalled++;
+		return super.nextBoolean();
 	}
 	@Override
 	public int nextInt() {
-		if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextInt();
-    }
-
-    @Override
-    public int nextInt(int bound) {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextInt(bound);
-    }
-
-    @Override
-    public double nextGaussian() {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextGaussian();
-    }
-
-    @Override
-    public double nextDouble() {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextDouble();
-    }
-
-    @Override
-    public float nextFloat() {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextFloat();
-    }
-
-    @Override
-    public long nextLong() {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-		return random.nextLong();
-    }
-
-    @Override
-    public void nextBytes(byte[] bytes) {
-    	if(pseudoRandom) {
-    		seed=random.nextLong();
-			random.setSeed(seed);
-		}else {
-			random.setSeed(seed);
-			random.setSeed(random.nextLong());
-		}
-        random.nextBytes(bytes);
-    }
-
+		timesCalled++;
+		return super.nextInt();
+	}
+	@Override
+	public float nextFloat() {
+		timesCalled++;
+		return super.nextFloat();
+	}
 }

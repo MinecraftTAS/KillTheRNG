@@ -26,6 +26,9 @@ public class UltimateRandomness {
 	public static CustomRandom entityParticleWaterBubble;
 	public static CustomRandom entityParticleWaterSplash;
 	public static CustomRandom entityParticleRunning;
+	public static CustomRandom entityAgeableParticleVillagerHappy;
+	
+	public static CustomRandom blockrotationprocessorProcessBlock;
 	
 	
 	public static void set(long masterSeed, boolean isPseudo) {
@@ -35,6 +38,9 @@ public class UltimateRandomness {
 		RandomList.put("entityParticleWaterBubble", entityParticleWaterBubble= new CustomRandom(masterSeed, isPseudo, TextFormatting.GOLD+"entityParticleWaterBubble", TextFormatting.GRAY+"Changes the x and z coordinates relative to the entity, where the waterbubble particles spawn", "this.rand."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() * 2.0F - 1.0F) * this.width"));
 		RandomList.put("entityParticleWaterSplash", entityParticleWaterSplash= new CustomRandom(masterSeed, isPseudo, TextFormatting.GOLD+"entityParticleWaterSplash", TextFormatting.GRAY+"Changes the x and z coordinates relative to the entity, where the watersplash particles spawn", "this.rand."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() * 2.0F - 1.0F) * this.width"));
 		RandomList.put("entityParticleRunning", entityParticleRunning= new CustomRandom(masterSeed, isPseudo, TextFormatting.GOLD+"entityParticleRunning", TextFormatting.GRAY+"Changes the x and z coordinates relative to the entity, where the running particles spawn", "this.posX + ((double)this.rand."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() - 0.5D) * (double)this.width"));
+		RandomList.put("entityAgeableParticleVillagerHappy", entityAgeableParticleVillagerHappy= new CustomRandom(masterSeed, isPseudo, TextFormatting.GOLD+"entityAgeableParticleVillagerHappy", TextFormatting.GRAY+"Changes the x,y and z coordinates relative to the entity, where the villager-happy particles spawn", "this.posX + (double)(this.rand."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() * this.width * 2.0F) - (double)this.width, this.posY + 0.5D + (double)(this.rand."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() * this.height)"));
+		
+		RandomList.put("blockrotationprocessorProcessBlock", blockrotationprocessorProcessBlock= new CustomRandom(masterSeed, isPseudo, TextFormatting.GOLD+"blockrotationprocessorProcessBlock", TextFormatting.GRAY+"Changes the amount of blocks missing, when loading a structure from structureblocks. Chance is the integrity of the structure", "this.chance < 1.0F && this.random."+TextFormatting.GREEN+"nextFloat"+TextFormatting.RESET+"() > this.chance ? null : blockInfoIn"));
 	}
 	public static void setSeedAll(long masterSeed) {
 		RandomList.forEach((k,v) -> v.setSeed(masterSeed));
@@ -68,5 +74,11 @@ public class UltimateRandomness {
 	 */
 	public static String getRandomVariableFromRandom(String stringIn) {
 		return getRandomFromString(stringIn).getRandomvariable();
+	}
+	public static long getSeedFromRandom(String stringIn) {
+		return getRandomFromString(stringIn).getSeed();
+	}
+	public static long getCallsFromRandom(String stringIn) {
+		return getRandomFromString(stringIn).getTimesCalled();
 	}
 }
