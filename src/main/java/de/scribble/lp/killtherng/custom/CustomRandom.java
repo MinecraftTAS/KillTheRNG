@@ -14,7 +14,7 @@ public class CustomRandom extends Random {
     private String description;
     private String randomvariable;
     
-    private static long timesCalled=0;
+    private long timesCalled=0;
 
     public CustomRandom() {
     	setSeed(0);
