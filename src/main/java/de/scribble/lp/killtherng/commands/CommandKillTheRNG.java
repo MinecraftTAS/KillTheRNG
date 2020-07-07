@@ -9,9 +9,11 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.ClickType;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.event.ClickEvent;
 
 public class CommandKillTheRNG extends CommandBase{
 
@@ -67,10 +69,15 @@ public class CommandKillTheRNG extends CommandBase{
 	
 	private void sendHelp(ICommandSender sender, String[] args) {
 		String theimportantone=args[0];
-		sender.sendMessage(new TextComponentString(UltimateRandomness.getNameFromRandom(theimportantone)));
+		//Setting a clickable component in chat
+		TextComponentString seed = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+UltimateRandomness.getSeedFromRandom(theimportantone));
+		String style ="/killtherng "+UltimateRandomness.getNameFromRandom(theimportantone)+" "+UltimateRandomness.getSeedFromRandom(theimportantone);
+		seed.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
+		
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+UltimateRandomness.getNameFromRandom(theimportantone)));
 		sender.sendMessage(new TextComponentString(UltimateRandomness.getDescriptionFromRandom(theimportantone)));
 		sender.sendMessage(new TextComponentString(UltimateRandomness.getRandomVariableFromRandom(theimportantone)));
-		sender.sendMessage(new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+UltimateRandomness.getSeedFromRandom(theimportantone)));
+		sender.sendMessage(seed);
 		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+UltimateRandomness.getCallsFromRandom(theimportantone)+" times"));
 	}
 	

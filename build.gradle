@@ -14,7 +14,7 @@ buildscript {
     }
 }
 plugins {
-    id 'com.github.johnrengelman.shadow' version '2.0.4'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
     id 'java'
 }
 
@@ -50,6 +50,15 @@ repositories {
     }
 }
 
+jar {
+    manifest.attributes(
+            'MixinConfigs': 'mixins.killtherng.json',
+            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+            'FMLCorePluginContainsFMLMod': 'true',
+            'ForceLoadAsMod': 'true'
+    )
+}
+
 dependencies {
     compile('org.spongepowered:mixin:0.7.10-SNAPSHOT') {
         exclude module: 'launchwrapper'
@@ -61,26 +70,21 @@ dependencies {
 }
 
 processResources {
-    // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
-        include "mcmod.info"
-
-        // replace version and mcversion
-        expand "version": project.version, "mcversion": project.minecraft.version
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
     }
 
-    // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude "mcmod.info"
+        exclude 'mcmod.info'
     }
 }
 sourceSets {
     main {
-        ext.refMap = "mixins.tas.refmap.json"
+        ext.refMap = "mixins.killtherng.refmap.json"
     }
 }
 shadowJar {
@@ -89,8 +93,8 @@ shadowJar {
     dependsOn reobfJar
 
     configurations = [project.configurations.compile]
-    relocate 'org.msgpack', 'de.tr7zw.tas.repack.org.msgpack'
-    relocate 'com.fasterxml', 'de.tr7zw.tas.repack.com.fasterxml'
+    relocate 'org.msgpack', 'de.scribble.lp.killtherng.repack.org.msgpack'
+    relocate 'com.fasterxml', 'de.scribble.lp.killtherng.repack.com.fasterxml'
     classifier "shadow"
     exclude 'dummyThing'
 
@@ -100,18 +104,8 @@ shadowJar {
     }
 }
 
-jar {
-    manifest.attributes(
-            'FMLAT': 'TASMOD_at.cfg',
-            'MixinConfigs': 'mixins.tas.json',
-            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-            'FMLCorePluginContainsFMLMod': 'true',
-            'ForceLoadAsMod': 'true'
-    )
-}
-
 mixin {
     // Specify "notch" or "searge" here
     defaultObfuscationEnv searge
-    add sourceSets.main, "mixins.tas.refmap.json"
+    add sourceSets.main, "mixins.killtherng.refmap.json"
 }

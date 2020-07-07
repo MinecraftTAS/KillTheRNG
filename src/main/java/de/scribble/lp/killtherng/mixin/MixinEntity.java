@@ -520,16 +520,7 @@ public abstract class MixinEntity extends Object implements ICommandSender, net.
                         }
                         boolean save=true;
                         long seedsave=0;
-                        if(!UltimateRandomness.entitySoundSwim.pseudoRandom) {
-                        	save=false;
-                        	seedsave=UltimateRandomness.entitySoundSwim.getSeed();
-                        	UltimateRandomness.entitySoundSwim.pseudoRandom=true;
-                        }
                         this.playSound(this.getSwimSound(), f1, 1.0F + (UltimateRandomness.entitySoundSwim.nextFloat() - UltimateRandomness.entitySoundSwim.nextFloat()) * 0.4F);
-                        if(!save) {
-                        	UltimateRandomness.entitySoundSwim.setSeed(seedsave);
-                    		UltimateRandomness.entitySoundSwim.pseudoRandom=false;
-                        }
                     }
                     else
                     {
@@ -580,16 +571,7 @@ public abstract class MixinEntity extends Object implements ICommandSender, net.
             	//KillTheRNG: Transforming random pitch for the sound, when an entity on fire is being extinguished
             	boolean save=true;
                 long seedsave=0;
-                if(!UltimateRandomness.entitySoundExtinguishFire.pseudoRandom) {
-                	save=false;
-                	seedsave=UltimateRandomness.entitySoundExtinguishFire.getSeed();
-                	UltimateRandomness.entitySoundExtinguishFire.pseudoRandom=true;
-                }
                 this.playSound(SoundEvents.ENTITY_GENERIC_EXTINGUISH_FIRE, 0.7F, 1.6F + (UltimateRandomness.entitySoundExtinguishFire.nextFloat() - UltimateRandomness.entitySoundExtinguishFire.nextFloat()) * 0.4F);
-                if(!save) {
-                	UltimateRandomness.entitySoundExtinguishFire.setSeed(seedsave);
-            		UltimateRandomness.entitySoundExtinguishFire.pseudoRandom=false;
-                }
                 this.fire = -this.getFireImmuneTicks();
             }
 
@@ -612,52 +594,21 @@ public abstract class MixinEntity extends Object implements ICommandSender, net.
         }
         boolean save=true;
         long seedsave=0;
-        if(!UltimateRandomness.entitySoundSplash.pseudoRandom) {
-        	save=false;
-        	seedsave=UltimateRandomness.entitySoundSplash.getSeed();
-        	UltimateRandomness.entitySoundSplash.pseudoRandom=true;
-        }
         this.playSound(this.getSplashSound(), f1, 1.0F + (UltimateRandomness.entitySoundSplash.nextFloat() - UltimateRandomness.entitySoundSplash.nextFloat()) * 0.4F);
-        if(!save) {
-        	UltimateRandomness.entitySoundSplash.setSeed(seedsave);
-    		UltimateRandomness.entitySoundSplash.pseudoRandom=false;
-        }
         float f2 = (float)MathHelper.floor(this.getEntityBoundingBox().minY);
 
         for (int i = 0; (float)i < 1.0F + this.width * 20.0F; ++i)
         {
-        	save=true;
-        	seedsave=0;
-        	if(!UltimateRandomness.entityParticleWaterBubble.pseudoRandom) {
-            	save=false;
-            	seedsave=UltimateRandomness.entityParticleWaterBubble.getSeed();
-            	UltimateRandomness.entityParticleWaterBubble.pseudoRandom=true;
-            }
             float f3 = (UltimateRandomness.entityParticleWaterBubble.nextFloat() * 2.0F - 1.0F) * this.width;
             float f4 = (UltimateRandomness.entityParticleWaterBubble.nextFloat() * 2.0F - 1.0F) * this.width;
             this.world.spawnParticle(EnumParticleTypes.WATER_BUBBLE, this.posX + (double)f3, (double)(f2 + 1.0F), this.posZ + (double)f4, this.motionX, this.motionY - (double)(UltimateRandomness.entityParticleWaterBubble.nextFloat() * 0.2F), this.motionZ);
-            if(!save) {
-            	UltimateRandomness.entityParticleWaterBubble.setSeed(seedsave);
-        		UltimateRandomness.entityParticleWaterBubble.pseudoRandom=false;
-            }
         }
 
         for (int j = 0; (float)j < 1.0F + this.width * 20.0F; ++j)
         {
-        	save=true;
-        	seedsave=0;
-        	if(!UltimateRandomness.entityParticleWaterSplash.pseudoRandom) {
-            	save=false;
-            	seedsave=UltimateRandomness.entityParticleWaterSplash.getSeed();
-            	UltimateRandomness.entityParticleWaterSplash.pseudoRandom=true;
-            }
             float f5 = (UltimateRandomness.entityParticleWaterSplash.nextFloat() * 2.0F - 1.0F) * this.width;
             float f6 = (UltimateRandomness.entityParticleWaterSplash.nextFloat() * 2.0F - 1.0F) * this.width;
             this.world.spawnParticle(EnumParticleTypes.WATER_SPLASH, this.posX + (double)f5, (double)(f2 + 1.0F), this.posZ + (double)f6, this.motionX, this.motionY, this.motionZ);
-            if(!save) {
-            	UltimateRandomness.entityParticleWaterSplash.setSeed(seedsave);
-        		UltimateRandomness.entityParticleWaterSplash.pseudoRandom=false;
-            }
         }
         ci.cancel();
     }
@@ -673,18 +624,7 @@ public abstract class MixinEntity extends Object implements ICommandSender, net.
         if(!iblockstate.getBlock().addRunningEffects(iblockstate, world, blockpos, (Entity)(Object)this))
         if (iblockstate.getRenderType() != EnumBlockRenderType.INVISIBLE)
         {
-        	boolean save=true;
-            long seedsave=0;
-        	if(!UltimateRandomness.entityParticleRunning.pseudoRandom) {
-            	save=false;
-            	seedsave=UltimateRandomness.entityParticleRunning.getSeed();
-            	UltimateRandomness.entityParticleRunning.pseudoRandom=true;
-            }
             this.world.spawnParticle(EnumParticleTypes.BLOCK_CRACK, this.posX + ((double)UltimateRandomness.entityParticleRunning.nextFloat() - 0.5D) * (double)this.width, this.getEntityBoundingBox().minY + 0.1D, this.posZ + ((double)UltimateRandomness.entityParticleRunning.nextFloat() - 0.5D) * (double)this.width, -this.motionX * 4.0D, 1.5D, -this.motionZ * 4.0D, Block.getStateId(iblockstate));
-            if(!save) {
-            	UltimateRandomness.entityParticleRunning.setSeed(seedsave);
-        		UltimateRandomness.entityParticleRunning.pseudoRandom=false;
-            }
         }
         ci.cancel();
     }
