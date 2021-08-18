@@ -1,62 +1,40 @@
 package de.scribble.lp.killtherng.custom;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicLong;
 
+import kaptainwutax.seedutils.lcg.LCG;
+import kaptainwutax.seedutils.rand.JRand;
 import net.minecraft.util.text.TextFormatting;
 
 
 public class CustomRandom extends Random {
 
-    public boolean pseudoRandom;
-    
     private String name;
     private String description;
-    private String randomvariable;
     
     private long timesCalled=0;
+    
+    public static final List<CustomRandom> LIST=new ArrayList<>();
 
     public CustomRandom() {
-    	setSeed(0);
-        pseudoRandom=true;
+    	super(0);
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
         this.description=nothing;
-        this.randomvariable=nothing;
+        LIST.add(this);
     }
     
-    public CustomRandom(long seedIn) {
-        setSeed(seedIn);
-        pseudoRandom=true;
-        String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(boolean isPseudoRandom) {
-    	setSeed(0);
-    	this.pseudoRandom=isPseudoRandom;
-    	String nothing="Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(long seedIn, boolean isPseudoRandom) {
-    	setSeed(seedIn);
-        pseudoRandom=isPseudoRandom;
-        String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(long seedIn, boolean isPseudoRandom, String name, String description, String randomVariable) {
-    	setSeed(seedIn);
-        pseudoRandom=isPseudoRandom;
-        this.name=name;
-        this.description=description;
-        this.randomvariable=randomVariable;
-    }
-    public void setSeed(long seedIn) {
+    public CustomRandom(String name, String description) {
+    	super(0);
+		this.name = name;
+		this.description = description;
+		LIST.add(this);
+	}
+
+	public void setSeed(long seedIn) {
     	timesCalled=0;
     	super.setSeed(seedIn ^ 0x5deece66dL);
     }
@@ -76,12 +54,11 @@ public class CustomRandom extends Random {
 	public String getName() {
 		return this.name;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
-	public String getRandomvariable() {
-		return randomvariable;
-	}
+	
 	public long getTimesCalled() {
 		return timesCalled;
 	}
@@ -110,5 +87,21 @@ public class CustomRandom extends Random {
 	public float nextFloat() {
 		timesCalled++;
 		return super.nextFloat();
+	}
+	@Override
+	public void nextBytes(byte[] bytes) {
+		timesCalled++;
+		super.nextBytes(bytes);
+	}
+	@Override
+	public synchronized double nextGaussian() {
+		timesCalled++;
+		return super.nextGaussian();
+	}
+	
+	public long advance(int steps) {
+		JRand thing=new JRand(getSeed());
+		thing.advance(steps);
+		return thing.getSeed();
 	}
 }

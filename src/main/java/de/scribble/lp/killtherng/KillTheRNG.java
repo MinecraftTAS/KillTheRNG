@@ -24,6 +24,8 @@ public class KillTheRNG {
     public static final String VERSION = "Alpha";
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
+    
+    public static final UltimateRandomness randomness = new UltimateRandomness();
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
@@ -31,12 +33,12 @@ public class KillTheRNG {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	MinecraftForge.EVENT_BUS.register(new KTRNGEventHandler());
-    	UltimateRandomness.set(0, false);
     }
+    
     @EventHandler
     public void postinit(FMLPostInitializationEvent event) {
     }
+    
     @EventHandler
     public void onServerStart(FMLServerStartingEvent ev) {
     	ev.registerServerCommand(new CommandKillTheRNG());
