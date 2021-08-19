@@ -7,8 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
-
 public class FileHandler {
 	private List<String> umrlines=new ArrayList<String>();
 	
@@ -32,13 +30,13 @@ public class FileHandler {
 			e.printStackTrace();
 		}
 		try {
-			writeLine("Recognisable Name, Qualified Name, Target, Description, Ordinal");
+			writeLine("Recognisable Name, Qualified Name, Target, Description, Ordinal, ClassAccess, MethodAccess");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	public void addRng(String className, String methodName, String methodDescriptor, String targetOwner, String targetName, String targetDescriptor, int access) throws IOException {
+	public void addRng(String className, String methodName, String methodDescriptor, String targetOwner, String targetName, String targetDescriptor, int classAccess, int methodAccess) throws IOException {
 //		out.write(String.format("@Redirect(method=\"%s\", at=@At(value=\"INVOKE\", target=\"%s\"\n", methodName, targetDescriptor).getBytes());
 		counter++;
 		if(!className.equals(prevClassName)) {
@@ -50,13 +48,17 @@ public class FileHandler {
 			prevMethodName=methodName;
 			ordinal=0;
 		}
-		
-//		writeLine(String.format("random_%s,L%s;%s%s,L%s;%s%s,null,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, ordinal, access));
+//		writeLine(String.format("random_%s,L%s;%s%s,L%s;%s%s,null,%s,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, ordinal, "0x"+Integer.toHexString(classAccess), "0x"+Integer.toHexString(methodAccess)));
+		System.out.println(counter+" "+classAccess+" "+methodAccess);
 		ordinal++;
 	}
 	
 	private void writeLine(String line) throws IOException {
 		line=line+"\n";
 		out.write(line.getBytes());
+	}
+	
+	private void writeLine(String line, int heck) {
+		
 	}
 }

@@ -23,25 +23,25 @@ public class Transformer implements IClassTransformer{
 		return writer.toByteArray();
 	}
 
-	public ClassVisitor classVisitor(ClassVisitor writer, String className, int access) {
+	public ClassVisitor classVisitor(ClassVisitor writer, String className, int access2) {
 		return new ClassVisitor(Opcodes.ASM5, writer) {
 			
 			@Override
 			public MethodVisitor visitMethod(int access, String methodName, String methodDescriptor, String signature, String[] exceptions) {
 				
-				return methodVisitor(super.visitMethod(access, methodName, methodDescriptor, signature, exceptions), className, methodName, methodDescriptor, access);
+				return methodVisitor(super.visitMethod(access, methodName, methodDescriptor, signature, exceptions), className, methodName, methodDescriptor, access2, access);
 			}
 		};
 	}
 	
-	public MethodVisitor methodVisitor(MethodVisitor writer, String className, String methodName, String methodDescriptor, int access) {
+	public MethodVisitor methodVisitor(MethodVisitor writer, String className, String methodName, String methodDescriptor, int classAccess, int methodAccess) {
 		return new MethodVisitor(Opcodes.ASM5, writer) {
 			@Override
 			public void visitMethodInsn(int opcode, String targetOwner, String targetName, String targetDescriptor, boolean isInterface) {
 				if(opcode==Opcodes.INVOKEVIRTUAL) {
 					if("java/util/Random".equalsIgnoreCase(targetOwner)) {
 						try {
-							handler.addRng(className, methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, access);
+							handler.addRng(className, methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, classAccess, methodAccess);
 						} catch (IOException e) {
 							e.printStackTrace();
 						}

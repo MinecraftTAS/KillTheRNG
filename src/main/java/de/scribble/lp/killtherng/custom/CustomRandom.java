@@ -3,9 +3,7 @@ package de.scribble.lp.killtherng.custom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
 
-import kaptainwutax.seedutils.lcg.LCG;
 import kaptainwutax.seedutils.rand.JRand;
 import net.minecraft.util.text.TextFormatting;
 

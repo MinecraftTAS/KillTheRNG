@@ -7,13 +7,9 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
-
-import de.scribble.lp.killtherng.KillTheRNG;
+import org.objectweb.asm.Opcodes;
 
 public class Csv2Mixin {
 	
@@ -24,6 +20,8 @@ public class Csv2Mixin {
 	private static FileOutputStream urStream;
 	
 	private static FileOutputStream mixinStream;
+	
+	private static FileOutputStream mixinConfigStream;
 	
 	private static String prevClassName;
 
@@ -68,8 +66,11 @@ public class Csv2Mixin {
 			String target=split[2];
 			String description=split[3];
 			String ordinal=split[4];
+			int classAccess=Integer.parseInt(split[5].replaceFirst("0x", ""), 16);
+			int methodAccess=Integer.parseInt(split[6].replaceFirst("0x", ""), 16);
 			
 			String className=getClassName(qualName);
+			String className2=getClassPath(qualName);
 			String methodName=getMethodName(qualName);
 			RandomType targetType=getTargetName(target);
 			
@@ -77,7 +78,8 @@ public class Csv2Mixin {
 			
 			if(!className.equals(prevClassName)) {
 				try {
-					switchClassFileMixin(className);
+					switchClassFileMixin(className, className2, classAccess);
+					addToMixinConfig(className);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} catch (IOException e) {
@@ -87,7 +89,7 @@ public class Csv2Mixin {
 			}
 			
 			try {
-				addRedirect(methodName, ordinal, targetType, name);
+				addRedirect(methodName, ordinal, targetType, name, methodAccess);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -95,116 +97,141 @@ public class Csv2Mixin {
 		try {
 			writeLineMixin("}");
 			writeLineUR("}");
+			closeMixinConf();
 			urStream.close();
 			mixinStream.close();
+			mixinConfigStream.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 
-	
+	private static void closeMixinConf() throws IOException{
+		writeLineMixinConf("\t]\n}");
+	}
+
+
+	private static void addToMixinConfig(String className) throws IOException {
+		writeLineMixinConf("\t\"Mixin"+className+"\",");
+	}
+
+
 	private static void addRedirect(String methodName, String ordinal, RandomType targetType,
-			String name) throws IOException {
+			String name, int methodAccess) throws IOException {
 		switch (targetType) {
 		case Int:
-			addIntRedirect(methodName, ordinal, name);
+			addIntRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case IntBound:
-			addIntBoundRedirect(methodName, ordinal, name);
+			addIntBoundRedirect(methodName, ordinal, name, methodAccess);
+			break;
 		case Float:
-			addFloatRedirect(methodName, ordinal, name);
+			addFloatRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case Double:
-			addDoubleRedirect(methodName, ordinal, name);
+			addDoubleRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case Boolean:
-			addBooleanRedirect(methodName, ordinal, name);
+			addBooleanRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case Bytes:
-			addBytesRedirect(methodName, ordinal, name);
+			addBytesRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case Gaussian:
-			addGaussianRedirect(methodName, ordinal, name);
+			addGaussianRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case Long:
-			addLongRedirect(methodName, ordinal, name);
+			addLongRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		case SetSeed:
-			addSetSeedRedirect(methodName, ordinal, name);
+			addSetSeedRedirect(methodName, ordinal, name, methodAccess);
 			break;
 		}
 	}
 
-	private static void addIntRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addIntRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextInt()I\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic int redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s int redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextInt();", name));
 		writeLineMixin("\t}\n");
 	}
 
-	private static void addIntBoundRedirect(String methodName, String ordinal, String name) throws IOException {
+
+	private static void addIntBoundRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextInt(I)I\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic int redirect_%s(Random rand, int i) {", name));
+		writeLineMixin(String.format("\t%s int redirect_%s(Random rand, int i) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextInt(i);", name));
 		writeLineMixin("\t}\n");
 	}
 	
-	private static void addDoubleRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addDoubleRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextDouble()D\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic double redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s double redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextDouble();", name));
 		writeLineMixin("\t}\n");
 	}
 
-	private static void addFloatRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addFloatRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextFloat()F\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic float redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s float redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextFloat();", name));
 		writeLineMixin("\t}\n");
 	}
 
-	private static void addBooleanRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addBooleanRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextBoolean()Z\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic boolean redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s boolean redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextBoolean();", name));
 		writeLineMixin("\t}\n");
 	}
 	
-	private static void addBytesRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addBytesRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextBytes([B)V\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic void redirect_%s(Random rand, byte[] bytes) {", name));
+		writeLineMixin(String.format("\t%s void redirect_%s(Random rand, byte[] bytes) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\tKillTheRNG.randomness.%s.nextBytes(bytes);", name));
 		writeLineMixin("\t}\n");
 	}
 
-	private static void addGaussianRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addGaussianRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextGaussian()D\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic double redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s double redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextGaussian();", name));
 		writeLineMixin("\t}\n");
 	}
 	
-	private static void addLongRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addLongRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextLong()J\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic long redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s long redirect_%s(Random rand) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin(String.format("\t\treturn KillTheRNG.randomness.%s.nextLong();", name));
 		writeLineMixin("\t}\n");
 	}
 	
-	private static void addSetSeedRedirect(String methodName, String ordinal, String name) throws IOException {
+	private static void addSetSeedRedirect(String methodName, String ordinal, String name, int methodAccess) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;setSeed(J)V\", ordinal = %s))", methodName, ordinal));
-		writeLineMixin(String.format("\tpublic void redirect_%s(Random rand) {", name));
+		writeLineMixin(String.format("\t%s void redirect_%s(Random rand, long unused) {", getAccess(methodAccess, methodName), name));
 		writeLineMixin("\t}\n");
 	}
 	
-	private static void switchClassFileMixin(String className) throws IOException {
+	private static String getAccess(int methodAccess, String methodName) {
+		if((methodAccess|Opcodes.ACC_STATIC)==methodAccess) {
+			return "private static";
+		}else {
+			return "public";
+		}
+	}
+	
+	private static void switchClassFileMixin(String className, String className2, int classAccess) throws IOException {
 		if(mixinStream!=null) {
 			writeLineMixin("}");
 		}
 		mixinStream=new FileOutputStream(new File(dirKTRNG, "Mixin"+className+".java"));
 		writeLineMixin("package de.scribble.lp.killtherng.mixin;\n");
 		writeLineMixin("import java.util.Random;\n");
-		writeLineMixin("@Mixin("+className.replace("$", ".")+".class)");
+		if(classAccess==0x30||classAccess==0x20||classAccess==0x420) {
+			writeLineMixin("@Mixin(targets=\""+className2+"\")");
+		}else {
+			writeLineMixin("@Mixin("+className.replace("$", ".")+".class)");
+		}
 		writeLineMixin("public class Mixin"+className+" {");
 	}
 
@@ -223,6 +250,19 @@ public class Csv2Mixin {
 		writeLineUR("import de.scribble.lp.killtherng.custom.CustomRandom;\n");
 		writeLineUR("public class UltimateRandomness {\n");
 		
+		startMixinConfig();
+	}
+
+
+	private static void startMixinConfig() throws IOException {
+		mixinConfigStream=new FileOutputStream(new File(dir, "mixins.killtherng.json"));
+		writeLineMixinConf("{\r\n" + 
+				"  \"required\": true,\n" + 
+				"  \"minVersion\": \"0.7.10\",\n" + 
+				"  \"package\": \"de.scribble.lp.killtherng.mixin\",\n" + 
+				"  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + 
+				"  \"compatibilityLevel\": \"JAVA_8\",\n" + 
+				"  \"mixins\": [");
 	}
 
 
@@ -252,6 +292,13 @@ public class Csv2Mixin {
 		return split2[split2.length-1];
 	}
 
+	private static String getClassPath(String qualName) {
+		String[] split = qualName.split(";",2);
+		String first = split[0].replace("/", ".");
+		String replaced=first.replaceFirst("L", "");
+		return replaced;
+	}
+	
 	private enum RandomType{
 		Int,
 		IntBound,
@@ -273,4 +320,10 @@ public class Csv2Mixin {
 		line=line+"\n";
 		mixinStream.write(line.getBytes());
 	}
+	
+	private static void writeLineMixinConf(String line) throws IOException {
+		line=line+"\n";
+		mixinConfigStream.write(line.getBytes());
+	}
+	
 }
