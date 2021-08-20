@@ -11,13 +11,20 @@ import net.minecraft.world.gen.structure.StructureNetherBridgePieces;
 
 @Mixin(StructureNetherBridgePieces.Corridor4.class)
 public class MixinStructureNetherBridgePieces$Corridor4 {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1714(Random rand, int i) {
+	public int redirect_random_1714_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1714.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1715(Random rand, int i) {
+	public int redirect_random_1715_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1715.nextInt(i);
 	}
 

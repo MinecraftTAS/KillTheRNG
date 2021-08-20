@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIWanderAvoidWater;
 
 @Mixin(EntityAIWanderAvoidWater.class)
 public class MixinEntityAIWanderAvoidWater {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getPosition()Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_718(Random rand) {
+	public float redirect_random_718_0(Random rand) {
 		return KillTheRNG.randomness.random_718.nextFloat();
 	}
 

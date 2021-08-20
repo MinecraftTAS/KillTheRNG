@@ -11,8 +11,12 @@ import net.minecraft.entity.monster.EntitySpider;
 
 @Mixin(EntitySpider.GroupData.class)
 public class MixinEntitySpider$GroupData {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "setRandomEffect(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1948(Random rand, int i) {
+	public int redirect_random_1948_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1948.nextInt(i);
 	}
 

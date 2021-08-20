@@ -11,13 +11,20 @@ import net.minecraft.tileentity.TileEntityChest;
 
 @Mixin(TileEntityChest.class)
 public class MixinTileEntityChest {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_395(Random rand) {
+	public float redirect_random_395_0(Random rand) {
 		return KillTheRNG.randomness.random_395.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_396(Random rand) {
+	public float redirect_random_396_1(Random rand) {
 		return KillTheRNG.randomness.random_396.nextFloat();
 	}
 

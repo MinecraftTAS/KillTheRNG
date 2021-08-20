@@ -11,13 +11,20 @@ import net.minecraft.world.storage.loot.LootTable;
 
 @Mixin(LootTable.class)
 public class MixinLootTable {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shuffleItems(Ljava/util/List;ILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1642(Random rand) {
+	public boolean redirect_random_1642_0(Random rand) {
 		return KillTheRNG.randomness.random_1642.nextBoolean();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "shuffleItems(Ljava/util/List;ILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
-	public boolean redirect_random_1643(Random rand) {
+	public boolean redirect_random_1643_1(Random rand) {
 		return KillTheRNG.randomness.random_1643.nextBoolean();
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityBoat;
 
 @Mixin(EntityBoat.class)
 public class MixinEntityBoat {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_600(Random rand) {
+	public float redirect_random_600_0(Random rand) {
 		return KillTheRNG.randomness.random_600.nextFloat();
 	}
 

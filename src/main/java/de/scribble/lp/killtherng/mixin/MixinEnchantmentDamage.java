@@ -11,8 +11,12 @@ import net.minecraft.enchantment.EnchantmentDamage;
 
 @Mixin(EnchantmentDamage.class)
 public class MixinEnchantmentDamage {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onEntityDamaged(Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/entity/Entity;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_566(Random rand, int i) {
+	public int redirect_random_566_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_566.nextInt(i);
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.block.BlockNewLeaf;
 
 @Mixin(BlockNewLeaf.class)
 public class MixinBlockNewLeaf {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "dropApple(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_530(Random rand, int i) {
+	public int redirect_random_530_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_530.nextInt(i);
 	}
 

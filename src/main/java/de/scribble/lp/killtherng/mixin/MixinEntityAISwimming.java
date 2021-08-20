@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAISwimming;
 
 @Mixin(EntityAISwimming.class)
 public class MixinEntityAISwimming {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_714(Random rand) {
+	public float redirect_random_714_0(Random rand) {
 		return KillTheRNG.randomness.random_714.nextFloat();
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.server.network.NetHandlerLoginServer;
 
 @Mixin(NetHandlerLoginServer.class)
 public class MixinNetHandlerLoginServer {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/network/NetworkManager;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBytes([B)V", ordinal = 0))
-	public void redirect_random_1918(Random rand, byte[] bytes) {
+	public void redirect_random_1918_0(Random rand, byte[] bytes) {
 		KillTheRNG.randomness.random_1918.nextBytes(bytes);
 	}
 

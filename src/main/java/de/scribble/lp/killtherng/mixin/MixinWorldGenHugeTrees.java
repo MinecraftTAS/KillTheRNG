@@ -11,13 +11,20 @@ import net.minecraft.world.gen.feature.WorldGenHugeTrees;
 
 @Mixin(WorldGenHugeTrees.class)
 public class MixinWorldGenHugeTrees {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_259(Random rand, int i) {
+	public int redirect_random_259_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_259.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_260(Random rand, int i) {
+	public int redirect_random_260_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_260.nextInt(i);
 	}
 

@@ -11,13 +11,20 @@ import net.minecraft.client.particle.ParticleSpell;
 
 @Mixin(ParticleSpell.class)
 public class MixinParticleSpell {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	private static double redirect_random_1430(Random rand) {
+	public double redirect_random_1430_0(Random rand) {
 		return KillTheRNG.randomness.random_1430.nextDouble();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	private static double redirect_random_1431(Random rand) {
+	public double redirect_random_1431_1(Random rand) {
 		return KillTheRNG.randomness.random_1431.nextDouble();
 	}
 

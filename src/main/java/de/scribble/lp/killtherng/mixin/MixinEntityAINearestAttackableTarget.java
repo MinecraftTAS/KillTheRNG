@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 
 @Mixin(EntityAINearestAttackableTarget.class)
 public class MixinEntityAINearestAttackableTarget {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_701(Random rand, int i) {
+	public int redirect_random_701_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_701.nextInt(i);
 	}
 

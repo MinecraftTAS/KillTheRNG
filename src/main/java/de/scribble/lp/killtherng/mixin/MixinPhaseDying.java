@@ -11,18 +11,28 @@ import net.minecraft.entity.boss.dragon.phase.PhaseDying;
 
 @Mixin(PhaseDying.class)
 public class MixinPhaseDying {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_2003(Random rand) {
+	public float redirect_random_2003_0(Random rand) {
 		return KillTheRNG.randomness.random_2003.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_2004(Random rand) {
+	public float redirect_random_2004_1(Random rand) {
 		return KillTheRNG.randomness.random_2004.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_2005(Random rand) {
+	public float redirect_random_2005_2(Random rand) {
 		return KillTheRNG.randomness.random_2005.nextFloat();
 	}
 

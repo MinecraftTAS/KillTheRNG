@@ -11,8 +11,12 @@ import net.minecraft.client.model.ModelGhast;
 
 @Mixin(ModelGhast.class)
 public class MixinModelGhast {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1378(Random rand, int i) {
+	public int redirect_random_1378_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1378.nextInt(i);
 	}
 

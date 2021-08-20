@@ -11,8 +11,12 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 
 @Mixin(StructureVillagePieces.Start.class)
 public class MixinStructureVillagePieces$Start {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/biome/BiomeProvider;ILjava/util/Random;IILjava/util/List;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1655(Random rand, int i) {
+	public int redirect_random_1655_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1655.nextInt(i);
 	}
 

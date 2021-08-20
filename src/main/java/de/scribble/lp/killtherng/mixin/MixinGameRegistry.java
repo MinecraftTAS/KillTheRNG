@@ -11,18 +11,28 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mixin(GameRegistry.class)
 public class MixinGameRegistry {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "generateWorld(IILnet/minecraft/world/World;Lnet/minecraft/world/gen/IChunkGenerator;Lnet/minecraft/world/chunk/IChunkProvider;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	private static long redirect_random_213(Random rand) {
+	private static long redirect_random_213_0(Random rand) {
 		return KillTheRNG.randomness.random_213.nextLong();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "generateWorld(IILnet/minecraft/world/World;Lnet/minecraft/world/gen/IChunkGenerator;Lnet/minecraft/world/chunk/IChunkProvider;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
-	private static long redirect_random_214(Random rand) {
+	private static long redirect_random_214_1(Random rand) {
 		return KillTheRNG.randomness.random_214.nextLong();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "generateWorld(IILnet/minecraft/world/World;Lnet/minecraft/world/gen/IChunkGenerator;Lnet/minecraft/world/chunk/IChunkProvider;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 2))
-	private static void redirect_random_215(Random rand, long unused) {
+	private static void redirect_random_215_2(Random rand, long unused) {
 	}
 
 }

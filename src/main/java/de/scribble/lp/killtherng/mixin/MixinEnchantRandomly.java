@@ -11,13 +11,20 @@ import net.minecraft.world.storage.loot.functions.EnchantRandomly;
 
 @Mixin(EnchantRandomly.class)
 public class MixinEnchantRandomly {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "apply(Lnet/minecraft/item/ItemStack;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1644(Random rand, int i) {
+	public int redirect_random_1644_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1644.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "apply(Lnet/minecraft/item/ItemStack;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1645(Random rand, int i) {
+	public int redirect_random_1645_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1645.nextInt(i);
 	}
 

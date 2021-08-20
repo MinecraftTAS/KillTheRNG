@@ -11,23 +11,36 @@ import net.minecraft.block.BlockEnchantmentTable;
 
 @Mixin(BlockEnchantmentTable.class)
 public class MixinBlockEnchantmentTable {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_475(Random rand, int i) {
+	public int redirect_random_475_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_475.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_476(Random rand) {
+	public float redirect_random_476_1(Random rand) {
 		return KillTheRNG.randomness.random_476.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_477(Random rand) {
+	public float redirect_random_477_2(Random rand) {
 		return KillTheRNG.randomness.random_477.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_random_478(Random rand) {
+	public float redirect_random_478_3(Random rand) {
 		return KillTheRNG.randomness.random_478.nextFloat();
 	}
 

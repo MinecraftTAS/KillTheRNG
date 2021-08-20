@@ -11,8 +11,12 @@ import net.minecraft.block.BlockGravel;
 
 @Mixin(BlockGravel.class)
 public class MixinBlockGravel {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_317(Random rand, int i) {
+	public int redirect_random_317_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_317.nextInt(i);
 	}
 

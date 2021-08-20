@@ -11,13 +11,20 @@ import net.minecraft.entity.boss.dragon.phase.PhaseStrafePlayer;
 
 @Mixin(PhaseStrafePlayer.class)
 public class MixinPhaseStrafePlayer {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1992(Random rand, int i) {
+	public int redirect_random_1992_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1992.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1993(Random rand) {
+	public float redirect_random_1993_0(Random rand) {
 		return KillTheRNG.randomness.random_1993.nextFloat();
 	}
 

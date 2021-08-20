@@ -11,13 +11,20 @@ import net.minecraft.entity.monster.EntityCreeper;
 
 @Mixin(EntityCreeper.class)
 public class MixinEntityCreeper {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onDeath(Lnet/minecraft/util/DamageSource;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_830(Random rand, int i) {
+	public int redirect_random_830_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_830.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_831(Random rand) {
+	public float redirect_random_831_0(Random rand) {
 		return KillTheRNG.randomness.random_831.nextFloat();
 	}
 

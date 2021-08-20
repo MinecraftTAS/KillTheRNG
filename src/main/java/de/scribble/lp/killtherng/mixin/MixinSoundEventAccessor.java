@@ -11,8 +11,12 @@ import net.minecraft.client.audio.SoundEventAccessor;
 
 @Mixin(SoundEventAccessor.class)
 public class MixinSoundEventAccessor {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "cloneEntry()Lnet/minecraft/client/audio/Sound;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1365(Random rand, int i) {
+	public int redirect_random_1365_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1365.nextInt(i);
 	}
 

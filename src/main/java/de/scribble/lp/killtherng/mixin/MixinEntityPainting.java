@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityPainting;
 
 @Mixin(EntityPainting.class)
 public class MixinEntityPainting {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_589(Random rand, int i) {
+	public int redirect_random_589_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_589.nextInt(i);
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIFollowGolem;
 
 @Mixin(EntityAIFollowGolem.class)
 public class MixinEntityAIFollowGolem {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1029(Random rand, int i) {
+	public int redirect_random_1029_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1029.nextInt(i);
 	}
 

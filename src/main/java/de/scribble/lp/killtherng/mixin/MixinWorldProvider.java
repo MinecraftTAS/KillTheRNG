@@ -11,13 +11,20 @@ import net.minecraft.world.WorldProvider;
 
 @Mixin(WorldProvider.class)
 public class MixinWorldProvider {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1480(Random rand, int i) {
+	public int redirect_random_1480_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1480.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1481(Random rand, int i) {
+	public int redirect_random_1481_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1481.nextInt(i);
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityFallingBlock;
 
 @Mixin(EntityFallingBlock.class)
 public class MixinEntityFallingBlock {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "fall(FF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_316(Random rand) {
+	public float redirect_random_316_0(Random rand) {
 		return KillTheRNG.randomness.random_316.nextFloat();
 	}
 

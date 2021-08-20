@@ -11,8 +11,12 @@ import net.minecraft.item.ItemLingeringPotion;
 
 @Mixin(ItemLingeringPotion.class)
 public class MixinItemLingeringPotion {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onItemRightClick(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Lnet/minecraft/util/ActionResult;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_675(Random rand) {
+	public float redirect_random_675_0(Random rand) {
 		return KillTheRNG.randomness.random_675.nextFloat();
 	}
 

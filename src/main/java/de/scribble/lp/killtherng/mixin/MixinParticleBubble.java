@@ -11,8 +11,12 @@ import net.minecraft.client.particle.ParticleBubble;
 
 @Mixin(ParticleBubble.class)
 public class MixinParticleBubble {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1425(Random rand) {
+	public float redirect_random_1425_0(Random rand) {
 		return KillTheRNG.randomness.random_1425.nextFloat();
 	}
 

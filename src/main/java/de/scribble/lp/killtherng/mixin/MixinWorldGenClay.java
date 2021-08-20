@@ -11,8 +11,12 @@ import net.minecraft.world.gen.feature.WorldGenClay;
 
 @Mixin(WorldGenClay.class)
 public class MixinWorldGenClay {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1197(Random rand, int i) {
+	public int redirect_random_1197_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1197.nextInt(i);
 	}
 

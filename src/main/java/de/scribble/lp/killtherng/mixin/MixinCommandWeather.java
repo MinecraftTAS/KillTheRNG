@@ -11,8 +11,12 @@ import net.minecraft.command.CommandWeather;
 
 @Mixin(CommandWeather.class)
 public class MixinCommandWeather {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1482(Random rand, int i) {
+	public int redirect_random_1482_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1482.nextInt(i);
 	}
 

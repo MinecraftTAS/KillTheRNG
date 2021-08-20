@@ -11,13 +11,20 @@ import net.minecraft.world.gen.structure.MapGenVillage;
 
 @Mixin(MapGenVillage.class)
 public class MixinMapGenVillage {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1610(Random rand, int i) {
+	public int redirect_random_1610_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1610.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1611(Random rand, int i) {
+	public int redirect_random_1611_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1611.nextInt(i);
 	}
 

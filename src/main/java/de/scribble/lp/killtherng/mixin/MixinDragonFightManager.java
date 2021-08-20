@@ -11,8 +11,12 @@ import net.minecraft.world.end.DragonFightManager;
 
 @Mixin(DragonFightManager.class)
 public class MixinDragonFightManager {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "createNewDragon()Lnet/minecraft/entity/boss/EntityDragon;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1851(Random rand) {
+	public float redirect_random_1851_0(Random rand) {
 		return KillTheRNG.randomness.random_1851.nextFloat();
 	}
 

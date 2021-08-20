@@ -11,8 +11,12 @@ import net.minecraft.world.gen.structure.StructureNetherBridgePieces;
 
 @Mixin(StructureNetherBridgePieces.Corridor2.class)
 public class MixinStructureNetherBridgePieces$Corridor2 {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1712(Random rand, int i) {
+	public int redirect_random_1712_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1712.nextInt(i);
 	}
 

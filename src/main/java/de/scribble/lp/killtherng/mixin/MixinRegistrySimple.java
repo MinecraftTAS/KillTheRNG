@@ -11,8 +11,12 @@ import net.minecraft.util.registry.RegistrySimple;
 
 @Mixin(RegistrySimple.class)
 public class MixinRegistrySimple {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getRandomObject(Ljava/util/Random;)Ljava/lang/Object;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_124(Random rand, int i) {
+	public int redirect_random_124_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_124.nextInt(i);
 	}
 

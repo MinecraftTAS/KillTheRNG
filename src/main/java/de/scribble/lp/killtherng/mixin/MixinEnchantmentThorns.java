@@ -11,13 +11,20 @@ import net.minecraft.enchantment.EnchantmentThorns;
 
 @Mixin(EnchantmentThorns.class)
 public class MixinEnchantmentThorns {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldHit(ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_564(Random rand) {
+	private static float redirect_random_564_0(Random rand) {
 		return KillTheRNG.randomness.random_564.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "getDamage(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_565(Random rand, int i) {
+	private static int redirect_random_565_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_565.nextInt(i);
 	}
 

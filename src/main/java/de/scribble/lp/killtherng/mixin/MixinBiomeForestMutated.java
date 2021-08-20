@@ -11,8 +11,12 @@ import net.minecraft.world.biome.BiomeForestMutated;
 
 @Mixin(BiomeForestMutated.class)
 public class MixinBiomeForestMutated {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1107(Random rand) {
+	public boolean redirect_random_1107_0(Random rand) {
 		return KillTheRNG.randomness.random_1107.nextBoolean();
 	}
 

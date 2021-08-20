@@ -11,8 +11,12 @@ import net.minecraft.entity.monster.EntityGhast;
 
 @Mixin(EntityGhast.class)
 public class MixinEntityGhast {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_858(Random rand, int i) {
+	public int redirect_random_858_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_858.nextInt(i);
 	}
 

@@ -48,7 +48,7 @@ public class FileHandler {
 			prevMethodName=methodName;
 			ordinal=0;
 		}
-//		writeLine(String.format("random_%s,L%s;%s%s,L%s;%s%s,null,%s,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, ordinal, "0x"+Integer.toHexString(classAccess), "0x"+Integer.toHexString(methodAccess)));
+//		writeLine(String.format("random_%s,null,L%s;%s%s,L%s;%s%s,%s,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, ordinal, "0x"+Integer.toHexString(classAccess), "0x"+Integer.toHexString(methodAccess)));
 		System.out.println(counter+" "+classAccess+" "+methodAccess);
 		ordinal++;
 	}

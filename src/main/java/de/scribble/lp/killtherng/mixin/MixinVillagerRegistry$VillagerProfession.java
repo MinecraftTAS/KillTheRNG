@@ -11,8 +11,12 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 
 @Mixin(VillagerRegistry.VillagerProfession.class)
 public class MixinVillagerRegistry$VillagerProfession {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getRandomCareer(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_212(Random rand, int i) {
+	public int redirect_random_212_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_212.nextInt(i);
 	}
 

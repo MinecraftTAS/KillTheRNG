@@ -11,8 +11,12 @@ import net.minecraft.world.gen.structure.MapGenStronghold;
 
 @Mixin(MapGenStronghold.Start.class)
 public class MixinMapGenStronghold$Start {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1628(Random rand, int i) {
+	public int redirect_random_1628_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1628.nextInt(i);
 	}
 

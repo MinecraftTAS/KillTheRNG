@@ -11,13 +11,20 @@ import net.minecraft.world.gen.structure.MapGenScatteredFeature;
 
 @Mixin(MapGenScatteredFeature.class)
 public class MixinMapGenScatteredFeature {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1616(Random rand, int i) {
+	public int redirect_random_1616_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1616.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1617(Random rand, int i) {
+	public int redirect_random_1617_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1617.nextInt(i);
 	}
 

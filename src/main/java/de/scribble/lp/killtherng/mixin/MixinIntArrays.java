@@ -11,13 +11,20 @@ import it.unimi.dsi.fastutil.ints.IntArrays;
 
 @Mixin(IntArrays.class)
 public class MixinIntArrays {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shuffle([IIILjava/util/Random;)[I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1412(Random rand, int i) {
+	private static int redirect_random_1412_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1412.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "shuffle([ILjava/util/Random;)[I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_1413(Random rand, int i) {
+	private static int redirect_random_1413_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_1413.nextInt(i);
 	}
 

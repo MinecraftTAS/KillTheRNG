@@ -11,8 +11,12 @@ import net.minecraft.tileentity.TileEntityHopper;
 
 @Mixin(TileEntityHopper.class)
 public class MixinTileEntityHopper {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getInventoryAtPosition(Lnet/minecraft/world/World;DDD)Lnet/minecraft/inventory/IInventory;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_529(Random rand, int i) {
+	private static int redirect_random_529_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_529.nextInt(i);
 	}
 

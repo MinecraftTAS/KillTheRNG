@@ -11,8 +11,12 @@ import net.minecraft.client.particle.ParticleRain;
 
 @Mixin(ParticleRain.class)
 public class MixinParticleRain {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1426(Random rand, int i) {
+	public int redirect_random_1426_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1426.nextInt(i);
 	}
 

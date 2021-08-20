@@ -11,8 +11,12 @@ import net.minecraft.world.storage.loot.conditions.RandomChanceWithLooting;
 
 @Mixin(RandomChanceWithLooting.class)
 public class MixinRandomChanceWithLooting {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "testCondition(Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1648(Random rand) {
+	public float redirect_random_1648_0(Random rand) {
 		return KillTheRNG.randomness.random_1648.nextFloat();
 	}
 

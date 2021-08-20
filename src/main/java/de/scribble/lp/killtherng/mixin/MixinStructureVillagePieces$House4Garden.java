@@ -11,8 +11,12 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 
 @Mixin(StructureVillagePieces.House4Garden.class)
 public class MixinStructureVillagePieces$House4Garden {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/gen/structure/StructureVillagePieces$Start;ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1657(Random rand) {
+	public boolean redirect_random_1657_0(Random rand) {
 		return KillTheRNG.randomness.random_1657.nextBoolean();
 	}
 

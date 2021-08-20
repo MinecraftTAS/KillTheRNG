@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIEatGrass;
 
 @Mixin(EntityAIEatGrass.class)
 public class MixinEntityAIEatGrass {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_951(Random rand, int i) {
+	public int redirect_random_951_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_951.nextInt(i);
 	}
 

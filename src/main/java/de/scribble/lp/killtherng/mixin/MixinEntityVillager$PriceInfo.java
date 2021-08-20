@@ -11,8 +11,12 @@ import net.minecraft.entity.passive.EntityVillager;
 
 @Mixin(EntityVillager.PriceInfo.class)
 public class MixinEntityVillager$PriceInfo {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getPrice(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1030(Random rand, int i) {
+	public int redirect_random_1030_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1030.nextInt(i);
 	}
 

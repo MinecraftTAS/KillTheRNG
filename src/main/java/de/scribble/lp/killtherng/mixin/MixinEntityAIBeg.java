@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIBeg;
 
 @Mixin(EntityAIBeg.class)
 public class MixinEntityAIBeg {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_973(Random rand, int i) {
+	public int redirect_random_973_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_973.nextInt(i);
 	}
 

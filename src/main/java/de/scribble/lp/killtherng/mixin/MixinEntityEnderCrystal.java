@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityEnderCrystal;
 
 @Mixin(EntityEnderCrystal.class)
 public class MixinEntityEnderCrystal {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_670(Random rand, int i) {
+	public int redirect_random_670_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_670.nextInt(i);
 	}
 

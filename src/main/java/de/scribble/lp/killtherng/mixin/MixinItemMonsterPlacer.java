@@ -11,8 +11,12 @@ import net.minecraft.item.ItemMonsterPlacer;
 
 @Mixin(ItemMonsterPlacer.class)
 public class MixinItemMonsterPlacer {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "spawnCreature(Lnet/minecraft/world/World;Lnet/minecraft/util/ResourceLocation;DDD)Lnet/minecraft/entity/Entity;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_655(Random rand) {
+	private static float redirect_random_655_0(Random rand) {
 		return KillTheRNG.randomness.random_655.nextFloat();
 	}
 

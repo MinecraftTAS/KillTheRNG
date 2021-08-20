@@ -11,8 +11,12 @@ import net.minecraft.entity.boss.dragon.phase.PhaseTakeoff;
 
 @Mixin(PhaseTakeoff.class)
 public class MixinPhaseTakeoff {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1998(Random rand) {
+	public float redirect_random_1998_0(Random rand) {
 		return KillTheRNG.randomness.random_1998.nextFloat();
 	}
 

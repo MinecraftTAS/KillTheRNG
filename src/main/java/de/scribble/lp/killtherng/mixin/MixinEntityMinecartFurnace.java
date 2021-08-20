@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityMinecartFurnace;
 
 @Mixin(EntityMinecartFurnace.class)
 public class MixinEntityMinecartFurnace {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_816(Random rand, int i) {
+	public int redirect_random_816_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_816.nextInt(i);
 	}
 

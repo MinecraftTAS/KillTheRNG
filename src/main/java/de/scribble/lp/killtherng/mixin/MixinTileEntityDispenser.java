@@ -11,8 +11,12 @@ import net.minecraft.tileentity.TileEntityDispenser;
 
 @Mixin(TileEntityDispenser.class)
 public class MixinTileEntityDispenser {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "getDispenseSlot()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_333(Random rand, int i) {
+	public int redirect_random_333_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_333.nextInt(i);
 	}
 

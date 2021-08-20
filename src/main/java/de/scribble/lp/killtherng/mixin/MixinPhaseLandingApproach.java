@@ -11,8 +11,12 @@ import net.minecraft.entity.boss.dragon.phase.PhaseLandingApproach;
 
 @Mixin(PhaseLandingApproach.class)
 public class MixinPhaseLandingApproach {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1994(Random rand) {
+	public float redirect_random_1994_0(Random rand) {
 		return KillTheRNG.randomness.random_1994.nextFloat();
 	}
 

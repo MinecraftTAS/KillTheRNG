@@ -11,8 +11,12 @@ import net.minecraft.entity.item.EntityItemFrame;
 
 @Mixin(EntityItemFrame.class)
 public class MixinEntityItemFrame {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "dropItemOrSelf(Lnet/minecraft/entity/Entity;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_590(Random rand) {
+	public float redirect_random_590_0(Random rand) {
 		return KillTheRNG.randomness.random_590.nextFloat();
 	}
 

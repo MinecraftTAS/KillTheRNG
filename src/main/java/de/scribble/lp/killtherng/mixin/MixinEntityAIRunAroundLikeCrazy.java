@@ -11,13 +11,20 @@ import net.minecraft.entity.ai.EntityAIRunAroundLikeCrazy;
 
 @Mixin(EntityAIRunAroundLikeCrazy.class)
 public class MixinEntityAIRunAroundLikeCrazy {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_775(Random rand, int i) {
+	public int redirect_random_775_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_775.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_776(Random rand, int i) {
+	public int redirect_random_776_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_776.nextInt(i);
 	}
 

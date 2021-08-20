@@ -11,13 +11,20 @@ import net.minecraft.block.BlockOre;
 
 @Mixin(BlockOre.class)
 public class MixinBlockOre {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_318(Random rand, int i) {
+	public int redirect_random_318_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_318.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_319(Random rand, int i) {
+	public int redirect_random_319_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_319.nextInt(i);
 	}
 

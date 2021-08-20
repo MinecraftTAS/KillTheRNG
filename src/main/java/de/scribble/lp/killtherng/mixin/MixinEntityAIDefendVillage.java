@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIDefendVillage;
 
 @Mixin(EntityAIDefendVillage.class)
 public class MixinEntityAIDefendVillage {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_983(Random rand, int i) {
+	public int redirect_random_983_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_983.nextInt(i);
 	}
 

@@ -11,8 +11,12 @@ import net.minecraft.block.BlockChorusPlant;
 
 @Mixin(BlockChorusPlant.class)
 public class MixinBlockChorusPlant {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_542(Random rand, int i) {
+	public int redirect_random_542_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_542.nextInt(i);
 	}
 

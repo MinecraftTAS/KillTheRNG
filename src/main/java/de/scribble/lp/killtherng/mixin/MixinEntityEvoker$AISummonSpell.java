@@ -10,23 +10,36 @@ import de.scribble.lp.killtherng.KillTheRNG;
 
 @Mixin(targets="net.minecraft.entity.monster.EntityEvoker$AISummonSpell")
 public class MixinEntityEvoker$AISummonSpell {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_799(Random rand, int i) {
+	public int redirect_random_799_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_799.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "castSpell()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_800(Random rand, int i) {
+	public int redirect_random_800_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_800.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "castSpell()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_801(Random rand, int i) {
+	public int redirect_random_801_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_801.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "castSpell()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_802(Random rand, int i) {
+	public int redirect_random_802_2(Random rand, int i) {
 		return KillTheRNG.randomness.random_802.nextInt(i);
 	}
 

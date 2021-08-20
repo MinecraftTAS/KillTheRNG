@@ -11,18 +11,28 @@ import net.minecraft.block.BlockNetherWart;
 
 @Mixin(BlockNetherWart.class)
 public class MixinBlockNetherWart {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_472(Random rand, int i) {
+	public int redirect_random_472_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_472.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_473(Random rand, int i) {
+	public int redirect_random_473_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_473.nextInt(i);
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_474(Random rand, int i) {
+	public int redirect_random_474_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_474.nextInt(i);
 	}
 

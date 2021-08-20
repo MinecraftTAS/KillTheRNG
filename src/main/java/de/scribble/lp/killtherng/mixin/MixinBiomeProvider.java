@@ -11,8 +11,12 @@ import net.minecraft.world.biome.BiomeProvider;
 
 @Mixin(BiomeProvider.class)
 public class MixinBiomeProvider {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "findBiomePosition(IIILjava/util/List;Ljava/util/Random;)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1362(Random rand, int i) {
+	public int redirect_random_1362_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1362.nextInt(i);
 	}
 

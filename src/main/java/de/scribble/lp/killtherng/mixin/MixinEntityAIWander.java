@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAIWander;
 
 @Mixin(EntityAIWander.class)
 public class MixinEntityAIWander {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_695(Random rand, int i) {
+	public int redirect_random_695_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_695.nextInt(i);
 	}
 

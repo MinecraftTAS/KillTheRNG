@@ -11,8 +11,12 @@ import net.minecraft.entity.ai.EntityAITarget;
 
 @Mixin(EntityAITarget.class)
 public class MixinEntityAITarget {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "canEasilyReach(Lnet/minecraft/entity/EntityLivingBase;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_702(Random rand, int i) {
+	public int redirect_random_702_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_702.nextInt(i);
 	}
 

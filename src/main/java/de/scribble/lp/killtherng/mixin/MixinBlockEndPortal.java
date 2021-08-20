@@ -11,13 +11,20 @@ import net.minecraft.block.BlockEndPortal;
 
 @Mixin(BlockEndPortal.class)
 public class MixinBlockEndPortal {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_486(Random rand) {
+	public float redirect_random_486_0(Random rand) {
 		return KillTheRNG.randomness.random_486.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_487(Random rand) {
+	public float redirect_random_487_1(Random rand) {
 		return KillTheRNG.randomness.random_487.nextFloat();
 	}
 

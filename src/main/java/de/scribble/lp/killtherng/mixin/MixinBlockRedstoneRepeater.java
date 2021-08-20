@@ -11,23 +11,36 @@ import net.minecraft.block.BlockRedstoneRepeater;
 
 @Mixin(BlockRedstoneRepeater.class)
 public class MixinBlockRedstoneRepeater {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_450(Random rand) {
+	public float redirect_random_450_0(Random rand) {
 		return KillTheRNG.randomness.random_450.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_451(Random rand) {
+	public float redirect_random_451_1(Random rand) {
 		return KillTheRNG.randomness.random_451.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_452(Random rand) {
+	public float redirect_random_452_2(Random rand) {
 		return KillTheRNG.randomness.random_452.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 3))
-	public boolean redirect_random_453(Random rand) {
+	public boolean redirect_random_453_3(Random rand) {
 		return KillTheRNG.randomness.random_453.nextBoolean();
 	}
 

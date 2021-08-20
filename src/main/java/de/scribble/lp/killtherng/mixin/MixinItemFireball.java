@@ -11,13 +11,20 @@ import net.minecraft.item.ItemFireball;
 
 @Mixin(ItemFireball.class)
 public class MixinItemFireball {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onItemUse(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumHand;Lnet/minecraft/util/EnumFacing;FFF)Lnet/minecraft/util/EnumActionResult;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_659(Random rand) {
+	public float redirect_random_659_0(Random rand) {
 		return KillTheRNG.randomness.random_659.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "onItemUse(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumHand;Lnet/minecraft/util/EnumFacing;FFF)Lnet/minecraft/util/EnumActionResult;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_660(Random rand) {
+	public float redirect_random_660_1(Random rand) {
 		return KillTheRNG.randomness.random_660.nextFloat();
 	}
 

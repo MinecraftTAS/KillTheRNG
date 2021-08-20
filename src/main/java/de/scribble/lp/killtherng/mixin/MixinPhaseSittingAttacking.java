@@ -11,8 +11,12 @@ import net.minecraft.entity.boss.dragon.phase.PhaseSittingAttacking;
 
 @Mixin(PhaseSittingAttacking.class)
 public class MixinPhaseSittingAttacking {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_2002(Random rand) {
+	public float redirect_random_2002_0(Random rand) {
 		return KillTheRNG.randomness.random_2002.nextFloat();
 	}
 

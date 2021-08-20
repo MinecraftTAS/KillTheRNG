@@ -11,33 +11,52 @@ import net.minecraft.entity.projectile.EntityThrowable;
 
 @Mixin(EntityThrowable.class)
 public class MixinEntityThrowable {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_random_594(Random rand) {
+	public double redirect_random_594_0(Random rand) {
 		return KillTheRNG.randomness.random_594.nextGaussian();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_random_595(Random rand) {
+	public double redirect_random_595_1(Random rand) {
 		return KillTheRNG.randomness.random_595.nextGaussian();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_random_596(Random rand) {
+	public double redirect_random_596_2(Random rand) {
 		return KillTheRNG.randomness.random_596.nextGaussian();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_597(Random rand) {
+	public float redirect_random_597_0(Random rand) {
 		return KillTheRNG.randomness.random_597.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_598(Random rand) {
+	public float redirect_random_598_1(Random rand) {
 		return KillTheRNG.randomness.random_598.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_599(Random rand) {
+	public float redirect_random_599_2(Random rand) {
 		return KillTheRNG.randomness.random_599.nextFloat();
 	}
 

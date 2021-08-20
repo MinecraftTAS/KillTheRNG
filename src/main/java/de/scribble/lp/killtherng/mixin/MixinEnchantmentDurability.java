@@ -11,13 +11,20 @@ import net.minecraft.enchantment.EnchantmentDurability;
 
 @Mixin(EnchantmentDurability.class)
 public class MixinEnchantmentDurability {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "negateDamage(Lnet/minecraft/item/ItemStack;ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_567(Random rand) {
+	private static float redirect_random_567_0(Random rand) {
 		return KillTheRNG.randomness.random_567.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "negateDamage(Lnet/minecraft/item/ItemStack;ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_568(Random rand, int i) {
+	private static int redirect_random_568_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_568.nextInt(i);
 	}
 

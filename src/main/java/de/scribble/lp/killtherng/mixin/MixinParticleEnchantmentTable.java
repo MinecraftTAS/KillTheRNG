@@ -11,13 +11,20 @@ import net.minecraft.client.particle.ParticleEnchantmentTable;
 
 @Mixin(ParticleEnchantmentTable.class)
 public class MixinParticleEnchantmentTable {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1435(Random rand) {
+	public float redirect_random_1435_0(Random rand) {
 		return KillTheRNG.randomness.random_1435.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_1436(Random rand) {
+	public float redirect_random_1436_1(Random rand) {
 		return KillTheRNG.randomness.random_1436.nextFloat();
 	}
 

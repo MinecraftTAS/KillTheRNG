@@ -11,8 +11,12 @@ import io.netty.util.ResourceLeakDetector;
 
 @Mixin(ResourceLeakDetector.class)
 public class MixinResourceLeakDetector {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "track0(Ljava/lang/Object;)Lio/netty/util/ResourceLeakDetector$DefaultResourceLeak;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1269(Random rand, int i) {
+	public int redirect_random_1269_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_1269.nextInt(i);
 	}
 

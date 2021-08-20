@@ -11,13 +11,20 @@ import net.minecraft.entity.ai.EntityAIAttackRangedBow;
 
 @Mixin(EntityAIAttackRangedBow.class)
 public class MixinEntityAIAttackRangedBow {
+
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_712(Random rand) {
+	public float redirect_random_712_0(Random rand) {
 		return KillTheRNG.randomness.random_712.nextFloat();
 	}
 
+	/**
+	* null
+	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_713(Random rand) {
+	public float redirect_random_713_1(Random rand) {
 		return KillTheRNG.randomness.random_713.nextFloat();
 	}
 
