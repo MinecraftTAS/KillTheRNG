@@ -20,7 +20,8 @@ public class KillTheRNG {
 
     public static final String MOD_ID = "killtherng";
     public static final String MOD_NAME = "KillTheRNG";
-    public static final String VERSION = "Alpha";
+    public static final String VERSION = "${version}";
+    public static final String MCVER = "${mcversion}";
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
     

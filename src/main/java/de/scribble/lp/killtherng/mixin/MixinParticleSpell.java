@@ -16,7 +16,7 @@ public class MixinParticleSpell {
 	* null
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_1430_0(Random rand) {
+	private static double redirect_random_1430_0(Random rand) {
 		return KillTheRNG.randomness.random_1430.nextDouble();
 	}
 
@@ -24,7 +24,7 @@ public class MixinParticleSpell {
 	* null
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_1431_1(Random rand) {
+	private static double redirect_random_1431_1(Random rand) {
 		return KillTheRNG.randomness.random_1431.nextDouble();
 	}
 

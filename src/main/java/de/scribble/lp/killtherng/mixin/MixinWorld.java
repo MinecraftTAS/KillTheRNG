@@ -23,7 +23,7 @@ public class MixinWorld {
 	/**
 	* null
 	*/
-	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
 	public int redirect_random_2_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_2.nextInt(i);
 	}
@@ -31,7 +31,7 @@ public class MixinWorld {
 	/**
 	* null
 	*/
-	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
+	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap=false)
 	public int redirect_random_3_1(Random rand, int i) {
 		return KillTheRNG.randomness.random_3.nextInt(i);
 	}
@@ -39,7 +39,7 @@ public class MixinWorld {
 	/**
 	* null
 	*/
-	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
+	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2), remap=false)
 	public int redirect_random_4_2(Random rand, int i) {
 		return KillTheRNG.randomness.random_4.nextInt(i);
 	}
@@ -47,7 +47,7 @@ public class MixinWorld {
 	/**
 	* null
 	*/
-	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
+	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3), remap=false)
 	public int redirect_random_5_3(Random rand, int i) {
 		return KillTheRNG.randomness.random_5.nextInt(i);
 	}

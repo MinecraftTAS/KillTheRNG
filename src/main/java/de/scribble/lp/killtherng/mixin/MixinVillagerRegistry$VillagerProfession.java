@@ -15,7 +15,7 @@ public class MixinVillagerRegistry$VillagerProfession {
 	/**
 	* null
 	*/
-	@Redirect(method = "getRandomCareer(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "getRandomCareer(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
 	public int redirect_random_212_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_212.nextInt(i);
 	}

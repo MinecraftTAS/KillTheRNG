@@ -14,7 +14,7 @@ public class MixinNamespacedWrapper {
 	/**
 	* null
 	*/
-	@Redirect(method = "getRandomObject(Ljava/util/Random;)Lnet/minecraftforge/registries/IForgeRegistryEntry;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "getRandomObject(Ljava/util/Random;)Lnet/minecraftforge/registries/IForgeRegistryEntry;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
 	public int redirect_random_206_0(Random rand, int i) {
 		return KillTheRNG.randomness.random_206.nextInt(i);
 	}

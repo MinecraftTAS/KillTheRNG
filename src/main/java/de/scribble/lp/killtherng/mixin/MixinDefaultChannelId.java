@@ -15,7 +15,7 @@ public class MixinDefaultChannelId {
 	/**
 	* null
 	*/
-	@Redirect(method = "defaultProcessId()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
+	@Redirect(method = "defaultProcessId()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
 	private static int redirect_random_1910_0(Random rand) {
 		return KillTheRNG.randomness.random_1910.nextInt();
 	}
@@ -23,7 +23,7 @@ public class MixinDefaultChannelId {
 	/**
 	* null
 	*/
-	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
+	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
 	public int redirect_random_1911_0(Random rand) {
 		return KillTheRNG.randomness.random_1911.nextInt();
 	}

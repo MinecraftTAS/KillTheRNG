@@ -55,7 +55,7 @@ public class MixinItemShears {
 	/**
 	* null
 	*/
-	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0), remap=false)
 	public float redirect_random_641_0(Random rand) {
 		return KillTheRNG.randomness.random_641.nextFloat();
 	}
@@ -63,7 +63,7 @@ public class MixinItemShears {
 	/**
 	* null
 	*/
-	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
+	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1), remap=false)
 	public float redirect_random_642_1(Random rand) {
 		return KillTheRNG.randomness.random_642.nextFloat();
 	}
@@ -71,7 +71,7 @@ public class MixinItemShears {
 	/**
 	* null
 	*/
-	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
+	@Redirect(method = "onBlockStartBreak(Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/player/EntityPlayer;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2), remap=false)
 	public float redirect_random_643_2(Random rand) {
 		return KillTheRNG.randomness.random_643.nextFloat();
 	}

@@ -413,6 +413,6 @@
 	"MixinPhaseSittingFlaming",
 	"MixinPhaseSittingAttacking",
 	"MixinPhaseDying",
-	"MixinChunkGeneratorFlat",
+	"MixinChunkGeneratorFlat"
 	]
 }

@@ -15,7 +15,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
+	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
 	public int redirect_random_1366_0(Random rand) {
 		return KillTheRNG.randomness.random_1366.nextInt();
 	}
@@ -23,7 +23,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1))
+	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
 	public int redirect_random_1367_1(Random rand) {
 		return KillTheRNG.randomness.random_1367.nextInt();
 	}
@@ -31,7 +31,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 2))
+	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 2), remap=false)
 	public int redirect_random_1368_2(Random rand) {
 		return KillTheRNG.randomness.random_1368.nextInt();
 	}
@@ -39,7 +39,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 3))
+	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 3), remap=false)
 	public int redirect_random_1369_3(Random rand) {
 		return KillTheRNG.randomness.random_1369.nextInt();
 	}
@@ -47,7 +47,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
+	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
 	public int redirect_random_1370_0(Random rand) {
 		return KillTheRNG.randomness.random_1370.nextInt();
 	}
@@ -55,7 +55,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1))
+	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
 	public int redirect_random_1371_1(Random rand) {
 		return KillTheRNG.randomness.random_1371.nextInt();
 	}
@@ -63,7 +63,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 2))
+	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 2), remap=false)
 	public int redirect_random_1372_2(Random rand) {
 		return KillTheRNG.randomness.random_1372.nextInt();
 	}
@@ -71,7 +71,7 @@ public class MixinSoundSystem {
 	/**
 	* null
 	*/
-	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 3))
+	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 3), remap=false)
 	public int redirect_random_1373_3(Random rand) {
 		return KillTheRNG.randomness.random_1373.nextInt();
 	}
