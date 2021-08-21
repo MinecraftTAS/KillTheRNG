@@ -2,6 +2,7 @@ package de.scribble.lp.killtherng.commands;
 
 import java.util.List;
 
+import com.google.common.collect.ImmutableList;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import de.scribble.lp.killtherng.URTools;
@@ -25,6 +26,12 @@ public class CommandKillTheRNG extends CommandBase{
 	public String getUsage(ICommandSender sender) {
 		return "/killtherng <RNGName> <seed>";
 	}
+	
+	@Override
+	public List<String> getAliases() {
+		// TODO Auto-generated method stub
+		return ImmutableList.of("ktrng");
+	}
 
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
@@ -34,6 +41,7 @@ public class CommandKillTheRNG extends CommandBase{
 						+ "/killtherng <Seed> to set the seed for every RNG value\n"
 						+ "/killtherng <true|false> to enable/disable pseudo random for ever RNG value\n"
 						+ "/killtherng <RNG-Value> <seed|true|false> Set the RNG seed or pseudo randomness for that value"));
+				return;
 			}
 			if(isNumeric(args[0])) {
 				URTools.setSeedAll(Integer.parseInt(args[0]));
@@ -65,8 +73,13 @@ public class CommandKillTheRNG extends CommandBase{
 		String style ="/killtherng "+URTools.getRandomFromString(theimportantone).getName()+" "+URTools.getRandomFromString(theimportantone).getSeed();
 		seed.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
 		
-		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+URTools.getRandomFromString(theimportantone).getName()));
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+URTools.getRandomFromString(theimportantone).getName()+"-------------"));
 		sender.sendMessage(new TextComponentString(URTools.getRandomFromString(theimportantone).getDescription()));
+		sender.sendMessage(new TextComponentString(""));
+		if(!URTools.getRandomFromString(theimportantone).isEnabled()) {
+			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, setting a seed will not do anything."));
+			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"You can still view some information"));
+		}
 		sender.sendMessage(seed);
 		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+URTools.getRandomFromString(theimportantone).getTimesCalled()+" times"));
 	}

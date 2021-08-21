@@ -14,11 +14,11 @@ public class FileHandler {
 	
 	private int counter=0;
 	
-	private int ordinal=0;
-	
 	private String prevClassName;
 	
 	private String prevMethodName;
+	
+	private List<String> prevTargetNames=new ArrayList<>();
 	
 	private FileOutputStream out;
 	
@@ -42,15 +42,16 @@ public class FileHandler {
 		if(!className.equals(prevClassName)) {
 			//When a new class is being processed
 			prevClassName=className;
-			ordinal=0;
+			prevTargetNames.clear();
 		}
 		if(!methodName.equals(prevMethodName)) {
 			prevMethodName=methodName;
-			ordinal=0;
+			prevTargetNames.clear();
 		}
-//		writeLine(String.format("random_%s,null,L%s;%s%s,L%s;%s%s,%s,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, ordinal, "0x"+Integer.toHexString(classAccess), "0x"+Integer.toHexString(methodAccess)));
-		System.out.println(counter+" "+classAccess+" "+methodAccess);
-		ordinal++;
+		
+//		writeLine(String.format("random_%s,null,L%s;%s%s,L%s;%s%s,%s,%s,%s", counter, className.replace(".", "/"), methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, countObject(prevTargetNames, targetName), "0x"+Integer.toHexString(classAccess), "0x"+Integer.toHexString(methodAccess)));
+		System.out.println(counter+" "+className+" "+methodAccess);
+		prevTargetNames.add(targetName);
 	}
 	
 	private void writeLine(String line) throws IOException {
@@ -58,7 +59,13 @@ public class FileHandler {
 		out.write(line.getBytes());
 	}
 	
-	private void writeLine(String line, int heck) {
-		
+	private int countObject(List<String> list, String string) {
+		int counter=0;
+		for(String listelement : list) {
+			if(listelement.equals(string)) {
+				counter++;
+			}
+		}
+		return counter;
 	}
 }

@@ -15,6 +15,8 @@ public class CustomRandom extends Random {
     
     private long timesCalled=0;
     
+    private boolean enabled;
+    
     public static final List<CustomRandom> LIST=new ArrayList<>();
 
     public CustomRandom() {
@@ -29,6 +31,15 @@ public class CustomRandom extends Random {
     	super(0);
 		this.name = name;
 		this.description = description;
+		enabled=true;
+		LIST.add(this);
+	}
+    
+    public CustomRandom(String name, String description, boolean enabled) {
+    	super(0);
+		this.name = name;
+		this.description = description;
+		this.enabled=enabled;
 		LIST.add(this);
 	}
 
@@ -36,6 +47,13 @@ public class CustomRandom extends Random {
     	timesCalled=0;
     	super.setSeed(seedIn ^ 0x5deece66dL);
     }
+	
+	public void setSeed(long seedIn, boolean shouldIncrease) {
+		if(shouldIncrease) {
+			timesCalled++;
+		}
+		super.setSeed(seedIn);
+	}
 
     public long getSeed() {
     	long saved=timesCalled;
@@ -61,6 +79,10 @@ public class CustomRandom extends Random {
 		return timesCalled;
 	}
 	
+	public boolean isEnabled() {
+		return enabled;
+	}
+	
 	@Override
 	public long nextLong() {
 		timesCalled++;
@@ -80,6 +102,11 @@ public class CustomRandom extends Random {
 	public int nextInt() {
 		timesCalled++;
 		return super.nextInt();
+	}
+	@Override
+	public int nextInt(int bound) {
+		timesCalled++;
+		return super.nextInt(bound);
 	}
 	@Override
 	public float nextFloat() {
