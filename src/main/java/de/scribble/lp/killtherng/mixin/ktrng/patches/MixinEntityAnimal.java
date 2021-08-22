@@ -73,12 +73,12 @@ public class MixinEntityAnimal {
 	}
 
 	/**
-	* null
+	* Xp amount from animals after breeding
 	*/
 	@Redirect(method = "getExperiencePoints(Lnet/minecraft/entity/player/EntityPlayer;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_191_7(Random rand, int i) {
-		return KillTheRNG.randomness.random_191.nextInt(i);
-//		KillTheRNG.randomness.random_191.nextInt(i);
+	public int redirect_animalXpDropAmount_7(Random rand, int i) {
+		return KillTheRNG.randomness.animalXpDropAmount.nextInt(i);
+//		KillTheRNG.randomness.animalXpDropAmount.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

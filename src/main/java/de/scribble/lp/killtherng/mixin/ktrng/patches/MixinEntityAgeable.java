@@ -13,32 +13,32 @@ import net.minecraft.entity.EntityAgeable;
 public class MixinEntityAgeable {
 
 	/**
-	* null
+	* Particles when a child grows up
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_198_1(Random rand) {
-		return KillTheRNG.randomness.random_198.nextFloat();
-//		KillTheRNG.randomness.random_198.nextFloat();
+	public float redirect_ageableGrowUpParticle_1(Random rand) {
+		return KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+//		KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Particles when a child grows up
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_199_2(Random rand) {
-		return KillTheRNG.randomness.random_199.nextFloat();
-//		KillTheRNG.randomness.random_199.nextFloat();
+	public float redirect_ageableGrowUpParticle_2(Random rand) {
+		return KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+//		KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Particles when a child grows up
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_200_3(Random rand) {
-		return KillTheRNG.randomness.random_200.nextFloat();
-//		KillTheRNG.randomness.random_200.nextFloat();
+	public float redirect_ageableGrowUpParticle_3(Random rand) {
+		return KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+//		KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 

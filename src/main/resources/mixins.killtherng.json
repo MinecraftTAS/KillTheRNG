@@ -4,8 +4,8 @@
   "package": "de.scribble.lp.killtherng.mixin",
   "refmap": "mixins.killtherng.refmap.json",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [ 
-  	"ktrng.MixinMinecraft",
+  "mixins": [
+	"ktrng.MixinMinecraft",
 	"ktrng.patches.MixinWorld",
 	"ktrng.patches.MixinWorldClient",
 	"ktrng.patches.MixinGuiIngame",

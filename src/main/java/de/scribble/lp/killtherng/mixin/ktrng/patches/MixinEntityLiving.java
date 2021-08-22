@@ -123,12 +123,12 @@ public class MixinEntityLiving {
 	}
 
 	/**
-	* Armor updates?
+	* If the item is dropped when a better equipment is available
 	*/
 	@Redirect(method = "updateEquipmentIfNeeded(Lnet/minecraft/entity/item/EntityItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_updateArmor_12(Random rand) {
-		return KillTheRNG.randomness.updateArmor.nextFloat();
-//		KillTheRNG.randomness.updateArmor.nextFloat();
+	public float redirect_dropEquipmentIfBetter_12(Random rand) {
+		return KillTheRNG.randomness.dropEquipmentIfBetter.nextFloat();
+//		KillTheRNG.randomness.dropEquipmentIfBetter.nextFloat();
 //		return rand.nextFloat();
 	}
 

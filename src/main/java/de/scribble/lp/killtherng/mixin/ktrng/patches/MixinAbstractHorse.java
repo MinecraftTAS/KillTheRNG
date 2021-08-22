@@ -113,62 +113,62 @@ public class MixinAbstractHorse {
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_random_170_11(Random rand) {
-		return KillTheRNG.randomness.random_170.nextGaussian();
-//		KillTheRNG.randomness.random_170.nextGaussian();
+	public double redirect_horseTamingParticles_11(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+//		KillTheRNG.randomness.horseTamingParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_random_171_12(Random rand) {
-		return KillTheRNG.randomness.random_171.nextGaussian();
-//		KillTheRNG.randomness.random_171.nextGaussian();
+	public double redirect_horseTamingParticles_12(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+//		KillTheRNG.randomness.horseTamingParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_random_172_13(Random rand) {
-		return KillTheRNG.randomness.random_172.nextGaussian();
-//		KillTheRNG.randomness.random_172.nextGaussian();
+	public double redirect_horseTamingParticles_13(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+//		KillTheRNG.randomness.horseTamingParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_173_14(Random rand) {
-		return KillTheRNG.randomness.random_173.nextFloat();
-//		KillTheRNG.randomness.random_173.nextFloat();
+	public float redirect_horseTamingParticles_14(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextFloat();
+//		KillTheRNG.randomness.horseTamingParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_174_15(Random rand) {
-		return KillTheRNG.randomness.random_174.nextFloat();
-//		KillTheRNG.randomness.random_174.nextFloat();
+	public float redirect_horseTamingParticles_15(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextFloat();
+//		KillTheRNG.randomness.horseTamingParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Particles when trying to tame a horse
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_175_16(Random rand) {
-		return KillTheRNG.randomness.random_175.nextFloat();
-//		KillTheRNG.randomness.random_175.nextFloat();
+	public float redirect_horseTamingParticles_16(Random rand) {
+		return KillTheRNG.randomness.horseTamingParticles.nextFloat();
+//		KillTheRNG.randomness.horseTamingParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 

@@ -73,82 +73,82 @@ public class MixinEntityLivingBase {
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_deathExplosionParticles_7(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
-//		KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
+	public double redirect_deathDustParticles_7(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextGaussian();
+//		KillTheRNG.randomness.deathDustParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_deathExplosionParticles_8(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
-//		KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
+	public double redirect_deathDustParticles_8(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextGaussian();
+//		KillTheRNG.randomness.deathDustParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_deathExplosionParticles_9(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
-//		KillTheRNG.randomness.deathExplosionParticles.nextGaussian();
+	public double redirect_deathDustParticles_9(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextGaussian();
+//		KillTheRNG.randomness.deathDustParticles.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_deathExplosionParticles_10(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextFloat();
-//		KillTheRNG.randomness.deathExplosionParticles.nextFloat();
+	public float redirect_deathDustParticles_10(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextFloat();
+//		KillTheRNG.randomness.deathDustParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_deathExplosionParticles_11(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextFloat();
-//		KillTheRNG.randomness.deathExplosionParticles.nextFloat();
+	public float redirect_deathDustParticles_11(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextFloat();
+//		KillTheRNG.randomness.deathDustParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* Position of explosionNormal particles when dying
+	* Position of the dust clouds when dying
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_deathExplosionParticles_12(Random rand) {
-		return KillTheRNG.randomness.deathExplosionParticles.nextFloat();
-//		KillTheRNG.randomness.deathExplosionParticles.nextFloat();
+	public float redirect_deathDustParticles_12(Random rand) {
+		return KillTheRNG.randomness.deathDustParticles.nextFloat();
+//		KillTheRNG.randomness.deathDustParticles.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* Decrease or not decrease air supply while respiration
+	* Decrease or not decrease air supply while having a respiration enchantment
 	*/
 	@Redirect(method = "decreaseAirSupply(I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_decrementAirSupply_13(Random rand, int i) {
-		return KillTheRNG.randomness.decrementAirSupply.nextInt(i);
-//		KillTheRNG.randomness.decrementAirSupply.nextInt(i);
+	public int redirect_respirationDecrementAirSupply_13(Random rand, int i) {
+		return KillTheRNG.randomness.respirationDecrementAirSupply.nextInt(i);
+//		KillTheRNG.randomness.respirationDecrementAirSupply.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* Whether or not it should spawn potion effects
+	* Whether or not it should spawn potion effects when invisible
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_potionParticles_14(Random rand, int i) {
-		return KillTheRNG.randomness.potionParticles.nextInt(i);
-//		KillTheRNG.randomness.potionParticles.nextInt(i);
+	public int redirect_potionParticlesInvisible_14(Random rand, int i) {
+		return KillTheRNG.randomness.potionParticlesInvisible.nextInt(i);
+//		KillTheRNG.randomness.potionParticlesInvisible.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
@@ -163,42 +163,42 @@ public class MixinEntityLivingBase {
 	}
 
 	/**
-	* Whether or not it should spawn potion effects
+	* Whether or not it should spawn potion effects when particles are hidden
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_potionParticles_16(Random rand, int i) {
-		return KillTheRNG.randomness.potionParticles.nextInt(i);
-//		KillTheRNG.randomness.potionParticles.nextInt(i);
+	public int redirect_potionParticlesHidden_16(Random rand, int i) {
+		return KillTheRNG.randomness.potionParticlesHidden.nextInt(i);
+//		KillTheRNG.randomness.potionParticlesHidden.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* Whether or not it should spawn potion effects
+	* Position of the potion particles
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_potionParticles_17(Random rand) {
-		return KillTheRNG.randomness.potionParticles.nextDouble();
-//		KillTheRNG.randomness.potionParticles.nextDouble();
+	public double redirect_potionParticlesPosition_17(Random rand) {
+		return KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+//		KillTheRNG.randomness.potionParticlesPosition.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* Whether or not it should spawn potion effects
+	* Position of the potion particles
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_potionParticles_18(Random rand) {
-		return KillTheRNG.randomness.potionParticles.nextDouble();
-//		KillTheRNG.randomness.potionParticles.nextDouble();
+	public double redirect_potionParticlesPosition_18(Random rand) {
+		return KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+//		KillTheRNG.randomness.potionParticlesPosition.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* Whether or not it should spawn potion effects
+	* Position of the potion particles
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_potionParticles_19(Random rand) {
-		return KillTheRNG.randomness.potionParticles.nextDouble();
-//		KillTheRNG.randomness.potionParticles.nextDouble();
+	public double redirect_potionParticlesPosition_19(Random rand) {
+		return KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+//		KillTheRNG.randomness.potionParticlesPosition.nextDouble();
 //		return rand.nextDouble();
 	}
 
@@ -213,12 +213,12 @@ public class MixinEntityLivingBase {
 	}
 
 	/**
-	* Particles when item in hand breaks
+	* Pitch when an item breaks in your hand
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_brokenItemParticles_21(Random rand) {
-		return KillTheRNG.randomness.brokenItemParticles.nextFloat();
-//		KillTheRNG.randomness.brokenItemParticles.nextFloat();
+	public float redirect_brokenItemSound_21(Random rand) {
+		return KillTheRNG.randomness.brokenItemSound.nextFloat();
+//		KillTheRNG.randomness.brokenItemSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -253,112 +253,112 @@ public class MixinEntityLivingBase {
 	}
 
 	/**
-	* Calculates knockback vector
+	* If knockback resistance is applied
 	*/
 	@Redirect(method = "knockBack(Lnet/minecraft/entity/Entity;FDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_knockBack_25(Random rand) {
-		return KillTheRNG.randomness.knockBack.nextDouble();
-//		KillTheRNG.randomness.knockBack.nextDouble();
+	public double redirect_knockBackResistance_25(Random rand) {
+		return KillTheRNG.randomness.knockBackResistance.nextDouble();
+//		KillTheRNG.randomness.knockBackResistance.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the death sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_entitySounds_26(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityDeathSound_26(Random rand) {
+		return KillTheRNG.randomness.entityDeathSound.nextFloat();
+//		KillTheRNG.randomness.entityDeathSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the death sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_entitySounds_27(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityDeathSound_27(Random rand) {
+		return KillTheRNG.randomness.entityDeathSound.nextFloat();
+//		KillTheRNG.randomness.entityDeathSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the shield break sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_entitySounds_28(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityShieldBreakSound_28(Random rand) {
+		return KillTheRNG.randomness.entityShieldBreakSound.nextFloat();
+//		KillTheRNG.randomness.entityShieldBreakSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the shield block sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_entitySounds_29(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityShieldBlockSound_29(Random rand) {
+		return KillTheRNG.randomness.entityShieldBlockSound.nextFloat();
+//		KillTheRNG.randomness.entityShieldBlockSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the thorns hit sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
-	public float redirect_entitySounds_30(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityThornsSound_30(Random rand) {
+		return KillTheRNG.randomness.entityThornsSound.nextFloat();
+//		KillTheRNG.randomness.entityThornsSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the thorns hit sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
-	public float redirect_entitySounds_31(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityThornsSound_31(Random rand) {
+		return KillTheRNG.randomness.entityThornsSound.nextFloat();
+//		KillTheRNG.randomness.entityThornsSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the hurt sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 6))
-	public float redirect_entitySounds_32(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityHurtSound_32(Random rand) {
+		return KillTheRNG.randomness.entityHurtSound.nextFloat();
+//		KillTheRNG.randomness.entityHurtSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* DeathSound, thorns sound hurt sound
+	* Pitch of the hurt sound
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 7))
-	public float redirect_entitySounds_33(Random rand) {
-		return KillTheRNG.randomness.entitySounds.nextFloat();
-//		KillTheRNG.randomness.entitySounds.nextFloat();
+	public float redirect_entityHurtSound_33(Random rand) {
+		return KillTheRNG.randomness.entityHurtSound.nextFloat();
+//		KillTheRNG.randomness.entityHurtSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* Change the pitch of the sound
+	* Change the pitch of the sound when the entity is a child
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_soundPitch_34(Random rand) {
-		return KillTheRNG.randomness.soundPitch.nextFloat();
-//		KillTheRNG.randomness.soundPitch.nextFloat();
+	public float redirect_soundPitchChild_34(Random rand) {
+		return KillTheRNG.randomness.soundPitchChild.nextFloat();
+//		KillTheRNG.randomness.soundPitchChild.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* Change the pitch of the sound
+	* Change the pitch of the sound when the entity is a child
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_soundPitch_35(Random rand) {
-		return KillTheRNG.randomness.soundPitch.nextFloat();
-//		KillTheRNG.randomness.soundPitch.nextFloat();
+	public float redirect_soundPitchChild_35(Random rand) {
+		return KillTheRNG.randomness.soundPitchChild.nextFloat();
+//		KillTheRNG.randomness.soundPitchChild.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -473,62 +473,62 @@ public class MixinEntityLivingBase {
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_98_47(Random rand) {
-		return KillTheRNG.randomness.random_98.nextFloat();
-//		KillTheRNG.randomness.random_98.nextFloat();
+	public float redirect_entityTeleportParticle_47(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+//		KillTheRNG.randomness.entityTeleportParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_99_48(Random rand) {
-		return KillTheRNG.randomness.random_99.nextFloat();
-//		KillTheRNG.randomness.random_99.nextFloat();
+	public float redirect_entityTeleportParticle_48(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+//		KillTheRNG.randomness.entityTeleportParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_100_49(Random rand) {
-		return KillTheRNG.randomness.random_100.nextFloat();
-//		KillTheRNG.randomness.random_100.nextFloat();
+	public float redirect_entityTeleportParticle_49(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+//		KillTheRNG.randomness.entityTeleportParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_101_50(Random rand) {
-		return KillTheRNG.randomness.random_101.nextDouble();
-//		KillTheRNG.randomness.random_101.nextDouble();
+	public double redirect_entityTeleportParticle_50(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+//		KillTheRNG.randomness.entityTeleportParticle.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_102_51(Random rand) {
-		return KillTheRNG.randomness.random_102.nextDouble();
-//		KillTheRNG.randomness.random_102.nextDouble();
+	public double redirect_entityTeleportParticle_51(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+//		KillTheRNG.randomness.entityTeleportParticle.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Position and velocity of portal particles after an entity teleports
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_103_52(Random rand) {
-		return KillTheRNG.randomness.random_103.nextDouble();
-//		KillTheRNG.randomness.random_103.nextDouble();
+	public double redirect_entityTeleportParticle_52(Random rand) {
+		return KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+//		KillTheRNG.randomness.entityTeleportParticle.nextDouble();
 //		return rand.nextDouble();
 	}
 

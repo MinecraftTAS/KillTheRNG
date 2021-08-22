@@ -13,12 +13,12 @@ import net.minecraft.util.registry.RegistrySimple;
 public class MixinRegistrySimple {
 
 	/**
-	* null
+	* Gets a random registry value from the mc registry
 	*/
 	@Redirect(method = "getRandomObject(Ljava/util/Random;)Ljava/lang/Object;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_124_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_124.nextInt(i);
-//		KillTheRNG.randomness.random_124.nextInt(i);
+	public int redirect_registryGetRandomObject_1(Random rand, int i) {
+		return KillTheRNG.randomness.registryGetRandomObject.nextInt(i);
+//		KillTheRNG.randomness.registryGetRandomObject.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

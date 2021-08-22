@@ -13,12 +13,12 @@ import net.minecraft.block.BlockGravel;
 public class MixinBlockGravel {
 
 	/**
-	* null
+	* If gravel frops flint or itself
 	*/
 	@Redirect(method = "getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_317_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_317.nextInt(i);
-//		KillTheRNG.randomness.random_317.nextInt(i);
+	public int redirect_gravelDropFlint_1(Random rand, int i) {
+		return KillTheRNG.randomness.gravelDropFlint.nextInt(i);
+//		KillTheRNG.randomness.gravelDropFlint.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

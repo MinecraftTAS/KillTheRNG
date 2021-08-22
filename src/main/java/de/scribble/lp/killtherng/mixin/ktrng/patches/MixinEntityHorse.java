@@ -23,42 +23,42 @@ public class MixinEntityHorse {
 	}
 
 	/**
-	* null
+	* Sets the horse variant for the child
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_154_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_154.nextInt(i);
-//		KillTheRNG.randomness.random_154.nextInt(i);
+	public int redirect_horseVariantChild_2(Random rand, int i) {
+		return KillTheRNG.randomness.horseVariantChild.nextInt(i);
+//		KillTheRNG.randomness.horseVariantChild.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Sets the horse variant for the child
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_155_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_155.nextInt(i);
-//		KillTheRNG.randomness.random_155.nextInt(i);
+	public int redirect_horseVariantChild_3(Random rand, int i) {
+		return KillTheRNG.randomness.horseVariantChild.nextInt(i);
+//		KillTheRNG.randomness.horseVariantChild.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Sets the horse variant for the child
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_156_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_156.nextInt(i);
-//		KillTheRNG.randomness.random_156.nextInt(i);
+	public int redirect_horseVariantChild_4(Random rand, int i) {
+		return KillTheRNG.randomness.horseVariantChild.nextInt(i);
+//		KillTheRNG.randomness.horseVariantChild.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Sets the horse variant for the child
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_157_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_157.nextInt(i);
-//		KillTheRNG.randomness.random_157.nextInt(i);
+	public int redirect_horseVariantChild_5(Random rand, int i) {
+		return KillTheRNG.randomness.horseVariantChild.nextInt(i);
+//		KillTheRNG.randomness.horseVariantChild.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

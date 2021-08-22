@@ -56,35 +56,35 @@ spawnWaterbubbleWhenDrowning	Spawns waterbubbles when entity is drowning	Lnet/mi
 spawnWaterbubbleWhenDrowning	Spawns waterbubbles when entity is drowning	Lnet/minecraft/entity/EntityLivingBase;onEntityUpdate()V	Ljava/util/Random;nextFloat()F	3	0x421	0x1	FALSE	FALSE
 spawnWaterbubbleWhenDrowning	Spawns waterbubbles when entity is drowning	Lnet/minecraft/entity/EntityLivingBase;onEntityUpdate()V	Ljava/util/Random;nextFloat()F	4	0x421	0x1	FALSE	FALSE
 spawnWaterbubbleWhenDrowning	Spawns waterbubbles when entity is drowning	Lnet/minecraft/entity/EntityLivingBase;onEntityUpdate()V	Ljava/util/Random;nextFloat()F	5	0x421	0x1	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	0	0x421	0x4	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	1	0x421	0x4	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	2	0x421	0x4	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
-deathExplosionParticles	Position of explosionNormal particles when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	2	0x421	0x4	FALSE	FALSE
-decrementAirSupply	Decrease or not decrease air supply while respiration	Lnet/minecraft/entity/EntityLivingBase;decreaseAirSupply(I)I	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
-potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	0	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	1	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextGaussian()D	2	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
+deathDustParticles	Position of the dust clouds when dying	Lnet/minecraft/entity/EntityLivingBase;onDeathUpdate()V	Ljava/util/Random;nextFloat()F	2	0x421	0x4	FALSE	FALSE
+respirationDecrementAirSupply	Decrease or not decrease air supply while having a respiration enchantment	Lnet/minecraft/entity/EntityLivingBase;decreaseAirSupply(I)I	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
+potionParticlesInvisible	Whether or not it should spawn potion effects when invisible	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextBoolean()Z	0	0x421	0x4	FALSE	FALSE
-potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextInt(I)I	1	0x421	0x4	FALSE	FALSE
-potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	0	0x421	0x4	FALSE	FALSE
-potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	1	0x421	0x4	FALSE	FALSE
-potionParticles	Whether or not it should spawn potion effects	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	2	0x421	0x4	FALSE	FALSE
+potionParticlesHidden	Whether or not it should spawn potion effects when particles are hidden	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextInt(I)I	1	0x421	0x4	FALSE	FALSE
+potionParticlesPosition	Position of the potion particles	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	0	0x421	0x4	FALSE	FALSE
+potionParticlesPosition	Position of the potion particles	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	1	0x421	0x4	FALSE	FALSE
+potionParticlesPosition	Position of the potion particles	Lnet/minecraft/entity/EntityLivingBase;updatePotionEffects()V	Ljava/util/Random;nextDouble()D	2	0x421	0x4	FALSE	FALSE
 damageHeadgearFromFallingBlock	Applies damage to headgear when anvil or a block is damaging the player	Lnet/minecraft/entity/EntityLivingBase;attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
-brokenItemParticles	Particles when item in hand breaks	Lnet/minecraft/entity/EntityLivingBase;renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
+brokenItemSound	Pitch when an item breaks in your hand	Lnet/minecraft/entity/EntityLivingBase;renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
 brokenItemParticles	Particles when item in hand breaks	Lnet/minecraft/entity/EntityLivingBase;renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
 brokenItemParticles	Particles when item in hand breaks	Lnet/minecraft/entity/EntityLivingBase;renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
 brokenItemParticles	Particles when item in hand breaks	Lnet/minecraft/entity/EntityLivingBase;renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	3	0x421	0x1	FALSE	FALSE
-knockBack	Calculates knockback vector	Lnet/minecraft/entity/EntityLivingBase;knockBack(Lnet/minecraft/entity/Entity;FDD)V	Ljava/util/Random;nextDouble()D	0	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	3	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	4	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	5	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	6	0x421	0x1	FALSE	FALSE
-entitySounds	DeathSound, thorns sound hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	7	0x421	0x1	FALSE	FALSE
-soundPitch	Change the pitch of the sound	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
-soundPitch	Change the pitch of the sound	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
+knockBackResistance	If knockback resistance is applied	Lnet/minecraft/entity/EntityLivingBase;knockBack(Lnet/minecraft/entity/Entity;FDD)V	Ljava/util/Random;nextDouble()D	0	0x421	0x1	FALSE	FALSE
+entityDeathSound	Pitch of the death sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
+entityDeathSound	Pitch of the death sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
+entityShieldBreakSound	Pitch of the shield break sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
+entityShieldBlockSound	Pitch of the shield block sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	3	0x421	0x1	FALSE	FALSE
+entityThornsSound	Pitch of the thorns hit sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	4	0x421	0x1	FALSE	FALSE
+entityThornsSound	Pitch of the thorns hit sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	5	0x421	0x1	FALSE	FALSE
+entityHurtSound	Pitch of the hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	6	0x421	0x1	FALSE	FALSE
+entityHurtSound	Pitch of the hurt sound	Lnet/minecraft/entity/EntityLivingBase;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	7	0x421	0x1	FALSE	FALSE
+soundPitchChild	Change the pitch of the sound when the entity is a child	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
+soundPitchChild	Change the pitch of the sound when the entity is a child	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
 soundPitch	Change the pitch of the sound	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	2	0x421	0x4	FALSE	FALSE
 soundPitch	Change the pitch of the sound	Lnet/minecraft/entity/EntityLivingBase;getSoundPitch()F	Ljava/util/Random;nextFloat()F	3	0x421	0x4	FALSE	FALSE
 crammingApplience	If entity cramming gets applied	Lnet/minecraft/entity/EntityLivingBase;collideWithNearbyEntities()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
@@ -96,33 +96,33 @@ drinkAndEatSound	Pitch of eating and drinking sounds	Lnet/minecraft/entity/Entit
 drinkAndEatSound	Pitch of eating and drinking sounds	Lnet/minecraft/entity/EntityLivingBase;updateItemUse(Lnet/minecraft/item/ItemStack;I)V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 drinkAndEatSound	Pitch of eating and drinking sounds	Lnet/minecraft/entity/EntityLivingBase;updateItemUse(Lnet/minecraft/item/ItemStack;I)V	Ljava/util/Random;nextFloat()F	4	0x421	0x4	FALSE	FALSE
 drinkAndEatSound	Pitch of eating and drinking sounds	Lnet/minecraft/entity/EntityLivingBase;updateItemUse(Lnet/minecraft/item/ItemStack;I)V	Ljava/util/Random;nextFloat()F	5	0x421	0x4	FALSE	FALSE
-random_98	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
-random_99	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
-random_100	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
-random_101	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	0	0x421	0x1	FALSE	FALSE
-random_102	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	1	0x421	0x1	FALSE	FALSE
-random_103	null	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	2	0x421	0x1	FALSE	FALSE
-random_104	null	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
-random_105	null	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE
-random_106	null	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	FALSE
-random_107	null	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x1	FALSE	FALSE
-random_108	null	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
-random_109	null	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
-random_110	null	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x4	FALSE	FALSE
-random_111	null	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x4	FALSE	FALSE
-random_112	null	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
-random_113	null	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextDouble()D	0	0x21	0x4	FALSE	FALSE
-random_114	null	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
-random_115	null	Lnet/minecraft/world/WorldServer;adjustPosToNearbyEntity(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/math/BlockPos;	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
-random_116	null	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x2	FALSE	FALSE
-random_117	null	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	1	0x21	0x2	FALSE	FALSE
-random_118	null	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	2	0x21	0x2	FALSE	FALSE
-random_119	null	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	3	0x21	0x2	FALSE	FALSE
-random_120	null	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
-random_121	null	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
-random_122	null	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x4	FALSE	FALSE
-random_123	null	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x4	FALSE	FALSE
-random_124	null	Lnet/minecraft/util/registry/RegistrySimple;getRandomObject(Ljava/util/Random;)Ljava/lang/Object;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	0	0x421	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	1	0x421	0x1	FALSE	FALSE
+entityTeleportParticle	Position and velocity of portal particles after an entity teleports	Lnet/minecraft/entity/EntityLivingBase;attemptTeleport(DDD)Z	Ljava/util/Random;nextDouble()D	2	0x421	0x1	FALSE	FALSE
+initialSpawnLocation	Spawn location when spawning in a world, unused in forge	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
+initialSpawnLocation	Spawn location when spawning in a world, unused in forge	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE
+initialSpawnLocation	Spawn location when spawning in a world, unused in forge	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	FALSE
+initialSpawnLocation	Spawn location when spawning in a world, unused in forge	Lnet/minecraft/world/WorldServer;setInitialSpawnLocation()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x1	FALSE	FALSE
+checkLightPlayer	Selects the player where the light should be checked	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
+checkLightPosition	The position, where the light should be checked	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
+checkLightPosition	The position, where the light should be checked	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x4	FALSE	FALSE
+checkLightPosition	The position, where the light should be checked	Lnet/minecraft/world/WorldServer;playerCheckLight()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x4	FALSE	FALSE
+lightningChance	The chance of lightning striking during thunderstorm	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
+spawnSkeletonRiders	The chance of skeletonRiders spawn on a lightning strike	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextDouble()D	0	0x21	0x4	FALSE	FALSE
+addSnowBlocks	If ice and snow form during snow storm	Lnet/minecraft/world/WorldServer;updateBlocks()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
+lightningAimForEntity	Lightning aims for an entity in a radius where it's about to strike. If multiple entities are found this random variable selects the entity	Lnet/minecraft/world/WorldServer;adjustPosToNearbyEntity(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/math/BlockPos;	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
+spawnPos	Creates a spawn position at random within 256 blocks of 0,0	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x2	FALSE	FALSE
+spawnPos	Creates a spawn position at random within 256 blocks of 0,0	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	1	0x21	0x2	FALSE	FALSE
+spawnPos	Creates a spawn position at random within 256 blocks of 0,0	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	2	0x21	0x2	FALSE	FALSE
+spawnPos	Creates a spawn position at random within 256 blocks of 0,0	Lnet/minecraft/world/WorldServer;createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V	Ljava/util/Random;nextInt(I)I	3	0x21	0x2	FALSE	FALSE
+bonusChestPos	The spawn position of the bonus chest	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
+bonusChestPos	The spawn position of the bonus chest	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	FALSE
+bonusChestPos	The spawn position of the bonus chest	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x4	FALSE	FALSE
+bonusChestPos	The spawn position of the bonus chest	Lnet/minecraft/world/WorldServer;createBonusChest()V	Ljava/util/Random;nextInt(I)I	3	0x21	0x4	FALSE	FALSE
+registryGetRandomObject	Gets a random registry value from the mc registry	Lnet/minecraft/util/registry/RegistrySimple;getRandomObject(Ljava/util/Random;)Ljava/lang/Object;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
 applyingEntityAi	Applies Entity AI	Lnet/minecraft/entity/EntityLiving;onEntityUpdate()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x1	FALSE	FALSE
 experienceAmount	Get a random amount of experience	Lnet/minecraft/entity/EntityLiving;getExperiencePoints(Lnet/minecraft/entity/player/EntityPlayer;)I	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 experienceAmount	Get a random amount of experience	Lnet/minecraft/entity/EntityLiving;getExperiencePoints(Lnet/minecraft/entity/player/EntityPlayer;)I	Ljava/util/Random;nextInt(I)I	1	0x421	0x4	FALSE	FALSE
@@ -134,7 +134,7 @@ explosionParticle	Spawn explosion particles	Lnet/minecraft/entity/EntityLiving;s
 explosionParticle	Spawn explosion particles	Lnet/minecraft/entity/EntityLiving;spawnExplosionParticle()V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
 dropAmount	Get's the random drops amount	Lnet/minecraft/entity/EntityLiving;dropFewItems(ZI)V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 dropAmount	Get's the random drops amount	Lnet/minecraft/entity/EntityLiving;dropFewItems(ZI)V	Ljava/util/Random;nextInt(I)I	1	0x421	0x4	FALSE	FALSE
-updateArmor	Armor updates?	Lnet/minecraft/entity/EntityLiving;updateEquipmentIfNeeded(Lnet/minecraft/entity/item/EntityItem;)V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
+dropEquipmentIfBetter	If the item is dropped when a better equipment is available	Lnet/minecraft/entity/EntityLiving;updateEquipmentIfNeeded(Lnet/minecraft/entity/item/EntityItem;)V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
 despawningEntity	Depawns entity	Lnet/minecraft/entity/EntityLiving;despawnEntity()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 equipmentDropChance	If the entity should drop the equipment	Lnet/minecraft/entity/EntityLiving;dropEquipment(ZI)V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
 equipmentDropChance	If the entity should drop the equipment	Lnet/minecraft/entity/EntityLiving;dropEquipment(ZI)V	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
@@ -152,10 +152,10 @@ setEnchantmentBasedOnDifficulty	Sets enchantment dependant on difficulty	Lnet/mi
 followRangeBoost	Adds a follow range boost	Lnet/minecraft/entity/EntityLiving;onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;	Ljava/util/Random;nextGaussian()D	0	0x421	0x1	FALSE	FALSE
 followRangeBoost	Adds a follow range boost	Lnet/minecraft/entity/EntityLiving;onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
 horseBreathSound	Plays horse breath sound	Lnet/minecraft/entity/passive/EntityHorse;playGallopSound(Lnet/minecraft/block/SoundType;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE
-random_154	null	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
-random_155	null	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE
-random_156	null	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	FALSE
-random_157	null	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	3	0x21	0x1	FALSE	FALSE
+horseVariantChild	Sets the horse variant for the child	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
+horseVariantChild	Sets the horse variant for the child	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE
+horseVariantChild	Sets the horse variant for the child	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	FALSE
+horseVariantChild	Sets the horse variant for the child	Lnet/minecraft/entity/passive/EntityHorse;createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;	Ljava/util/Random;nextInt(I)I	3	0x21	0x1	FALSE	FALSE
 horseInitialVariant	Picks a random variant if genes are not set	Lnet/minecraft/entity/passive/EntityHorse;onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
 horseInitialVariant	Picks a random variant if genes are not set	Lnet/minecraft/entity/passive/EntityHorse;onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE
 horseEatSound	Pitch of horse eating	Lnet/minecraft/entity/passive/AbstractHorse;eatingHorse()V	Ljava/util/Random;nextFloat()F	0	0x421	0x2	FALSE	FALSE
@@ -168,12 +168,12 @@ horseChildGrowingUpParticle	Position of the villager happy particles when feedin
 horseMoveTailAnimation	Plays tail animation	Lnet/minecraft/entity/passive/AbstractHorse;onLivingUpdate()V	Ljava/util/Random;nextInt(I)I	0	0x421	0x1	FALSE	FALSE
 horseMoveTailAnimation	Plays tail animation	Lnet/minecraft/entity/passive/AbstractHorse;onLivingUpdate()V	Ljava/util/Random;nextInt(I)I	1	0x421	0x1	FALSE	FALSE
 horseMoveTailAnimation	Plays tail animation	Lnet/minecraft/entity/passive/AbstractHorse;onLivingUpdate()V	Ljava/util/Random;nextInt(I)I	2	0x421	0x1	FALSE	FALSE
-random_170	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	0	0x421	0x4	FALSE	FALSE
-random_171	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	1	0x421	0x4	FALSE	FALSE
-random_172	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	2	0x421	0x4	FALSE	FALSE
-random_173	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
-random_174	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
-random_175	null	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	2	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	0	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	1	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextGaussian()D	2	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	0	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	1	0x421	0x4	FALSE	FALSE
+horseTamingParticles	Particles when trying to tame a horse	Lnet/minecraft/entity/passive/AbstractHorse;spawnHorseParticles(Z)V	Ljava/util/Random;nextFloat()F	2	0x421	0x4	FALSE	FALSE
 horseMaxHealth	Max health of the horse	Lnet/minecraft/entity/passive/AbstractHorse;getModifiedMaxHealth()F	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 horseMaxHealth	Max health of the horse	Lnet/minecraft/entity/passive/AbstractHorse;getModifiedMaxHealth()F	Ljava/util/Random;nextInt(I)I	1	0x421	0x4	FALSE	FALSE
 horseJumpHeight	Max jump strength of horse	Lnet/minecraft/entity/passive/AbstractHorse;getModifiedJumpStrength()D	Ljava/util/Random;nextDouble()D	0	0x421	0x4	FALSE	FALSE
@@ -189,16 +189,16 @@ animalHeartParticle	Particle location and speed of hearts when breeding	Lnet/min
 animalHeartParticle	Particle location and speed of hearts when breeding	Lnet/minecraft/entity/passive/EntityAnimal;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
 animalHeartParticle	Particle location and speed of hearts when breeding	Lnet/minecraft/entity/passive/EntityAnimal;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
 animalHeartParticle	Particle location and speed of hearts when breeding	Lnet/minecraft/entity/passive/EntityAnimal;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
-random_191	null	Lnet/minecraft/entity/passive/EntityAnimal;getExperiencePoints(Lnet/minecraft/entity/player/EntityPlayer;)I	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
+animalXpDropAmount	Xp amount from animals after breeding	Lnet/minecraft/entity/passive/EntityAnimal;getExperiencePoints(Lnet/minecraft/entity/player/EntityPlayer;)I	Ljava/util/Random;nextInt(I)I	0	0x421	0x4	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextGaussian()D	0	0x421	0x1	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextGaussian()D	1	0x421	0x1	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextGaussian()D	2	0x421	0x1	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
 animalHeartParticleStatusUpdate	Same as animalHeartParticle but with some status handler stuff... idk	Lnet/minecraft/entity/passive/EntityAnimal;handleStatusUpdate(B)V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
-random_198	null	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
-random_199	null	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
-random_200	null	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
+ageableGrowUpParticle	Particles when a child grows up	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	0	0x421	0x1	FALSE	FALSE
+ageableGrowUpParticle	Particles when a child grows up	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	1	0x421	0x1	FALSE	FALSE
+ageableGrowUpParticle	Particles when a child grows up	Lnet/minecraft/entity/EntityAgeable;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	2	0x421	0x1	FALSE	FALSE
 blockDropItemChance	If a drop should be dropped	Lnet/minecraft/block/Block;dropBlockAsItemWithChance(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;FI)V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE
 blockDropPosition	Where the spawned item should spawn	Lnet/minecraft/block/Block;spawnAsEntity(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	0	0x21	0x9	FALSE	FALSE
 blockDropPosition	Where the spawned item should spawn	Lnet/minecraft/block/Block;spawnAsEntity(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V	Ljava/util/Random;nextFloat()F	1	0x21	0x9	FALSE	FALSE
@@ -315,7 +315,7 @@ random_313	null	Lnet/minecraft/block/BlockFalling;randomDisplayTick(Lnet/minecra
 random_314	null	Lnet/minecraft/block/BlockFalling;randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE
 random_315	null	Lnet/minecraft/block/BlockFalling;randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V	Ljava/util/Random;nextFloat()F	1	0x21	0x1	FALSE	FALSE
 anvilFallingDamage	If anvil get's damaged when falling	Lnet/minecraft/entity/item/EntityFallingBlock;fall(FF)V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE
-random_317	null	Lnet/minecraft/block/BlockGravel;getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
+gravelDropFlint	If gravel frops flint or itself	Lnet/minecraft/block/BlockGravel;getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
 random_318	null	Lnet/minecraft/block/BlockOre;quantityDropped(Ljava/util/Random;)I	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
 random_319	null	Lnet/minecraft/block/BlockOre;quantityDroppedWithBonus(ILjava/util/Random;)I	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE
 random_320	null	Lnet/minecraft/util/EnumFacing;random(Ljava/util/Random;)Lnet/minecraft/util/EnumFacing;	Ljava/util/Random;nextInt(I)I	0	0x4031	0x9	FALSE	FALSE
