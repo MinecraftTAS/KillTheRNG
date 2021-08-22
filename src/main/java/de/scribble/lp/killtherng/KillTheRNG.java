@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
+import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -25,6 +26,8 @@ public class KillTheRNG {
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
     
+    public static SeedingModes mode=SeedingModes.None;
+    
     public static final UltimateRandomness randomness = new UltimateRandomness();
 
     @EventHandler
@@ -42,5 +45,7 @@ public class KillTheRNG {
     @EventHandler
     public void onServerStart(FMLServerStartingEvent ev) {
     	ev.registerServerCommand(new CommandKillTheRNG());
+    	ev.registerServerCommand(new CommandSeedingMode());
     }
+    
 }

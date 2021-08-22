@@ -326,7 +326,7 @@ public class Csv2Mixin {
 		writeLineUR("package de.scribble.lp.killtherng;\n");
 		writeLineUR("import de.scribble.lp.killtherng.custom.CustomRandom;\n");
 		writeLineUR("public class UltimateRandomness {\n");
-		
+		writeLineUR("public CustomRandom Global=new CustomRandom(\"Global\", \"The global randomness used in PlayerInput and Tick seedingmodes\");\n");
 		startMixinConfig();
 	}
 
@@ -361,7 +361,8 @@ public class Csv2Mixin {
 		writeLineMixinConf("{\r\n" + "  \"required\": true,\n" + "  \"minVersion\": \"0.7.10\",\n"
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
-				+ "  \"mixins\": [\n");
+				+ "  \"mixins\": [\n"
+				+ "\t\"ktrng.MixinMinecraft\",\n");
 	}
 
 	private static void closeMixinConf() throws IOException {

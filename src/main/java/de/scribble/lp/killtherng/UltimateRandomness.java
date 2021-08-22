@@ -6,6 +6,8 @@ import de.scribble.lp.killtherng.custom.CustomRandom;
 
 public class UltimateRandomness {
 
+public CustomRandom Global=new CustomRandom("Global", "The global randomness used in PlayerInput and Tick seedingmodes");
+
 public CustomRandom blockupdateLCG=new CustomRandom("blockupdateLCG", "Linear Congruential Generator seed, for random block updates. Called when joining a World", true);
 public CustomRandom thunderTime=new CustomRandom("thunderTime", "Length of the weather phase, when thundering", true);
 public CustomRandom clearWeatherTimeAfterThunder=new CustomRandom("clearWeatherTimeAfterThunder", "Length of the weather phase, after thundering or raining", true);

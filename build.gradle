@@ -46,7 +46,7 @@ dependencies {
     }
     compile 'org.msgpack:msgpack-core:0.8.16'
     compile 'org.msgpack:jackson-dataformat-msgpack:0.8.16'
-    compile files('libs/latticg-1.05.jar', 'libs/SeedUtils.jar')
+    compile files('libs/latticg-1.05.jar', 'libs/SeedUtils.jar', 'libs/MathUtils.jar')
 }
 
 jar {

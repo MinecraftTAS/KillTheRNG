@@ -37,10 +37,11 @@ public class CommandKillTheRNG extends CommandBase{
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		if(sender instanceof EntityPlayer) {
 			if(args.length==0) {
-				sender.sendMessage(new TextComponentString("Set the RNG Seed here.\n"
-						+ "/killtherng <Seed> to set the seed for every RNG value\n"
-						+ "/killtherng <true|false> to enable/disable pseudo random for ever RNG value\n"
-						+ "/killtherng <RNG-Value> <seed|true|false> Set the RNG seed or pseudo randomness for that value"));
+				sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-----------------------Help-----------------------\n"+ChatFormatting.RESET
+						+ "Sets all or individual rng seeds.\n"
+						+ String.format("%s/killtherng %s<seed>%s - Set the seed for every RNG value\n", ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.RESET)
+						+ String.format("%s/killtherng %s<RNG-Value> %s<seed>%s - Set the RNG seed for that value\n", ChatFormatting.AQUA, ChatFormatting.YELLOW, ChatFormatting.GREEN, ChatFormatting.RESET)
+						+ ChatFormatting.GRAY+"Current Global Seed: "+ChatFormatting.YELLOW+URTools.getRandomFromString("Global").getSeed()));
 				return;
 			}
 			if(isNumeric(args[0])) {

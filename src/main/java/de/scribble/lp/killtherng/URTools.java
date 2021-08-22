@@ -14,6 +14,7 @@ public class URTools {
 	
 	public static void setSeedAll(long seed) {
 		CustomRandom.LIST.forEach(rand->{
+			if(rand.getName().equals("Global")) return;
 			rand.setSeed(seed);
 		});
 	}
@@ -28,5 +29,9 @@ public class URTools {
 			out[i]=CustomRandom.LIST.get(i).getName();
 		}
 		return out;
+	}
+	
+	public static void nextSeed() {
+		setSeedAll(KillTheRNG.randomness.Global.nextLong());
 	}
 }
