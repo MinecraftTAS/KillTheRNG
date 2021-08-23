@@ -13,43 +13,43 @@ import net.minecraft.world.gen.feature.WorldGenBigTree;
 public class MixinWorldGenBigTree {
 
 	/**
-	* null
+	* Some leaf generation
 	*/
 	@Redirect(method = "generateLeafNodeList()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_240_1(Random rand) {
-		return KillTheRNG.randomness.random_240.nextFloat();
-//		KillTheRNG.randomness.random_240.nextFloat();
-//		return rand.nextFloat();
+	public float redirect_genBigTreeLeafNodes_1(Random rand) {
+//		return KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Some leaf generation
 	*/
 	@Redirect(method = "generateLeafNodeList()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_241_2(Random rand) {
-		return KillTheRNG.randomness.random_241.nextFloat();
-//		KillTheRNG.randomness.random_241.nextFloat();
-//		return rand.nextFloat();
+	public float redirect_genBigTreeLeafNodes_2(Random rand) {
+//		return KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Advances the randomness to the next seed?
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_242_3(Random rand) {
-		return KillTheRNG.randomness.random_242.nextLong();
-//		KillTheRNG.randomness.random_242.nextLong();
-//		return rand.nextLong();
+	public long redirect_genBigTreeGenerateNextSeed_3(Random rand) {
+//		return KillTheRNG.randomness.genBigTreeGenerateNextSeed.nextLong();
+		KillTheRNG.randomness.genBigTreeGenerateNextSeed.nextLong();
+		return rand.nextLong();
 	}
 
 	/**
-	* null
+	* Height limit for big trees
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_243_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_243.nextInt(i);
-//		KillTheRNG.randomness.random_243.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genBigTreeHeightLimit_4(Random rand, int i) {
+//		return KillTheRNG.randomness.genBigTreeHeightLimit.nextInt(i);
+		KillTheRNG.randomness.genBigTreeHeightLimit.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

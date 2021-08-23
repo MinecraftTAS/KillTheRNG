@@ -13,82 +13,82 @@ import net.minecraft.block.BlockGrass;
 public class MixinBlockGrass {
 
 	/**
-	* null
+	* Determines the next block position for grass to spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_227_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_227.nextInt(i);
-//		KillTheRNG.randomness.random_227.nextInt(i);
+	public int redirect_grassSpreadPos_1(Random rand, int i) {
+		return KillTheRNG.randomness.grassSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.grassSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Determines the next block position for grass to spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_228_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_228.nextInt(i);
-//		KillTheRNG.randomness.random_228.nextInt(i);
+	public int redirect_grassSpreadPos_2(Random rand, int i) {
+		return KillTheRNG.randomness.grassSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.grassSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Determines the next block position for grass to spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_229_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_229.nextInt(i);
-//		KillTheRNG.randomness.random_229.nextInt(i);
+	public int redirect_grassSpreadPos_3(Random rand, int i) {
+		return KillTheRNG.randomness.grassSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.grassSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a flower should be added when bonemealing grass
 	*/
 	@Redirect(method = "grow(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_230_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_230.nextInt(i);
-//		KillTheRNG.randomness.random_230.nextInt(i);
+	public int redirect_bonemealGrassFlower_4(Random rand, int i) {
+		return KillTheRNG.randomness.bonemealGrassFlower.nextInt(i);
+//		KillTheRNG.randomness.bonemealGrassFlower.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The position where the grass should grow
 	*/
 	@Redirect(method = "grow(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_231_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_231.nextInt(i);
-//		KillTheRNG.randomness.random_231.nextInt(i);
+	public int redirect_bonemealGrassPos_5(Random rand, int i) {
+		return KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
+//		KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The position where the grass should grow
 	*/
 	@Redirect(method = "grow(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_232_6(Random rand, int i) {
-		return KillTheRNG.randomness.random_232.nextInt(i);
-//		KillTheRNG.randomness.random_232.nextInt(i);
+	public int redirect_bonemealGrassPos_6(Random rand, int i) {
+		return KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
+//		KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The position where the grass should grow
 	*/
 	@Redirect(method = "grow(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_233_7(Random rand, int i) {
-		return KillTheRNG.randomness.random_233.nextInt(i);
-//		KillTheRNG.randomness.random_233.nextInt(i);
+	public int redirect_bonemealGrassPos_7(Random rand, int i) {
+		return KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
+//		KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The position where the grass should grow
 	*/
 	@Redirect(method = "grow(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_234_8(Random rand, int i) {
-		return KillTheRNG.randomness.random_234.nextInt(i);
-//		KillTheRNG.randomness.random_234.nextInt(i);
+	public int redirect_bonemealGrassPos_8(Random rand, int i) {
+		return KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
+//		KillTheRNG.randomness.bonemealGrassPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

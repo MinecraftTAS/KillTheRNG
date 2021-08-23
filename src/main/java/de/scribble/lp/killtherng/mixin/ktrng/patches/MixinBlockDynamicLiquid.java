@@ -13,12 +13,12 @@ import net.minecraft.block.BlockDynamicLiquid;
 public class MixinBlockDynamicLiquid {
 
 	/**
-	* null
+	* If lava should spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_287_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_287.nextInt(i);
-//		KillTheRNG.randomness.random_287.nextInt(i);
+	public int redirect_lavaFlow_1(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFlow.nextInt(i);
+//		KillTheRNG.randomness.lavaFlow.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

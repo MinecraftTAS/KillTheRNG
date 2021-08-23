@@ -13,23 +13,23 @@ import net.minecraft.world.gen.feature.WorldGenHugeTrees;
 public class MixinWorldGenHugeTrees {
 
 	/**
-	* null
+	* Height of huge tree
 	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_259_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_259.nextInt(i);
-//		KillTheRNG.randomness.random_259.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genHugeTreeHeight_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genHugeTreeHeight.nextInt(i);
+		KillTheRNG.randomness.genHugeTreeHeight.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Extra height of a huge tree
 	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_260_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_260.nextInt(i);
-//		KillTheRNG.randomness.random_260.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genHugeTreeExtraHeight_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genHugeTreeExtraHeight.nextInt(i);
+		KillTheRNG.randomness.genHugeTreeExtraHeight.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

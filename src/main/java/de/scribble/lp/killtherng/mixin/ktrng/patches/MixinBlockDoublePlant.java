@@ -13,12 +13,12 @@ import net.minecraft.block.BlockDoublePlant;
 public class MixinBlockDoublePlant {
 
 	/**
-	* null
+	* If a seed is dropped from a double grass
 	*/
 	@Redirect(method = "getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_216_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_216.nextInt(i);
-//		KillTheRNG.randomness.random_216.nextInt(i);
+	public int redirect_seedFromDoublePlant_1(Random rand, int i) {
+		return KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
+//		KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

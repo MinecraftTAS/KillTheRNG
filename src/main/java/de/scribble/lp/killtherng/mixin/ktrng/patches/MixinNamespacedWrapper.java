@@ -12,12 +12,12 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinNamespacedWrapper {
 
 	/**
-	* null
+	* Responsible for a random enchantment during trading and random villager professions
 	*/
 	@Redirect(method = "getRandomObject(Ljava/util/Random;)Lnet/minecraftforge/registries/IForgeRegistryEntry;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_206_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_206.nextInt(i);
-//		KillTheRNG.randomness.random_206.nextInt(i);
+	public int redirect_randomRegistryObject_1(Random rand, int i) {
+		return KillTheRNG.randomness.randomRegistryObject.nextInt(i);
+//		KillTheRNG.randomness.randomRegistryObject.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -13,133 +13,133 @@ import net.minecraft.world.gen.feature.WorldGenTrees;
 public class MixinWorldGenTrees {
 
 	/**
-	* null
+	* Height for trees
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_244_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_244.nextInt(i);
-//		KillTheRNG.randomness.random_244.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeHeight_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeHeight.nextInt(i);
+		KillTheRNG.randomness.genTreeHeight.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Chance of vine generating on tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_245_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_245.nextInt(i);
-//		KillTheRNG.randomness.random_245.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVine_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVine.nextInt(i);
+		KillTheRNG.randomness.genTreeVine.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a vine should spread
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_246_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_246.nextInt(i);
-//		KillTheRNG.randomness.random_246.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineSpread_3(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a vine should spread
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_247_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_247.nextInt(i);
-//		KillTheRNG.randomness.random_247.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineSpread_4(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a vine should spread
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_248_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_248.nextInt(i);
-//		KillTheRNG.randomness.random_248.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineSpread_5(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a vine should spread
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_random_249_6(Random rand, int i) {
-		return KillTheRNG.randomness.random_249.nextInt(i);
-//		KillTheRNG.randomness.random_249.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineSpread_6(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		KillTheRNG.randomness.genTreeVineSpread.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The length of a vine generating on a tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
-	public int redirect_random_250_7(Random rand, int i) {
-		return KillTheRNG.randomness.random_250.nextInt(i);
-//		KillTheRNG.randomness.random_250.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineLength_7(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The length of a vine generating on a tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
-	public int redirect_random_251_8(Random rand, int i) {
-		return KillTheRNG.randomness.random_251.nextInt(i);
-//		KillTheRNG.randomness.random_251.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineLength_8(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The length of a vine generating on a tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
-	public int redirect_random_252_9(Random rand, int i) {
-		return KillTheRNG.randomness.random_252.nextInt(i);
-//		KillTheRNG.randomness.random_252.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineLength_9(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The length of a vine generating on a tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 9))
-	public int redirect_random_253_10(Random rand, int i) {
-		return KillTheRNG.randomness.random_253.nextInt(i);
-//		KillTheRNG.randomness.random_253.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeVineLength_10(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		KillTheRNG.randomness.genTreeVineLength.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a cocoa should be added to a tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 10))
-	public int redirect_random_254_11(Random rand, int i) {
-		return KillTheRNG.randomness.random_254.nextInt(i);
-//		KillTheRNG.randomness.random_254.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeCocoaChance_11(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeCocoaChance.nextInt(i);
+		KillTheRNG.randomness.genTreeCocoaChance.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* How many cocoas should be added
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 11))
-	public int redirect_random_255_12(Random rand, int i) {
-		return KillTheRNG.randomness.random_255.nextInt(i);
-//		KillTheRNG.randomness.random_255.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeCocoaAmount_12(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeCocoaAmount.nextInt(i);
+		KillTheRNG.randomness.genTreeCocoaAmount.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* The grow state of a generated cocoa bean
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 12))
-	public int redirect_random_256_13(Random rand, int i) {
-		return KillTheRNG.randomness.random_256.nextInt(i);
-//		KillTheRNG.randomness.random_256.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genTreeCocoaAge_13(Random rand, int i) {
+//		return KillTheRNG.randomness.genTreeCocoaAge.nextInt(i);
+		KillTheRNG.randomness.genTreeCocoaAge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

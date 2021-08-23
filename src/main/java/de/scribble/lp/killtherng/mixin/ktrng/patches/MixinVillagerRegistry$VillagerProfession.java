@@ -13,12 +13,12 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 public class MixinVillagerRegistry$VillagerProfession {
 
 	/**
-	* null
+	* What profession the villager should have
 	*/
 	@Redirect(method = "getRandomCareer(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_212_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_212.nextInt(i);
-//		KillTheRNG.randomness.random_212.nextInt(i);
+	public int redirect_villagerProfession_1(Random rand, int i) {
+		return KillTheRNG.randomness.villagerProfession.nextInt(i);
+//		KillTheRNG.randomness.villagerProfession.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

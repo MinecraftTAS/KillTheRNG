@@ -13,23 +13,23 @@ import net.minecraft.world.gen.feature.WorldGenMegaPineTree;
 public class MixinWorldGenMegaPineTree {
 
 	/**
-	* null
+	* Size of the crown from a mega spruce tree
 	*/
 	@Redirect(method = "createCrown(Lnet/minecraft/world/World;IIIILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_257_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_257.nextInt(i);
-//		KillTheRNG.randomness.random_257.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genMegaSpruceCrownSize_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
+		KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position offset of the generated podzol circle
 	*/
 	@Redirect(method = "generateSaplings(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_258_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_258.nextInt(i);
-//		KillTheRNG.randomness.random_258.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_genPodzolPos_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genPodzolPos.nextInt(i);
+		KillTheRNG.randomness.genPodzolPos.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }
