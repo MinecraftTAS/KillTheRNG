@@ -13,52 +13,52 @@ import net.minecraft.block.BlockStaticLiquid;
 public class MixinBlockStaticLiquid {
 
 	/**
-	* null
+	* Chance of fire spreading and how much spreads
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_308_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_308.nextInt(i);
-//		KillTheRNG.randomness.random_308.nextInt(i);
+	public int redirect_lavaFireSpreadChanceAndAmount_1(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
+//		KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of next fire spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_309_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_309.nextInt(i);
-//		KillTheRNG.randomness.random_309.nextInt(i);
+	public int redirect_lavaFireSpreadPos_2(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of next fire spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_310_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_310.nextInt(i);
-//		KillTheRNG.randomness.random_310.nextInt(i);
+	public int redirect_lavaFireSpreadPos_3(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of next fire spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_311_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_311.nextInt(i);
-//		KillTheRNG.randomness.random_311.nextInt(i);
+	public int redirect_lavaFireSpreadPos_4(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of next fire spread
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_312_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_312.nextInt(i);
-//		KillTheRNG.randomness.random_312.nextInt(i);
+	public int redirect_lavaFireSpreadPos_5(Random rand, int i) {
+		return KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+//		KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

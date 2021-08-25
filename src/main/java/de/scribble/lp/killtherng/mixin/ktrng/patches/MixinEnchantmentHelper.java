@@ -23,72 +23,72 @@ public class MixinEnchantmentHelper {
 	}
 
 	/**
-	* null
+	* Calculates whether an Item is enchantable with set enchantment
 	*/
 	@Redirect(method = "calcItemStackEnchantability(Ljava/util/Random;IILnet/minecraft/item/ItemStack;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1896_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1896.nextInt(i);
-//		KillTheRNG.randomness.random_1896.nextInt(i);
+	private static int redirect_enchantibiliyRandom_2(Random rand, int i) {
+		return KillTheRNG.randomness.enchantibiliyRandom.nextInt(i);
+//		KillTheRNG.randomness.enchantibiliyRandom.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Calculates whether an Item is enchantable with set enchantment
 	*/
 	@Redirect(method = "calcItemStackEnchantability(Ljava/util/Random;IILnet/minecraft/item/ItemStack;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_1897_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1897.nextInt(i);
-//		KillTheRNG.randomness.random_1897.nextInt(i);
+	private static int redirect_enchantibiliyRandom_3(Random rand, int i) {
+		return KillTheRNG.randomness.enchantibiliyRandom.nextInt(i);
+//		KillTheRNG.randomness.enchantibiliyRandom.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Enchantment Level
 	*/
 	@Redirect(method = "buildEnchantmentList(Ljava/util/Random;Lnet/minecraft/item/ItemStack;IZ)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1898_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1898.nextInt(i);
-//		KillTheRNG.randomness.random_1898.nextInt(i);
+	private static int redirect_enchantLevel_4(Random rand, int i) {
+		return KillTheRNG.randomness.enchantLevel.nextInt(i);
+//		KillTheRNG.randomness.enchantLevel.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Enchantment Level
 	*/
 	@Redirect(method = "buildEnchantmentList(Ljava/util/Random;Lnet/minecraft/item/ItemStack;IZ)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_1899_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1899.nextInt(i);
-//		KillTheRNG.randomness.random_1899.nextInt(i);
+	private static int redirect_enchantLevel_5(Random rand, int i) {
+		return KillTheRNG.randomness.enchantLevel.nextInt(i);
+//		KillTheRNG.randomness.enchantLevel.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Enchantment for Level
 	*/
 	@Redirect(method = "buildEnchantmentList(Ljava/util/Random;Lnet/minecraft/item/ItemStack;IZ)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_1900_6(Random rand) {
-		return KillTheRNG.randomness.random_1900.nextFloat();
-//		KillTheRNG.randomness.random_1900.nextFloat();
+	private static float redirect_enchantMent_6(Random rand) {
+		return KillTheRNG.randomness.enchantMent.nextFloat();
+//		KillTheRNG.randomness.enchantMent.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random Enchantment for Level
 	*/
 	@Redirect(method = "buildEnchantmentList(Ljava/util/Random;Lnet/minecraft/item/ItemStack;IZ)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	private static float redirect_random_1901_7(Random rand) {
-		return KillTheRNG.randomness.random_1901.nextFloat();
-//		KillTheRNG.randomness.random_1901.nextFloat();
+	private static float redirect_enchantMent_7(Random rand) {
+		return KillTheRNG.randomness.enchantMent.nextFloat();
+//		KillTheRNG.randomness.enchantMent.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random Enchantment for Level
 	*/
 	@Redirect(method = "buildEnchantmentList(Ljava/util/Random;Lnet/minecraft/item/ItemStack;IZ)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	private static int redirect_random_1902_8(Random rand, int i) {
-		return KillTheRNG.randomness.random_1902.nextInt(i);
-//		KillTheRNG.randomness.random_1902.nextInt(i);
+	private static int redirect_enchantMent_8(Random rand, int i) {
+		return KillTheRNG.randomness.enchantMent.nextInt(i);
+//		KillTheRNG.randomness.enchantMent.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

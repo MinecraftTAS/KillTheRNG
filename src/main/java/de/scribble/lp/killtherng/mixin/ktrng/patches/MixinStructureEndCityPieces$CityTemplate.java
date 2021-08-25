@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureEndCityPieces;
 public class MixinStructureEndCityPieces$CityTemplate {
 
 	/**
-	* null
+	* Position, Rotation and Type of next End Piece
 	*/
 	@Redirect(method = "handleDataMarker(Ljava/lang/String;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_1760_1(Random rand) {
-		return KillTheRNG.randomness.random_1760.nextLong();
-//		KillTheRNG.randomness.random_1760.nextLong();
-//		return rand.nextLong();
+	public long redirect_posRotTypeEndCity_1(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeEndCity.nextLong();
+		KillTheRNG.randomness.posRotTypeEndCity.nextLong();
+		return rand.nextLong();
 	}
 
 }

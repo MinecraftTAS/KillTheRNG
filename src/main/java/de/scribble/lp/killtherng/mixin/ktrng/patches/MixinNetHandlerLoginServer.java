@@ -13,13 +13,13 @@ import net.minecraft.server.network.NetHandlerLoginServer;
 public class MixinNetHandlerLoginServer {
 
 	/**
-	* null
+	* Token for verifying incoming packets
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/network/NetworkManager;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBytes([B)V", ordinal = 0))
-	public void redirect_random_1918_1(Random rand, byte[] bytes) {
-		KillTheRNG.randomness.random_1918.nextBytes(bytes);
-//		KillTheRNG.randomness.random_1918.nextBytes(bytes);
-//		rand.nextBytes(bytes);
+	public void redirect_serverToken_1(Random rand, byte[] bytes) {
+//		KillTheRNG.randomness.serverToken.nextBytes(bytes);
+		KillTheRNG.randomness.serverToken.nextBytes(bytes);
+		rand.nextBytes(bytes);
 	}
 
 }

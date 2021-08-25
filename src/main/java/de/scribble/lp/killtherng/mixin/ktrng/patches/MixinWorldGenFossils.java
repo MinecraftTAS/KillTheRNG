@@ -13,53 +13,53 @@ import net.minecraft.world.gen.feature.WorldGenFossils;
 public class MixinWorldGenFossils {
 
 	/**
-	* null
+	* Random Position, Rotation and type of Fossil
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1975_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1975.nextInt(i);
-//		KillTheRNG.randomness.random_1975.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fossilGenRandom_1(Random rand, int i) {
+//		return KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position, Rotation and type of Fossil
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1976_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1976.nextInt(i);
-//		KillTheRNG.randomness.random_1976.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fossilGenRandom_2(Random rand, int i) {
+//		return KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position, Rotation and type of Fossil
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1977_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1977.nextInt(i);
-//		KillTheRNG.randomness.random_1977.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fossilGenRandom_3(Random rand, int i) {
+//		return KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position, Rotation and type of Fossil
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1978_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1978.nextInt(i);
-//		KillTheRNG.randomness.random_1978.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fossilGenRandom_4(Random rand, int i) {
+//		return KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position, Rotation and type of Fossil
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1979_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1979.nextInt(i);
-//		KillTheRNG.randomness.random_1979.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fossilGenRandom_5(Random rand, int i) {
+//		return KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		KillTheRNG.randomness.fossilGenRandom.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

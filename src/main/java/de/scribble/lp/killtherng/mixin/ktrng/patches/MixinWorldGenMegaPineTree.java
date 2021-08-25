@@ -26,9 +26,9 @@ public class MixinWorldGenMegaPineTree {
 	* Position offset of the generated podzol circle
 	*/
 	@Redirect(method = "generateSaplings(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_genPodzolPos_2(Random rand, int i) {
-//		return KillTheRNG.randomness.genPodzolPos.nextInt(i);
-		KillTheRNG.randomness.genPodzolPos.nextInt(i);
+	public int redirect_genPodzolPosOffset_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
+		KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
 		return rand.nextInt(i);
 	}
 

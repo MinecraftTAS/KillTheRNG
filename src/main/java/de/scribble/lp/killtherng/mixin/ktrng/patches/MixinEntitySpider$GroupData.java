@@ -13,12 +13,12 @@ import net.minecraft.entity.monster.EntitySpider;
 public class MixinEntitySpider$GroupData {
 
 	/**
-	* null
+	* Random effect from a spider, when spawning naturally
 	*/
 	@Redirect(method = "setRandomEffect(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1948_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1948.nextInt(i);
-//		KillTheRNG.randomness.random_1948.nextInt(i);
+	public int redirect_spiderEffect_1(Random rand, int i) {
+		return KillTheRNG.randomness.spiderEffect.nextInt(i);
+//		KillTheRNG.randomness.spiderEffect.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -13,23 +13,23 @@ import net.minecraft.world.gen.structure.StructureOceanMonumentPieces;
 public class MixinStructureOceanMonumentPieces$SimpleRoom {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/util/EnumFacing;Lnet/minecraft/world/gen/structure/StructureOceanMonumentPieces$RoomDefinition;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1740_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1740.nextInt(i);
-//		KillTheRNG.randomness.random_1740.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeOceanMonument_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1741_2(Random rand) {
-		return KillTheRNG.randomness.random_1741.nextBoolean();
-//		KillTheRNG.randomness.random_1741.nextBoolean();
-//		return rand.nextBoolean();
+	public boolean redirect_posRotTypeOceanMonument_2(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextBoolean();
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextBoolean();
+		return rand.nextBoolean();
 	}
 
 }

@@ -13,52 +13,52 @@ import net.minecraft.world.gen.feature.WorldGenTaiga2;
 public class MixinWorldGenTaiga2 {
 
 	/**
-	* Multiple things to do with taiga tree generation, but too lazy to figure this out...
+	* Height of a taiga tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_genTaigaTree_1(Random rand, int i) {
-//		return KillTheRNG.randomness.genTaigaTree.nextInt(i);
-		KillTheRNG.randomness.genTaigaTree.nextInt(i);
+	public int redirect_genTaigaTreeHeight_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genTaigaTreeHeight.nextInt(i);
+		KillTheRNG.randomness.genTaigaTreeHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Multiple things to do with taiga tree generation, but too lazy to figure this out...
+	* The height of the crown of a taiga tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_genTaigaTree_2(Random rand, int i) {
-//		return KillTheRNG.randomness.genTaigaTree.nextInt(i);
-		KillTheRNG.randomness.genTaigaTree.nextInt(i);
+	public int redirect_genTaigaTreeCheckCrownHeight_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genTaigaTreeCheckCrownHeight.nextInt(i);
+		KillTheRNG.randomness.genTaigaTreeCheckCrownHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Multiple things to do with taiga tree generation, but too lazy to figure this out...
+	* Width of the crown of a taiga tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_genTaigaTree_3(Random rand, int i) {
-//		return KillTheRNG.randomness.genTaigaTree.nextInt(i);
-		KillTheRNG.randomness.genTaigaTree.nextInt(i);
+	public int redirect_genTaigaTreeCheckCrownWidth_3(Random rand, int i) {
+//		return KillTheRNG.randomness.genTaigaTreeCheckCrownWidth.nextInt(i);
+		KillTheRNG.randomness.genTaigaTreeCheckCrownWidth.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Multiple things to do with taiga tree generation, but too lazy to figure this out...
+	* Width of the crown of a taiga tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_genTaigaTree_4(Random rand, int i) {
-//		return KillTheRNG.randomness.genTaigaTree.nextInt(i);
-		KillTheRNG.randomness.genTaigaTree.nextInt(i);
+	public int redirect_genTaigaTreeCrownWidth_4(Random rand, int i) {
+//		return KillTheRNG.randomness.genTaigaTreeCrownWidth.nextInt(i);
+		KillTheRNG.randomness.genTaigaTreeCrownWidth.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Multiple things to do with taiga tree generation, but too lazy to figure this out...
+	* Part of the trunk generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_genTaigaTree_5(Random rand, int i) {
-//		return KillTheRNG.randomness.genTaigaTree.nextInt(i);
-		KillTheRNG.randomness.genTaigaTree.nextInt(i);
+	public int redirect_genTaigaTreeTrunk_5(Random rand, int i) {
+//		return KillTheRNG.randomness.genTaigaTreeTrunk.nextInt(i);
+		KillTheRNG.randomness.genTaigaTreeTrunk.nextInt(i);
 		return rand.nextInt(i);
 	}
 

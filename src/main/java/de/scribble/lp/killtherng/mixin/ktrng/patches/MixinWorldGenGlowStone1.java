@@ -13,53 +13,53 @@ import net.minecraft.world.gen.feature.WorldGenGlowStone1;
 public class MixinWorldGenGlowStone1 {
 
 	/**
-	* null
+	* Glowstone Position and Count
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1841_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1841.nextInt(i);
-//		KillTheRNG.randomness.random_1841.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_glowstoneGen_1(Random rand, int i) {
+//		return KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Glowstone Position and Count
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1842_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1842.nextInt(i);
-//		KillTheRNG.randomness.random_1842.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_glowstoneGen_2(Random rand, int i) {
+//		return KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Glowstone Position and Count
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1843_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1843.nextInt(i);
-//		KillTheRNG.randomness.random_1843.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_glowstoneGen_3(Random rand, int i) {
+//		return KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Glowstone Position and Count
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1844_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1844.nextInt(i);
-//		KillTheRNG.randomness.random_1844.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_glowstoneGen_4(Random rand, int i) {
+//		return KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Glowstone Position and Count
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1845_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1845.nextInt(i);
-//		KillTheRNG.randomness.random_1845.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_glowstoneGen_5(Random rand, int i) {
+//		return KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		KillTheRNG.randomness.glowstoneGen.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

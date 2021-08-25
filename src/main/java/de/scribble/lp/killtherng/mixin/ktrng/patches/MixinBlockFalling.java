@@ -13,32 +13,32 @@ import net.minecraft.block.BlockFalling;
 public class MixinBlockFalling {
 
 	/**
-	* null
+	* Chance of a falling block particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_313_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_313.nextInt(i);
-//		KillTheRNG.randomness.random_313.nextInt(i);
+	public int redirect_fallingBlockParticleActivate_1(Random rand, int i) {
+		return KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
+//		KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of falling block particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_314_2(Random rand) {
-		return KillTheRNG.randomness.random_314.nextFloat();
-//		KillTheRNG.randomness.random_314.nextFloat();
+	public float redirect_fallingBlockParticlePos_2(Random rand) {
+		return KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+//		KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position of falling block particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_315_3(Random rand) {
-		return KillTheRNG.randomness.random_315.nextFloat();
-//		KillTheRNG.randomness.random_315.nextFloat();
+	public float redirect_fallingBlockParticlePos_3(Random rand) {
+		return KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+//		KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 

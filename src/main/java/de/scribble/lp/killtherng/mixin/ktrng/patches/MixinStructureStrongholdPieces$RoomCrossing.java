@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureStrongholdPieces;
 public class MixinStructureStrongholdPieces$RoomCrossing {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Stronghold Piece
 	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1726_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1726.nextInt(i);
-//		KillTheRNG.randomness.random_1726.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeStronghold_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

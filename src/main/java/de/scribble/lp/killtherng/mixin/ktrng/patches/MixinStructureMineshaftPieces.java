@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureMineshaftPieces;
 public class MixinStructureMineshaftPieces {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Mineshaft Piece
 	*/
 	@Redirect(method = "createRandomShaftPiece(Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;ILnet/minecraft/world/gen/structure/MapGenMineshaft$Type;)Lnet/minecraft/world/gen/structure/StructureMineshaftPieces$Peice;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1670_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1670.nextInt(i);
-//		KillTheRNG.randomness.random_1670.nextInt(i);
-//		return rand.nextInt(i);
+	private static int redirect_posRotTypeMineshaft_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeMineshaft.nextInt(i);
+		KillTheRNG.randomness.posRotTypeMineshaft.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

@@ -13,12 +13,12 @@ import net.minecraft.block.BlockOldLeaf;
 public class MixinBlockOldLeaf {
 
 	/**
-	* null
+	* Chance of dropping on apple on leaf break
 	*/
 	@Redirect(method = "dropApple(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_322_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_322.nextInt(i);
-//		KillTheRNG.randomness.random_322.nextInt(i);
+	public int redirect_leafDropApple_1(Random rand, int i) {
+		return KillTheRNG.randomness.leafDropApple.nextInt(i);
+//		KillTheRNG.randomness.leafDropApple.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

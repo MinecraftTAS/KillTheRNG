@@ -13,12 +13,12 @@ import net.minecraft.util.EnumFacing;
 public class MixinEnumFacing$Plane {
 
 	/**
-	* null
+	* A random plane direction
 	*/
 	@Redirect(method = "random(Ljava/util/Random;)Lnet/minecraft/util/EnumFacing;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_321_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_321.nextInt(i);
-//		KillTheRNG.randomness.random_321.nextInt(i);
+	public int redirect_randomFacingPlane_1(Random rand, int i) {
+		return KillTheRNG.randomness.randomFacingPlane.nextInt(i);
+//		KillTheRNG.randomness.randomFacingPlane.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

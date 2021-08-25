@@ -13,63 +13,63 @@ import net.minecraft.world.gen.structure.StructureNetherBridgePieces;
 public class MixinStructureNetherBridgePieces$End {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
-	public int redirect_random_1716_1(Random rand) {
-		return KillTheRNG.randomness.random_1716.nextInt();
-//		KillTheRNG.randomness.random_1716.nextInt();
-//		return rand.nextInt();
+	public int redirect_posRotTypeNetherBridge_1(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt();
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt();
+		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1717_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1717.nextInt(i);
-//		KillTheRNG.randomness.random_1717.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1718_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1718.nextInt(i);
-//		KillTheRNG.randomness.random_1718.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_3(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1719_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1719.nextInt(i);
-//		KillTheRNG.randomness.random_1719.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_4(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1720_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1720.nextInt(i);
-//		KillTheRNG.randomness.random_1720.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_5(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1721_6(Random rand, int i) {
-		return KillTheRNG.randomness.random_1721.nextInt(i);
-//		KillTheRNG.randomness.random_1721.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_6(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 public class MixinStructureVillagePieces {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "generateComponent(Lnet/minecraft/world/gen/structure/StructureVillagePieces$Start;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureVillagePieces$Village;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1656_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1656.nextInt(i);
-//		KillTheRNG.randomness.random_1656.nextInt(i);
-//		return rand.nextInt(i);
+	private static int redirect_posRotTypeVillage_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

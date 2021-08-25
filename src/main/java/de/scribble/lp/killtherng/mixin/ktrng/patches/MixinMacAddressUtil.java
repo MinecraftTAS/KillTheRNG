@@ -13,13 +13,13 @@ import io.netty.util.internal.MacAddressUtil;
 public class MixinMacAddressUtil {
 
 	/**
-	* null
+	* Connection Stuff
 	*/
 	@Redirect(method = "defaultMachineId()[B", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBytes([B)V", ordinal = 0), remap=false)
-	private static void redirect_random_1912_1(Random rand, byte[] bytes) {
-		KillTheRNG.randomness.random_1912.nextBytes(bytes);
-//		KillTheRNG.randomness.random_1912.nextBytes(bytes);
-//		rand.nextBytes(bytes);
+	private static void redirect_con_1(Random rand, byte[] bytes) {
+//		KillTheRNG.randomness.con.nextBytes(bytes);
+		KillTheRNG.randomness.con.nextBytes(bytes);
+		rand.nextBytes(bytes);
 	}
 
 }

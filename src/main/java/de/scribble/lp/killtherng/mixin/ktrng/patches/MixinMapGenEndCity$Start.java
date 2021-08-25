@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.MapGenEndCity;
 public class MixinMapGenEndCity$Start {
 
 	/**
-	* null
+	* Position of the End City Beginning
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/ChunkGeneratorEnd;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1669_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1669.nextInt(i);
-//		KillTheRNG.randomness.random_1669.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posEndCity_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posEndCity.nextInt(i);
+		KillTheRNG.randomness.posEndCity.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

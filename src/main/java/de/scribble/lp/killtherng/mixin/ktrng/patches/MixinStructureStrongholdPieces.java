@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureStrongholdPieces;
 public class MixinStructureStrongholdPieces {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Stronghold Piece
 	*/
 	@Redirect(method = "generatePieceFromSmallDoor(Lnet/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureStrongholdPieces$Stronghold;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1722_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1722.nextInt(i);
-//		KillTheRNG.randomness.random_1722.nextInt(i);
-//		return rand.nextInt(i);
+	private static int redirect_posRotTypeStronghold_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

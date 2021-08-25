@@ -13,63 +13,63 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 public class MixinStructureVillagePieces$Path {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1662_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1662.nextInt(i);
-//		KillTheRNG.randomness.random_1662.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1663_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1663.nextInt(i);
-//		KillTheRNG.randomness.random_1663.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1664_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1664.nextInt(i);
-//		KillTheRNG.randomness.random_1664.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_3(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1665_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1665.nextInt(i);
-//		KillTheRNG.randomness.random_1665.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_4(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1666_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1666.nextInt(i);
-//		KillTheRNG.randomness.random_1666.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_5(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_random_1667_6(Random rand, int i) {
-		return KillTheRNG.randomness.random_1667.nextInt(i);
-//		KillTheRNG.randomness.random_1667.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeVillage_6(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

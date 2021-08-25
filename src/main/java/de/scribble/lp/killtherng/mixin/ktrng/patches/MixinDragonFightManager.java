@@ -13,13 +13,13 @@ import net.minecraft.world.end.DragonFightManager;
 public class MixinDragonFightManager {
 
 	/**
-	* null
+	* Angle for the ender dragon when spawning
 	*/
 	@Redirect(method = "createNewDragon()Lnet/minecraft/entity/boss/EntityDragon;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1851_1(Random rand) {
-		return KillTheRNG.randomness.random_1851.nextFloat();
-//		KillTheRNG.randomness.random_1851.nextFloat();
-//		return rand.nextFloat();
+	public float redirect_enderDragonYaw_1(Random rand) {
+//		return KillTheRNG.randomness.enderDragonYaw.nextFloat();
+		KillTheRNG.randomness.enderDragonYaw.nextFloat();
+		return rand.nextFloat();
 	}
 
 }

@@ -13,53 +13,53 @@ import net.minecraft.village.Village;
 public class MixinVillage {
 
 	/**
-	* null
+	* Whether to spawn an Iron Golem in a Village or not
 	*/
 	@Redirect(method = "tick(I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1913_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1913.nextInt(i);
-//		KillTheRNG.randomness.random_1913.nextInt(i);
+	public int redirect_ironGolemSpawnVillage_1(Random rand, int i) {
+		return KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
+//		KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position for Villagers to spawn
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1914_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1914.nextInt(i);
-//		KillTheRNG.randomness.random_1914.nextInt(i);
+	public int redirect_villagerSpawnPos_2(Random rand, int i) {
+		return KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+//		KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position for Villagers to spawn
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1915_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1915.nextInt(i);
-//		KillTheRNG.randomness.random_1915.nextInt(i);
+	public int redirect_villagerSpawnPos_3(Random rand, int i) {
+		return KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+//		KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random Position for Villagers to spawn
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1916_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1916.nextInt(i);
-//		KillTheRNG.randomness.random_1916.nextInt(i);
+	public int redirect_villagerSpawnPos_4(Random rand, int i) {
+		return KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+//		KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Unused Code
 	*/
 	@Redirect(method = "removeDeadAndOutOfRangeDoors()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1917_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1917.nextInt(i);
-//		KillTheRNG.randomness.random_1917.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_villageResetDoorOpeningRestrictionCounter_5(Random rand, int i) {
+//		return KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
+		KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

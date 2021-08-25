@@ -13,52 +13,52 @@ import net.minecraft.world.gen.feature.WorldGenMegaJungle;
 public class MixinWorldGenMegaJungle {
 
 	/**
-	* null
+	* Height of jungle tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_269_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_269.nextInt(i);
-		KillTheRNG.randomness.random_269.nextInt(i);
+	public int redirect_genMegaJungleHeight_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+		KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Crown of jungle tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_270_2(Random rand) {
-//		return KillTheRNG.randomness.random_270.nextFloat();
-		KillTheRNG.randomness.random_270.nextFloat();
+	public float redirect_genMegaJungleCrown_2(Random rand) {
+//		return KillTheRNG.randomness.genMegaJungleCrown.nextFloat();
+		KillTheRNG.randomness.genMegaJungleCrown.nextFloat();
 		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Height of jungle tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_271_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_271.nextInt(i);
-		KillTheRNG.randomness.random_271.nextInt(i);
+	public int redirect_genMegaJungleHeight_3(Random rand, int i) {
+//		return KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+		KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Crown of jungle tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_272_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_272.nextInt(i);
-		KillTheRNG.randomness.random_272.nextInt(i);
+	public int redirect_genMegaJungleCrown_4(Random rand, int i) {
+//		return KillTheRNG.randomness.genMegaJungleCrown.nextInt(i);
+		KillTheRNG.randomness.genMegaJungleCrown.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* If a vine should be placed
 	*/
 	@Redirect(method = "placeVine(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/properties/PropertyBool;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_273_5(Random rand, int i) {
-//		return KillTheRNG.randomness.random_273.nextInt(i);
-		KillTheRNG.randomness.random_273.nextInt(i);
+	public int redirect_genMegaJungleVine_5(Random rand, int i) {
+//		return KillTheRNG.randomness.genMegaJungleVine.nextInt(i);
+		KillTheRNG.randomness.genMegaJungleVine.nextInt(i);
 		return rand.nextInt(i);
 	}
 

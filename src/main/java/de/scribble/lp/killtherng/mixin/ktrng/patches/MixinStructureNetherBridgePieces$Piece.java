@@ -12,13 +12,13 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinStructureNetherBridgePieces$Piece {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "generatePiece(Lnet/minecraft/world/gen/structure/StructureNetherBridgePieces$Start;Ljava/util/List;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureNetherBridgePieces$Piece;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1711_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1711.nextInt(i);
-//		KillTheRNG.randomness.random_1711.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

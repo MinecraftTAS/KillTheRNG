@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureVillagePieces;
 public class MixinStructureVillagePieces$House4Garden {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Village Piece
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/gen/structure/StructureVillagePieces$Start;ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1657_1(Random rand) {
-		return KillTheRNG.randomness.random_1657.nextBoolean();
-//		KillTheRNG.randomness.random_1657.nextBoolean();
-//		return rand.nextBoolean();
+	public boolean redirect_posRotTypeVillage_1(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeVillage.nextBoolean();
+		KillTheRNG.randomness.posRotTypeVillage.nextBoolean();
+		return rand.nextBoolean();
 	}
 
 }

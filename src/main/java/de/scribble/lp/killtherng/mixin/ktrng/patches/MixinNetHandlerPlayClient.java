@@ -13,102 +13,102 @@ import net.minecraft.client.network.NetHandlerPlayClient;
 public class MixinNetHandlerPlayClient {
 
 	/**
-	* null
+	* Pitch for sound when other players pickup an item
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1919_1(Random rand) {
-		return KillTheRNG.randomness.random_1919.nextFloat();
-//		KillTheRNG.randomness.random_1919.nextFloat();
+	public float redirect_pickupItemPitch_1(Random rand) {
+		return KillTheRNG.randomness.pickupItemPitch.nextFloat();
+//		KillTheRNG.randomness.pickupItemPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch for sound when other players pickup an item
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_1920_2(Random rand) {
-		return KillTheRNG.randomness.random_1920.nextFloat();
-//		KillTheRNG.randomness.random_1920.nextFloat();
+	public float redirect_pickupItemPitch_2(Random rand) {
+		return KillTheRNG.randomness.pickupItemPitch.nextFloat();
+//		KillTheRNG.randomness.pickupItemPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch for sound when other players pickup an item
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_1921_3(Random rand) {
-		return KillTheRNG.randomness.random_1921.nextFloat();
-//		KillTheRNG.randomness.random_1921.nextFloat();
+	public float redirect_pickupItemPitch_3(Random rand) {
+		return KillTheRNG.randomness.pickupItemPitch.nextFloat();
+//		KillTheRNG.randomness.pickupItemPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch for sound when other players pickup an item
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_random_1922_4(Random rand) {
-		return KillTheRNG.randomness.random_1922.nextFloat();
-//		KillTheRNG.randomness.random_1922.nextFloat();
+	public float redirect_pickupItemPitch_4(Random rand) {
+		return KillTheRNG.randomness.pickupItemPitch.nextFloat();
+//		KillTheRNG.randomness.pickupItemPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_random_1923_5(Random rand) {
-		return KillTheRNG.randomness.random_1923.nextGaussian();
-//		KillTheRNG.randomness.random_1923.nextGaussian();
+	public double redirect_incomingParticleOffset_5(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_random_1924_6(Random rand) {
-		return KillTheRNG.randomness.random_1924.nextGaussian();
-//		KillTheRNG.randomness.random_1924.nextGaussian();
+	public double redirect_incomingParticleOffset_6(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_random_1925_7(Random rand) {
-		return KillTheRNG.randomness.random_1925.nextGaussian();
-//		KillTheRNG.randomness.random_1925.nextGaussian();
+	public double redirect_incomingParticleOffset_7(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 3))
-	public double redirect_random_1926_8(Random rand) {
-		return KillTheRNG.randomness.random_1926.nextGaussian();
-//		KillTheRNG.randomness.random_1926.nextGaussian();
+	public double redirect_incomingParticleOffset_8(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 4))
-	public double redirect_random_1927_9(Random rand) {
-		return KillTheRNG.randomness.random_1927.nextGaussian();
-//		KillTheRNG.randomness.random_1927.nextGaussian();
+	public double redirect_incomingParticleOffset_9(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
 	/**
-	* null
+	* Offset for incoming packets with any particle
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 5))
-	public double redirect_random_1928_10(Random rand) {
-		return KillTheRNG.randomness.random_1928.nextGaussian();
-//		KillTheRNG.randomness.random_1928.nextGaussian();
+	public double redirect_incomingParticleOffset_10(Random rand) {
+		return KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+//		KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
 //		return rand.nextGaussian();
 	}
 

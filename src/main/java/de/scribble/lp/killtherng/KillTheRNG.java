@@ -27,7 +27,7 @@ public class KillTheRNG {
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
     
-    public static SeedingModes mode=SeedingModes.None;
+    public static SeedingModes mode=SeedingModes.PlayerInput;
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
 

@@ -13,52 +13,52 @@ import net.minecraft.block.BlockLeaves;
 public class MixinBlockLeaves {
 
 	/**
-	* null
+	* If a drip particle should spawn
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_323_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_323.nextInt(i);
-//		KillTheRNG.randomness.random_323.nextInt(i);
+	public int redirect_leafDripParticleActivate_1(Random rand, int i) {
+		return KillTheRNG.randomness.leafDripParticleActivate.nextInt(i);
+//		KillTheRNG.randomness.leafDripParticleActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of drip particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_324_2(Random rand) {
-		return KillTheRNG.randomness.random_324.nextFloat();
-//		KillTheRNG.randomness.random_324.nextFloat();
+	public float redirect_leafDripParticle_2(Random rand) {
+		return KillTheRNG.randomness.leafDripParticle.nextFloat();
+//		KillTheRNG.randomness.leafDripParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position of drip particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_325_3(Random rand) {
-		return KillTheRNG.randomness.random_325.nextFloat();
-//		KillTheRNG.randomness.random_325.nextFloat();
+	public float redirect_leafDripParticle_3(Random rand) {
+		return KillTheRNG.randomness.leafDripParticle.nextFloat();
+//		KillTheRNG.randomness.leafDripParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Chance of a sapling dropped
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_326_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_326.nextInt(i);
-//		KillTheRNG.randomness.random_326.nextInt(i);
+	public int redirect_leafDropSapling_4(Random rand, int i) {
+		return KillTheRNG.randomness.leafDropSapling.nextInt(i);
+//		KillTheRNG.randomness.leafDropSapling.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Chance of a sapling dropped
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_327_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_327.nextInt(i);
-//		KillTheRNG.randomness.random_327.nextInt(i);
+	public int redirect_leafDropSapling2_5(Random rand, int i) {
+		return KillTheRNG.randomness.leafDropSapling2.nextInt(i);
+//		KillTheRNG.randomness.leafDropSapling2.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

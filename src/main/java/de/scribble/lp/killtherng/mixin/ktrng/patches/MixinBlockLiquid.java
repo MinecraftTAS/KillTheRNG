@@ -13,182 +13,182 @@ import net.minecraft.block.BlockLiquid;
 public class MixinBlockLiquid {
 
 	/**
-	* null
+	* If the water flowing sound should play
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_288_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_288.nextInt(i);
-//		KillTheRNG.randomness.random_288.nextInt(i);
+	public int redirect_waterAmbientSoundActivate_1(Random rand, int i) {
+		return KillTheRNG.randomness.waterAmbientSoundActivate.nextInt(i);
+//		KillTheRNG.randomness.waterAmbientSoundActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Pitch of the water flowing sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_289_2(Random rand) {
-		return KillTheRNG.randomness.random_289.nextFloat();
-//		KillTheRNG.randomness.random_289.nextFloat();
+	public float redirect_waterAmbientSound_2(Random rand) {
+		return KillTheRNG.randomness.waterAmbientSound.nextFloat();
+//		KillTheRNG.randomness.waterAmbientSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch of the water flowing sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_290_3(Random rand) {
-		return KillTheRNG.randomness.random_290.nextFloat();
-//		KillTheRNG.randomness.random_290.nextFloat();
+	public float redirect_waterAmbientSound_3(Random rand) {
+		return KillTheRNG.randomness.waterAmbientSound.nextFloat();
+//		KillTheRNG.randomness.waterAmbientSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* If a water particle should spawn
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_291_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_291.nextInt(i);
-//		KillTheRNG.randomness.random_291.nextInt(i);
+	public int redirect_waterParticleSuspendedActivate_4(Random rand, int i) {
+		return KillTheRNG.randomness.waterParticleSuspendedActivate.nextInt(i);
+//		KillTheRNG.randomness.waterParticleSuspendedActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Water particle position
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_292_5(Random rand) {
-		return KillTheRNG.randomness.random_292.nextFloat();
-//		KillTheRNG.randomness.random_292.nextFloat();
+	public float redirect_waterParticleSuspendedPos_5(Random rand) {
+		return KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
+//		KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Water particle position
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_random_293_6(Random rand) {
-		return KillTheRNG.randomness.random_293.nextFloat();
-//		KillTheRNG.randomness.random_293.nextFloat();
+	public float redirect_waterParticleSuspendedPos_6(Random rand) {
+		return KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
+//		KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Water particle position
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
-	public float redirect_random_294_7(Random rand) {
-		return KillTheRNG.randomness.random_294.nextFloat();
-//		KillTheRNG.randomness.random_294.nextFloat();
+	public float redirect_waterParticleSuspendedPos_7(Random rand) {
+		return KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
+//		KillTheRNG.randomness.waterParticleSuspendedPos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* If the lava pop sound should activate
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_295_8(Random rand, int i) {
-		return KillTheRNG.randomness.random_295.nextInt(i);
-//		KillTheRNG.randomness.random_295.nextInt(i);
+	public int redirect_lavaPopSoundActivate_8(Random rand, int i) {
+		return KillTheRNG.randomness.lavaPopSoundActivate.nextInt(i);
+//		KillTheRNG.randomness.lavaPopSoundActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of lava pop particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
-	public float redirect_random_296_9(Random rand) {
-		return KillTheRNG.randomness.random_296.nextFloat();
-//		KillTheRNG.randomness.random_296.nextFloat();
+	public float redirect_lavaPopParticle_9(Random rand) {
+		return KillTheRNG.randomness.lavaPopParticle.nextFloat();
+//		KillTheRNG.randomness.lavaPopParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position of lava pop particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 6))
-	public float redirect_random_297_10(Random rand) {
-		return KillTheRNG.randomness.random_297.nextFloat();
-//		KillTheRNG.randomness.random_297.nextFloat();
+	public float redirect_lavaPopParticle_10(Random rand) {
+		return KillTheRNG.randomness.lavaPopParticle.nextFloat();
+//		KillTheRNG.randomness.lavaPopParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Postion of lava pop sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 7))
-	public float redirect_random_298_11(Random rand) {
-		return KillTheRNG.randomness.random_298.nextFloat();
-//		KillTheRNG.randomness.random_298.nextFloat();
+	public float redirect_lavaPopSoundPitch_11(Random rand) {
+		return KillTheRNG.randomness.lavaPopSoundPitch.nextFloat();
+//		KillTheRNG.randomness.lavaPopSoundPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Postion of lava pop sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 8))
-	public float redirect_random_299_12(Random rand) {
-		return KillTheRNG.randomness.random_299.nextFloat();
-//		KillTheRNG.randomness.random_299.nextFloat();
+	public float redirect_lavaPopSoundPitch_12(Random rand) {
+		return KillTheRNG.randomness.lavaPopSoundPitch.nextFloat();
+//		KillTheRNG.randomness.lavaPopSoundPitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* If the lava flowing sound should play
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_300_13(Random rand, int i) {
-		return KillTheRNG.randomness.random_300.nextInt(i);
-//		KillTheRNG.randomness.random_300.nextInt(i);
+	public int redirect_lavaAmbientSoundActivate_13(Random rand, int i) {
+		return KillTheRNG.randomness.lavaAmbientSoundActivate.nextInt(i);
+//		KillTheRNG.randomness.lavaAmbientSoundActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Pitch of flowing lava sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 9))
-	public float redirect_random_301_14(Random rand) {
-		return KillTheRNG.randomness.random_301.nextFloat();
-//		KillTheRNG.randomness.random_301.nextFloat();
+	public float redirect_lavaAmbientSound_14(Random rand) {
+		return KillTheRNG.randomness.lavaAmbientSound.nextFloat();
+//		KillTheRNG.randomness.lavaAmbientSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch of flowing lava sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 10))
-	public float redirect_random_302_15(Random rand) {
-		return KillTheRNG.randomness.random_302.nextFloat();
-//		KillTheRNG.randomness.random_302.nextFloat();
+	public float redirect_lavaAmbientSound_15(Random rand) {
+		return KillTheRNG.randomness.lavaAmbientSound.nextFloat();
+//		KillTheRNG.randomness.lavaAmbientSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* If a drip particle should spawn
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_303_16(Random rand, int i) {
-		return KillTheRNG.randomness.random_303.nextInt(i);
-//		KillTheRNG.randomness.random_303.nextInt(i);
+	public int redirect_liquidDripParticleActivate_16(Random rand, int i) {
+		return KillTheRNG.randomness.liquidDripParticleActivate.nextInt(i);
+//		KillTheRNG.randomness.liquidDripParticleActivate.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of drip particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 11))
-	public float redirect_random_304_17(Random rand) {
-		return KillTheRNG.randomness.random_304.nextFloat();
-//		KillTheRNG.randomness.random_304.nextFloat();
+	public float redirect_liquidDripParticle_17(Random rand) {
+		return KillTheRNG.randomness.liquidDripParticle.nextFloat();
+//		KillTheRNG.randomness.liquidDripParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position of drip particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 12))
-	public float redirect_random_305_18(Random rand) {
-		return KillTheRNG.randomness.random_305.nextFloat();
-//		KillTheRNG.randomness.random_305.nextFloat();
+	public float redirect_liquidDripParticle_18(Random rand) {
+		return KillTheRNG.randomness.liquidDripParticle.nextFloat();
+//		KillTheRNG.randomness.liquidDripParticle.nextFloat();
 //		return rand.nextFloat();
 	}
 

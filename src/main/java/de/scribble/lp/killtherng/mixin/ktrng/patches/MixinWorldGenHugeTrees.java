@@ -13,7 +13,7 @@ import net.minecraft.world.gen.feature.WorldGenHugeTrees;
 public class MixinWorldGenHugeTrees {
 
 	/**
-	* Height of huge tree
+	* Height of a huge tree
 	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genHugeTreeHeight_1(Random rand, int i) {

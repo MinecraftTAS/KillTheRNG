@@ -33,22 +33,22 @@ public class MixinEntityFireworkRocket {
 	}
 
 	/**
-	* Motion of the firework rocket
+	* Lifetime of the firework rocket
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_fireworkMotion_3(Random rand, int i) {
-		return KillTheRNG.randomness.fireworkMotion.nextInt(i);
-//		KillTheRNG.randomness.fireworkMotion.nextInt(i);
+	public int redirect_fireworkLifetime_3(Random rand, int i) {
+		return KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+//		KillTheRNG.randomness.fireworkLifetime.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* Motion of the firework rocket
+	* Lifetime of the firework rocket
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_fireworkMotion_4(Random rand, int i) {
-		return KillTheRNG.randomness.fireworkMotion.nextInt(i);
-//		KillTheRNG.randomness.fireworkMotion.nextInt(i);
+	public int redirect_fireworkLifetime_4(Random rand, int i) {
+		return KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+//		KillTheRNG.randomness.fireworkLifetime.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

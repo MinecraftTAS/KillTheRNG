@@ -1,5 +1,6 @@
 package de.scribble.lp.killtherng.custom;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -21,8 +22,10 @@ public class CustomRandom extends Random {
     
     public static final List<CustomRandom> LIST=new ArrayList<>();
     
+    private JRand jrand=new JRand(0L);
+    
     public CustomRandom() {
-    	super(0);
+    	super(0L);
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
         this.description=nothing;
@@ -30,7 +33,7 @@ public class CustomRandom extends Random {
     }
     
     public CustomRandom(String name, String description) {
-    	super(0);
+    	super(0L);
 		this.name = name;
 		this.description = description;
 		enabled=true;
@@ -142,11 +145,16 @@ public class CustomRandom extends Random {
 		if(KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput) setSeed(seedstored, false);
 	}
 	@Override
-	public synchronized double nextGaussian() {
+	public double nextGaussian() {
 		timesCalled++;
 		long seedstored=getSeed();
-		double value=super.nextGaussian();
-		if(KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput) setSeed(seedstored, false);
+		double value=0;
+		if(KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput) {
+			jrand.setSeed(seedstored);
+			value=jrand.nextGaussian();
+		}else {
+			value=super.nextGaussian();
+		}
 		return value;
 	}
 	

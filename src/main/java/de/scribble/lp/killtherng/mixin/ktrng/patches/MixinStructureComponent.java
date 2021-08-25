@@ -13,43 +13,43 @@ import net.minecraft.world.gen.structure.StructureComponent;
 public class MixinStructureComponent {
 
 	/**
-	* null
+	* World Generation Utility
 	*/
 	@Redirect(method = "generateMaybeBox(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Ljava/util/Random;FIIIIIILnet/minecraft/block/state/IBlockState;Lnet/minecraft/block/state/IBlockState;ZI)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1651_1(Random rand) {
-		return KillTheRNG.randomness.random_1651.nextFloat();
-//		KillTheRNG.randomness.random_1651.nextFloat();
-//		return rand.nextFloat();
+	public float redirect_worldGenUtil_1(Random rand) {
+//		return KillTheRNG.randomness.worldGenUtil.nextFloat();
+		KillTheRNG.randomness.worldGenUtil.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* World Generation Utility
 	*/
 	@Redirect(method = "randomlyPlaceBlock(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Ljava/util/Random;FIIILnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1652_2(Random rand) {
-		return KillTheRNG.randomness.random_1652.nextFloat();
-//		KillTheRNG.randomness.random_1652.nextFloat();
-//		return rand.nextFloat();
+	public float redirect_worldGenUtil_2(Random rand) {
+//		return KillTheRNG.randomness.worldGenUtil.nextFloat();
+		KillTheRNG.randomness.worldGenUtil.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* World Generation Utility
 	*/
 	@Redirect(method = "generateChest(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/ResourceLocation;Lnet/minecraft/block/state/IBlockState;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_1653_3(Random rand) {
-		return KillTheRNG.randomness.random_1653.nextLong();
-//		KillTheRNG.randomness.random_1653.nextLong();
-//		return rand.nextLong();
+	public long redirect_worldGenUtil_3(Random rand) {
+//		return KillTheRNG.randomness.worldGenUtil.nextLong();
+		KillTheRNG.randomness.worldGenUtil.nextLong();
+		return rand.nextLong();
 	}
 
 	/**
-	* null
+	* World Generation Utility
 	*/
 	@Redirect(method = "createDispenser(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;Lnet/minecraft/util/ResourceLocation;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_1654_4(Random rand) {
-		return KillTheRNG.randomness.random_1654.nextLong();
-//		KillTheRNG.randomness.random_1654.nextLong();
-//		return rand.nextLong();
+	public long redirect_worldGenUtil_4(Random rand) {
+//		return KillTheRNG.randomness.worldGenUtil.nextLong();
+		KillTheRNG.randomness.worldGenUtil.nextLong();
+		return rand.nextLong();
 	}
 
 }

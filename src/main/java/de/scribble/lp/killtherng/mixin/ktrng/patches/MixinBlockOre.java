@@ -13,22 +13,22 @@ import net.minecraft.block.BlockOre;
 public class MixinBlockOre {
 
 	/**
-	* null
+	* How much lapis you get
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_318_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_318.nextInt(i);
-//		KillTheRNG.randomness.random_318.nextInt(i);
+	public int redirect_oreLapisAmount_1(Random rand, int i) {
+		return KillTheRNG.randomness.oreLapisAmount.nextInt(i);
+//		KillTheRNG.randomness.oreLapisAmount.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* How much extra ore drop you get with fortune
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_319_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_319.nextInt(i);
-//		KillTheRNG.randomness.random_319.nextInt(i);
+	public int redirect_oreFortuneBonus_2(Random rand, int i) {
+		return KillTheRNG.randomness.oreFortuneBonus.nextInt(i);
+//		KillTheRNG.randomness.oreFortuneBonus.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

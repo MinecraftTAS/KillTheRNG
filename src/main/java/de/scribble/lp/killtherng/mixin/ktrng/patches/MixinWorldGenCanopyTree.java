@@ -13,72 +13,72 @@ import net.minecraft.world.gen.feature.WorldGenCanopyTree;
 public class MixinWorldGenCanopyTree {
 
 	/**
-	* null
+	* Height of dark oak tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_280_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_280.nextInt(i);
-		KillTheRNG.randomness.random_280.nextInt(i);
+	public int redirect_genDarkOakTreeHeight_1(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Height of dark oak tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_281_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_281.nextInt(i);
-		KillTheRNG.randomness.random_281.nextInt(i);
+	public int redirect_genDarkOakTreeHeight_2(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Trunk of dark oak tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_282_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_282.nextInt(i);
-		KillTheRNG.randomness.random_282.nextInt(i);
+	public int redirect_genDarkOakTreeTrunk_3(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Trunk of dark oak tree
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_283_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_283.nextInt(i);
-		KillTheRNG.randomness.random_283.nextInt(i);
+	public int redirect_genDarkOakTreeTrunk_4(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Some extra leaves?
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_284_5(Random rand) {
-//		return KillTheRNG.randomness.random_284.nextBoolean();
-		KillTheRNG.randomness.random_284.nextBoolean();
+	public boolean redirect_genDarkOakTreeExtraLeaves_5(Random rand) {
+//		return KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
+		KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
 		return rand.nextBoolean();
 	}
 
 	/**
-	* null
+	* Some extra trunks?
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_285_6(Random rand, int i) {
-//		return KillTheRNG.randomness.random_285.nextInt(i);
-		KillTheRNG.randomness.random_285.nextInt(i);
+	public int redirect_genDarkOakTreeExtraTrunk_6(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Some extra trunks?
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_random_286_7(Random rand, int i) {
-//		return KillTheRNG.randomness.random_286.nextInt(i);
-		KillTheRNG.randomness.random_286.nextInt(i);
+	public int redirect_genDarkOakTreeExtraTrunk_7(Random rand, int i) {
+//		return KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+		KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
 		return rand.nextInt(i);
 	}
 

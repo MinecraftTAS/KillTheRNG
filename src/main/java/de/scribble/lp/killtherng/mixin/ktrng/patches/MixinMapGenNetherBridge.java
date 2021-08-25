@@ -13,52 +13,52 @@ import net.minecraft.world.gen.structure.MapGenNetherBridge;
 public class MixinMapGenNetherBridge {
 
 	/**
-	* null
+	* Nether Brige Spawn Position
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1830_1(Random rand, long seed) {
-		KillTheRNG.randomness.random_1830.setSeed(seed, true);
-//		rand.setSeed(seed);
+	public void redirect_netherBridgeSpawnPos_1(Random rand, long seed) {
+		KillTheRNG.randomness.netherBridgeSpawnPos.setSeed(seed, true);
+		rand.setSeed(seed);
 	}
 
 	/**
-	* null
+	* Nether Brige Spawn Position
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
-	public int redirect_random_1831_2(Random rand) {
-		return KillTheRNG.randomness.random_1831.nextInt();
-//		KillTheRNG.randomness.random_1831.nextInt();
-//		return rand.nextInt();
+	public int redirect_netherBridgeSpawnPos_2(Random rand) {
+//		return KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
+		KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
+		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Nether Brige Spawn Position
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1832_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1832.nextInt(i);
-//		KillTheRNG.randomness.random_1832.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_netherBridgeSpawnPos_3(Random rand, int i) {
+//		return KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Nether Brige Spawn Position
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1833_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1833.nextInt(i);
-//		KillTheRNG.randomness.random_1833.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_netherBridgeSpawnPos_4(Random rand, int i) {
+//		return KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Nether Brige Spawn Position
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1834_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_1834.nextInt(i);
-//		KillTheRNG.randomness.random_1834.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_netherBridgeSpawnPos_5(Random rand, int i) {
+//		return KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

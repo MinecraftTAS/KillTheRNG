@@ -13,13 +13,13 @@ import net.minecraft.world.gen.structure.StructureNetherBridgePieces;
 public class MixinStructureNetherBridgePieces$Corridor2 {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Nether Bridge Piece
 	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1712_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1712.nextInt(i);
-//		KillTheRNG.randomness.random_1712.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeNetherBridge_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

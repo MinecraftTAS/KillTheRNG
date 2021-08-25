@@ -12,13 +12,13 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinStructureEndCityPieces$1 {
 
 	/**
-	* null
+	* Position, Rotation and Type of next End Piece
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1745_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1745.nextInt(i);
-//		KillTheRNG.randomness.random_1745.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeEndCity_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

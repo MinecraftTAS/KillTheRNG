@@ -12,23 +12,23 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinStructureEndCityPieces$4 {
 
 	/**
-	* null
+	* Position, Rotation and Type of next End Piece
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1758_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1758.nextInt(i);
-//		KillTheRNG.randomness.random_1758.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_posRotTypeEndCity_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next End Piece
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1759_2(Random rand) {
-		return KillTheRNG.randomness.random_1759.nextBoolean();
-//		KillTheRNG.randomness.random_1759.nextBoolean();
-//		return rand.nextBoolean();
+	public boolean redirect_posRotTypeEndCity_2(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+		KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+		return rand.nextBoolean();
 	}
 
 }
