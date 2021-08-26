@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
-import de.scribble.lp.killtherng.URTools;
+import de.scribble.lp.killtherng.URToolsServer;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -41,20 +41,20 @@ public class CommandKillTheRNG extends CommandBase{
 						+ "Sets all or individual rng seeds.\n"
 						+ String.format("%s/killtherng %s<seed>%s - Set the seed for every RNG value\n", ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.RESET)
 						+ String.format("%s/killtherng %s<RNG-Value> %s<seed>%s - Set the RNG seed for that value\n", ChatFormatting.AQUA, ChatFormatting.YELLOW, ChatFormatting.GREEN, ChatFormatting.RESET)
-						+ ChatFormatting.GRAY+"Current Global Seed: "+ChatFormatting.YELLOW+URTools.getRandomFromString("Global").getSeed()));
+						+ ChatFormatting.GRAY+"Current Global Seed: "+ChatFormatting.YELLOW+URToolsServer.getRandomFromString("Global").getSeed()));
 				return;
 			}
 			if(isNumeric(args[0])) {
-				URTools.setSeedAll(Integer.parseInt(args[0]));
+				URToolsServer.setSeedAll(Integer.parseInt(args[0]));
 				notifyCommandListener(sender, this, "Set seed %s for everything",  new Object[] {args[0]});
 			}
-			else if(URTools.isRandomInList(args[0])) {
+			else if(URToolsServer.isRandomInList(args[0])) {
 				if(args.length==1) {
 					sendHelp(sender, args);
 					return;
 				}
 				if(isNumeric(args[1])) {
-					URTools.getRandomFromString(args[0]).setSeed(Long.parseLong(args[1]));
+					URToolsServer.getRandomFromString(args[0]).setSeed(Long.parseLong(args[1]));
 					notifyCommandListener(sender, this, "Set seed %s for %s",  new Object[] {args[1],args[0]});
 				}
 				else if(args[1].equalsIgnoreCase("help")) {
@@ -70,27 +70,27 @@ public class CommandKillTheRNG extends CommandBase{
 	private void sendHelp(ICommandSender sender, String[] args) {
 		String theimportantone=args[0];
 		//Setting a clickable component in chat
-		TextComponentString seed = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+URTools.getRandomFromString(theimportantone).getSeed());
-		String style ="/killtherng "+URTools.getRandomFromString(theimportantone).getName()+" "+URTools.getRandomFromString(theimportantone).getSeed();
+		TextComponentString seed = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+URToolsServer.getRandomFromString(theimportantone).getSeed());
+		String style ="/killtherng "+URToolsServer.getRandomFromString(theimportantone).getName()+" "+URToolsServer.getRandomFromString(theimportantone).getSeed();
 		seed.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
 		
-		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+URTools.getRandomFromString(theimportantone).getName()+"-------------"));
-		sender.sendMessage(new TextComponentString(URTools.getRandomFromString(theimportantone).getDescription()));
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+URToolsServer.getRandomFromString(theimportantone).getName()+"-------------"));
+		sender.sendMessage(new TextComponentString(URToolsServer.getRandomFromString(theimportantone).getDescription()));
 		sender.sendMessage(new TextComponentString(""));
-		if(!URTools.getRandomFromString(theimportantone).isEnabled()) {
+		if(!URToolsServer.getRandomFromString(theimportantone).isEnabled()) {
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, setting a seed will not do anything."));
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"You can still view some information"));
 		}
 		sender.sendMessage(seed);
-		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+URTools.getRandomFromString(theimportantone).getTimesCalled()+" times"));
+		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+URToolsServer.getRandomFromString(theimportantone).getTimesCalled()+" times"));
 	}
 	
 	@Override
 	public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args,
 			BlockPos targetPos) {
 		if(args.length==1) {
-			return getListOfStringsMatchingLastWord(args, URTools.getNames());
-		}else if(URTools.isRandomInList(args[0])) {
+			return getListOfStringsMatchingLastWord(args, URToolsServer.getNames());
+		}else if(URToolsServer.isRandomInList(args[0])) {
 			return getListOfStringsMatchingLastWord(args, "help");
 		}
 		return super.getTabCompletions(server, sender, args, targetPos);

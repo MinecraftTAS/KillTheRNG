@@ -33,7 +33,6 @@ public class CommandSeedingMode extends CommandBase{
 					+ "Sets how the rng seed should change.\n\n"
 					+ String.format("%s/seedingmode %sNone%s - Closest to vanilla behaviour. Each random variable has a seed that will advance once the variable was called\n\n", ChatFormatting.AQUA, ChatFormatting.DARK_PURPLE, ChatFormatting.RESET)
 					+ String.format("%s/seedingmode %sPlayerInput%s - Every random variable has one global seed, that is changed once the player presses something on the keyboard or moves the camera\n\n", ChatFormatting.AQUA, ChatFormatting.DARK_PURPLE, ChatFormatting.RESET)
-					+ String.format("%s/seedingmode %sTicks%s - Every random variable has one global seed, that is changed once at the start of the tick\n\n", ChatFormatting.AQUA, ChatFormatting.DARK_PURPLE, ChatFormatting.RESET)
 					+ String.format("%s/seedingmode %sFixed%s - Every random variable does not change it's seed, once the variable gets called. Good for testing, but definitely not vanilla viable\n\n", ChatFormatting.AQUA, ChatFormatting.DARK_PURPLE, ChatFormatting.RESET)
 					+ ChatFormatting.DARK_GRAY+"Current mode: "+ChatFormatting.GREEN+KillTheRNG.mode.toString()+ChatFormatting.RESET+"\n"
 					+ ""));

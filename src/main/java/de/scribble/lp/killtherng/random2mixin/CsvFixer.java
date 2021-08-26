@@ -20,7 +20,7 @@ public class CsvFixer {
 	public static void main(String[] args) {
 		// Loading in the file
 		File logfile = new File(".", "Randomness 1.12.2 extreme - Oh no.tsv");
-		File logfile2= new File(".", "Randomness 1.12.2 extreme - Oh no2.tsv");
+		File logfile2= new File(".", "Classes.tsv");
 		// Check if it exists
 		if (!logfile.exists()) {
 			return;
@@ -41,6 +41,8 @@ public class CsvFixer {
 		
 		String prevQualName=null;
 		
+		String prevClassName=null;
+		
 		List<String> prevTargetNames=new ArrayList<>();
 		
 		// process lines
@@ -58,19 +60,32 @@ public class CsvFixer {
 			String methodAccess = split[6];
 			String remap = split[7];
 			String enabled = split[8];
+
+			String className=getClassName(qualName);
 			
-			if(!qualName.equals(prevQualName)) {
-				//When a new class is being processed
-				prevQualName=qualName;
+			String out = "";
+			if (!qualName.equals(prevQualName)) {
+				// When a new class is being processed
+				prevQualName = qualName;
 				prevTargetNames.clear();
 			}
 			
-			String out=String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", name, description, qualName, target, countObject(prevTargetNames, target), classAccess, methodAccess, remap, enabled);
-			try {
-				stream.write(out.getBytes());
-			} catch (IOException e) {
-				e.printStackTrace();
+			if(!className.equals(prevClassName)) {
+				out=String.format("%s\tBoth\n", className);
+				try {
+					stream.write(out.getBytes());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				prevClassName=className;
 			}
+
+//			String out=String.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", name, description, qualName, target, countObject(prevTargetNames, target), classAccess, methodAccess, remap, enabled);
+//			try {
+//				stream.write(out.getBytes());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
 			prevTargetNames.add(target);
 			
 		}
@@ -89,5 +104,12 @@ public class CsvFixer {
 			}
 		}
 		return counter;
+	}
+	
+	private static String getClassName(String qualName) {
+		String[] split = qualName.split(";",2);
+		String first = split[0];
+		String[] split2 = first.split("/");
+		return split2[split2.length-1];
 	}
 }

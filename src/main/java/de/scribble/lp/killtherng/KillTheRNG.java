@@ -6,12 +6,18 @@ import org.apache.logging.log4j.Logger;
 import de.scribble.lp.killtherng.commands.CommandFindSeed;
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
+import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
+import de.scribble.lp.killtherng.networking.ChangeSeedPacketHandler;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 
 @Mod(
         modid = KillTheRNG.MOD_ID,
@@ -30,9 +36,17 @@ public class KillTheRNG {
     public static SeedingModes mode=SeedingModes.PlayerInput;
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
+    
+    public static EntityPlayerMP trackedPlayer;
+    
+    public static SimpleNetworkWrapper NETWORK;
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
+    	NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("killtherng");
+    	int i = -1;
+    	
+    	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);
     }
 
     @EventHandler

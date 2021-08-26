@@ -339,8 +339,8 @@ random_337	null	Lnet/minecraft/dispenser/BehaviorDefaultDispenseItem;doDispense(
 random_338	null	Lnet/minecraft/util/math/MathHelper;getInt(Ljava/util/Random;II)I	Ljava/util/Random;nextInt(I)I	0	0x21	0x9	FALSE	FALSE
 random_339	null	Lnet/minecraft/util/math/MathHelper;nextFloat(Ljava/util/Random;FF)F	Ljava/util/Random;nextFloat()F	0	0x21	0x9	FALSE	FALSE
 random_340	null	Lnet/minecraft/util/math/MathHelper;nextDouble(Ljava/util/Random;DD)D	Ljava/util/Random;nextDouble()D	0	0x21	0x9	FALSE	FALSE
-random_341	null	Lnet/minecraft/util/math/MathHelper;getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;	Ljava/util/Random;nextLong()J	0	0x21	0x9	FALSE	FALSE
-random_342	null	Lnet/minecraft/util/math/MathHelper;getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;	Ljava/util/Random;nextLong()J	1	0x21	0x9	FALSE	FALSE
+randomUUID	Creates a new UUID for entities	Lnet/minecraft/util/math/MathHelper;getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;	Ljava/util/Random;nextLong()J	0	0x21	0x9	FALSE	TRUE
+randomUUID	Creates a new UUID for entities	Lnet/minecraft/util/math/MathHelper;getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;	Ljava/util/Random;nextLong()J	1	0x21	0x9	FALSE	TRUE
 random_343	null	Lnet/minecraft/block/BlockPistonBase;eventReceived(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;II)Z	Ljava/util/Random;nextFloat()F	0	0x21	0x20001	FALSE	FALSE
 random_344	null	Lnet/minecraft/block/BlockPistonBase;eventReceived(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;II)Z	Ljava/util/Random;nextFloat()F	1	0x21	0x20001	FALSE	FALSE
 random_345	null	Lnet/minecraft/block/BlockTallGrass;quantityDroppedWithBonus(ILjava/util/Random;)I	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE

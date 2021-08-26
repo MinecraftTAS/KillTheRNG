@@ -21,8 +21,4 @@ public class MixinMinecraft {
 		SeedingModes.nextPlayerInput();
 	}
 	
-	@Inject(method = "runTick", at = @At("HEAD"))
-	public void changeRunTick(CallbackInfo ci) {
-		SeedingModes.nextTick();
-	}
 }

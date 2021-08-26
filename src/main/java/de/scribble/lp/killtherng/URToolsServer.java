@@ -1,8 +1,9 @@
 package de.scribble.lp.killtherng;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
+import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 
-public class URTools {
+public class URToolsServer {
 	public static CustomRandom getRandomFromString(String name) {
 		for(CustomRandom rand: CustomRandom.LIST) {
 			if(rand.getName().equalsIgnoreCase(name)) {
@@ -17,6 +18,7 @@ public class URTools {
 			if(rand.getName().equals("Global")) return;
 			rand.setSeed(seed);
 		});
+		KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(seed));
 	}
 	
 	public static boolean isRandomInList(String name) {

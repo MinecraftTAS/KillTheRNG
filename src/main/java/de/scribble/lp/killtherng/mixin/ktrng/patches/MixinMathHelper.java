@@ -43,23 +43,23 @@ public class MixinMathHelper {
 	}
 
 	/**
-	* null
+	* Creates a new UUID for entities
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	private static long redirect_random_341_4(Random rand) {
-		return KillTheRNG.randomness.random_341.nextLong();
-//		KillTheRNG.randomness.random_341.nextLong();
-//		return rand.nextLong();
+	private static long redirect_randomUUID_4(Random rand) {
+//		return KillTheRNG.randomness.randomUUID.nextLong();
+		KillTheRNG.randomness.randomUUID.nextLong();
+		return rand.nextLong();
 	}
 
 	/**
-	* null
+	* Creates a new UUID for entities
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
-	private static long redirect_random_342_5(Random rand) {
-		return KillTheRNG.randomness.random_342.nextLong();
-//		KillTheRNG.randomness.random_342.nextLong();
-//		return rand.nextLong();
+	private static long redirect_randomUUID_5(Random rand) {
+//		return KillTheRNG.randomness.randomUUID.nextLong();
+		KillTheRNG.randomness.randomUUID.nextLong();
+		return rand.nextLong();
 	}
 
 }

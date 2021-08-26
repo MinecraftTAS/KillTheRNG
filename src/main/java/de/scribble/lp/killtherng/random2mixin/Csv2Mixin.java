@@ -11,7 +11,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.objectweb.asm.Opcodes;
 
-import de.scribble.lp.killtherng.URTools;
+import de.scribble.lp.killtherng.URToolsServer;
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
 public class Csv2Mixin {
@@ -333,7 +333,7 @@ public class Csv2Mixin {
 	
 	private static void addRandomnessUR(String name, String description, boolean enabled) {
 		try {
-			if(!URTools.isRandomInList(name)) {
+			if(!URToolsServer.isRandomInList(name)) {
 				new CustomRandom(name, description);
 				writeLineUR(String.format("public CustomRandom %s=new CustomRandom(\"%s\", \"%s\", %b);", name, name, description, enabled));
 			}
@@ -362,7 +362,8 @@ public class Csv2Mixin {
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"
-				+ "\t\"ktrng.MixinMinecraft\",\n");
+				+ "\t\"ktrng.MixinMinecraft\",\n"
+				+ "\t\"ktrng.MixinPlayerList\",\n\n");
 	}
 
 	private static void closeMixinConf() throws IOException {

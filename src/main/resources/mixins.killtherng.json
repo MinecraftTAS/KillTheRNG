@@ -5,7 +5,7 @@
   "refmap": "mixins.killtherng.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-	"ktrng.MixinMinecraft",
+	"ktrng.MixinMinecraft",	"ktrng.MixinPlayerList",
 	"ktrng.patches.MixinWorld",
 	"ktrng.patches.MixinWorldClient",
 	"ktrng.patches.MixinGuiIngame",
