@@ -13,15 +13,27 @@ public class ChangeSeedPacketHandler implements IMessageHandler<ChangeSeedPacket
 	@Override
 	public IMessage onMessage(ChangeSeedPacket message, MessageContext ctx) {
 		if(ctx.side.isServer()) {
-			if(KillTheRNG.trackedPlayer.getUniqueID().equals(ctx.getServerHandler().player.getUniqueID())) {
-				if(message.next) {
-					SeedingModes.nextPlayerInput();
+			if(message.next) {
+				if(KillTheRNG.mode==SeedingModes.PlayerInput&&KillTheRNG.trackedPlayer.getUniqueID().equals(ctx.getServerHandler().player.getUniqueID())) {
+					URToolsServer.nextSeed();
+				}
+			} else {
+				if(message.name.isEmpty()) {
+					URToolsServer.setSeedAll(message.seed, false);
 				} else {
-					URToolsServer.setSeedAll(message.seed);
+					if(URToolsServer.isRandomInList(message.name)) {
+						URToolsServer.getRandomFromString(message.name);
+						KillTheRNG.NETWORK.sendToAll(message);
+					}
 				}
 			}
+			
 		}else {
-			URToolsClient.setSeedAll(message.seed);
+			if(message.name.isEmpty()) {
+				URToolsClient.setSeedAll(message.seed, message.next);
+			} else {
+				URToolsClient.getRandomFromString(message.name).setSeed(message.seed);
+			}
 		}
 		return null;
 	}

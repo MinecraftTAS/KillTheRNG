@@ -12,10 +12,13 @@ public class URToolsClient {
 		return null;
 	}
 	
-	public static void setSeedAll(long seed) {
+	public static void setSeedAll(long seed, boolean next) {
 		CustomRandom.LIST.forEach(rand->{
-			if(rand.getName().equals("Global")) return;
-			rand.setSeed(seed);
+			if(next) {
+				rand.setSeed(seed, false);
+			}else {
+				rand.setSeed(seed);
+			}
 		});
 	}
 	
@@ -31,7 +34,4 @@ public class URToolsClient {
 		return out;
 	}
 	
-	public static void nextSeed() {
-		setSeedAll(KillTheRNG.randomness.Global.nextLong());
-	}
 }

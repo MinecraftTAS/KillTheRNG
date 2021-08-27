@@ -6,7 +6,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.objectweb.asm.Opcodes;
@@ -30,6 +32,14 @@ public class Csv2Mixin {
 	
 	private static int counter=0;
 	
+	private static Map<String, SideType> mapper=new HashMap<>();
+	
+	private static List<String> both=new ArrayList<>();
+	
+	private static List<String> client=new ArrayList<>();
+	
+	private static List<String> server=new ArrayList<>();
+	
 	private enum RandomType{
 		Int,
 		IntBound,
@@ -42,6 +52,12 @@ public class Csv2Mixin {
 		SetSeed
 	}
 	
+	private enum SideType{
+		Both,
+		Client,
+		Server;
+	}
+	
 	public static void main(String[] args) {
 		
 		dirKTRNG=new File(dir, "java/de/scribble/lp/killtherng/mixin/ktrng/patches");
@@ -52,6 +68,20 @@ public class Csv2Mixin {
 		
 		//Loading in the file
 		File logfile=new File(".","Randomness 1.12.2 extreme - Oh no.tsv");
+		File classfile=new File(".", "Classes.csv");
+		
+		if(classfile.exists()) {
+			List<String> lines2=new ArrayList<>();
+			try {
+				lines2=FileUtils.readLines(classfile, Charset.defaultCharset());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			for(String line : lines2) {
+				String[] split=line.split(",");
+				mapper.put(split[0], SideType.valueOf(split[1]));
+			}
+		}
 		
 		//Check if it exists
 		if(!logfile.exists()) {
@@ -350,10 +380,17 @@ public class Csv2Mixin {
 	//======================================================================
 	
 	private static void addToMixinConfig(String className) throws IOException {
-		if (prevClassName != null) {
-			writeLineMixinConf(",\n");
+		switch (mapper.get(className)) {
+		case Both:
+			both.add(className);
+			break;
+		case Client:
+			client.add(className);
+			break;
+		case Server:
+			server.add(className);
+			break;
 		}
-		writeLineMixinConf("\t\"ktrng.patches.Mixin" + className + "\"");
 	}
 
 	private static void startMixinConfig() throws IOException {
@@ -362,11 +399,43 @@ public class Csv2Mixin {
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"
-				+ "\t\"ktrng.MixinMinecraft\",\n"
 				+ "\t\"ktrng.MixinPlayerList\",\n\n");
 	}
 
 	private static void closeMixinConf() throws IOException {
+		for (int i = 0; i < both.size(); i++) {
+			String line=both.get(i);
+			String sep=",";
+			if(i==both.size()-1) {
+				sep="";
+			}
+			writeLineMixinConf("\t\"ktrng.patches.Mixin"+line+"\""+sep+"\n");
+		}
+		writeLineMixinConf("  ],\n"
+				+ "  \"client\": [\n"
+				+ "\t\"ktrng.MixinMinecraft\",\n\n");
+		
+		for (int i = 0; i < client.size(); i++) {
+			String line=client.get(i);
+			String sep=",";
+			if(i==client.size()-1) {
+				sep="";
+			}
+			writeLineMixinConf("\t\"ktrng.patches.Mixin"+line+"\""+sep+"\n");
+		}
+		writeLineMixinConf("  ],\n"
+				+ "  \"server\": [\n");
+				
+		
+		for (int i = 0; i < server.size(); i++) {
+			String line=server.get(i);
+			String sep=",";
+			if(i==server.size()-1) {
+				sep="";
+			}
+			writeLineMixinConf("\t\"ktrng.patches.Mixin"+line+"\""+sep+"\n");
+		}
+		
 		writeLineMixinConf("\n\t]\n}\n");
 	}
 

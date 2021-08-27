@@ -8,6 +8,10 @@ import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacketHandler;
+import de.scribble.lp.killtherng.networking.SeedInfoPacket;
+import de.scribble.lp.killtherng.networking.SeedInfoPacketHandler;
+import de.scribble.lp.killtherng.networking.SeedingModePacket;
+import de.scribble.lp.killtherng.networking.SeedingModePacketHandler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -47,6 +51,11 @@ public class KillTheRNG {
     	int i = -1;
     	
     	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.CLIENT);
+    	
+    	NETWORK.registerMessage(SeedInfoPacketHandler.class, SeedInfoPacket.class, i++, Side.CLIENT);
+    	
+    	NETWORK.registerMessage(SeedingModePacketHandler.class, SeedingModePacket.class, i++, Side.CLIENT);
     }
 
     @EventHandler

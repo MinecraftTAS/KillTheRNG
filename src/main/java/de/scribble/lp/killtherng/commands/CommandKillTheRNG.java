@@ -5,15 +5,25 @@ import java.util.List;
 import com.google.common.collect.ImmutableList;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
+import de.scribble.lp.killtherng.KillTheRNG;
+import de.scribble.lp.killtherng.URToolsClient;
 import de.scribble.lp.killtherng.URToolsServer;
+import de.scribble.lp.killtherng.custom.CustomRandom;
+import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
+import de.scribble.lp.killtherng.networking.SeedInfoPacket;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.event.ClickEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class CommandKillTheRNG extends CommandBase{
 
@@ -29,7 +39,6 @@ public class CommandKillTheRNG extends CommandBase{
 	
 	@Override
 	public List<String> getAliases() {
-		// TODO Auto-generated method stub
 		return ImmutableList.of("ktrng");
 	}
 
@@ -45,20 +54,19 @@ public class CommandKillTheRNG extends CommandBase{
 				return;
 			}
 			if(isNumeric(args[0])) {
-				URToolsServer.setSeedAll(Integer.parseInt(args[0]));
+				URToolsServer.setSeedAll(Long.parseLong(args[0]), false);
 				notifyCommandListener(sender, this, "Set seed %s for everything",  new Object[] {args[0]});
 			}
 			else if(URToolsServer.isRandomInList(args[0])) {
 				if(args.length==1) {
-					sendHelp(sender, args);
+					KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(URToolsServer.getRandomFromString(args[0])), (EntityPlayerMP)sender);
 					return;
 				}
 				if(isNumeric(args[1])) {
-					URToolsServer.getRandomFromString(args[0]).setSeed(Long.parseLong(args[1]));
+					long seed=Long.parseLong(args[1]);
+					URToolsServer.getRandomFromString(args[0]).setSeed(seed);
+					KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(args[0], seed));
 					notifyCommandListener(sender, this, "Set seed %s for %s",  new Object[] {args[1],args[0]});
-				}
-				else if(args[1].equalsIgnoreCase("help")) {
-					sendHelp(sender, args);
 				}
 				else {
 					throw new CommandException("Can't understand what you just typed in...", new Object[] {});
@@ -67,22 +75,34 @@ public class CommandKillTheRNG extends CommandBase{
 		}
 	}
 	
-	private void sendHelp(ICommandSender sender, String[] args) {
-		String theimportantone=args[0];
-		//Setting a clickable component in chat
-		TextComponentString seed = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+URToolsServer.getRandomFromString(theimportantone).getSeed());
-		String style ="/killtherng "+URToolsServer.getRandomFromString(theimportantone).getName()+" "+URToolsServer.getRandomFromString(theimportantone).getSeed();
-		seed.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
+	@SideOnly(Side.CLIENT)
+	public static void sendHelp(String name, long timesCalled, long seed) {
+		CustomRandom clientRandom=URToolsClient.getRandomFromString(name);
+		EntityPlayerSP sender=Minecraft.getMinecraft().player;
 		
-		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+URToolsServer.getRandomFromString(theimportantone).getName()+"-------------"));
-		sender.sendMessage(new TextComponentString(URToolsServer.getRandomFromString(theimportantone).getDescription()));
+		//Setting a clickable component in chat
+		TextComponentString seedTextComponentClient = new TextComponentString(ChatFormatting.GRAY+"Current Seed (Client): "+ChatFormatting.YELLOW+clientRandom.getSeed());
+		String style ="/killtherng "+clientRandom.getName()+" "+clientRandom.getSeed();
+		seedTextComponentClient.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
+		
+		//Setting a clickable component in chat
+		TextComponentString seedTextComponentServer = new TextComponentString(ChatFormatting.GRAY+"Current Seed (Server): "+ChatFormatting.YELLOW+seed);
+		seedTextComponentServer.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
+		
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+clientRandom.getName()+"-------------"));
+		sender.sendMessage(new TextComponentString(clientRandom.getDescription()));
 		sender.sendMessage(new TextComponentString(""));
-		if(!URToolsServer.getRandomFromString(theimportantone).isEnabled()) {
+		if(!clientRandom.isEnabled()) {
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, setting a seed will not do anything."));
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"You can still view some information"));
 		}
-		sender.sendMessage(seed);
-		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+URToolsServer.getRandomFromString(theimportantone).getTimesCalled()+" times"));
+		sender.sendMessage(seedTextComponentClient);
+		sender.sendMessage(seedTextComponentServer);
+		if(Minecraft.getMinecraft().isSingleplayer()) {
+			sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+clientRandom.getTimesCalled()+" times"));
+		}else {
+			sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+clientRandom.getTimesCalled()+" times on the client and "+timesCalled+" on the server"));
+		}
 	}
 	
 	@Override

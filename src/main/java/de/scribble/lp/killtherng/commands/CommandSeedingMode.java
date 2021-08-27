@@ -7,6 +7,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 
 import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.SeedingModes;
+import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -41,7 +42,7 @@ public class CommandSeedingMode extends CommandBase{
 			new CommandException("Too many arguments");
 		}else {
 			try {
-				KillTheRNG.mode=SeedingModes.valueOf(args[0]);
+				KillTheRNG.NETWORK.sendToAll(new SeedingModePacket(SeedingModes.valueOf(args[0])));
 			} catch (IllegalArgumentException e) {
 				new CommandException("Wrong seeding mode: %s", e.getMessage());
 			}  catch (Exception e) {
