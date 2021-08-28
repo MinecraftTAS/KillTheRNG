@@ -53,12 +53,12 @@ public class MixinEntityEgg {
 	}
 
 	/**
-	* Chance of chick spawning from a thrown egg
+	* Chance of 4 chicks spawning from a thrown egg
 	*/
 	@Redirect(method = "onImpact(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_eggChickChance_5(Random rand, int i) {
-		return KillTheRNG.randomness.eggChickChance.nextInt(i);
-//		KillTheRNG.randomness.eggChickChance.nextInt(i);
+	public int redirect_eggFourChickChance_5(Random rand, int i) {
+		return KillTheRNG.randomness.eggFourChickChance.nextInt(i);
+//		KillTheRNG.randomness.eggFourChickChance.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

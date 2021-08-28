@@ -13,16 +13,11 @@ public class URToolsServer {
 		return null;
 	}
 	
-	public static void setSeedAll(long seed, boolean next) {
+	public static void setSeedAll(long seed) {
 		CustomRandom.LIST.forEach(rand->{
-			if(rand.getName().equals("Global")&&next) return;
-			if(next) {
-				rand.setSeed(seed, false);
-			}else {
-				rand.setSeed(seed);
-			}
+			rand.setSeed(seed);
 		});
-		KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(seed, next));
+		KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(seed));
 	}
 	
 	public static boolean isRandomInList(String name) {
@@ -37,7 +32,14 @@ public class URToolsServer {
 		return out;
 	}
 	
-	public static void nextSeed() {
-		setSeedAll(KillTheRNG.randomness.Global.nextLong(), true);
+	public static long nextSeed() {
+		KillTheRNG.randomness.Global.nextLong();
+		long seed=KillTheRNG.randomness.Global.getSeed();
+		CustomRandom.LIST.forEach(rand->{
+			if(rand.getName().equals("Global"))return;
+			rand.setSeed(seed, false);
+		});
+		return seed;
 	}
+	
 }

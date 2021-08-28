@@ -13,12 +13,12 @@ import net.minecraft.world.storage.loot.LootPool;
 public class MixinLootPool {
 
 	/**
-	* null
+	* Creates a loot roll dependant on weight
 	*/
 	@Redirect(method = "createLootRoll(Ljava/util/Collection;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1641_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1641.nextInt(i);
-//		KillTheRNG.randomness.random_1641.nextInt(i);
+	public int redirect_lootCreateRoll_1(Random rand, int i) {
+		return KillTheRNG.randomness.lootCreateRoll.nextInt(i);
+//		KillTheRNG.randomness.lootCreateRoll.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

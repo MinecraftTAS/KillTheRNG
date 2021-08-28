@@ -13,22 +13,22 @@ import net.minecraft.world.storage.loot.LootTable;
 public class MixinLootTable {
 
 	/**
-	* null
+	* Shuffles items?
 	*/
 	@Redirect(method = "shuffleItems(Ljava/util/List;ILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1642_1(Random rand) {
-		return KillTheRNG.randomness.random_1642.nextBoolean();
-//		KillTheRNG.randomness.random_1642.nextBoolean();
+	public boolean redirect_lootTableShuffleItems_1(Random rand) {
+		return KillTheRNG.randomness.lootTableShuffleItems.nextBoolean();
+//		KillTheRNG.randomness.lootTableShuffleItems.nextBoolean();
 //		return rand.nextBoolean();
 	}
 
 	/**
-	* null
+	* Shuffles items?
 	*/
 	@Redirect(method = "shuffleItems(Ljava/util/List;ILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
-	public boolean redirect_random_1643_2(Random rand) {
-		return KillTheRNG.randomness.random_1643.nextBoolean();
-//		KillTheRNG.randomness.random_1643.nextBoolean();
+	public boolean redirect_lootTableShuffleItems_2(Random rand) {
+		return KillTheRNG.randomness.lootTableShuffleItems.nextBoolean();
+//		KillTheRNG.randomness.lootTableShuffleItems.nextBoolean();
 //		return rand.nextBoolean();
 	}
 

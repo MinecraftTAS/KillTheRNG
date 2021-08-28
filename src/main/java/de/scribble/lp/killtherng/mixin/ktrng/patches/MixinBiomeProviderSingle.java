@@ -17,9 +17,9 @@ public class MixinBiomeProviderSingle {
 	*/
 	@Redirect(method = "findBiomePosition(IIILjava/util/List;Ljava/util/Random;)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1363_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1363.nextInt(i);
-//		KillTheRNG.randomness.random_1363.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1363.nextInt(i);
+		KillTheRNG.randomness.random_1363.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinBiomeProviderSingle {
 	*/
 	@Redirect(method = "findBiomePosition(IIILjava/util/List;Ljava/util/Random;)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1364_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1364.nextInt(i);
-//		KillTheRNG.randomness.random_1364.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1364.nextInt(i);
+		KillTheRNG.randomness.random_1364.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

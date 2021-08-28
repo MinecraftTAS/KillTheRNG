@@ -17,9 +17,9 @@ public class MixinSoundEventAccessor {
 	*/
 	@Redirect(method = "cloneEntry()Lnet/minecraft/client/audio/Sound;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1365_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1365.nextInt(i);
-//		KillTheRNG.randomness.random_1365.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1365.nextInt(i);
+		KillTheRNG.randomness.random_1365.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

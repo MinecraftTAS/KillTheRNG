@@ -17,9 +17,9 @@ public class MixinMapGenScatteredFeature {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1616_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1616.nextInt(i);
-//		KillTheRNG.randomness.random_1616.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1616.nextInt(i);
+		KillTheRNG.randomness.random_1616.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinMapGenScatteredFeature {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1617_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1617.nextInt(i);
-//		KillTheRNG.randomness.random_1617.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1617.nextInt(i);
+		KillTheRNG.randomness.random_1617.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

@@ -17,9 +17,9 @@ public class MixinMapGenStronghold$Start {
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1628_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1628.nextInt(i);
-//		KillTheRNG.randomness.random_1628.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1628.nextInt(i);
+		KillTheRNG.randomness.random_1628.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

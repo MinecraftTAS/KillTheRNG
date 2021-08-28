@@ -18,7 +18,7 @@ public class MixinChunkGeneratorEnd {
 	@Redirect(method = "generateChunk(II)Lnet/minecraft/world/chunk/Chunk;", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_chunkGenEnd_1(Random rand, long seed) {
 		KillTheRNG.randomness.chunkGenEnd.setSeed(seed, true);
-//		rand.setSeed(seed);
+		rand.setSeed(seed);
 	}
 
 	/**

@@ -17,9 +17,9 @@ public class MixinWorldGenMinable {
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1225_1(Random rand) {
-		return KillTheRNG.randomness.random_1225.nextFloat();
-//		KillTheRNG.randomness.random_1225.nextFloat();
-//		return rand.nextFloat();
+//		return KillTheRNG.randomness.random_1225.nextFloat();
+		KillTheRNG.randomness.random_1225.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinWorldGenMinable {
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1226_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1226.nextInt(i);
-//		KillTheRNG.randomness.random_1226.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1226.nextInt(i);
+		KillTheRNG.randomness.random_1226.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -37,9 +37,9 @@ public class MixinWorldGenMinable {
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1227_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1227.nextInt(i);
-//		KillTheRNG.randomness.random_1227.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1227.nextInt(i);
+		KillTheRNG.randomness.random_1227.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -47,9 +47,9 @@ public class MixinWorldGenMinable {
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_random_1228_4(Random rand) {
-		return KillTheRNG.randomness.random_1228.nextDouble();
-//		KillTheRNG.randomness.random_1228.nextDouble();
-//		return rand.nextDouble();
+//		return KillTheRNG.randomness.random_1228.nextDouble();
+		KillTheRNG.randomness.random_1228.nextDouble();
+		return rand.nextDouble();
 	}
 
 }

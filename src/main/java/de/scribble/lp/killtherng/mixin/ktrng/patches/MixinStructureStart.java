@@ -17,9 +17,9 @@ public class MixinStructureStart {
 	*/
 	@Redirect(method = "markAvailableHeight(Lnet/minecraft/world/World;Ljava/util/Random;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1626_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1626.nextInt(i);
-//		KillTheRNG.randomness.random_1626.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1626.nextInt(i);
+		KillTheRNG.randomness.random_1626.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinStructureStart {
 	*/
 	@Redirect(method = "setRandomHeight(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1627_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1627.nextInt(i);
-//		KillTheRNG.randomness.random_1627.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1627.nextInt(i);
+		KillTheRNG.randomness.random_1627.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

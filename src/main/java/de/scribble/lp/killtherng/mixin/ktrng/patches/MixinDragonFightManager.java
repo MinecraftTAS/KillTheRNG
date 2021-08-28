@@ -17,9 +17,9 @@ public class MixinDragonFightManager {
 	*/
 	@Redirect(method = "createNewDragon()Lnet/minecraft/entity/boss/EntityDragon;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_enderDragonYaw_1(Random rand) {
-//		return KillTheRNG.randomness.enderDragonYaw.nextFloat();
-		KillTheRNG.randomness.enderDragonYaw.nextFloat();
-		return rand.nextFloat();
+		return KillTheRNG.randomness.enderDragonYaw.nextFloat();
+//		KillTheRNG.randomness.enderDragonYaw.nextFloat();
+//		return rand.nextFloat();
 	}
 
 }

@@ -42,7 +42,9 @@ public class CommandSeedingMode extends CommandBase{
 			new CommandException("Too many arguments");
 		}else {
 			try {
-				KillTheRNG.NETWORK.sendToAll(new SeedingModePacket(SeedingModes.valueOf(args[0])));
+				SeedingModes mode=SeedingModes.valueOf(args[0]);
+				KillTheRNG.NETWORK.sendToAll(new SeedingModePacket(mode));
+				notifyCommandListener(sender, this, "Set the mode to %s", mode.toString());
 			} catch (IllegalArgumentException e) {
 				new CommandException("Wrong seeding mode: %s", e.getMessage());
 			}  catch (Exception e) {

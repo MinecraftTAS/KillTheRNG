@@ -17,9 +17,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "renderStars(Lnet/minecraft/client/renderer/BufferBuilder;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1270_1(Random rand) {
-		return KillTheRNG.randomness.random_1270.nextFloat();
-//		KillTheRNG.randomness.random_1270.nextFloat();
-//		return rand.nextFloat();
+//		return KillTheRNG.randomness.random_1270.nextFloat();
+		KillTheRNG.randomness.random_1270.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "renderStars(Lnet/minecraft/client/renderer/BufferBuilder;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_1271_2(Random rand) {
-		return KillTheRNG.randomness.random_1271.nextFloat();
-//		KillTheRNG.randomness.random_1271.nextFloat();
-//		return rand.nextFloat();
+//		return KillTheRNG.randomness.random_1271.nextFloat();
+		KillTheRNG.randomness.random_1271.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
@@ -37,9 +37,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "renderStars(Lnet/minecraft/client/renderer/BufferBuilder;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_random_1272_3(Random rand) {
-		return KillTheRNG.randomness.random_1272.nextFloat();
-//		KillTheRNG.randomness.random_1272.nextFloat();
-//		return rand.nextFloat();
+//		return KillTheRNG.randomness.random_1272.nextFloat();
+		KillTheRNG.randomness.random_1272.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
@@ -47,9 +47,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "renderStars(Lnet/minecraft/client/renderer/BufferBuilder;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_random_1273_4(Random rand) {
-		return KillTheRNG.randomness.random_1273.nextFloat();
-//		KillTheRNG.randomness.random_1273.nextFloat();
-//		return rand.nextFloat();
+//		return KillTheRNG.randomness.random_1273.nextFloat();
+		KillTheRNG.randomness.random_1273.nextFloat();
+		return rand.nextFloat();
 	}
 
 	/**
@@ -57,9 +57,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "renderStars(Lnet/minecraft/client/renderer/BufferBuilder;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_random_1274_5(Random rand) {
-		return KillTheRNG.randomness.random_1274.nextDouble();
-//		KillTheRNG.randomness.random_1274.nextDouble();
-//		return rand.nextDouble();
+//		return KillTheRNG.randomness.random_1274.nextDouble();
+		KillTheRNG.randomness.random_1274.nextDouble();
+		return rand.nextDouble();
 	}
 
 	/**
@@ -67,9 +67,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "calculateParticleLevel(Z)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1275_6(Random rand, int i) {
-		return KillTheRNG.randomness.random_1275.nextInt(i);
-//		KillTheRNG.randomness.random_1275.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1275.nextInt(i);
+		KillTheRNG.randomness.random_1275.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -77,9 +77,9 @@ public class MixinRenderGlobal {
 	*/
 	@Redirect(method = "calculateParticleLevel(Z)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1276_7(Random rand, int i) {
-		return KillTheRNG.randomness.random_1276.nextInt(i);
-//		KillTheRNG.randomness.random_1276.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1276.nextInt(i);
+		KillTheRNG.randomness.random_1276.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**

@@ -6,8 +6,13 @@ import org.apache.logging.log4j.Logger;
 import de.scribble.lp.killtherng.commands.CommandFindSeed;
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
+import de.scribble.lp.killtherng.custom.CustomRandom;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacketHandler;
+import de.scribble.lp.killtherng.networking.NextSeedPacket;
+import de.scribble.lp.killtherng.networking.NextSeedPacketHandler;
+import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
+import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacketHandler;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacketHandler;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
@@ -56,10 +61,17 @@ public class KillTheRNG {
     	NETWORK.registerMessage(SeedInfoPacketHandler.class, SeedInfoPacket.class, i++, Side.CLIENT);
     	
     	NETWORK.registerMessage(SeedingModePacketHandler.class, SeedingModePacket.class, i++, Side.CLIENT);
+    	
+    	NETWORK.registerMessage(NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.CLIENT);
+    	
+    	NETWORK.registerMessage(RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+    	System.out.println(CustomRandom.reverse(42069));
     }
     
     @EventHandler

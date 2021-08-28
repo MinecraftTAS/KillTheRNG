@@ -17,9 +17,9 @@ public class MixinBiomeForestMutated {
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_random_1107_1(Random rand) {
-		return KillTheRNG.randomness.random_1107.nextBoolean();
-//		KillTheRNG.randomness.random_1107.nextBoolean();
-//		return rand.nextBoolean();
+//		return KillTheRNG.randomness.random_1107.nextBoolean();
+		KillTheRNG.randomness.random_1107.nextBoolean();
+		return rand.nextBoolean();
 	}
 
 }

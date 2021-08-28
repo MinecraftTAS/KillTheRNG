@@ -17,9 +17,9 @@ public class MixinMapGenVillage$Start {
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1629_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1629.nextInt(i);
-//		KillTheRNG.randomness.random_1629.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1629.nextInt(i);
+		KillTheRNG.randomness.random_1629.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinMapGenVillage$Start {
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1630_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1630.nextInt(i);
-//		KillTheRNG.randomness.random_1630.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1630.nextInt(i);
+		KillTheRNG.randomness.random_1630.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

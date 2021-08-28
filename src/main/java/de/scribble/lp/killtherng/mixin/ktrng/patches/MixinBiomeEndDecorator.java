@@ -17,9 +17,9 @@ public class MixinBiomeEndDecorator {
 	*/
 	@Redirect(method = "getSpikesForWorld(Lnet/minecraft/world/World;)[Lnet/minecraft/world/gen/feature/WorldGenSpikes$EndSpike;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	private static long redirect_random_1248_1(Random rand) {
-		return KillTheRNG.randomness.random_1248.nextLong();
-//		KillTheRNG.randomness.random_1248.nextLong();
-//		return rand.nextLong();
+//		return KillTheRNG.randomness.random_1248.nextLong();
+		KillTheRNG.randomness.random_1248.nextLong();
+		return rand.nextLong();
 	}
 
 }

@@ -17,9 +17,9 @@ public class MixinWorld {
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/storage/ISaveHandler;Lnet/minecraft/world/storage/WorldInfo;Lnet/minecraft/world/WorldProvider;Lnet/minecraft/profiler/Profiler;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	public int redirect_blockupdateLCG_1(Random rand) {
-		return KillTheRNG.randomness.blockupdateLCG.nextInt();
-//		KillTheRNG.randomness.blockupdateLCG.nextInt();
-//		return rand.nextInt();
+//		return KillTheRNG.randomness.blockupdateLCG.nextInt();
+		KillTheRNG.randomness.blockupdateLCG.nextInt();
+		return rand.nextInt();
 	}
 
 	/**

@@ -17,9 +17,9 @@ public class MixinMapGenVillage {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1610_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1610.nextInt(i);
-//		KillTheRNG.randomness.random_1610.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1610.nextInt(i);
+		KillTheRNG.randomness.random_1610.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinMapGenVillage {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1611_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1611.nextInt(i);
-//		KillTheRNG.randomness.random_1611.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1611.nextInt(i);
+		KillTheRNG.randomness.random_1611.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

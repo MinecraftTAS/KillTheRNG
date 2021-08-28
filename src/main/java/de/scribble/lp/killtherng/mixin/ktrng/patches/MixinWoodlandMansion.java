@@ -17,9 +17,9 @@ public class MixinWoodlandMansion {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1622_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1622.nextInt(i);
-//		KillTheRNG.randomness.random_1622.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1622.nextInt(i);
+		KillTheRNG.randomness.random_1622.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -27,9 +27,9 @@ public class MixinWoodlandMansion {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1623_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1623.nextInt(i);
-//		KillTheRNG.randomness.random_1623.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1623.nextInt(i);
+		KillTheRNG.randomness.random_1623.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -37,9 +37,9 @@ public class MixinWoodlandMansion {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_random_1624_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_1624.nextInt(i);
-//		KillTheRNG.randomness.random_1624.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1624.nextInt(i);
+		KillTheRNG.randomness.random_1624.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
@@ -47,9 +47,9 @@ public class MixinWoodlandMansion {
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_random_1625_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_1625.nextInt(i);
-//		KillTheRNG.randomness.random_1625.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1625.nextInt(i);
+		KillTheRNG.randomness.random_1625.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

@@ -17,9 +17,9 @@ public class MixinTeleporter {
 	*/
 	@Redirect(method = "makePortal(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1640_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1640.nextInt(i);
-//		KillTheRNG.randomness.random_1640.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1640.nextInt(i);
+		KillTheRNG.randomness.random_1640.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

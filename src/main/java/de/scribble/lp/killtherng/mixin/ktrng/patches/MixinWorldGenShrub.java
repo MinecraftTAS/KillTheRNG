@@ -17,9 +17,9 @@ public class MixinWorldGenShrub {
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1260_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1260.nextInt(i);
-//		KillTheRNG.randomness.random_1260.nextInt(i);
-//		return rand.nextInt(i);
+//		return KillTheRNG.randomness.random_1260.nextInt(i);
+		KillTheRNG.randomness.random_1260.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

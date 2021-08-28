@@ -413,7 +413,8 @@ public class Csv2Mixin {
 		}
 		writeLineMixinConf("  ],\n"
 				+ "  \"client\": [\n"
-				+ "\t\"ktrng.MixinMinecraft\",\n\n");
+				+ "\t\"ktrng.MixinMinecraft\",\n"
+				+ "\t\"ktrng.MixinGuiMainMenu\",\n\n");
 		
 		for (int i = 0; i < client.size(); i++) {
 			String line=client.get(i);

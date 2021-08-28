@@ -54,7 +54,7 @@ public class CommandKillTheRNG extends CommandBase{
 				return;
 			}
 			if(isNumeric(args[0])) {
-				URToolsServer.setSeedAll(Long.parseLong(args[0]), false);
+				URToolsServer.setSeedAll(Long.parseLong(args[0]));
 				notifyCommandListener(sender, this, "Set seed %s for everything",  new Object[] {args[0]});
 			}
 			else if(URToolsServer.isRandomInList(args[0])) {

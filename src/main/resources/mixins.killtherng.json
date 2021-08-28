@@ -377,6 +377,7 @@
   ],
   "client": [
 	"ktrng.MixinMinecraft",
+	"ktrng.MixinGuiMainMenu",
 
 	"ktrng.patches.MixinWorldClient",
 	"ktrng.patches.MixinGuiIngame",

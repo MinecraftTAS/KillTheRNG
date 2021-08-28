@@ -1,6 +1,6 @@
 package de.scribble.lp.killtherng;
 
-import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
+import de.scribble.lp.killtherng.networking.NextSeedPacket;
 
 /**
  * Used to switch between different seeding methods
@@ -14,7 +14,7 @@ public enum SeedingModes {
 	
 	public static void nextPlayerInput() {
 		if(KillTheRNG.mode==PlayerInput) {
-			KillTheRNG.NETWORK.sendToServer(new ChangeSeedPacket(0L, true));
+			KillTheRNG.NETWORK.sendToServer(new NextSeedPacket());
 		}
 	}
 }

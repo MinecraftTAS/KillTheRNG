@@ -13,12 +13,12 @@ import net.minecraft.world.storage.loot.conditions.RandomChance;
 public class MixinRandomChance {
 
 	/**
-	* null
+	* Test Random chance condition
 	*/
 	@Redirect(method = "testCondition(Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1647_1(Random rand) {
-		return KillTheRNG.randomness.random_1647.nextFloat();
-//		KillTheRNG.randomness.random_1647.nextFloat();
+	public float redirect_randomChanceTestCondition_1(Random rand) {
+		return KillTheRNG.randomness.randomChanceTestCondition.nextFloat();
+//		KillTheRNG.randomness.randomChanceTestCondition.nextFloat();
 //		return rand.nextFloat();
 	}
 

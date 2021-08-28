@@ -28,7 +28,7 @@ public class MixinGuiWinGame {
 	@Redirect(method = "drawScreen(IIF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_random_1467_2(Random rand, long seed) {
 		KillTheRNG.randomness.random_1467.setSeed(seed, true);
-//		rand.setSeed(seed);
+		rand.setSeed(seed);
 	}
 
 }
