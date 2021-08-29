@@ -104,67 +104,8 @@ public class MixinEntityRenderer {
 	/**
 	* null
 	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1354_10(Random rand, long seed) {
-		KillTheRNG.randomness.random_1354.setSeed(seed, true);
-		rand.setSeed(seed);
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_1355_11(Random rand) {
-//		return KillTheRNG.randomness.random_1355.nextDouble();
-		KillTheRNG.randomness.random_1355.nextDouble();
-		return rand.nextDouble();
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_1356_12(Random rand) {
-//		return KillTheRNG.randomness.random_1356.nextDouble();
-		KillTheRNG.randomness.random_1356.nextDouble();
-		return rand.nextDouble();
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_random_1357_13(Random rand) {
-//		return KillTheRNG.randomness.random_1357.nextGaussian();
-		KillTheRNG.randomness.random_1357.nextGaussian();
-		return rand.nextGaussian();
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_1358_14(Random rand) {
-//		return KillTheRNG.randomness.random_1358.nextDouble();
-		KillTheRNG.randomness.random_1358.nextDouble();
-		return rand.nextDouble();
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_random_1359_15(Random rand) {
-//		return KillTheRNG.randomness.random_1359.nextGaussian();
-		KillTheRNG.randomness.random_1359.nextGaussian();
-		return rand.nextGaussian();
-	}
-
-	/**
-	* null
-	*/
 	@Redirect(method = "displayItemActivation(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1360_16(Random rand) {
+	public float redirect_random_1360_10(Random rand) {
 //		return KillTheRNG.randomness.random_1360.nextFloat();
 		KillTheRNG.randomness.random_1360.nextFloat();
 		return rand.nextFloat();
@@ -174,10 +115,109 @@ public class MixinEntityRenderer {
 	* null
 	*/
 	@Redirect(method = "displayItemActivation(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_1361_17(Random rand) {
+	public float redirect_random_1361_11(Random rand) {
 //		return KillTheRNG.randomness.random_1361.nextFloat();
 		KillTheRNG.randomness.random_1361.nextFloat();
 		return rand.nextFloat();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
+	public void redirect_random_1354_12(Random rand, long seed) {
+		KillTheRNG.randomness.random_1354.setSeed(seed, true);
+		rand.setSeed(seed);
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
+	public double redirect_random_1355_13(Random rand) {
+//		return KillTheRNG.randomness.random_1355.nextDouble();
+		KillTheRNG.randomness.random_1355.nextDouble();
+		return rand.nextDouble();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
+	public double redirect_random_1356_14(Random rand) {
+//		return KillTheRNG.randomness.random_1356.nextDouble();
+		KillTheRNG.randomness.random_1356.nextDouble();
+		return rand.nextDouble();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
+	public double redirect_random_1357_15(Random rand) {
+//		return KillTheRNG.randomness.random_1357.nextGaussian();
+		KillTheRNG.randomness.random_1357.nextGaussian();
+		return rand.nextGaussian();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
+	public double redirect_random_1358_16(Random rand) {
+//		return KillTheRNG.randomness.random_1358.nextDouble();
+		KillTheRNG.randomness.random_1358.nextDouble();
+		return rand.nextDouble();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "renderRainSnow(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
+	public double redirect_random_1359_17(Random rand) {
+//		return KillTheRNG.randomness.random_1359.nextGaussian();
+		KillTheRNG.randomness.random_1359.nextGaussian();
+		return rand.nextGaussian();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "updateTorchFlicker()V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_30_18() {
+		return KillTheRNG.randomness.math_random_30.nextDouble();
+//		KillTheRNG.randomness.math_random_30.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "updateTorchFlicker()V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_31_19() {
+		return KillTheRNG.randomness.math_random_31.nextDouble();
+//		KillTheRNG.randomness.math_random_31.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "updateTorchFlicker()V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	public double redirect_math_random_32_20() {
+		return KillTheRNG.randomness.math_random_32.nextDouble();
+//		KillTheRNG.randomness.math_random_32.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "updateTorchFlicker()V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 3))
+	public double redirect_math_random_33_21() {
+		return KillTheRNG.randomness.math_random_33.nextDouble();
+//		KillTheRNG.randomness.math_random_33.nextDouble();
+//		return Math.random();
 	}
 
 }

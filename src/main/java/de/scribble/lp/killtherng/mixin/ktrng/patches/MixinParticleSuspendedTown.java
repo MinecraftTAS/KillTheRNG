@@ -32,4 +32,14 @@ public class MixinParticleSuspendedTown {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_50_3() {
+		return KillTheRNG.randomness.math_random_50.nextDouble();
+//		KillTheRNG.randomness.math_random_50.nextDouble();
+//		return Math.random();
+	}
+
 }

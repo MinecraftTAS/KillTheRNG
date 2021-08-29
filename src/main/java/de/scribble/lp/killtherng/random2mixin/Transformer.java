@@ -38,8 +38,16 @@ public class Transformer implements IClassTransformer{
 		return new MethodVisitor(Opcodes.ASM5, writer) {
 			@Override
 			public void visitMethodInsn(int opcode, String targetOwner, String targetName, String targetDescriptor, boolean isInterface) {
-				if(opcode==Opcodes.INVOKEVIRTUAL) {
+				if(opcode==Opcodes.INVOKEVIRTUAL&&false) {
 					if("java/util/Random".equalsIgnoreCase(targetOwner)) {
+						try {
+							handler.addRng(className, methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, classAccess, methodAccess);
+						} catch (IOException e) {
+							e.printStackTrace();
+						}
+					}
+				}else if(opcode==Opcodes.INVOKESTATIC) {
+					if("java/lang/Math".equalsIgnoreCase(targetOwner)&&"random".equals(targetName)) {
 						try {
 							handler.addRng(className, methodName, methodDescriptor, targetOwner, targetName, targetDescriptor, classAccess, methodAccess);
 						} catch (IOException e) {

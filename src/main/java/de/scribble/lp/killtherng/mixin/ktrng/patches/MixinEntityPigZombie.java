@@ -13,30 +13,10 @@ import net.minecraft.entity.monster.EntityPigZombie;
 public class MixinEntityPigZombie {
 
 	/**
-	* Pitch of zombie piglin
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_pigZombieSound_1(Random rand) {
-		return KillTheRNG.randomness.pigZombieSound.nextFloat();
-//		KillTheRNG.randomness.pigZombieSound.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* Pitch of zombie piglin
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_pigZombieSound_2(Random rand) {
-		return KillTheRNG.randomness.pigZombieSound.nextFloat();
-//		KillTheRNG.randomness.pigZombieSound.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
 	* Adds a random amount to the base anger level
 	*/
 	@Redirect(method = "becomeAngryAt(Lnet/minecraft/entity/Entity;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_pigZombieAngerLevel_3(Random rand, int i) {
+	public int redirect_pigZombieAngerLevel_1(Random rand, int i) {
 		return KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
 //		KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
 //		return rand.nextInt(i);
@@ -46,10 +26,30 @@ public class MixinEntityPigZombie {
 	* Adds a random amount to the base anger level
 	*/
 	@Redirect(method = "becomeAngryAt(Lnet/minecraft/entity/Entity;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_pigZombieAngerLevel_4(Random rand, int i) {
+	public int redirect_pigZombieAngerLevel_2(Random rand, int i) {
 		return KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
 //		KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
 //		return rand.nextInt(i);
+	}
+
+	/**
+	* Pitch of zombie piglin
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_pigZombieSound_3(Random rand) {
+		return KillTheRNG.randomness.pigZombieSound.nextFloat();
+//		KillTheRNG.randomness.pigZombieSound.nextFloat();
+//		return rand.nextFloat();
+	}
+
+	/**
+	* Pitch of zombie piglin
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
+	public float redirect_pigZombieSound_4(Random rand) {
+		return KillTheRNG.randomness.pigZombieSound.nextFloat();
+//		KillTheRNG.randomness.pigZombieSound.nextFloat();
+//		return rand.nextFloat();
 	}
 
 }

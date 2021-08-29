@@ -23,100 +23,10 @@ public class MixinEntityBat {
 	}
 
 	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_batHangingRandomHeadRotation_2(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_batHangingRandomHeadRotation_3(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_batHangingRandomHeadRotation_4(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_batHangingRandomHeadRotation_5(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_batHangingRandomHeadRotation_6(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_batHangingRandomHeadRotation_7(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
-	public int redirect_batHangingRandomHeadRotation_8(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
-	public int redirect_batHangingRandomHeadRotation_9(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Chance of rotating the bats head when it's hanging from a block
-	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
-	public int redirect_batHangingRandomHeadRotation_10(Random rand, int i) {
-		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
 	* null
 	*/
 	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_923_11(Random rand) {
+	public boolean redirect_random_923_2(Random rand) {
 		return KillTheRNG.randomness.random_923.nextBoolean();
 //		KillTheRNG.randomness.random_923.nextBoolean();
 //		return rand.nextBoolean();
@@ -126,9 +36,99 @@ public class MixinEntityBat {
 	* null
 	*/
 	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_924_12(Random rand, int i) {
+	public int redirect_random_924_3(Random rand, int i) {
 		return KillTheRNG.randomness.random_924.nextInt(i);
 //		KillTheRNG.randomness.random_924.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_batHangingRandomHeadRotation_4(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
+	public int redirect_batHangingRandomHeadRotation_5(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
+	public int redirect_batHangingRandomHeadRotation_6(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
+	public int redirect_batHangingRandomHeadRotation_7(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
+	public int redirect_batHangingRandomHeadRotation_8(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
+	public int redirect_batHangingRandomHeadRotation_9(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
+	public int redirect_batHangingRandomHeadRotation_10(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
+	public int redirect_batHangingRandomHeadRotation_11(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* Chance of rotating the bats head when it's hanging from a block
+	*/
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
+	public int redirect_batHangingRandomHeadRotation_12(Random rand, int i) {
+		return KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
+//		KillTheRNG.randomness.batHangingRandomHeadRotation.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

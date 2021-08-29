@@ -13,13 +13,13 @@ import net.minecraft.block.BlockSapling;
 public class MixinBlockSapling {
 
 	/**
-	* Determines when a sapling grows into a tree
+	* Chance of a sapling growing after being bonemealed
 	*/
-	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_growTreeChance_1(Random rand, int i) {
-		return KillTheRNG.randomness.growTreeChance.nextInt(i);
-//		KillTheRNG.randomness.growTreeChance.nextInt(i);
-//		return rand.nextInt(i);
+	@Redirect(method = "canUseBonemeal(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_boneMealSapling_1(Random rand) {
+		return KillTheRNG.randomness.boneMealSapling.nextFloat();
+//		KillTheRNG.randomness.boneMealSapling.nextFloat();
+//		return rand.nextFloat();
 	}
 
 	/**
@@ -53,13 +53,13 @@ public class MixinBlockSapling {
 	}
 
 	/**
-	* Chance of a sapling growing after being bonemealed
+	* Determines when a sapling grows into a tree
 	*/
-	@Redirect(method = "canUseBonemeal(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_boneMealSapling_5(Random rand) {
-		return KillTheRNG.randomness.boneMealSapling.nextFloat();
-//		KillTheRNG.randomness.boneMealSapling.nextFloat();
-//		return rand.nextFloat();
+	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_growTreeChance_5(Random rand, int i) {
+		return KillTheRNG.randomness.growTreeChance.nextInt(i);
+//		KillTheRNG.randomness.growTreeChance.nextInt(i);
+//		return rand.nextInt(i);
 	}
 
 }

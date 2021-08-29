@@ -39,6 +39,8 @@ public class Csv2Mixin {
 	private static List<String> client=new ArrayList<>();
 	
 	private static List<String> server=new ArrayList<>();
+
+	private static boolean isStatic;
 	
 	private enum RandomType{
 		Int,
@@ -49,7 +51,8 @@ public class Csv2Mixin {
 		Bytes,
 		Gaussian,
 		Long,
-		SetSeed
+		SetSeed,
+		Math
 	}
 	
 	private enum SideType{
@@ -106,26 +109,36 @@ public class Csv2Mixin {
 			if(line.startsWith("Recognisable")) continue;
 			String[] split = line.split("\t");
 			
+			//The name of the randomness in question: "blockupdateLCG"
 			String name=split[0];
+			//The description of what the randomness does: "Linear Congruential Generator seed, for random block updates. Called when joining a World"
 			String description=split[1];
+			//The qualified name of the class and method that should be mixed into: "Lnet/minecraft/world/World;<init>(Lnet/minecraft/world/storage/ISaveHandler;Lnet/minecraft/world/storage/WorldInfo;Lnet/minecraft/world/WorldProvider;Lnet/minecraft/profiler/Profiler;Z)V"
 			String qualName=split[2];
+			//The qualified name of the redirect target: "Ljava/util/Random;nextInt()I"
 			String target=split[3];
+			//The ordinal of the randomness. If multiple redirect targets are the same, the ordinal will increase: "0"
 			String ordinal=split[4];
+			//The access information of the class, something like public, abstract, private etc... some special cases need this: "0x421"
 			int classAccess=Integer.parseInt(split[5].replaceFirst("0x", ""), 16);
+			//The access of the method that should be mixed into, something like public, private, protected, static etc... : "0x4"
 			int methodAccess=Integer.parseInt(split[6].replaceFirst("0x", ""), 16);
+			//If the random should be remapped. Some stuff like forge classes are still deobfuscated in the finished jar, which throws an error... : "FALSE"
 			boolean remap=split[7].equals("TRUE")? true : false;
+			//If the random should be enabled. If the value is "TRUE" it will be disabled in the mixin: "TRUE"
 			boolean enabled=split[8].equals("TRUE")? false : true;
 			
-			String className=getClassName(qualName);
-			String className2=getClassPath(qualName);
-			String methodName=getMethodName(qualName);
+			/****Process qualified name****/
+			String className=getClassName(qualName); //The actual class name to mix into without the package information: "World"
+			String classNameWithPath=getClassNameWithPath(qualName);	//The class name with the path, this is used for classes that are private: "net.minecraft.world.World"
+			String methodName=getMethodName(qualName);		//The method name plus descriptor: "<init>(Lnet/minecraft/world/storage/ISaveHandler;Lnet/minecraft/world/storage/WorldInfo;Lnet/minecraft/world/WorldProvider;Lnet/minecraft/profiler/Profiler;Z)V"
 			RandomType targetType=getTargetName(target);
 			
 			addRandomnessUR(name, description, enabled);
 			
 			if(!className.equals(prevClassName)) {
 				try {
-					switchClassFileMixin(className, className2, classAccess);
+					switchClassFileMixin(className, classNameWithPath, classAccess);
 					addToMixinConfig(className);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
@@ -229,8 +242,12 @@ public class Csv2Mixin {
 		case SetSeed:
 			addSetSeedRedirect(methodName, ordinal, name, access, remap, enabled);
 			break;
+		case Math:
+			addMathRedirect(methodName, ordinal, name, access, remap, enabled);
+			break;
 		}
 	}
+
 
 	private static void addIntRedirect(String methodName, String ordinal, String name, String access, String remap, boolean enabled) throws IOException {
 		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/util/Random;nextInt()I\", ordinal = %s)%s)", methodName, ordinal, remap));
@@ -333,10 +350,21 @@ public class Csv2Mixin {
 		writeLineMixin("\t}\n");
 	}
 	
+	private static void addMathRedirect(String methodName, String ordinal, String name, String access, String remap, boolean enabled) throws IOException{
+		writeLineMixin(String.format("\t@Redirect(method = \"%s\", at = @At(value = \"INVOKE\", target = \"Ljava/lang/Math;random()D\", ordinal = %s)%s)", methodName, ordinal, remap));
+		writeLineMixin(String.format("\t%s double redirect_%s_%s() {", access, name, counter));
+		
+		writeLineMixin(String.format("%s\t\treturn KillTheRNG.randomness.%s.nextDouble();", enabled ? "" : "//", name));
+		
+		writeLineMixin(String.format("%s\t\tKillTheRNG.randomness.%s.nextDouble();", !enabled ? "" : "//", name));
+		writeLineMixin(String.format("%s\t\treturn Math.random();", !enabled ? "" : "//"));
+		writeLineMixin("\t}\n");
+	}
+	
 	//********************************************
 	
 	private static String getAccess(int methodAccess, String methodName, String className) {
-		if((methodAccess|Opcodes.ACC_STATIC)==methodAccess||className.equals("ParticleSpell")) {
+		if((methodAccess|Opcodes.ACC_STATIC)==methodAccess||(className.equals("ParticleSpell")&&counter<3)) {
 			return "private static";
 		}else {
 			return "public";
@@ -459,7 +487,7 @@ public class Csv2Mixin {
 		return split2[split2.length-1];
 	}
 
-	private static String getClassPath(String qualName) {
+	private static String getClassNameWithPath(String qualName) {
 		String[] split = qualName.split(";",2);
 		String first = split[0].replace("/", ".");
 		String replaced=first.replaceFirst("L", "");
@@ -467,16 +495,16 @@ public class Csv2Mixin {
 	}
 	
 	private static RandomType getTargetName(String target) {
-		String method=target.split(";")[1];
-		if(method.equals("nextInt()I")) return RandomType.Int;
-		if(method.equals("nextInt(I)I")) return RandomType.IntBound;
-		if(method.equals("nextFloat()F")) return RandomType.Float;
-		if(method.equals("nextDouble()D")) return RandomType.Double;
-		if(method.equals("nextBoolean()Z")) return RandomType.Boolean;
-		if(method.equals("nextBytes([B)V")) return RandomType.Bytes;
-		if(method.equals("nextGaussian()D")) return RandomType.Gaussian;
-		if(method.equals("nextLong()J")) return RandomType.Long;
-		if(method.equals("setSeed(J)V")) return RandomType.SetSeed;
+		if(target.equals("Ljava/util/Random;nextInt()I")) return RandomType.Int;
+		if(target.equals("Ljava/util/Random;nextInt(I)I")) return RandomType.IntBound;
+		if(target.equals("Ljava/util/Random;nextFloat()F")) return RandomType.Float;
+		if(target.equals("Ljava/util/Random;nextDouble()D")) return RandomType.Double;
+		if(target.equals("Ljava/util/Random;nextBoolean()Z")) return RandomType.Boolean;
+		if(target.equals("Ljava/util/Random;nextBytes([B)V")) return RandomType.Bytes;
+		if(target.equals("Ljava/util/Random;nextGaussian()D")) return RandomType.Gaussian;
+		if(target.equals("Ljava/util/Random;nextLong()J")) return RandomType.Long;
+		if(target.equals("Ljava/util/Random;setSeed(J)V")) return RandomType.SetSeed;
+		if(target.equals("Ljava/lang/Math;random()D")) return RandomType.Math;
 		return null;
 	}
 

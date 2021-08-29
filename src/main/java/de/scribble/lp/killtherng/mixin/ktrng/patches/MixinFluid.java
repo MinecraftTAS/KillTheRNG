@@ -32,4 +32,34 @@ public class MixinFluid {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_26_3() {
+		return KillTheRNG.randomness.math_random_26.nextDouble();
+//		KillTheRNG.randomness.math_random_26.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_27_4() {
+		return KillTheRNG.randomness.math_random_27.nextDouble();
+//		KillTheRNG.randomness.math_random_27.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	public double redirect_math_random_28_5() {
+		return KillTheRNG.randomness.math_random_28.nextDouble();
+//		KillTheRNG.randomness.math_random_28.nextDouble();
+//		return Math.random();
+	}
+
 }

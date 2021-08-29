@@ -13,19 +13,19 @@ import net.minecraft.entity.projectile.EntityEvokerFangs;
 public class MixinEntityEvokerFangs {
 
 	/**
-	* Particles of evoker fangs
+	* Pitch of evocation fangs attack sound
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_evokerFangCritParticles_1(Random rand) {
-		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
-//		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
-//		return rand.nextDouble();
+	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_evokerFangSound_1(Random rand) {
+		return KillTheRNG.randomness.evokerFangSound.nextFloat();
+//		KillTheRNG.randomness.evokerFangSound.nextFloat();
+//		return rand.nextFloat();
 	}
 
 	/**
 	* Particles of evoker fangs
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_evokerFangCritParticles_2(Random rand) {
 		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
 //		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
@@ -35,7 +35,7 @@ public class MixinEntityEvokerFangs {
 	/**
 	* Particles of evoker fangs
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_evokerFangCritParticles_3(Random rand) {
 		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
 //		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
@@ -45,7 +45,7 @@ public class MixinEntityEvokerFangs {
 	/**
 	* Particles of evoker fangs
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_evokerFangCritParticles_4(Random rand) {
 		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
 //		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
@@ -55,7 +55,7 @@ public class MixinEntityEvokerFangs {
 	/**
 	* Particles of evoker fangs
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_evokerFangCritParticles_5(Random rand) {
 		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
 //		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
@@ -65,7 +65,7 @@ public class MixinEntityEvokerFangs {
 	/**
 	* Particles of evoker fangs
 	*/
-	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
 	public double redirect_evokerFangCritParticles_6(Random rand) {
 		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
 //		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
@@ -73,13 +73,13 @@ public class MixinEntityEvokerFangs {
 	}
 
 	/**
-	* Pitch of evocation fangs attack sound
+	* Particles of evoker fangs
 	*/
-	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_evokerFangSound_7(Random rand) {
-		return KillTheRNG.randomness.evokerFangSound.nextFloat();
-//		KillTheRNG.randomness.evokerFangSound.nextFloat();
-//		return rand.nextFloat();
+	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
+	public double redirect_evokerFangCritParticles_7(Random rand) {
+		return KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+//		KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+//		return rand.nextDouble();
 	}
 
 }

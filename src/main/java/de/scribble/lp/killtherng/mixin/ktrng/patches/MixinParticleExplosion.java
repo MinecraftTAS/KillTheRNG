@@ -52,4 +52,34 @@ public class MixinParticleExplosion {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_39_5() {
+		return KillTheRNG.randomness.math_random_39.nextDouble();
+//		KillTheRNG.randomness.math_random_39.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_40_6() {
+		return KillTheRNG.randomness.math_random_40.nextDouble();
+//		KillTheRNG.randomness.math_random_40.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	public double redirect_math_random_41_7() {
+		return KillTheRNG.randomness.math_random_41.nextDouble();
+//		KillTheRNG.randomness.math_random_41.nextDouble();
+//		return Math.random();
+	}
+
 }

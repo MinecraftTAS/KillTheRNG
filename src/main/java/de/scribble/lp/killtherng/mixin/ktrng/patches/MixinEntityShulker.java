@@ -13,19 +13,19 @@ import net.minecraft.entity.monster.EntityShulker;
 public class MixinEntityShulker {
 
 	/**
-	* Coordinate to teleport to
+	* Whether the shulker teleports after taking damage
 	*/
-	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_shulkerTeleportToBlockPos_1(Random rand, int i) {
-		return KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
-//		KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
+	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_sulkerTeleportOnHealthLoss_1(Random rand, int i) {
+		return KillTheRNG.randomness.sulkerTeleportOnHealthLoss.nextInt(i);
+//		KillTheRNG.randomness.sulkerTeleportOnHealthLoss.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
 	* Coordinate to teleport to
 	*/
-	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
+	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_shulkerTeleportToBlockPos_2(Random rand, int i) {
 		return KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
 //		KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
@@ -35,7 +35,7 @@ public class MixinEntityShulker {
 	/**
 	* Coordinate to teleport to
 	*/
-	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
+	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_shulkerTeleportToBlockPos_3(Random rand, int i) {
 		return KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
 //		KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
@@ -43,12 +43,12 @@ public class MixinEntityShulker {
 	}
 
 	/**
-	* Whether the shulker teleports after taking damage
+	* Coordinate to teleport to
 	*/
-	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_sulkerTeleportOnHealthLoss_4(Random rand, int i) {
-		return KillTheRNG.randomness.sulkerTeleportOnHealthLoss.nextInt(i);
-//		KillTheRNG.randomness.sulkerTeleportOnHealthLoss.nextInt(i);
+	@Redirect(method = "tryTeleportToNewPosition()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
+	public int redirect_shulkerTeleportToBlockPos_4(Random rand, int i) {
+		return KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
+//		KillTheRNG.randomness.shulkerTeleportToBlockPos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

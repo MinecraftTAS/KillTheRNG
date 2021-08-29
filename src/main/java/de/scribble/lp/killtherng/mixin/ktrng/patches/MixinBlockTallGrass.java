@@ -15,20 +15,20 @@ public class MixinBlockTallGrass {
 	/**
 	* null
 	*/
-	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_345_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_345.nextInt(i);
-//		KillTheRNG.randomness.random_345.nextInt(i);
+	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
+	public int redirect_random_346_1(Random rand, int i) {
+		return KillTheRNG.randomness.random_346.nextInt(i);
+//		KillTheRNG.randomness.random_346.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
 	* null
 	*/
-	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_346_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_346.nextInt(i);
-//		KillTheRNG.randomness.random_346.nextInt(i);
+	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_random_345_2(Random rand, int i) {
+		return KillTheRNG.randomness.random_345.nextInt(i);
+//		KillTheRNG.randomness.random_345.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -23,10 +23,19 @@ public class MixinWorld {
 	}
 
 	/**
+	* General setSeed method of the world random
+	*/
+	@Redirect(method = "setRandomSeed(III)Ljava/util/Random;", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
+	public void redirect_worldSetRandomSeed_2(Random rand, long seed) {
+		KillTheRNG.randomness.worldSetRandomSeed.setSeed(seed, true);
+		rand.setSeed(seed);
+	}
+
+	/**
 	* Length of the weather phase, when thundering
 	*/
 	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_thunderTime_2(Random rand, int i) {
+	public int redirect_thunderTime_3(Random rand, int i) {
 		return KillTheRNG.randomness.thunderTime.nextInt(i);
 //		KillTheRNG.randomness.thunderTime.nextInt(i);
 //		return rand.nextInt(i);
@@ -36,7 +45,7 @@ public class MixinWorld {
 	* Length of the weather phase, after thundering or raining
 	*/
 	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap=false)
-	public int redirect_clearWeatherTimeAfterThunder_3(Random rand, int i) {
+	public int redirect_clearWeatherTimeAfterThunder_4(Random rand, int i) {
 		return KillTheRNG.randomness.clearWeatherTimeAfterThunder.nextInt(i);
 //		KillTheRNG.randomness.clearWeatherTimeAfterThunder.nextInt(i);
 //		return rand.nextInt(i);
@@ -46,7 +55,7 @@ public class MixinWorld {
 	* Length of the weather phase, when raining
 	*/
 	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2), remap=false)
-	public int redirect_rainTime_4(Random rand, int i) {
+	public int redirect_rainTime_5(Random rand, int i) {
 		return KillTheRNG.randomness.rainTime.nextInt(i);
 //		KillTheRNG.randomness.rainTime.nextInt(i);
 //		return rand.nextInt(i);
@@ -56,19 +65,10 @@ public class MixinWorld {
 	* Length of the weather phase, after thundering or raining
 	*/
 	@Redirect(method = "updateWeatherBody()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3), remap=false)
-	public int redirect_clearWeatherTimeAfterRain_5(Random rand, int i) {
+	public int redirect_clearWeatherTimeAfterRain_6(Random rand, int i) {
 		return KillTheRNG.randomness.clearWeatherTimeAfterRain.nextInt(i);
 //		KillTheRNG.randomness.clearWeatherTimeAfterRain.nextInt(i);
 //		return rand.nextInt(i);
-	}
-
-	/**
-	* General setSeed method of the world random
-	*/
-	@Redirect(method = "setRandomSeed(III)Ljava/util/Random;", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_worldSetRandomSeed_6(Random rand, long seed) {
-		KillTheRNG.randomness.worldSetRandomSeed.setSeed(seed, true);
-		rand.setSeed(seed);
 	}
 
 }

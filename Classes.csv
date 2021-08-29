@@ -409,3 +409,14 @@ PhaseSittingFlaming,Both
 PhaseSittingAttacking,Both
 PhaseDying,Both
 ChunkGeneratorFlat,Both
+EntityTNTPrimed,Both
+ItemCompass$1,Both
+ItemClock$1,Both
+ParticleWaterWake,Both
+ParticleCrit,Both
+ParticleSmokeNormal,Both
+ParticleDrip,Both
+ParticleCloud,Both
+ParticleRedstone,Both
+ParticleFallingDust,Both
+ParticleSnowShovel,Both

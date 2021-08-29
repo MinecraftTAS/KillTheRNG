@@ -35,8 +35,18 @@ public class MixinParticleLava {
 	/**
 	* null
 	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_57_3() {
+		return KillTheRNG.randomness.math_random_57.nextDouble();
+//		KillTheRNG.randomness.math_random_57.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1445_3(Random rand) {
+	public float redirect_random_1445_4(Random rand) {
 		return KillTheRNG.randomness.random_1445.nextFloat();
 //		KillTheRNG.randomness.random_1445.nextFloat();
 //		return rand.nextFloat();

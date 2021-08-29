@@ -23,30 +23,10 @@ public class MixinMathHelper {
 	}
 
 	/**
-	* null
-	*/
-	@Redirect(method = "nextFloat(Ljava/util/Random;FF)F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_339_2(Random rand) {
-		return KillTheRNG.randomness.random_339.nextFloat();
-//		KillTheRNG.randomness.random_339.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* null
-	*/
-	@Redirect(method = "nextDouble(Ljava/util/Random;DD)D", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	private static double redirect_random_340_3(Random rand) {
-		return KillTheRNG.randomness.random_340.nextDouble();
-//		KillTheRNG.randomness.random_340.nextDouble();
-//		return rand.nextDouble();
-	}
-
-	/**
 	* Creates a new UUID for entities
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	private static long redirect_randomUUID_4(Random rand) {
+	private static long redirect_randomUUID_2(Random rand) {
 //		return KillTheRNG.randomness.randomUUID.nextLong();
 		KillTheRNG.randomness.randomUUID.nextLong();
 		return rand.nextLong();
@@ -56,10 +36,30 @@ public class MixinMathHelper {
 	* Creates a new UUID for entities
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
-	private static long redirect_randomUUID_5(Random rand) {
+	private static long redirect_randomUUID_3(Random rand) {
 //		return KillTheRNG.randomness.randomUUID.nextLong();
 		KillTheRNG.randomness.randomUUID.nextLong();
 		return rand.nextLong();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "nextDouble(Ljava/util/Random;DD)D", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
+	private static double redirect_random_340_4(Random rand) {
+		return KillTheRNG.randomness.random_340.nextDouble();
+//		KillTheRNG.randomness.random_340.nextDouble();
+//		return rand.nextDouble();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "nextFloat(Ljava/util/Random;FF)F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	private static float redirect_random_339_5(Random rand) {
+		return KillTheRNG.randomness.random_339.nextFloat();
+//		KillTheRNG.randomness.random_339.nextFloat();
+//		return rand.nextFloat();
 	}
 
 }

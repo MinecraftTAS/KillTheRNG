@@ -13,30 +13,10 @@ import net.minecraft.entity.ai.EntityAISkeletonRiders;
 public class MixinEntityAISkeletonRiders {
 
 	/**
-	* How much velocity should be added to the skeleton horse
-	*/
-	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_aiSkeletonRidersAddVelocity_1(Random rand) {
-		return KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
-//		KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
-//		return rand.nextGaussian();
-	}
-
-	/**
-	* How much velocity should be added to the skeleton horse
-	*/
-	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_aiSkeletonRidersAddVelocity_2(Random rand) {
-		return KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
-//		KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
-//		return rand.nextGaussian();
-	}
-
-	/**
 	* What enchantment should be added to the item in the main hand
 	*/
 	@Redirect(method = "createSkeleton(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/passive/AbstractHorse;)Lnet/minecraft/entity/monster/EntitySkeleton;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_3(Random rand, int i) {
+	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_1(Random rand, int i) {
 		return KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 //		KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 //		return rand.nextInt(i);
@@ -46,10 +26,30 @@ public class MixinEntityAISkeletonRiders {
 	* What enchantment should be added to the item in the main hand
 	*/
 	@Redirect(method = "createSkeleton(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/passive/AbstractHorse;)Lnet/minecraft/entity/monster/EntitySkeleton;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_4(Random rand, int i) {
+	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_2(Random rand, int i) {
 		return KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 //		KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 //		return rand.nextInt(i);
+	}
+
+	/**
+	* How much velocity should be added to the skeleton horse
+	*/
+	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
+	public double redirect_aiSkeletonRidersAddVelocity_3(Random rand) {
+		return KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+//		KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+//		return rand.nextGaussian();
+	}
+
+	/**
+	* How much velocity should be added to the skeleton horse
+	*/
+	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
+	public double redirect_aiSkeletonRidersAddVelocity_4(Random rand) {
+		return KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+//		KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+//		return rand.nextGaussian();
 	}
 
 }

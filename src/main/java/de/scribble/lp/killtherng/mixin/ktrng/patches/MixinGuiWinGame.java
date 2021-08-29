@@ -15,20 +15,20 @@ public class MixinGuiWinGame {
 	/**
 	* null
 	*/
-	@Redirect(method = "initGui()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1466_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1466.nextInt(i);
-//		KillTheRNG.randomness.random_1466.nextInt(i);
-//		return rand.nextInt(i);
+	@Redirect(method = "drawScreen(IIF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
+	public void redirect_random_1467_1(Random rand, long seed) {
+		KillTheRNG.randomness.random_1467.setSeed(seed, true);
+		rand.setSeed(seed);
 	}
 
 	/**
 	* null
 	*/
-	@Redirect(method = "drawScreen(IIF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1467_2(Random rand, long seed) {
-		KillTheRNG.randomness.random_1467.setSeed(seed, true);
-		rand.setSeed(seed);
+	@Redirect(method = "initGui()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_random_1466_2(Random rand, int i) {
+		return KillTheRNG.randomness.random_1466.nextInt(i);
+//		KillTheRNG.randomness.random_1466.nextInt(i);
+//		return rand.nextInt(i);
 	}
 
 }

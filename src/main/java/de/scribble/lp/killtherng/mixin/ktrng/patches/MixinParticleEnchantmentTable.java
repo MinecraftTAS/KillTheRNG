@@ -32,4 +32,24 @@ public class MixinParticleEnchantmentTable {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_54_3() {
+		return KillTheRNG.randomness.math_random_54.nextDouble();
+//		KillTheRNG.randomness.math_random_54.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_55_4() {
+		return KillTheRNG.randomness.math_random_55.nextDouble();
+//		KillTheRNG.randomness.math_random_55.nextDouble();
+//		return Math.random();
+	}
+
 }

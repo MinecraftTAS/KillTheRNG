@@ -3,10 +3,8 @@ package de.scribble.lp.killtherng;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import de.scribble.lp.killtherng.commands.CommandFindSeed;
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
-import de.scribble.lp.killtherng.custom.CustomRandom;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacketHandler;
 import de.scribble.lp.killtherng.networking.NextSeedPacket;
@@ -71,7 +69,6 @@ public class KillTheRNG {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	System.out.println(CustomRandom.reverse(42069));
     }
     
     @EventHandler
@@ -82,7 +79,6 @@ public class KillTheRNG {
     public void onServerStart(FMLServerStartingEvent ev) {
     	ev.registerServerCommand(new CommandKillTheRNG());
     	ev.registerServerCommand(new CommandSeedingMode());
-    	ev.registerServerCommand(new CommandFindSeed());
     }
     
 }

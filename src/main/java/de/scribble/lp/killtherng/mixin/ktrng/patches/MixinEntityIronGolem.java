@@ -13,12 +13,12 @@ import net.minecraft.entity.monster.EntityIronGolem;
 public class MixinEntityIronGolem {
 
 	/**
-	* How long it takes until the golem checks where his home is
+	* Adds random damage to the base damage
 	*/
-	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_ironGolemHomeCheck_1(Random rand, int i) {
-		return KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
-//		KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
+	@Redirect(method = "attackEntityAsMob(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_ironGolemDamage_1(Random rand, int i) {
+		return KillTheRNG.randomness.ironGolemDamage.nextInt(i);
+//		KillTheRNG.randomness.ironGolemDamage.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
@@ -83,12 +83,12 @@ public class MixinEntityIronGolem {
 	}
 
 	/**
-	* Adds random damage to the base damage
+	* How long it takes until the golem checks where his home is
 	*/
-	@Redirect(method = "attackEntityAsMob(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_ironGolemDamage_8(Random rand, int i) {
-		return KillTheRNG.randomness.ironGolemDamage.nextInt(i);
-//		KillTheRNG.randomness.ironGolemDamage.nextInt(i);
+	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_ironGolemHomeCheck_8(Random rand, int i) {
+		return KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
+//		KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -34,7 +34,7 @@ public class MixinWoodlandMansionPieces$FirstFloor {
 	/**
 	* Type and Direction of Woodland Mansion Pieces
 	*/
-	@Redirect(method = "get1x2SideEntrance(Ljava/util/Random;Z)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "get1x2FrontEntrance(Ljava/util/Random;Z)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_woodlandMansionRng_3(Random rand, int i) {
 //		return KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
 		KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
@@ -44,7 +44,7 @@ public class MixinWoodlandMansionPieces$FirstFloor {
 	/**
 	* Type and Direction of Woodland Mansion Pieces
 	*/
-	@Redirect(method = "get1x2FrontEntrance(Ljava/util/Random;Z)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "get1x2Secret(Ljava/util/Random;)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_woodlandMansionRng_4(Random rand, int i) {
 //		return KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
 		KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
@@ -54,7 +54,7 @@ public class MixinWoodlandMansionPieces$FirstFloor {
 	/**
 	* Type and Direction of Woodland Mansion Pieces
 	*/
-	@Redirect(method = "get1x2Secret(Ljava/util/Random;)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	@Redirect(method = "get1x2SideEntrance(Ljava/util/Random;Z)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_woodlandMansionRng_5(Random rand, int i) {
 //		return KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
 		KillTheRNG.randomness.woodlandMansionRng.nextInt(i);

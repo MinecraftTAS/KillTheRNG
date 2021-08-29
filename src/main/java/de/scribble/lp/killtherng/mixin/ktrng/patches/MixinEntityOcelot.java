@@ -23,30 +23,10 @@ public class MixinEntityOcelot {
 	}
 
 	/**
-	* If taming is successful
-	*/
-	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_ocelotTamingChance_2(Random rand, int i) {
-		return KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
-//		KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* If taming is successful
-	*/
-	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_ocelotTamingChance_3(Random rand, int i) {
-		return KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
-//		KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
 	* null
 	*/
 	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_977_4(Random rand, int i) {
+	public int redirect_random_977_2(Random rand, int i) {
 		return KillTheRNG.randomness.random_977.nextInt(i);
 //		KillTheRNG.randomness.random_977.nextInt(i);
 //		return rand.nextInt(i);
@@ -56,9 +36,29 @@ public class MixinEntityOcelot {
 	* null
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_978_5(Random rand, int i) {
+	public int redirect_random_978_3(Random rand, int i) {
 		return KillTheRNG.randomness.random_978.nextInt(i);
 //		KillTheRNG.randomness.random_978.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* If taming is successful
+	*/
+	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_ocelotTamingChance_4(Random rand, int i) {
+		return KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
+//		KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
+	* If taming is successful
+	*/
+	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
+	public int redirect_ocelotTamingChance_5(Random rand, int i) {
+		return KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
+//		KillTheRNG.randomness.ocelotTamingChance.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

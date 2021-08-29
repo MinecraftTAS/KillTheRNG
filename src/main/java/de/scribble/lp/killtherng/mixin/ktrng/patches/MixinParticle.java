@@ -52,4 +52,54 @@ public class MixinParticle {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_34_5() {
+		return KillTheRNG.randomness.math_random_34.nextDouble();
+//		KillTheRNG.randomness.math_random_34.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_35_6() {
+		return KillTheRNG.randomness.math_random_35.nextDouble();
+//		KillTheRNG.randomness.math_random_35.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	public double redirect_math_random_36_7() {
+		return KillTheRNG.randomness.math_random_36.nextDouble();
+//		KillTheRNG.randomness.math_random_36.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 3))
+	public double redirect_math_random_37_8() {
+		return KillTheRNG.randomness.math_random_37.nextDouble();
+//		KillTheRNG.randomness.math_random_37.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 4))
+	public double redirect_math_random_38_9() {
+		return KillTheRNG.randomness.math_random_38.nextDouble();
+//		KillTheRNG.randomness.math_random_38.nextDouble();
+//		return Math.random();
+	}
+
 }

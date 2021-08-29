@@ -23,10 +23,20 @@ public class MixinEntityGuardian {
 	}
 
 	/**
+	* Whether the guardian can spawn at this location
+	*/
+	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_guardianSpawning_2(Random rand, int i) {
+		return KillTheRNG.randomness.guardianSpawning.nextInt(i);
+//		KillTheRNG.randomness.guardianSpawning.nextInt(i);
+//		return rand.nextInt(i);
+	}
+
+	/**
 	* Random spike animation (?)
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_guardianClientSpikesAnimation_2(Random rand) {
+	public float redirect_guardianClientSpikesAnimation_3(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
 //		return rand.nextFloat();
@@ -36,16 +46,6 @@ public class MixinEntityGuardian {
 	* Random spike animation (?)
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_guardianClientSpikesAnimation_3(Random rand) {
-		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
-//		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
-//		return rand.nextDouble();
-	}
-
-	/**
-	* Random spike animation (?)
-	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_guardianClientSpikesAnimation_4(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
@@ -55,7 +55,7 @@ public class MixinEntityGuardian {
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_guardianClientSpikesAnimation_5(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
@@ -65,7 +65,7 @@ public class MixinEntityGuardian {
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_guardianClientSpikesAnimation_6(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
@@ -75,7 +75,7 @@ public class MixinEntityGuardian {
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_guardianClientSpikesAnimation_7(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
@@ -85,17 +85,17 @@ public class MixinEntityGuardian {
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_guardianClientSpikesAnimation_8(Random rand) {
-		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
-//		KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
-//		return rand.nextFloat();
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
+	public double redirect_guardianClientSpikesAnimation_8(Random rand) {
+		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
+//		KillTheRNG.randomness.guardianClientSpikesAnimation.nextDouble();
+//		return rand.nextDouble();
 	}
 
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_guardianClientSpikesAnimation_9(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
@@ -105,7 +105,7 @@ public class MixinEntityGuardian {
 	/**
 	* Random spike animation (?)
 	*/
-	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_guardianClientSpikesAnimation_10(Random rand) {
 		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
 //		KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
@@ -113,13 +113,13 @@ public class MixinEntityGuardian {
 	}
 
 	/**
-	* Whether the guardian can spawn at this location
+	* Random spike animation (?)
 	*/
-	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_guardianSpawning_11(Random rand, int i) {
-		return KillTheRNG.randomness.guardianSpawning.nextInt(i);
-//		KillTheRNG.randomness.guardianSpawning.nextInt(i);
-//		return rand.nextInt(i);
+	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
+	public float redirect_guardianClientSpikesAnimation_11(Random rand) {
+		return KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
+//		KillTheRNG.randomness.guardianClientSpikesAnimation.nextFloat();
+//		return rand.nextFloat();
 	}
 
 }

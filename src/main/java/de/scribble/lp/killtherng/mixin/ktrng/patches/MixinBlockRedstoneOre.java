@@ -15,10 +15,10 @@ public class MixinBlockRedstoneOre {
 	/**
 	* null
 	*/
-	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_404_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_404.nextInt(i);
-//		KillTheRNG.randomness.random_404.nextInt(i);
+	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
+	public int redirect_random_406_1(Random rand, int i) {
+		return KillTheRNG.randomness.random_406.nextInt(i);
+//		KillTheRNG.randomness.random_406.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
@@ -35,10 +35,10 @@ public class MixinBlockRedstoneOre {
 	/**
 	* null
 	*/
-	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_406_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_406.nextInt(i);
-//		KillTheRNG.randomness.random_406.nextInt(i);
+	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_random_404_3(Random rand, int i) {
+		return KillTheRNG.randomness.random_404.nextInt(i);
+//		KillTheRNG.randomness.random_404.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

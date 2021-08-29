@@ -212,4 +212,24 @@ public class MixinBlockLiquid {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_21_21() {
+		return KillTheRNG.randomness.math_random_21.nextDouble();
+//		KillTheRNG.randomness.math_random_21.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_22_22() {
+		return KillTheRNG.randomness.math_random_22.nextDouble();
+//		KillTheRNG.randomness.math_random_22.nextDouble();
+//		return Math.random();
+	}
+
 }

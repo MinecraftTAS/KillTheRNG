@@ -32,4 +32,34 @@ public class MixinItemBucket {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "tryPlaceContainedLiquid(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_23_3() {
+		return KillTheRNG.randomness.math_random_23.nextDouble();
+//		KillTheRNG.randomness.math_random_23.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "tryPlaceContainedLiquid(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_24_4() {
+		return KillTheRNG.randomness.math_random_24.nextDouble();
+//		KillTheRNG.randomness.math_random_24.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "tryPlaceContainedLiquid(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	public double redirect_math_random_25_5() {
+		return KillTheRNG.randomness.math_random_25.nextDouble();
+//		KillTheRNG.randomness.math_random_25.nextDouble();
+//		return Math.random();
+	}
+
 }

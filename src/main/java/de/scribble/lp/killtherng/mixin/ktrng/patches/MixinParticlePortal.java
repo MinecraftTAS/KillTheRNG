@@ -32,4 +32,24 @@ public class MixinParticlePortal {
 //		return rand.nextFloat();
 	}
 
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	public double redirect_math_random_52_3() {
+		return KillTheRNG.randomness.math_random_52.nextDouble();
+//		KillTheRNG.randomness.math_random_52.nextDouble();
+//		return Math.random();
+	}
+
+	/**
+	* null
+	*/
+	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	public double redirect_math_random_53_4() {
+		return KillTheRNG.randomness.math_random_53.nextDouble();
+//		KillTheRNG.randomness.math_random_53.nextDouble();
+//		return Math.random();
+	}
+
 }

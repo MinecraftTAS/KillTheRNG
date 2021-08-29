@@ -15,20 +15,20 @@ public class MixinTileEntityShulkerBox {
 	/**
 	* null
 	*/
-	@Redirect(method = "openInventory(Lnet/minecraft/entity/player/EntityPlayer;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_562_1(Random rand) {
-		return KillTheRNG.randomness.random_562.nextFloat();
-//		KillTheRNG.randomness.random_562.nextFloat();
+	@Redirect(method = "closeInventory(Lnet/minecraft/entity/player/EntityPlayer;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_random_563_1(Random rand) {
+		return KillTheRNG.randomness.random_563.nextFloat();
+//		KillTheRNG.randomness.random_563.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
 	* null
 	*/
-	@Redirect(method = "closeInventory(Lnet/minecraft/entity/player/EntityPlayer;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_563_2(Random rand) {
-		return KillTheRNG.randomness.random_563.nextFloat();
-//		KillTheRNG.randomness.random_563.nextFloat();
+	@Redirect(method = "openInventory(Lnet/minecraft/entity/player/EntityPlayer;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_random_562_2(Random rand) {
+		return KillTheRNG.randomness.random_562.nextFloat();
+//		KillTheRNG.randomness.random_562.nextFloat();
 //		return rand.nextFloat();
 	}
 

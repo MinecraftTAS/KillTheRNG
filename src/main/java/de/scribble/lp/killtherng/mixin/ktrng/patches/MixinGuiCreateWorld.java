@@ -13,13 +13,13 @@ import net.minecraft.client.gui.GuiCreateWorld;
 public class MixinGuiCreateWorld {
 
 	/**
-	* null
+	* Sets the world seed if nothing was put in
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_1472_1(Random rand) {
-		return KillTheRNG.randomness.random_1472.nextLong();
-//		KillTheRNG.randomness.random_1472.nextLong();
-//		return rand.nextLong();
+	public long redirect_chooseRandomSeed_1(Random rand) {
+//		return KillTheRNG.randomness.chooseRandomSeed.nextLong();
+		KillTheRNG.randomness.chooseRandomSeed.nextLong();
+		return rand.nextLong();
 	}
 
 }

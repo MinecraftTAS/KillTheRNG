@@ -15,21 +15,21 @@ public class MixinEnchantmentThorns {
 	/**
 	* null
 	*/
-	@Redirect(method = "shouldHit(ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_random_564_1(Random rand) {
-		return KillTheRNG.randomness.random_564.nextFloat();
-//		KillTheRNG.randomness.random_564.nextFloat();
-//		return rand.nextFloat();
+	@Redirect(method = "getDamage(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	private static int redirect_random_565_1(Random rand, int i) {
+		return KillTheRNG.randomness.random_565.nextInt(i);
+//		KillTheRNG.randomness.random_565.nextInt(i);
+//		return rand.nextInt(i);
 	}
 
 	/**
 	* null
 	*/
-	@Redirect(method = "getDamage(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_565_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_565.nextInt(i);
-//		KillTheRNG.randomness.random_565.nextInt(i);
-//		return rand.nextInt(i);
+	@Redirect(method = "shouldHit(ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	private static float redirect_random_564_2(Random rand) {
+		return KillTheRNG.randomness.random_564.nextFloat();
+//		KillTheRNG.randomness.random_564.nextFloat();
+//		return rand.nextFloat();
 	}
 
 }

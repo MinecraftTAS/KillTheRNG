@@ -13,33 +13,33 @@ import net.minecraft.entity.projectile.EntityArrow;
 public class MixinEntityArrow {
 
 	/**
-	* Add inaccuracy to the shot
+	* Get the damage of a critical arrow
 	*/
-	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_arrowInaccuracy_1(Random rand) {
-		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		return rand.nextGaussian();
+	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
+	public int redirect_arrowCritDamage_1(Random rand, int i) {
+		return KillTheRNG.randomness.arrowCritDamage.nextInt(i);
+//		KillTheRNG.randomness.arrowCritDamage.nextInt(i);
+//		return rand.nextInt(i);
 	}
 
 	/**
-	* Add inaccuracy to the shot
+	* Get the damage of a critical arrow
 	*/
-	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_arrowInaccuracy_2(Random rand) {
-		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		return rand.nextGaussian();
+	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
+	public float redirect_arrowCritDamage_2(Random rand) {
+		return KillTheRNG.randomness.arrowCritDamage.nextFloat();
+//		KillTheRNG.randomness.arrowCritDamage.nextFloat();
+//		return rand.nextFloat();
 	}
 
 	/**
-	* Add inaccuracy to the shot
+	* Get the damage of a critical arrow
 	*/
-	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_arrowInaccuracy_3(Random rand) {
-		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
-//		return rand.nextGaussian();
+	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
+	public float redirect_arrowCritDamage_3(Random rand) {
+		return KillTheRNG.randomness.arrowCritDamage.nextFloat();
+//		KillTheRNG.randomness.arrowCritDamage.nextFloat();
+//		return rand.nextFloat();
 	}
 
 	/**
@@ -73,42 +73,42 @@ public class MixinEntityArrow {
 	}
 
 	/**
-	* Get the damage of a critical arrow
-	*/
-	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_arrowCritDamage_7(Random rand, int i) {
-		return KillTheRNG.randomness.arrowCritDamage.nextInt(i);
-//		KillTheRNG.randomness.arrowCritDamage.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Get the damage of a critical arrow
-	*/
-	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_arrowCritDamage_8(Random rand) {
-		return KillTheRNG.randomness.arrowCritDamage.nextFloat();
-//		KillTheRNG.randomness.arrowCritDamage.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* Get the damage of a critical arrow
-	*/
-	@Redirect(method = "onHit(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_arrowCritDamage_9(Random rand) {
-		return KillTheRNG.randomness.arrowCritDamage.nextFloat();
-//		KillTheRNG.randomness.arrowCritDamage.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
 	* Damage of arrow with enchantments
 	*/
 	@Redirect(method = "setEnchantmentEffectsFromEntity(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_arrowEnchantmentDamage_10(Random rand) {
+	public double redirect_arrowEnchantmentDamage_7(Random rand) {
 		return KillTheRNG.randomness.arrowEnchantmentDamage.nextGaussian();
 //		KillTheRNG.randomness.arrowEnchantmentDamage.nextGaussian();
+//		return rand.nextGaussian();
+	}
+
+	/**
+	* Add inaccuracy to the shot
+	*/
+	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
+	public double redirect_arrowInaccuracy_8(Random rand) {
+		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
+//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
+//		return rand.nextGaussian();
+	}
+
+	/**
+	* Add inaccuracy to the shot
+	*/
+	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
+	public double redirect_arrowInaccuracy_9(Random rand) {
+		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
+//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
+//		return rand.nextGaussian();
+	}
+
+	/**
+	* Add inaccuracy to the shot
+	*/
+	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
+	public double redirect_arrowInaccuracy_10(Random rand) {
+		return KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
+//		KillTheRNG.randomness.arrowInaccuracy.nextGaussian();
 //		return rand.nextGaussian();
 	}
 
