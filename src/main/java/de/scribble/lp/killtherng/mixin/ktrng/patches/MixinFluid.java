@@ -35,7 +35,7 @@ public class MixinFluid {
 	/**
 	* null
 	*/
-	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0), remap=false)
 	public double redirect_math_random_26_3() {
 		return KillTheRNG.randomness.math_random_26.nextDouble();
 //		KillTheRNG.randomness.math_random_26.nextDouble();
@@ -45,7 +45,7 @@ public class MixinFluid {
 	/**
 	* null
 	*/
-	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1), remap=false)
 	public double redirect_math_random_27_4() {
 		return KillTheRNG.randomness.math_random_27.nextDouble();
 //		KillTheRNG.randomness.math_random_27.nextDouble();
@@ -55,7 +55,7 @@ public class MixinFluid {
 	/**
 	* null
 	*/
-	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
+	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2), remap=false)
 	public double redirect_math_random_28_5() {
 		return KillTheRNG.randomness.math_random_28.nextDouble();
 //		KillTheRNG.randomness.math_random_28.nextDouble();

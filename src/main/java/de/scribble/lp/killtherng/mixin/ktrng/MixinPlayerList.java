@@ -32,7 +32,7 @@ public abstract class MixinPlayerList {
 	@Shadow
 	private MinecraftServer server;
 	
-	@Inject(method="initializeConnectionToPlayer", at = @At("RETURN"))
+	@Inject(method="initializeConnectionToPlayer", at = @At("RETURN"), remap = false)
 	public void playerLogin(NetworkManager netManager, EntityPlayerMP playerIn, NetHandlerPlayServer nethandlerplayserver, CallbackInfo ci) {
 		if(playerEntityList.size()==1) {
 			KillTheRNG.trackedPlayer=playerIn;

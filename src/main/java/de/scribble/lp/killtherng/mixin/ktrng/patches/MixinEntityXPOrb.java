@@ -105,7 +105,7 @@ public class MixinEntityXPOrb {
 	/**
 	* null
 	*/
-	@Redirect(method = "roundAverage(F)I", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
+	@Redirect(method = "roundAverage(F)I", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0), remap=false)
 	private static double redirect_math_random_15_10() {
 		return KillTheRNG.randomness.math_random_15.nextDouble();
 //		KillTheRNG.randomness.math_random_15.nextDouble();
