@@ -40,7 +40,7 @@ public class KillTheRNG {
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
     
-    public static SeedingModes mode=SeedingModes.PlayerInput;
+    public static SeedingModes mode;
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
     
@@ -51,6 +51,7 @@ public class KillTheRNG {
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
     	NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("killtherng");
+    	mode=SeedingModes.PlayerInput;
     	int i = -1;
     	
     	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);

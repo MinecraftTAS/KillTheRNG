@@ -11,8 +11,11 @@ public class RequestGlobalSeedPacketHandler implements IMessageHandler<RequestGl
 	@Override
 	public IMessage onMessage(RequestGlobalSeedPacket message, MessageContext ctx) {
 		if(ctx.side.isClient()) {
-			KillTheRNG.NETWORK.sendToServer(new RequestGlobalSeedPacket(KillTheRNG.randomness.Global.getSeed()));
+			long seed=KillTheRNG.randomness.Global.getSeed();
+			KillTheRNG.LOGGER.info("Sending {} to the server", seed);
+			KillTheRNG.NETWORK.sendToServer(new RequestGlobalSeedPacket(seed));
 		}else if(ctx.side.isServer()) {
+			KillTheRNG.LOGGER.info("Updating global seed to {}", message.seed);
 			URToolsServer.setSeedAll(message.seed);
 		}
 		return null;

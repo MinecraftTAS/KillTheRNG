@@ -30,19 +30,22 @@ public abstract class MixinPlayerList {
 	private List<EntityPlayerMP> playerEntityList;
 	
 	@Shadow
-	private MinecraftServer server;
+	private MinecraftServer mcServer;
 	
 	@Inject(method="initializeConnectionToPlayer", at = @At("RETURN"), remap = false)
 	public void playerLogin(NetworkManager netManager, EntityPlayerMP playerIn, NetHandlerPlayServer nethandlerplayserver, CallbackInfo ci) {
+		KillTheRNG.LOGGER.info("Joining game");
 		if(playerEntityList.size()==1) {
+			KillTheRNG.LOGGER.info("Setting tracked player to {}", playerIn.getName());
 			KillTheRNG.trackedPlayer=playerIn;
 			KillTheRNG.NETWORK.sendTo(new RequestGlobalSeedPacket(), playerIn);
 		}
 		if(KillTheRNG.mode==SeedingModes.PlayerInput&&KillTheRNG.trackedPlayer!=null) {
-			if(server.isDedicatedServer()) {
+			if(mcServer.isDedicatedServer()) {
 				playerIn.sendMessage(new TextComponentString(String.format("The current rng tracker is %s. If they move the, rng will change", ChatFormatting.BLUE+KillTheRNG.trackedPlayer.getName()+ChatFormatting.RESET)));
 			}
 		}
+		KillTheRNG.LOGGER.info("Sending the current seeding mode {} to {}", KillTheRNG.mode.toString(), playerIn.getName());
 		KillTheRNG.NETWORK.sendTo(new SeedingModePacket(KillTheRNG.mode), playerIn);
 	}
 	
@@ -55,7 +58,7 @@ public abstract class MixinPlayerList {
 				players.remove(playerIn);
 				KillTheRNG.trackedPlayer=players.get(0);
 				if(KillTheRNG.mode==SeedingModes.PlayerInput) {
-					if(server.isDedicatedServer()) {
+					if(mcServer.isDedicatedServer()) {
 						this.sendMessage(new TextComponentString(String.format("Current rng tracker is now %s. If they move, the rng will change", ChatFormatting.BLUE+KillTheRNG.trackedPlayer.getName()+ChatFormatting.RESET)));
 					}
 				}

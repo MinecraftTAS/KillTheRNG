@@ -32,7 +32,7 @@ minecraft {
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = project.mcpVersion
-    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace '${version}':project.version,'${mcversion}':project.minecraft.version
 }
 
@@ -46,7 +46,7 @@ dependencies {
     }
     compile 'org.msgpack:msgpack-core:0.8.16'
     compile 'org.msgpack:jackson-dataformat-msgpack:0.8.16'
-    compile files('libs/latticg-1.05.jar', 'libs/SeedUtils.jar', 'libs/MathUtils.jar')
+    compile files('libs/SeedUtils.jar', 'libs/MathUtils.jar')
 }
 
 jar {
@@ -57,6 +57,7 @@ jar {
             'ForceLoadAsMod': 'true'
     )
 }
+
 
 processResources {
     inputs.property "version", project.version
@@ -74,6 +75,9 @@ processResources {
 sourceSets {
     main {
         ext.refMap = "mixins.killtherng.refmap.json"
+        java {
+            exclude 'de/scribble/lp/killtherng/random2mixin/**'
+        }
     }
 }
 shadowJar {
@@ -87,14 +91,30 @@ shadowJar {
     classifier "shadow"
     exclude 'dummyThing'
 
-
     afterEvaluate {
         from zipTree(reobfJar.jar)
     }
+    
+}
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'deobf'
+    manifest.attributes(
+            'MixinConfigs': 'mixins.killtherng.json',
+            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+            'FMLCorePluginContainsFMLMod': 'true',
+            'ForceLoadAsMod': 'true'
+    )
 }
 
 mixin {
     // Specify "notch" or "searge" here
     defaultObfuscationEnv searge
     add sourceSets.main, "mixins.killtherng.refmap.json"
+}
+
+artifacts {
+    archives deobfJar 
+    archives jar
 }
