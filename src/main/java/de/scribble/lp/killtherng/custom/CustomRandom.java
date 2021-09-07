@@ -1,65 +1,63 @@
 package de.scribble.lp.killtherng.custom;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicLong;
 
+import de.scribble.lp.killtherng.KillTheRNG;
+import de.scribble.lp.killtherng.SeedingModes;
+import kaptainwutax.seedutils.rand.JRand;
 import net.minecraft.util.text.TextFormatting;
 
 
 public class CustomRandom extends Random {
 
-    public boolean pseudoRandom;
-    
     private String name;
     private String description;
-    private String randomvariable;
     
     private long timesCalled=0;
-
+    
+    private boolean enabled;
+    
+    public static final List<CustomRandom> LIST=new ArrayList<>();
+    
+    private JRand jrand=new JRand(0L);
+    
     public CustomRandom() {
-    	setSeed(0);
-        pseudoRandom=true;
+    	super(0L);
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
         this.name=nothing;
         this.description=nothing;
-        this.randomvariable=nothing;
+        LIST.add(this);
     }
     
-    public CustomRandom(long seedIn) {
-        setSeed(seedIn);
-        pseudoRandom=true;
-        String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(boolean isPseudoRandom) {
-    	setSeed(0);
-    	this.pseudoRandom=isPseudoRandom;
-    	String nothing="Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(long seedIn, boolean isPseudoRandom) {
-    	setSeed(seedIn);
-        pseudoRandom=isPseudoRandom;
-        String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=nothing;
-        this.description=nothing;
-        this.randomvariable=nothing;
-    }
-    public CustomRandom(long seedIn, boolean isPseudoRandom, String name, String description, String randomVariable) {
-    	setSeed(seedIn);
-        pseudoRandom=isPseudoRandom;
-        this.name=name;
-        this.description=description;
-        this.randomvariable=randomVariable;
-    }
-    public void setSeed(long seedIn) {
+    public CustomRandom(String name, String description) {
+    	super(0L);
+		this.name = name;
+		this.description = description;
+		enabled=true;
+		LIST.add(this);
+	}
+    
+    public CustomRandom(String name, String description, boolean enabled) {
+    	super(0);
+		this.name = name;
+		this.description = description;
+		this.enabled=enabled;
+		LIST.add(this);
+	}
+
+	public void setSeed(long seedIn) {
     	timesCalled=0;
     	super.setSeed(seedIn ^ 0x5deece66dL);
     }
+	
+	public void setSeed(long seedIn, boolean shouldIncrease) {
+		if(shouldIncrease) {
+			timesCalled++;
+		}
+		super.setSeed(seedIn ^ 0x5deece66dL);
+	}
 
     public long getSeed() {
     	long saved=timesCalled;
@@ -76,39 +74,91 @@ public class CustomRandom extends Random {
 	public String getName() {
 		return this.name;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
-	public String getRandomvariable() {
-		return randomvariable;
-	}
+	
 	public long getTimesCalled() {
 		return timesCalled;
+	}
+	
+	public boolean isEnabled() {
+		return enabled;
 	}
 	
 	@Override
 	public long nextLong() {
 		timesCalled++;
-		return super.nextLong();
+		long seedstored=getSeed();
+		long value=super.nextLong();
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)&&!this.name.equals("Global")) setSeed(seedstored, false);
+		
+		return value;
 	}
 	@Override	
 	public double nextDouble() {
 		timesCalled++;
-		return super.nextDouble();
+		long seedstored=getSeed();
+		double value=super.nextDouble();
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		return value;
 	}
 	@Override
 	public boolean nextBoolean() {
 		timesCalled++;
-		return super.nextBoolean();
+		long seedstored=getSeed();
+		boolean value=super.nextBoolean();
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		return value;
 	}
 	@Override
 	public int nextInt() {
 		timesCalled++;
-		return super.nextInt();
+		long seedstored=getSeed();
+		int value=super.nextInt();
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		return value;
+	}
+	@Override
+	public int nextInt(int bound) {
+		timesCalled++;
+		long seedstored=getSeed();
+		int value=super.nextInt(bound);
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		return value;
 	}
 	@Override
 	public float nextFloat() {
 		timesCalled++;
-		return super.nextFloat();
+		long seedstored=getSeed();
+		float value=super.nextFloat();
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		return value;
+	}
+	@Override
+	public void nextBytes(byte[] bytes) {
+		timesCalled++;
+		long seedstored=getSeed();
+		super.nextBytes(bytes);
+		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+	}
+	@Override
+	public double nextGaussian() {
+		timesCalled++;
+		long seedstored=getSeed();
+		double value=0;
+		if(KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput) {
+			jrand.setSeed(seedstored);
+			value=jrand.nextGaussian();
+		}else {
+			value=super.nextGaussian();
+		}
+		return value;
+	}
+	
+	public long getSeedAt(int steps) {
+		JRand thing=new JRand(getSeed()).combine(steps);
+		return thing.getSeed();
 	}
 }
