@@ -2,7 +2,7 @@
   "required": true,
   "minVersion": "0.7.10",
   "package": "de.scribble.lp.killtherng.mixin",
-  "refmap": "mixins.killtherng.refmap.json",
+  "refmap": "refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
 	"ktrng.MixinPlayerList",

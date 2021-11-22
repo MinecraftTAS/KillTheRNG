@@ -9,5 +9,5 @@ The list of all random occurences can be found [here](https://docs.google.com/sp
   
 Note that every random call currently has it's own variable stored in UltimateRandomness.java
 
-Put `--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker` in your program arguments to make this work in your IDE  
-Use `gradlew shadow` to build your mod.
+## Development
+This Project uses ForgeNoGradle. Please download and run [this file](https://mgnet.work/ForgeNoGradle-1.0.0.jar) in your repository root directory
