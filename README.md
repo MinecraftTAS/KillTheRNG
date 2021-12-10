@@ -10,4 +10,5 @@ The list of all random occurences can be found [here](https://docs.google.com/sp
 Note that every random call currently has it's own variable stored in UltimateRandomness.java
 
 ## Development
-This Project uses ForgeNoGradle. Please download and run [this file](https://mgnet.work/ForgeNoGradle-1.0.0.jar) in your repository root directory
+This Project uses ForgeNoGradle. Please download and run [this file](https://mgnet.work/ForgeNoGradle-1.0.1.jar) in your repository root directory
+To export a jar, clean the project first. Project -> Clean, then run the -export.launch file
