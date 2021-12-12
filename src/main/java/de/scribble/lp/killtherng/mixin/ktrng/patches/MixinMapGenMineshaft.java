@@ -13,41 +13,41 @@ import net.minecraft.world.gen.structure.MapGenMineshaft;
 public class MixinMapGenMineshaft {
 
 	/**
-	* null
+	* Position of the Mineshaft
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_1612_1(Random rand) {
-//		return KillTheRNG.randomness.random_1612.nextDouble();
-		KillTheRNG.randomness.random_1612.nextDouble();
+	public double redirect_posRotMineshaft_1(Random rand) {
+//		return KillTheRNG.randomness.posRotMineshaft.nextDouble();
+		KillTheRNG.randomness.posRotMineshaft.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Position of the Mineshaft
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1613_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1613.nextInt(i);
-		KillTheRNG.randomness.random_1613.nextInt(i);
+	public int redirect_posRotMineshaft_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotMineshaft.nextInt(i);
+		KillTheRNG.randomness.posRotMineshaft.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of the Mineshaft
 	*/
 	@Redirect(method = "getNearestStructurePos(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Z)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1614_3(Random rand, long seed) {
-		KillTheRNG.randomness.random_1614.setSeed(seed, true);
+	public void redirect_posRotMineshaft_3(Random rand, long seed) {
+		KillTheRNG.randomness.posRotMineshaft.setSeed(seed, true);
 		rand.setSeed(seed);
 	}
 
 	/**
-	* null
+	* Position of the Mineshaft
 	*/
 	@Redirect(method = "getNearestStructurePos(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Z)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
-	public int redirect_random_1615_4(Random rand) {
-//		return KillTheRNG.randomness.random_1615.nextInt();
-		KillTheRNG.randomness.random_1615.nextInt();
+	public int redirect_posRotMineshaft_4(Random rand) {
+//		return KillTheRNG.randomness.posRotMineshaft.nextInt();
+		KillTheRNG.randomness.posRotMineshaft.nextInt();
 		return rand.nextInt();
 	}
 

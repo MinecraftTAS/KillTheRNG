@@ -13,52 +13,52 @@ import net.minecraft.block.BlockChorusFlower;
 public class MixinBlockChorusFlower {
 
 	/**
-	* null
+	* Random direction a chorus flower grows
 	*/
 	@Redirect(method = "growTreeRecursive(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_546_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_546.nextInt(i);
-//		KillTheRNG.randomness.random_546.nextInt(i);
+	private static int redirect_chorusGrowDirection_1(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
+//		KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Random direction a chorus flower grows
 	*/
 	@Redirect(method = "growTreeRecursive(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_547_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_547.nextInt(i);
-//		KillTheRNG.randomness.random_547.nextInt(i);
+	private static int redirect_chorusGrowDirection_2(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
+//		KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* WHY IS THIS HEEEEERRRREEEEE ITS SO FUCKING USELESS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_543_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_543.nextInt(i);
-//		KillTheRNG.randomness.random_543.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_pointlessness_3(Random rand, int i) {
+//		return KillTheRNG.randomness.pointlessness.nextInt(i);
+		KillTheRNG.randomness.pointlessness.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Chance for the chorus fruit to grow in height
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_544_4(Random rand, int i) {
-		return KillTheRNG.randomness.random_544.nextInt(i);
-//		KillTheRNG.randomness.random_544.nextInt(i);
+	public int redirect_chorusGrowHeight_4(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrowHeight.nextInt(i);
+//		KillTheRNG.randomness.chorusGrowHeight.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Something about chorus growing
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_545_5(Random rand, int i) {
-		return KillTheRNG.randomness.random_545.nextInt(i);
-//		KillTheRNG.randomness.random_545.nextInt(i);
+	public int redirect_chorusGrow_5(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrow.nextInt(i);
+//		KillTheRNG.randomness.chorusGrow.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

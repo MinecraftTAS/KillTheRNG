@@ -13,22 +13,22 @@ import net.minecraft.world.gen.structure.MapGenVillage;
 public class MixinMapGenVillage$Start {
 
 	/**
-	* null
+	* Position of the Village
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1629_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1629.nextInt(i);
-		KillTheRNG.randomness.random_1629.nextInt(i);
+	public int redirect_posRotVillage_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotVillage.nextInt(i);
+		KillTheRNG.randomness.posRotVillage.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of the Village
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1630_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1630.nextInt(i);
-		KillTheRNG.randomness.random_1630.nextInt(i);
+	public int redirect_posRotVillage_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotVillage.nextInt(i);
+		KillTheRNG.randomness.posRotVillage.nextInt(i);
 		return rand.nextInt(i);
 	}
 

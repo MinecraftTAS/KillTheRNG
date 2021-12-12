@@ -12,12 +12,12 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinForgeHooks$1 {
 
 	/**
-	* null
+	* Amount of wheat seeds to drop
 	*/
 	@Redirect(method = "getStack(Ljava/util/Random;I)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_1268_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1268.nextInt(i);
-//		KillTheRNG.randomness.random_1268.nextInt(i);
+	public int redirect_wheatSeedRandom_1(Random rand, int i) {
+		return KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
+//		KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

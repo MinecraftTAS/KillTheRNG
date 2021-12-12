@@ -13,82 +13,82 @@ import net.minecraft.world.gen.structure.MapGenStructure;
 public class MixinMapGenStructure {
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_random_1603_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1603.nextInt(i);
-		KillTheRNG.randomness.random_1603.nextInt(i);
+	private static int redirect_posRotStructure_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	private static int redirect_random_1604_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1604.nextInt(i);
-		KillTheRNG.randomness.random_1604.nextInt(i);
+	private static int redirect_posRotStructure_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	private static int redirect_random_1605_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1605.nextInt(i);
-		KillTheRNG.randomness.random_1605.nextInt(i);
+	private static int redirect_posRotStructure_3(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	private static int redirect_random_1606_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1606.nextInt(i);
-		KillTheRNG.randomness.random_1606.nextInt(i);
+	private static int redirect_posRotStructure_4(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	private static int redirect_random_1607_5(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1607.nextInt(i);
-		KillTheRNG.randomness.random_1607.nextInt(i);
+	private static int redirect_posRotStructure_5(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	private static int redirect_random_1608_6(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1608.nextInt(i);
-		KillTheRNG.randomness.random_1608.nextInt(i);
+	private static int redirect_posRotStructure_6(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt(i);
+		KillTheRNG.randomness.posRotStructure.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of search for nearest structure
 	*/
 	@Redirect(method = "findNearestStructurePosBySpacing(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/structure/MapGenStructure;Lnet/minecraft/util/math/BlockPos;IIIZIZ)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
-	private static int redirect_random_1609_7(Random rand) {
-//		return KillTheRNG.randomness.random_1609.nextInt();
-		KillTheRNG.randomness.random_1609.nextInt();
+	private static int redirect_posRotStructure_7(Random rand) {
+//		return KillTheRNG.randomness.posRotStructure.nextInt();
+		KillTheRNG.randomness.posRotStructure.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* WHY IS THIS HEEEEERRRREEEEE ITS SO FUCKING USELESS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 	*/
 	@Redirect(method = "recursiveGenerate(Lnet/minecraft/world/World;IIIILnet/minecraft/world/chunk/ChunkPrimer;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
-	public int redirect_random_1602_8(Random rand) {
-//		return KillTheRNG.randomness.random_1602.nextInt();
-		KillTheRNG.randomness.random_1602.nextInt();
+	public int redirect_pointlessness_8(Random rand) {
+//		return KillTheRNG.randomness.pointlessness.nextInt();
+		KillTheRNG.randomness.pointlessness.nextInt();
 		return rand.nextInt();
 	}
 

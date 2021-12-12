@@ -13,40 +13,40 @@ import net.minecraft.world.gen.structure.StructureOceanMonument;
 public class MixinStructureOceanMonument$StartMonument {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1631_1(Random rand, long seed) {
-		KillTheRNG.randomness.random_1631.setSeed(seed, true);
+	public void redirect_posRotTypeOceanMonument_1(Random rand, long seed) {
+		KillTheRNG.randomness.posRotTypeOceanMonument.setSeed(seed, true);
 		rand.setSeed(seed);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
-	public long redirect_random_1632_2(Random rand) {
-//		return KillTheRNG.randomness.random_1632.nextLong();
-		KillTheRNG.randomness.random_1632.nextLong();
+	public long redirect_posRotTypeOceanMonument_2(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextLong();
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextLong();
 		return rand.nextLong();
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
-	public long redirect_random_1633_3(Random rand) {
-//		return KillTheRNG.randomness.random_1633.nextLong();
-		KillTheRNG.randomness.random_1633.nextLong();
+	public long redirect_posRotTypeOceanMonument_3(Random rand) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextLong();
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextLong();
 		return rand.nextLong();
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 1))
-	public void redirect_random_1634_4(Random rand, long seed) {
-		KillTheRNG.randomness.random_1634.setSeed(seed, true);
+	public void redirect_posRotTypeOceanMonument_4(Random rand, long seed) {
+		KillTheRNG.randomness.posRotTypeOceanMonument.setSeed(seed, true);
 		rand.setSeed(seed);
 	}
 

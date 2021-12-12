@@ -13,102 +13,102 @@ import net.minecraft.world.biome.BiomeTaiga;
 public class MixinBiomeTaiga {
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1066_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1066.nextInt(i);
-		KillTheRNG.randomness.random_1066.nextInt(i);
+	public int redirect_taigeGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1067_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1067.nextInt(i);
-		KillTheRNG.randomness.random_1067.nextInt(i);
+	public int redirect_taigeGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1068_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1068.nextInt(i);
-		KillTheRNG.randomness.random_1068.nextInt(i);
+	public int redirect_taigeGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1069_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1069.nextInt(i);
-		KillTheRNG.randomness.random_1069.nextInt(i);
+	public int redirect_taigeGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1070_5(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1070.nextInt(i);
-		KillTheRNG.randomness.random_1070.nextInt(i);
+	public int redirect_taigeGeneration_5(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_random_1071_6(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1071.nextInt(i);
-		KillTheRNG.randomness.random_1071.nextInt(i);
+	public int redirect_taigeGeneration_6(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1062_7(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1062.nextInt(i);
-		KillTheRNG.randomness.random_1062.nextInt(i);
+	public int redirect_taigeGeneration_7(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1063_8(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1063.nextInt(i);
-		KillTheRNG.randomness.random_1063.nextInt(i);
+	public int redirect_taigeGeneration_8(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1064_9(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1064.nextInt(i);
-		KillTheRNG.randomness.random_1064.nextInt(i);
+	public int redirect_taigeGeneration_9(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Taiga Generation
 	*/
 	@Redirect(method = "getRandomWorldGenForGrass(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenerator;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1065_10(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1065.nextInt(i);
-		KillTheRNG.randomness.random_1065.nextInt(i);
+	public int redirect_taigeGeneration_10(Random rand, int i) {
+//		return KillTheRNG.randomness.taigeGeneration.nextInt(i);
+		KillTheRNG.randomness.taigeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

@@ -12,42 +12,42 @@ import de.scribble.lp.killtherng.KillTheRNG;
 public class MixinBiomeHills$EmeraldGenerator {
 
 	/**
-	* null
+	* Hills Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_1235_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1235.nextInt(i);
-		KillTheRNG.randomness.random_1235.nextInt(i);
+	public int redirect_hillsGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		KillTheRNG.randomness.hillsGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Hills Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap=false)
-	public int redirect_random_1236_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1236.nextInt(i);
-		KillTheRNG.randomness.random_1236.nextInt(i);
+	public int redirect_hillsGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		KillTheRNG.randomness.hillsGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Hills Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2), remap=false)
-	public int redirect_random_1237_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1237.nextInt(i);
-		KillTheRNG.randomness.random_1237.nextInt(i);
+	public int redirect_hillsGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		KillTheRNG.randomness.hillsGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Hills Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3), remap=false)
-	public int redirect_random_1238_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1238.nextInt(i);
-		KillTheRNG.randomness.random_1238.nextInt(i);
+	public int redirect_hillsGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		KillTheRNG.randomness.hillsGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

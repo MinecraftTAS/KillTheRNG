@@ -13,62 +13,62 @@ import net.minecraft.world.gen.feature.WorldGenBlockBlob;
 public class MixinWorldGenBlockBlob {
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1242_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1242.nextInt(i);
-		KillTheRNG.randomness.random_1242.nextInt(i);
+	public int redirect_blockGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1243_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1243.nextInt(i);
-		KillTheRNG.randomness.random_1243.nextInt(i);
+	public int redirect_blockGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1244_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1244.nextInt(i);
-		KillTheRNG.randomness.random_1244.nextInt(i);
+	public int redirect_blockGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1245_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1245.nextInt(i);
-		KillTheRNG.randomness.random_1245.nextInt(i);
+	public int redirect_blockGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_random_1246_5(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1246.nextInt(i);
-		KillTheRNG.randomness.random_1246.nextInt(i);
+	public int redirect_blockGeneration_5(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Block Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_random_1247_6(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1247.nextInt(i);
-		KillTheRNG.randomness.random_1247.nextInt(i);
+	public int redirect_blockGeneration_6(Random rand, int i) {
+//		return KillTheRNG.randomness.blockGeneration.nextInt(i);
+		KillTheRNG.randomness.blockGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

@@ -13,13 +13,13 @@ import io.netty.util.ResourceLeakDetector;
 public class MixinResourceLeakDetector {
 
 	/**
-	* null
+	* Sampling interval for leak
 	*/
 	@Redirect(method = "track0(Ljava/lang/Object;)Lio/netty/util/ResourceLeakDetector$DefaultResourceLeak;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_1269_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1269.nextInt(i);
-//		KillTheRNG.randomness.random_1269.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_nettyLeakDetector_1(Random rand, int i) {
+//		return KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
+		KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

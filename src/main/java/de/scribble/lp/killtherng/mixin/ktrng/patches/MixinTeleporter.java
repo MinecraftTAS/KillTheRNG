@@ -13,12 +13,12 @@ import net.minecraft.world.Teleporter;
 public class MixinTeleporter {
 
 	/**
-	* null
+	* Position where a portal should be created
 	*/
 	@Redirect(method = "makePortal(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1640_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1640.nextInt(i);
-		KillTheRNG.randomness.random_1640.nextInt(i);
+	public int redirect_portalGenerationPosition_1(Random rand, int i) {
+//		return KillTheRNG.randomness.portalGenerationPosition.nextInt(i);
+		KillTheRNG.randomness.portalGenerationPosition.nextInt(i);
 		return rand.nextInt(i);
 	}
 

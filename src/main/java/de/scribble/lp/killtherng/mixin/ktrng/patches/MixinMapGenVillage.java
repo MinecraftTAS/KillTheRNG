@@ -13,22 +13,22 @@ import net.minecraft.world.gen.structure.MapGenVillage;
 public class MixinMapGenVillage {
 
 	/**
-	* null
+	* Position of the Village
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1610_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1610.nextInt(i);
-		KillTheRNG.randomness.random_1610.nextInt(i);
+	public int redirect_posRotVillage_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotVillage.nextInt(i);
+		KillTheRNG.randomness.posRotVillage.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position of the Village
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1611_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1611.nextInt(i);
-		KillTheRNG.randomness.random_1611.nextInt(i);
+	public int redirect_posRotVillage_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotVillage.nextInt(i);
+		KillTheRNG.randomness.posRotVillage.nextInt(i);
 		return rand.nextInt(i);
 	}
 

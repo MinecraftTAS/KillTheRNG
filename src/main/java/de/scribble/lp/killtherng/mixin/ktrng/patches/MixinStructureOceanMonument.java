@@ -13,42 +13,42 @@ import net.minecraft.world.gen.structure.StructureOceanMonument;
 public class MixinStructureOceanMonument {
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1618_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1618.nextInt(i);
-		KillTheRNG.randomness.random_1618.nextInt(i);
+	public int redirect_posRotTypeOceanMonument_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1619_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1619.nextInt(i);
-		KillTheRNG.randomness.random_1619.nextInt(i);
+	public int redirect_posRotTypeOceanMonument_2(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1620_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1620.nextInt(i);
-		KillTheRNG.randomness.random_1620.nextInt(i);
+	public int redirect_posRotTypeOceanMonument_3(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Position, Rotation and Type of next Ocean Monument Piece
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1621_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1621.nextInt(i);
-		KillTheRNG.randomness.random_1621.nextInt(i);
+	public int redirect_posRotTypeOceanMonument_4(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
 		return rand.nextInt(i);
 	}
 

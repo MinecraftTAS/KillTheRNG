@@ -13,52 +13,52 @@ import net.minecraftforge.fluids.Fluid;
 public class MixinFluid {
 
 	/**
-	* null
+	* Pitch of the fluid vaporization sound
 	*/
 	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0), remap=false)
-	public float redirect_random_1266_1(Random rand) {
-		return KillTheRNG.randomness.random_1266.nextFloat();
-//		KillTheRNG.randomness.random_1266.nextFloat();
+	public float redirect_vaporizationParticlePitch_1(Random rand) {
+		return KillTheRNG.randomness.vaporizationParticlePitch.nextFloat();
+//		KillTheRNG.randomness.vaporizationParticlePitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Pitch of the fluid vaporization sound
 	*/
 	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1), remap=false)
-	public float redirect_random_1267_2(Random rand) {
-		return KillTheRNG.randomness.random_1267.nextFloat();
-//		KillTheRNG.randomness.random_1267.nextFloat();
+	public float redirect_vaporizationParticlePitch_2(Random rand) {
+		return KillTheRNG.randomness.vaporizationParticlePitch.nextFloat();
+//		KillTheRNG.randomness.vaporizationParticlePitch.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Position of the fluid vaporization particle
 	*/
 	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0), remap=false)
-	public double redirect_math_random_26_3() {
-		return KillTheRNG.randomness.math_random_26.nextDouble();
-//		KillTheRNG.randomness.math_random_26.nextDouble();
+	public double redirect_vaporizationParticlePosition_3() {
+		return KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
+//		KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
 //		return Math.random();
 	}
 
 	/**
-	* null
+	* Position of the fluid vaporization particle
 	*/
 	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1), remap=false)
-	public double redirect_math_random_27_4() {
-		return KillTheRNG.randomness.math_random_27.nextDouble();
-//		KillTheRNG.randomness.math_random_27.nextDouble();
+	public double redirect_vaporizationParticlePosition_4() {
+		return KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
+//		KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
 //		return Math.random();
 	}
 
 	/**
-	* null
+	* Position of the fluid vaporization particle
 	*/
 	@Redirect(method = "vaporize(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraftforge/fluids/FluidStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2), remap=false)
-	public double redirect_math_random_28_5() {
-		return KillTheRNG.randomness.math_random_28.nextDouble();
-//		KillTheRNG.randomness.math_random_28.nextDouble();
+	public double redirect_vaporizationParticlePosition_5() {
+		return KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
+//		KillTheRNG.randomness.vaporizationParticlePosition.nextDouble();
 //		return Math.random();
 	}
 

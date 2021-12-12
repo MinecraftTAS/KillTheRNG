@@ -13,82 +13,82 @@ import paulscode.sound.SoundSystem;
 public class MixinSoundSystem {
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
-	public int redirect_random_1366_1(Random rand) {
-//		return KillTheRNG.randomness.random_1366.nextInt();
-		KillTheRNG.randomness.random_1366.nextInt();
+	public int redirect_soundId_1(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
-	public int redirect_random_1367_2(Random rand) {
-//		return KillTheRNG.randomness.random_1367.nextInt();
-		KillTheRNG.randomness.random_1367.nextInt();
+	public int redirect_soundId_2(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
-	public int redirect_random_1368_3(Random rand) {
-//		return KillTheRNG.randomness.random_1368.nextInt();
-		KillTheRNG.randomness.random_1368.nextInt();
+	public int redirect_soundId_3(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
-	public int redirect_random_1369_4(Random rand) {
-//		return KillTheRNG.randomness.random_1369.nextInt();
-		KillTheRNG.randomness.random_1369.nextInt();
+	public int redirect_soundId_4(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
-	public int redirect_random_1370_5(Random rand) {
-//		return KillTheRNG.randomness.random_1370.nextInt();
-		KillTheRNG.randomness.random_1370.nextInt();
+	public int redirect_soundId_5(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
-	public int redirect_random_1371_6(Random rand) {
-//		return KillTheRNG.randomness.random_1371.nextInt();
-		KillTheRNG.randomness.random_1371.nextInt();
+	public int redirect_soundId_6(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap=false)
-	public int redirect_random_1372_7(Random rand) {
-//		return KillTheRNG.randomness.random_1372.nextInt();
-		KillTheRNG.randomness.random_1372.nextInt();
+	public int redirect_soundId_7(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 
 	/**
-	* null
+	* Chooses a random pointless number for a sound that plays
 	*/
 	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap=false)
-	public int redirect_random_1373_8(Random rand) {
-//		return KillTheRNG.randomness.random_1373.nextInt();
-		KillTheRNG.randomness.random_1373.nextInt();
+	public int redirect_soundId_8(Random rand) {
+//		return KillTheRNG.randomness.soundId.nextInt();
+		KillTheRNG.randomness.soundId.nextInt();
 		return rand.nextInt();
 	}
 

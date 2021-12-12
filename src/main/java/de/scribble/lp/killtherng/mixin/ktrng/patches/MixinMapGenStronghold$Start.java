@@ -13,12 +13,12 @@ import net.minecraft.world.gen.structure.MapGenStronghold;
 public class MixinMapGenStronghold$Start {
 
 	/**
-	* null
+	* Position of the Stronghold
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1628_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1628.nextInt(i);
-		KillTheRNG.randomness.random_1628.nextInt(i);
+	public int redirect_posRotStronghold_1(Random rand, int i) {
+//		return KillTheRNG.randomness.posRotStronghold.nextInt(i);
+		KillTheRNG.randomness.posRotStronghold.nextInt(i);
 		return rand.nextInt(i);
 	}
 

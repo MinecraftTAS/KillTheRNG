@@ -13,42 +13,42 @@ import net.minecraft.world.biome.BiomeDesert;
 public class MixinBiomeDesert {
 
 	/**
-	* If a well generates
+	* Desert Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_biomeDesertGenWell_1(Random rand, int i) {
-//		return KillTheRNG.randomness.biomeDesertGenWell.nextInt(i);
-		KillTheRNG.randomness.biomeDesertGenWell.nextInt(i);
+	public int redirect_desertGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.desertGeneration.nextInt(i);
+		KillTheRNG.randomness.desertGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Position of the well
+	* Desert Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_biomeDesertGenWellPos_2(Random rand, int i) {
-//		return KillTheRNG.randomness.biomeDesertGenWellPos.nextInt(i);
-		KillTheRNG.randomness.biomeDesertGenWellPos.nextInt(i);
+	public int redirect_desertGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.desertGeneration.nextInt(i);
+		KillTheRNG.randomness.desertGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* Position of the well
+	* Desert Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_biomeDesertGenWellPos_3(Random rand, int i) {
-//		return KillTheRNG.randomness.biomeDesertGenWellPos.nextInt(i);
-		KillTheRNG.randomness.biomeDesertGenWellPos.nextInt(i);
+	public int redirect_desertGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.desertGeneration.nextInt(i);
+		KillTheRNG.randomness.desertGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* If a fossil generates
+	* Desert Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_biomeDesertGenFossils_4(Random rand, int i) {
-//		return KillTheRNG.randomness.biomeDesertGenFossils.nextInt(i);
-		KillTheRNG.randomness.biomeDesertGenFossils.nextInt(i);
+	public int redirect_desertGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.desertGeneration.nextInt(i);
+		KillTheRNG.randomness.desertGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

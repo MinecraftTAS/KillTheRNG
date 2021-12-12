@@ -13,14 +13,15 @@ import java.util.Map;
 import org.apache.commons.io.FileUtils;
 import org.objectweb.asm.Opcodes;
 
-import de.scribble.lp.killtherng.URToolsServer;
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
 public class Csv2Mixin {
 	
-	private static File dir=new File("./src/main");
+	private static File dir=new File("../");
 	
 	private static File dirKTRNG;
+	
+	private static List<CustomRandom> processed=new ArrayList<>();
 	
 	private static FileOutputStream urStream;
 	
@@ -40,8 +41,6 @@ public class Csv2Mixin {
 	
 	private static List<String> server=new ArrayList<>();
 
-	private static boolean isStatic;
-	
 	private enum RandomType{
 		Int,
 		IntBound,
@@ -63,15 +62,15 @@ public class Csv2Mixin {
 	
 	public static void main(String[] args) {
 		
-		dirKTRNG=new File(dir, "java/de/scribble/lp/killtherng/mixin/ktrng/patches");
+		dirKTRNG=new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
 		
 		if(!dirKTRNG.exists()) {
 			dirKTRNG.mkdirs();
 		}
 		
 		//Loading in the file
-		File logfile=new File(".","Randomness 1.12.2 extreme - Oh no.tsv");
-		File classfile=new File(".", "Classes.csv");
+		File logfile=new File(dir,"Randomness 1.12.2 extreme - Oh no.tsv");
+		File classfile=new File(dir, "Classes.csv");
 		
 		if(classfile.exists()) {
 			List<String> lines2=new ArrayList<>();
@@ -380,7 +379,7 @@ public class Csv2Mixin {
 	//======================================================================
 	
 	private static void startURFile() throws IOException, FileNotFoundException {
-		urStream=new FileOutputStream(new File(dir, "java/de/scribble/lp/killtherng/UltimateRandomness.java"));
+		urStream=new FileOutputStream(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomness.java"));
 		writeLineUR("package de.scribble.lp.killtherng;\n");
 		writeLineUR("import de.scribble.lp.killtherng.custom.CustomRandom;\n");
 		writeLineUR("public class UltimateRandomness {\n");
@@ -391,8 +390,8 @@ public class Csv2Mixin {
 	
 	private static void addRandomnessUR(String name, String description, boolean enabled) {
 		try {
-			if(!URToolsServer.isRandomInList(name)) {
-				new CustomRandom(name, description);
+			if(!isRandomInList(name)) {
+				processed.add(new CustomRandom(name, description));
 				writeLineUR(String.format("public CustomRandom %s=new CustomRandom(\"%s\", \"%s\", %b);", name, name, description, enabled));
 			}
 		} catch (IOException e) {
@@ -422,7 +421,7 @@ public class Csv2Mixin {
 	}
 
 	private static void startMixinConfig() throws IOException {
-		mixinConfigStream = new FileOutputStream(new File(dir, "resources/mixins.killtherng.json"));
+		mixinConfigStream = new FileOutputStream(new File(dir, "src/main/resources/mixins.killtherng.json"));
 		writeLineMixinConf("{\r\n" + "  \"required\": true,\n" + "  \"minVersion\": \"0.7.10\",\n"
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
@@ -508,4 +507,16 @@ public class Csv2Mixin {
 		return null;
 	}
 
+	public static CustomRandom getRandomFromString(String name) {
+		for(CustomRandom rand : processed) {
+			if(rand.getName().equalsIgnoreCase(name)) {
+				return rand;
+			}
+		}
+		return null;
+	}
+	
+	public static boolean isRandomInList(String name) {
+		return getRandomFromString(name)!=null;
+	}
 }

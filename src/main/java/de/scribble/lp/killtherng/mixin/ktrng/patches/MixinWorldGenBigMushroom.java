@@ -13,33 +13,33 @@ import net.minecraft.world.gen.feature.WorldGenBigMushroom;
 public class MixinWorldGenBigMushroom {
 
 	/**
-	* null
+	* Mushroom Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_358_1(Random rand) {
-		return KillTheRNG.randomness.random_358.nextBoolean();
-//		KillTheRNG.randomness.random_358.nextBoolean();
-//		return rand.nextBoolean();
+	public boolean redirect_mushroomGeneration_1(Random rand) {
+//		return KillTheRNG.randomness.mushroomGeneration.nextBoolean();
+		KillTheRNG.randomness.mushroomGeneration.nextBoolean();
+		return rand.nextBoolean();
 	}
 
 	/**
-	* null
+	* Mushroom Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_359_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_359.nextInt(i);
-//		KillTheRNG.randomness.random_359.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_mushroomGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Mushroom Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_360_3(Random rand, int i) {
-		return KillTheRNG.randomness.random_360.nextInt(i);
-//		KillTheRNG.randomness.random_360.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_mushroomGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

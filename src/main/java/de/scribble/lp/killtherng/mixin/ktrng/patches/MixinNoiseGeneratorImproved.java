@@ -13,42 +13,42 @@ import net.minecraft.world.gen.NoiseGeneratorImproved;
 public class MixinNoiseGeneratorImproved {
 
 	/**
-	* null
+	* Terrain Generation
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_1636_1(Random rand) {
-//		return KillTheRNG.randomness.random_1636.nextDouble();
-		KillTheRNG.randomness.random_1636.nextDouble();
+	public double redirect_noiseGeneration_1(Random rand) {
+//		return KillTheRNG.randomness.noiseGeneration.nextDouble();
+		KillTheRNG.randomness.noiseGeneration.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Terrain Generation
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_1637_2(Random rand) {
-//		return KillTheRNG.randomness.random_1637.nextDouble();
-		KillTheRNG.randomness.random_1637.nextDouble();
+	public double redirect_noiseGeneration_2(Random rand) {
+//		return KillTheRNG.randomness.noiseGeneration.nextDouble();
+		KillTheRNG.randomness.noiseGeneration.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Terrain Generation
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_1638_3(Random rand) {
-//		return KillTheRNG.randomness.random_1638.nextDouble();
-		KillTheRNG.randomness.random_1638.nextDouble();
+	public double redirect_noiseGeneration_3(Random rand) {
+//		return KillTheRNG.randomness.noiseGeneration.nextDouble();
+		KillTheRNG.randomness.noiseGeneration.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Terrain Generation
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1639_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1639.nextInt(i);
-		KillTheRNG.randomness.random_1639.nextInt(i);
+	public int redirect_noiseGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.noiseGeneration.nextInt(i);
+		KillTheRNG.randomness.noiseGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

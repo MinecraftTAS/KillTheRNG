@@ -13,12 +13,12 @@ import net.minecraft.world.gen.feature.WorldGenShrub;
 public class MixinWorldGenShrub {
 
 	/**
-	* null
+	* Shrub Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1260_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1260.nextInt(i);
-		KillTheRNG.randomness.random_1260.nextInt(i);
+	public int redirect_shrubGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.shrubGeneration.nextInt(i);
+		KillTheRNG.randomness.shrubGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

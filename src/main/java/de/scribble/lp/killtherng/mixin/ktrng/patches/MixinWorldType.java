@@ -13,12 +13,12 @@ import net.minecraft.world.WorldType;
 public class MixinWorldType {
 
 	/**
-	* null
+	* Whether a slime can spawn here
 	*/
 	@Redirect(method = "handleSlimeSpawnReduction(Ljava/util/Random;Lnet/minecraft/world/World;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_1473_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1473.nextInt(i);
-//		KillTheRNG.randomness.random_1473.nextInt(i);
+	public int redirect_slimeSpawnModifier_1(Random rand, int i) {
+		return KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
+//		KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

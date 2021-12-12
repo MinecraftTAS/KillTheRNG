@@ -13,12 +13,12 @@ import net.minecraft.world.gen.feature.WorldGenIcePath;
 public class MixinWorldGenIcePath {
 
 	/**
-	* null
+	* Ice Spike Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1259_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1259.nextInt(i);
-		KillTheRNG.randomness.random_1259.nextInt(i);
+	public int redirect_iceSpikeGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
+		KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

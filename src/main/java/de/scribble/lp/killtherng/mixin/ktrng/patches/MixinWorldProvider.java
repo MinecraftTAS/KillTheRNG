@@ -13,22 +13,22 @@ import net.minecraft.world.WorldProvider;
 public class MixinWorldProvider {
 
 	/**
-	* null
+	* Spawn Position of the player when creating a new world
 	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_1480_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1480.nextInt(i);
-//		KillTheRNG.randomness.random_1480.nextInt(i);
+	public int redirect_spawnPosWorldGen_1(Random rand, int i) {
+		return KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+//		KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Spawn Position of the player when creating a new world
 	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap=false)
-	public int redirect_random_1481_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_1481.nextInt(i);
-//		KillTheRNG.randomness.random_1481.nextInt(i);
+	public int redirect_spawnPosWorldGen_2(Random rand, int i) {
+		return KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+//		KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

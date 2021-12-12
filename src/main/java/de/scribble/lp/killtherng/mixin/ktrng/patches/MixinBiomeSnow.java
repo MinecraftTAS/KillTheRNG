@@ -13,42 +13,42 @@ import net.minecraft.world.biome.BiomeSnow;
 public class MixinBiomeSnow {
 
 	/**
-	* null
+	* Snow Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1073_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1073.nextInt(i);
-		KillTheRNG.randomness.random_1073.nextInt(i);
+	public int redirect_snowGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.snowGeneration.nextInt(i);
+		KillTheRNG.randomness.snowGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Snow Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_random_1074_2(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1074.nextInt(i);
-		KillTheRNG.randomness.random_1074.nextInt(i);
+	public int redirect_snowGeneration_2(Random rand, int i) {
+//		return KillTheRNG.randomness.snowGeneration.nextInt(i);
+		KillTheRNG.randomness.snowGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Snow Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_random_1075_3(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1075.nextInt(i);
-		KillTheRNG.randomness.random_1075.nextInt(i);
+	public int redirect_snowGeneration_3(Random rand, int i) {
+//		return KillTheRNG.randomness.snowGeneration.nextInt(i);
+		KillTheRNG.randomness.snowGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Snow Generation
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_random_1076_4(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1076.nextInt(i);
-		KillTheRNG.randomness.random_1076.nextInt(i);
+	public int redirect_snowGeneration_4(Random rand, int i) {
+//		return KillTheRNG.randomness.snowGeneration.nextInt(i);
+		KillTheRNG.randomness.snowGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

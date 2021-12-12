@@ -13,12 +13,12 @@ import net.minecraft.world.gen.feature.WorldGenClay;
 public class MixinWorldGenClay {
 
 	/**
-	* null
+	* Clay Generation (looking at you diamonds)
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1197_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1197.nextInt(i);
-		KillTheRNG.randomness.random_1197.nextInt(i);
+	public int redirect_clayGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.clayGeneration.nextInt(i);
+		KillTheRNG.randomness.clayGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 

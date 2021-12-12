@@ -13,41 +13,41 @@ import net.minecraft.world.gen.structure.MapGenStronghold;
 public class MixinMapGenStronghold {
 
 	/**
-	* null
+	* Position of the Stronghold
 	*/
 	@Redirect(method = "generatePositions()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
-	public void redirect_random_1598_1(Random rand, long seed) {
-		KillTheRNG.randomness.random_1598.setSeed(seed, true);
+	public void redirect_posRotStronghold_1(Random rand, long seed) {
+		KillTheRNG.randomness.posRotStronghold.setSeed(seed, true);
 		rand.setSeed(seed);
 	}
 
 	/**
-	* null
+	* Position of the Stronghold
 	*/
 	@Redirect(method = "generatePositions()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_1599_2(Random rand) {
-//		return KillTheRNG.randomness.random_1599.nextDouble();
-		KillTheRNG.randomness.random_1599.nextDouble();
+	public double redirect_posRotStronghold_2(Random rand) {
+//		return KillTheRNG.randomness.posRotStronghold.nextDouble();
+		KillTheRNG.randomness.posRotStronghold.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Position of the Stronghold
 	*/
 	@Redirect(method = "generatePositions()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_1600_3(Random rand) {
-//		return KillTheRNG.randomness.random_1600.nextDouble();
-		KillTheRNG.randomness.random_1600.nextDouble();
+	public double redirect_posRotStronghold_3(Random rand) {
+//		return KillTheRNG.randomness.posRotStronghold.nextDouble();
+		KillTheRNG.randomness.posRotStronghold.nextDouble();
 		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Position of the Stronghold
 	*/
 	@Redirect(method = "generatePositions()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_1601_4(Random rand) {
-//		return KillTheRNG.randomness.random_1601.nextDouble();
-		KillTheRNG.randomness.random_1601.nextDouble();
+	public double redirect_posRotStronghold_4(Random rand) {
+//		return KillTheRNG.randomness.posRotStronghold.nextDouble();
+		KillTheRNG.randomness.posRotStronghold.nextDouble();
 		return rand.nextDouble();
 	}
 

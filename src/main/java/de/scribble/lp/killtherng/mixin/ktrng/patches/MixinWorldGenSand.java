@@ -13,12 +13,12 @@ import net.minecraft.world.gen.feature.WorldGenSand;
 public class MixinWorldGenSand {
 
 	/**
-	* null
+	* Sand Generation
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1198_1(Random rand, int i) {
-//		return KillTheRNG.randomness.random_1198.nextInt(i);
-		KillTheRNG.randomness.random_1198.nextInt(i);
+	public int redirect_sandGeneration_1(Random rand, int i) {
+//		return KillTheRNG.randomness.sandGeneration.nextInt(i);
+		KillTheRNG.randomness.sandGeneration.nextInt(i);
 		return rand.nextInt(i);
 	}
 
