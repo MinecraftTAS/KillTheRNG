@@ -13,7 +13,7 @@ import net.minecraft.entity.passive.EntitySquid;
 public class MixinEntitySquid {
 
 	/**
-	* Sets the seed of the random for no good reason "+ChatFormatting.RED+"Squids are evil!
+	* Sets the seed of the random for no good reason "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_squidIdioticSetSeed_1(Random rand, long seed) {
@@ -22,7 +22,7 @@ public class MixinEntitySquid {
 	}
 
 	/**
-	* Initial rotation velocity of the squid. "+ChatFormatting.RED+"Squids are evil!
+	* Initial rotation velocity of the squid. "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_squidInitRotationVelocity_2(Random rand) {
@@ -32,7 +32,7 @@ public class MixinEntitySquid {
 	}
 
 	/**
-	* If the rotation should be changed. "+ChatFormatting.RED+"Squids are evil!
+	* If the rotation should be changed. "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_squidShouldChangeRotationVelocity_3(Random rand, int i) {
@@ -42,7 +42,7 @@ public class MixinEntitySquid {
 	}
 
 	/**
-	* If the rotation should be changed. "+ChatFormatting.RED+"Squids are evil!
+	* If the rotation should be changed. "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_squidShouldChangeRotationVelocity_4(Random rand) {

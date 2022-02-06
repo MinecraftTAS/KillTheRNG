@@ -70,7 +70,7 @@ public class Csv2Mixin {
 		
 		//Loading in the file
 		File logfile=new File(dir,"Randomness 1.12.2 extreme - Oh no.tsv");
-		File classfile=new File(dir, "Classes.csv");
+		File classfile=new File(dir, "Randomness 1.12.2 extreme - Classes.csv");
 		
 		if(classfile.exists()) {
 			List<String> lines2=new ArrayList<>();
@@ -126,6 +126,8 @@ public class Csv2Mixin {
 			boolean remap=split[7].equals("TRUE")? true : false;
 			//If the random should be enabled. If the value is "TRUE" it will be disabled in the mixin: "TRUE"
 			boolean enabled=split[8].equals("TRUE")? false : true;
+			//If the mixin should be called on the client
+			boolean client=split[9].equals("TRUE")? true : false;
 			
 			/****Process qualified name****/
 			String className=getClassName(qualName); //The actual class name to mix into without the package information: "World"
@@ -133,11 +135,15 @@ public class Csv2Mixin {
 			String methodName=getMethodName(qualName);		//The method name plus descriptor: "<init>(Lnet/minecraft/world/storage/ISaveHandler;Lnet/minecraft/world/storage/WorldInfo;Lnet/minecraft/world/WorldProvider;Lnet/minecraft/profiler/Profiler;Z)V"
 			RandomType targetType=getTargetName(target);
 			
+			if(client) {
+				className=className+"2";
+			}
+			
 			addRandomnessUR(name, description, enabled);
 			
 			if(!className.equals(prevClassName)) {
 				try {
-					switchClassFileMixin(className, classNameWithPath, classAccess);
+					switchClassFileMixin(className, classNameWithPath, classAccess, client);
 					addToMixinConfig(className);
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
@@ -168,7 +174,7 @@ public class Csv2Mixin {
 
 	//======================================================================
 	
-	private static void switchClassFileMixin(String className, String className2, int classAccess) throws IOException {
+	private static void switchClassFileMixin(String className, String className2, int classAccess, boolean client) throws IOException {
 		if(mixinStream!=null) {
 			writeLineMixin("}");
 		}
@@ -182,7 +188,12 @@ public class Csv2Mixin {
 		if(classAccess==0x30||classAccess==0x20||classAccess==0x420) {
 			writeLineMixin("@Mixin(targets=\""+className2+"\")");
 		}else {
-			writeLineMixin("@Mixin("+className.replace("$", ".")+".class)");
+			if(client) {
+				writeLineMixin("@Mixin("+className.replace("$", ".").replace("2", "")+".class)");
+			}else {
+				writeLineMixin("@Mixin("+className.replace("$", ".")+".class)");
+			}
+			
 		}
 		writeLineMixin("public class Mixin"+className+" {\n");
 	}

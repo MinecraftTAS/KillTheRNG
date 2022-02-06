@@ -18,7 +18,7 @@ plugins {
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
-version = "1.1"
+version = "1.2"
 group = "de.scribble.lp.killtherng" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "KilltheRNG-1.12.2"
 
@@ -34,6 +34,8 @@ minecraft {
     mappings = project.mcpVersion
     //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace '${version}':project.version,'${mcversion}':project.minecraft.version
+    clientRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
+    serverRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
 }
 
 dependencies {

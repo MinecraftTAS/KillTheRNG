@@ -13,70 +13,10 @@ import net.minecraft.entity.passive.EntityVillager;
 public class MixinEntityVillager {
 
 	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_villagerParticle_1(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		return rand.nextGaussian();
-	}
-
-	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_villagerParticle_2(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		return rand.nextGaussian();
-	}
-
-	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_villagerParticle_3(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		KillTheRNG.randomness.villagerParticle.nextGaussian();
-//		return rand.nextGaussian();
-	}
-
-	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_villagerParticle_4(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextFloat();
-//		KillTheRNG.randomness.villagerParticle.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_villagerParticle_5(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextFloat();
-//		KillTheRNG.randomness.villagerParticle.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* Position and velocity of villager related particles
-	*/
-	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_villagerParticle_6(Random rand) {
-		return KillTheRNG.randomness.villagerParticle.nextFloat();
-//		KillTheRNG.randomness.villagerParticle.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
 	* Time it takes until the villager checks if a village is nearby
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_villagerLookingForVillage_7(Random rand, int i) {
+	public int redirect_villagerLookingForVillage_1(Random rand, int i) {
 		return KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		return rand.nextInt(i);
@@ -86,7 +26,7 @@ public class MixinEntityVillager {
 	* Time it takes until the villager checks if a village is nearby
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_villagerLookingForVillage_8(Random rand, int i) {
+	public int redirect_villagerLookingForVillage_2(Random rand, int i) {
 		return KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		return rand.nextInt(i);
@@ -96,7 +36,7 @@ public class MixinEntityVillager {
 	* Time it takes until the villager checks if a village is nearby
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_villagerLookingForVillage_9(Random rand, int i) {
+	public int redirect_villagerLookingForVillage_3(Random rand, int i) {
 		return KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
 //		return rand.nextInt(i);
@@ -106,7 +46,7 @@ public class MixinEntityVillager {
 	* How much xp will be spawned after trading
 	*/
 	@Redirect(method = "useRecipe(Lnet/minecraft/village/MerchantRecipe;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_villagerTradingXp_10(Random rand, int i) {
+	public int redirect_villagerTradingXp_4(Random rand, int i) {
 		return KillTheRNG.randomness.villagerTradingXp.nextInt(i);
 //		KillTheRNG.randomness.villagerTradingXp.nextInt(i);
 //		return rand.nextInt(i);
@@ -116,7 +56,7 @@ public class MixinEntityVillager {
 	* How much xp will be spawned after trading
 	*/
 	@Redirect(method = "useRecipe(Lnet/minecraft/village/MerchantRecipe;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_villagerTradingXp_11(Random rand, int i) {
+	public int redirect_villagerTradingXp_5(Random rand, int i) {
 		return KillTheRNG.randomness.villagerTradingXp.nextInt(i);
 //		KillTheRNG.randomness.villagerTradingXp.nextInt(i);
 //		return rand.nextInt(i);

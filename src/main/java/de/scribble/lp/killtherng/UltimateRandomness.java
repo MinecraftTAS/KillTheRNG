@@ -1,7 +1,5 @@
 package de.scribble.lp.killtherng;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
 public class UltimateRandomness {
@@ -17,14 +15,15 @@ public CustomRandom blockDropPosition=new CustomRandom("blockDropPosition", "Whe
 public CustomRandom checkAndDropBeetroot=new CustomRandom("checkAndDropBeetroot", "Chance per tick of dropping beetroot if block below isn't sustainable for beetroot", true);
 public CustomRandom brewingStandParticlePosition=new CustomRandom("brewingStandParticlePosition", "Get the X of the position of a particle of a brewing stand", true);
 public CustomRandom cauldronFillWIthRain=new CustomRandom("cauldronFillWIthRain", "Chance of a cauldron increasing the water level during rain", true);
+public CustomRandom chorusGrow=new CustomRandom("chorusGrow", "Random direction a chorus flower grows", true);
 public CustomRandom chorusGrowDirection=new CustomRandom("chorusGrowDirection", "Random direction a chorus flower grows", true);
 public CustomRandom pointlessness=new CustomRandom("pointlessness", "WHY IS THIS HEEEEERRRREEEEE ITS SO FUCKING USELESS AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", false);
-public CustomRandom chorusGrowHeight=new CustomRandom("chorusGrowHeight", "Chance for the chorus fruit to grow in height", true);
-public CustomRandom chorusGrow=new CustomRandom("chorusGrow", "Something about chorus growing", true);
-public CustomRandom random_542=new CustomRandom("random_542", "null", true);
-public CustomRandom random_501=new CustomRandom("random_501", "null", true);
-public CustomRandom random_400=new CustomRandom("random_400", "null", true);
-public CustomRandom random_399=new CustomRandom("random_399", "null", true);
+public CustomRandom chorusGrowHeight=new CustomRandom("chorusGrowHeight", "Chance for chorus fruit to grow in height", true);
+public CustomRandom chorusGrowSomething=new CustomRandom("chorusGrowSomething", "Something about chorus growing", true);
+public CustomRandom chorusQuantityDropped=new CustomRandom("chorusQuantityDropped", "How many chorus fruit drops when broken", true);
+public CustomRandom cocoaGrow=new CustomRandom("cocoaGrow", "Chance for cocoa to grow", true);
+public CustomRandom cropDrop=new CustomRandom("cropDrop", "Chance for a crop to drop + quantity", true);
+public CustomRandom cropGrow=new CustomRandom("cropGrow", "Chance for a crop to grow", true);
 public CustomRandom random_347=new CustomRandom("random_347", "null", true);
 public CustomRandom seedFromDoublePlant=new CustomRandom("seedFromDoublePlant", "If a seed is dropped from a double grass", true);
 public CustomRandom dragoneggTeleportPos=new CustomRandom("dragoneggTeleportPos", "The position of the dragon egg after the player interacts with it", true);
@@ -153,17 +152,17 @@ public CustomRandom oreLapisAmount=new CustomRandom("oreLapisAmount", "How much 
 public CustomRandom oreFortuneBonus=new CustomRandom("oreFortuneBonus", "How much extra ore drop you get with fortune", true);
 public CustomRandom random_343=new CustomRandom("random_343", "null", true);
 public CustomRandom random_344=new CustomRandom("random_344", "null", true);
-public CustomRandom random_439=new CustomRandom("random_439", "null", true);
-public CustomRandom random_440=new CustomRandom("random_440", "null", true);
-public CustomRandom random_441=new CustomRandom("random_441", "null", true);
-public CustomRandom random_442=new CustomRandom("random_442", "null", true);
-public CustomRandom random_443=new CustomRandom("random_443", "null", true);
-public CustomRandom random_444=new CustomRandom("random_444", "null", true);
-public CustomRandom random_445=new CustomRandom("random_445", "null", true);
-public CustomRandom random_446=new CustomRandom("random_446", "null", true);
-public CustomRandom random_447=new CustomRandom("random_447", "null", true);
-public CustomRandom random_448=new CustomRandom("random_448", "null", true);
-public CustomRandom random_449=new CustomRandom("random_449", "null", true);
+public CustomRandom random_439=new CustomRandom("random_439", "null", false);
+public CustomRandom random_440=new CustomRandom("random_440", "null", false);
+public CustomRandom random_441=new CustomRandom("random_441", "null", false);
+public CustomRandom random_442=new CustomRandom("random_442", "null", false);
+public CustomRandom random_443=new CustomRandom("random_443", "null", false);
+public CustomRandom random_444=new CustomRandom("random_444", "null", false);
+public CustomRandom random_445=new CustomRandom("random_445", "null", false);
+public CustomRandom random_446=new CustomRandom("random_446", "null", false);
+public CustomRandom random_447=new CustomRandom("random_447", "null", false);
+public CustomRandom random_448=new CustomRandom("random_448", "null", false);
+public CustomRandom random_449=new CustomRandom("random_449", "null", false);
 public CustomRandom random_438=new CustomRandom("random_438", "null", true);
 public CustomRandom random_511=new CustomRandom("random_511", "null", true);
 public CustomRandom random_421=new CustomRandom("random_421", "null", true);
@@ -764,9 +763,9 @@ public CustomRandom random_950=new CustomRandom("random_950", "null", true);
 public CustomRandom random_947=new CustomRandom("random_947", "null", true);
 public CustomRandom random_948=new CustomRandom("random_948", "null", true);
 public CustomRandom random_949=new CustomRandom("random_949", "null", true);
-public CustomRandom squidIdioticSetSeed=new CustomRandom("squidIdioticSetSeed", "Sets the seed of the random for no good reason "+ChatFormatting.RED+"Squids are evil!", true);
-public CustomRandom squidInitRotationVelocity=new CustomRandom("squidInitRotationVelocity", "Initial rotation velocity of the squid. "+ChatFormatting.RED+"Squids are evil!", true);
-public CustomRandom squidShouldChangeRotationVelocity=new CustomRandom("squidShouldChangeRotationVelocity", "If the rotation should be changed. "+ChatFormatting.RED+"Squids are evil!", true);
+public CustomRandom squidIdioticSetSeed=new CustomRandom("squidIdioticSetSeed", "Sets the seed of the random for no good reason "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!", true);
+public CustomRandom squidInitRotationVelocity=new CustomRandom("squidInitRotationVelocity", "Initial rotation velocity of the squid. "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!", true);
+public CustomRandom squidShouldChangeRotationVelocity=new CustomRandom("squidShouldChangeRotationVelocity", "If the rotation should be changed. "+net.minecraft.util.text.TextFormatting.RED+"Squids are evil!", true);
 public CustomRandom random_957=new CustomRandom("random_957", "null", true);
 public CustomRandom random_958=new CustomRandom("random_958", "null", true);
 public CustomRandom random_959=new CustomRandom("random_959", "null", true);

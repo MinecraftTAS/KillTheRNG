@@ -13,12 +13,12 @@ import net.minecraft.block.BlockChorusPlant;
 public class MixinBlockChorusPlant {
 
 	/**
-	* null
+	* How many chorus fruit drops when broken
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_542_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_542.nextInt(i);
-//		KillTheRNG.randomness.random_542.nextInt(i);
+	public int redirect_chorusQuantityDropped_1(Random rand, int i) {
+		return KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
+//		KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

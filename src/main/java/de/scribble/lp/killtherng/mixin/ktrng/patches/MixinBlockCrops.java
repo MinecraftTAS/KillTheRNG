@@ -13,22 +13,22 @@ import net.minecraft.block.BlockCrops;
 public class MixinBlockCrops {
 
 	/**
-	* null
+	* Chance for a crop to drop + quantity
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap=false)
-	public int redirect_random_400_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_400.nextInt(i);
-//		KillTheRNG.randomness.random_400.nextInt(i);
+	public int redirect_cropDrop_1(Random rand, int i) {
+		return KillTheRNG.randomness.cropDrop.nextInt(i);
+//		KillTheRNG.randomness.cropDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Chance for a crop to grow
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_399_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_399.nextInt(i);
-//		KillTheRNG.randomness.random_399.nextInt(i);
+	public int redirect_cropGrow_2(Random rand, int i) {
+		return KillTheRNG.randomness.cropGrow.nextInt(i);
+//		KillTheRNG.randomness.cropGrow.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

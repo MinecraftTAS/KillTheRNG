@@ -32,34 +32,4 @@ public class MixinBlockLeaves {
 //		return rand.nextInt(i);
 	}
 
-	/**
-	* If a drip particle should spawn
-	*/
-	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_leafDripParticleActivate_3(Random rand, int i) {
-		return KillTheRNG.randomness.leafDripParticleActivate.nextInt(i);
-//		KillTheRNG.randomness.leafDripParticleActivate.nextInt(i);
-//		return rand.nextInt(i);
-	}
-
-	/**
-	* Position of drip particle
-	*/
-	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_leafDripParticle_4(Random rand) {
-		return KillTheRNG.randomness.leafDripParticle.nextFloat();
-//		KillTheRNG.randomness.leafDripParticle.nextFloat();
-//		return rand.nextFloat();
-	}
-
-	/**
-	* Position of drip particle
-	*/
-	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_leafDripParticle_5(Random rand) {
-		return KillTheRNG.randomness.leafDripParticle.nextFloat();
-//		KillTheRNG.randomness.leafDripParticle.nextFloat();
-//		return rand.nextFloat();
-	}
-
 }

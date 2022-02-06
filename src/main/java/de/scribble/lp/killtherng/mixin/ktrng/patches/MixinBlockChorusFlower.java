@@ -16,9 +16,9 @@ public class MixinBlockChorusFlower {
 	* Random direction a chorus flower grows
 	*/
 	@Redirect(method = "growTreeRecursive(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	private static int redirect_chorusGrowDirection_1(Random rand, int i) {
-		return KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
-//		KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
+	private static int redirect_chorusGrow_1(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrow.nextInt(i);
+//		KillTheRNG.randomness.chorusGrow.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
@@ -43,7 +43,7 @@ public class MixinBlockChorusFlower {
 	}
 
 	/**
-	* Chance for the chorus fruit to grow in height
+	* Chance for chorus fruit to grow in height
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_chorusGrowHeight_4(Random rand, int i) {
@@ -56,9 +56,9 @@ public class MixinBlockChorusFlower {
 	* Something about chorus growing
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_chorusGrow_5(Random rand, int i) {
-		return KillTheRNG.randomness.chorusGrow.nextInt(i);
-//		KillTheRNG.randomness.chorusGrow.nextInt(i);
+	public int redirect_chorusGrowSomething_5(Random rand, int i) {
+		return KillTheRNG.randomness.chorusGrowSomething.nextInt(i);
+//		KillTheRNG.randomness.chorusGrowSomething.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

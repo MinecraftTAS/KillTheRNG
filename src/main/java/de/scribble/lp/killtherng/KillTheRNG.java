@@ -15,7 +15,6 @@ import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacketHandler;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacketHandler;
-import de.scribble.lp.killtherng.random2mixin.Csv2Mixin;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;

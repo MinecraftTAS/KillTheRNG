@@ -42,7 +42,7 @@ public abstract class MixinPlayerList {
 		}
 		if(KillTheRNG.mode==SeedingModes.PlayerInput&&KillTheRNG.trackedPlayer!=null) {
 			if(mcServer.isDedicatedServer()) {
-				playerIn.sendMessage(new TextComponentString(String.format("The current rng tracker is %s. If they move the, rng will change", ChatFormatting.BLUE+KillTheRNG.trackedPlayer.getName()+ChatFormatting.RESET)));
+				playerIn.sendMessage(new TextComponentString(String.format("The current rng tracker is %s. If they move, the rng will change", ChatFormatting.BLUE+KillTheRNG.trackedPlayer.getName()+ChatFormatting.RESET)));
 			}
 		}
 		KillTheRNG.LOGGER.info("Sending the current seeding mode {} to {}", KillTheRNG.mode.toString(), playerIn.getName());
@@ -51,14 +51,14 @@ public abstract class MixinPlayerList {
 	
 	@Inject(method = "playerLoggedOut", at = @At("HEAD"))
 	public void playerLogout(EntityPlayerMP playerIn, CallbackInfo ci) {
-		if(playerEntityList.size()>1) {
-			EntityPlayerMP player=KillTheRNG.trackedPlayer;
-			if(player.getUniqueID().equals(playerIn.getUniqueID())) {
-				List<EntityPlayerMP> players=new ArrayList<>(playerEntityList);
+		if (playerEntityList.size() > 1) {
+			EntityPlayerMP player = KillTheRNG.trackedPlayer;
+			if (player.getUniqueID().equals(playerIn.getUniqueID())) {
+				List<EntityPlayerMP> players = new ArrayList<>(playerEntityList);
 				players.remove(playerIn);
-				KillTheRNG.trackedPlayer=players.get(0);
-				if(KillTheRNG.mode==SeedingModes.PlayerInput) {
-					if(mcServer.isDedicatedServer()) {
+				KillTheRNG.trackedPlayer = players.get(0);
+				if (KillTheRNG.mode == SeedingModes.PlayerInput) {
+					if (mcServer.isDedicatedServer()) {
 						this.sendMessage(new TextComponentString(String.format("Current rng tracker is now %s. If they move, the rng will change", ChatFormatting.BLUE+KillTheRNG.trackedPlayer.getName()+ChatFormatting.RESET)));
 					}
 				}
