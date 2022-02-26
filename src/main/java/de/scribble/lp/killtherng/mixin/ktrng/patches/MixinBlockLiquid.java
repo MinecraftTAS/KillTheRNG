@@ -33,22 +33,22 @@ public class MixinBlockLiquid {
 	}
 
 	/**
-	* null
+	* Postion of lava particle
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
-	public double redirect_math_random_21_3() {
-		return KillTheRNG.randomness.math_random_21.nextDouble();
-//		KillTheRNG.randomness.math_random_21.nextDouble();
+	public double redirect_lavaParticlePos_3() {
+		return KillTheRNG.randomness.lavaParticlePos.nextDouble();
+//		KillTheRNG.randomness.lavaParticlePos.nextDouble();
 //		return Math.random();
 	}
 
 	/**
-	* null
+	* Postion of lava particle
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
-	public double redirect_math_random_22_4() {
-		return KillTheRNG.randomness.math_random_22.nextDouble();
-//		KillTheRNG.randomness.math_random_22.nextDouble();
+	public double redirect_lavaParticlePos_4() {
+		return KillTheRNG.randomness.lavaParticlePos.nextDouble();
+//		KillTheRNG.randomness.lavaParticlePos.nextDouble();
 //		return Math.random();
 	}
 

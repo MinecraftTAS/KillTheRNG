@@ -16,9 +16,9 @@ public class MixinBlockBrewingStand {
 	* Get the X of the position of a particle of a brewing stand
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_brewingStandParticlePosition_1(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
+	public float redirect_brewingStandParticlePositionX_1(Random rand) {
+		return KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
+//		KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -26,9 +26,9 @@ public class MixinBlockBrewingStand {
 	* Get the Y of the position of a particle of a brewing stand
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_brewingStandParticlePosition_2(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
+	public float redirect_brewingStandParticlePositionY_2(Random rand) {
+		return KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
+//		KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -36,9 +36,9 @@ public class MixinBlockBrewingStand {
 	* Get the Z of the position of a particle of a brewing stand
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_brewingStandParticlePosition_3(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePosition.nextFloat();
+	public float redirect_brewingStandParticlePositionZ_3(Random rand) {
+		return KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
+//		KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
 //		return rand.nextFloat();
 	}
 

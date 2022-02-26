@@ -13,12 +13,12 @@ import net.minecraft.block.BlockDeadBush;
 public class MixinBlockDeadBush {
 
 	/**
-	* null
+	* Quantity of dead bush drop
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_347_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_347.nextInt(i);
-//		KillTheRNG.randomness.random_347.nextInt(i);
+	public int redirect_deadBushDrop_1(Random rand, int i) {
+		return KillTheRNG.randomness.deadBushDrop.nextInt(i);
+//		KillTheRNG.randomness.deadBushDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

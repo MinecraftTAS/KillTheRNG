@@ -23,212 +23,212 @@ public class MixinBlockFire2 {
 	}
 
 	/**
-	* null
+	* Chance if fire makes a sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_372_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_372.nextInt(i);
-//		KillTheRNG.randomness.random_372.nextInt(i);
+	public int redirect_fireSoundChance_2(Random rand, int i) {
+		return KillTheRNG.randomness.fireSoundChance.nextInt(i);
+//		KillTheRNG.randomness.fireSoundChance.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Something about fire sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_373_3(Random rand) {
-		return KillTheRNG.randomness.random_373.nextFloat();
-//		KillTheRNG.randomness.random_373.nextFloat();
+	public float redirect_fireSound_3(Random rand) {
+		return KillTheRNG.randomness.fireSound.nextFloat();
+//		KillTheRNG.randomness.fireSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Something about fire sound
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_374_4(Random rand) {
-		return KillTheRNG.randomness.random_374.nextFloat();
-//		KillTheRNG.randomness.random_374.nextFloat();
+	public float redirect_fireSound_4(Random rand) {
+		return KillTheRNG.randomness.fireSound.nextFloat();
+//		KillTheRNG.randomness.fireSound.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_375_5(Random rand) {
-		return KillTheRNG.randomness.random_375.nextDouble();
-//		KillTheRNG.randomness.random_375.nextDouble();
+	public double redirect_fireParticlePosX_5(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_376_6(Random rand) {
-		return KillTheRNG.randomness.random_376.nextDouble();
-//		KillTheRNG.randomness.random_376.nextDouble();
+	public double redirect_fireParticlePosY_6(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_377_7(Random rand) {
-		return KillTheRNG.randomness.random_377.nextDouble();
-//		KillTheRNG.randomness.random_377.nextDouble();
+	public double redirect_fireParticlePosZ_7(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
-	public double redirect_random_378_8(Random rand) {
-		return KillTheRNG.randomness.random_378.nextDouble();
-//		KillTheRNG.randomness.random_378.nextDouble();
+	public double redirect_fireParticlePosX_8(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
-	public double redirect_random_379_9(Random rand) {
-		return KillTheRNG.randomness.random_379.nextDouble();
-//		KillTheRNG.randomness.random_379.nextDouble();
+	public double redirect_fireParticlePosY_9(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
-	public double redirect_random_380_10(Random rand) {
-		return KillTheRNG.randomness.random_380.nextDouble();
-//		KillTheRNG.randomness.random_380.nextDouble();
+	public double redirect_fireParticlePosZ_10(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 6))
-	public double redirect_random_381_11(Random rand) {
-		return KillTheRNG.randomness.random_381.nextDouble();
-//		KillTheRNG.randomness.random_381.nextDouble();
+	public double redirect_fireParticlePosX_11(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 7))
-	public double redirect_random_382_12(Random rand) {
-		return KillTheRNG.randomness.random_382.nextDouble();
-//		KillTheRNG.randomness.random_382.nextDouble();
+	public double redirect_fireParticlePosY_12(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 8))
-	public double redirect_random_383_13(Random rand) {
-		return KillTheRNG.randomness.random_383.nextDouble();
-//		KillTheRNG.randomness.random_383.nextDouble();
+	public double redirect_fireParticlePosZ_13(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 9))
-	public double redirect_random_384_14(Random rand) {
-		return KillTheRNG.randomness.random_384.nextDouble();
-//		KillTheRNG.randomness.random_384.nextDouble();
+	public double redirect_fireParticlePosX_14(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 10))
-	public double redirect_random_385_15(Random rand) {
-		return KillTheRNG.randomness.random_385.nextDouble();
-//		KillTheRNG.randomness.random_385.nextDouble();
+	public double redirect_fireParticlePosY_15(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 11))
-	public double redirect_random_386_16(Random rand) {
-		return KillTheRNG.randomness.random_386.nextDouble();
-//		KillTheRNG.randomness.random_386.nextDouble();
+	public double redirect_fireParticlePosZ_16(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 12))
-	public double redirect_random_387_17(Random rand) {
-		return KillTheRNG.randomness.random_387.nextDouble();
-//		KillTheRNG.randomness.random_387.nextDouble();
+	public double redirect_fireParticlePosX_17(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 13))
-	public double redirect_random_388_18(Random rand) {
-		return KillTheRNG.randomness.random_388.nextDouble();
-//		KillTheRNG.randomness.random_388.nextDouble();
+	public double redirect_fireParticlePosY_18(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 14))
-	public double redirect_random_389_19(Random rand) {
-		return KillTheRNG.randomness.random_389.nextDouble();
-//		KillTheRNG.randomness.random_389.nextDouble();
+	public double redirect_fireParticlePosZ_19(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the X of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 15))
-	public double redirect_random_390_20(Random rand) {
-		return KillTheRNG.randomness.random_390.nextDouble();
-//		KillTheRNG.randomness.random_390.nextDouble();
+	public double redirect_fireParticlePosX_20(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosX.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosX.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Y of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 16))
-	public double redirect_random_391_21(Random rand) {
-		return KillTheRNG.randomness.random_391.nextDouble();
-//		KillTheRNG.randomness.random_391.nextDouble();
+	public double redirect_fireParticlePosY_21(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosY.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosY.nextDouble();
 //		return rand.nextDouble();
 	}
 
 	/**
-	* null
+	* Get the Z of a fire particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 17))
-	public double redirect_random_392_22(Random rand) {
-		return KillTheRNG.randomness.random_392.nextDouble();
-//		KillTheRNG.randomness.random_392.nextDouble();
+	public double redirect_fireParticlePosZ_22(Random rand) {
+		return KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+//		KillTheRNG.randomness.fireParticlePosZ.nextDouble();
 //		return rand.nextDouble();
 	}
 

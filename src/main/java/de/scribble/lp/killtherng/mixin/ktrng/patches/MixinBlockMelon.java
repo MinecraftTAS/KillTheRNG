@@ -13,22 +13,22 @@ import net.minecraft.block.BlockMelon;
 public class MixinBlockMelon {
 
 	/**
-	* null
+	* Quantity of melon drop
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_458_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_458.nextInt(i);
-//		KillTheRNG.randomness.random_458.nextInt(i);
+	public int redirect_melonDrop_1(Random rand, int i) {
+		return KillTheRNG.randomness.melonDrop.nextInt(i);
+//		KillTheRNG.randomness.melonDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Quantity of bonus melon drop
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_459_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_459.nextInt(i);
-//		KillTheRNG.randomness.random_459.nextInt(i);
+	public int redirect_bonusMelonDrop_2(Random rand, int i) {
+		return KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
+//		KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
