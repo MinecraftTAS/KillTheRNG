@@ -13,12 +13,12 @@ import net.minecraft.block.BlockHugeMushroom;
 public class MixinBlockHugeMushroom {
 
 	/**
-	* null
+	* Quantity of huge mushroom drop
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_457_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_457.nextInt(i);
-//		KillTheRNG.randomness.random_457.nextInt(i);
+	public int redirect_hugeMushroomDrop_1(Random rand, int i) {
+		return KillTheRNG.randomness.hugeMushroomDrop.nextInt(i);
+//		KillTheRNG.randomness.hugeMushroomDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -13,13 +13,13 @@ import net.minecraft.client.gui.FontRenderer;
 public class MixinFontRenderer {
 
 	/**
-	* null
+	* Chooses a seed for the obfuscated text
 	*/
 	@Redirect(method = "renderStringAtPos(Ljava/lang/String;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1265_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1265.nextInt(i);
-//		KillTheRNG.randomness.random_1265.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_fontRendererObfuscation_1(Random rand, int i) {
+//		return KillTheRNG.randomness.fontRendererObfuscation.nextInt(i);
+		KillTheRNG.randomness.fontRendererObfuscation.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

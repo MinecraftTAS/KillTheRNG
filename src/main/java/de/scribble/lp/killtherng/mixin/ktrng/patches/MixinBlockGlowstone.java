@@ -13,22 +13,22 @@ import net.minecraft.block.BlockGlowstone;
 public class MixinBlockGlowstone {
 
 	/**
-	* null
+	* Quantity of glowstone drop
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_437_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_437.nextInt(i);
-//		KillTheRNG.randomness.random_437.nextInt(i);
+	public int redirect_glowstoneDrop_1(Random rand, int i) {
+		return KillTheRNG.randomness.glowstoneDrop.nextInt(i);
+//		KillTheRNG.randomness.glowstoneDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Quantity of bonus glowstone drop
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_436_2(Random rand, int i) {
-		return KillTheRNG.randomness.random_436.nextInt(i);
-//		KillTheRNG.randomness.random_436.nextInt(i);
+	public int redirect_bonusGlowstoneDrop_2(Random rand, int i) {
+		return KillTheRNG.randomness.bonusGlowstoneDrop.nextInt(i);
+//		KillTheRNG.randomness.bonusGlowstoneDrop.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -13,12 +13,12 @@ import net.minecraft.block.BlockFrostedIce;
 public class MixinBlockFrostedIce {
 
 	/**
-	* null
+	* Chance for frosted ice to melt
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_559_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_559.nextInt(i);
-//		KillTheRNG.randomness.random_559.nextInt(i);
+	public int redirect_frostedIceMeltChance_1(Random rand, int i) {
+		return KillTheRNG.randomness.frostedIceMeltChance.nextInt(i);
+//		KillTheRNG.randomness.frostedIceMeltChance.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

@@ -13,102 +13,102 @@ import net.minecraft.block.BlockEndGateway;
 public class MixinBlockEndGateway {
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_549_1(Random rand) {
-		return KillTheRNG.randomness.random_549.nextFloat();
-//		KillTheRNG.randomness.random_549.nextFloat();
+	public float redirect_endGatewayParticlePos_1(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_550_2(Random rand) {
-		return KillTheRNG.randomness.random_550.nextFloat();
-//		KillTheRNG.randomness.random_550.nextFloat();
+	public float redirect_endGatewayParticlePos_2(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_551_3(Random rand) {
-		return KillTheRNG.randomness.random_551.nextFloat();
-//		KillTheRNG.randomness.random_551.nextFloat();
+	public float redirect_endGatewayParticlePos_3(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_random_552_4(Random rand) {
-		return KillTheRNG.randomness.random_552.nextFloat();
-//		KillTheRNG.randomness.random_552.nextFloat();
+	public float redirect_endGatewayParticlePos_4(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
-	public float redirect_random_553_5(Random rand) {
-		return KillTheRNG.randomness.random_553.nextFloat();
-//		KillTheRNG.randomness.random_553.nextFloat();
+	public float redirect_endGatewayParticlePos_5(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
-	public float redirect_random_554_6(Random rand) {
-		return KillTheRNG.randomness.random_554.nextFloat();
-//		KillTheRNG.randomness.random_554.nextFloat();
+	public float redirect_endGatewayParticlePos_6(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_555_7(Random rand, int i) {
-		return KillTheRNG.randomness.random_555.nextInt(i);
-//		KillTheRNG.randomness.random_555.nextInt(i);
+	public int redirect_endGatewayParticlePos_7(Random rand, int i) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextInt(i);
+//		KillTheRNG.randomness.endGatewayParticlePos.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_556_8(Random rand) {
-		return KillTheRNG.randomness.random_556.nextBoolean();
-//		KillTheRNG.randomness.random_556.nextBoolean();
+	public boolean redirect_endGatewayParticlePos_8(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextBoolean();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextBoolean();
 //		return rand.nextBoolean();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 6))
-	public float redirect_random_557_9(Random rand) {
-		return KillTheRNG.randomness.random_557.nextFloat();
-//		KillTheRNG.randomness.random_557.nextFloat();
+	public float redirect_endGatewayParticlePos_9(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Where the end gateway particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 7))
-	public float redirect_random_558_10(Random rand) {
-		return KillTheRNG.randomness.random_558.nextFloat();
-//		KillTheRNG.randomness.random_558.nextFloat();
+	public float redirect_endGatewayParticlePos_10(Random rand) {
+		return KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
+//		KillTheRNG.randomness.endGatewayParticlePos.nextFloat();
 //		return rand.nextFloat();
 	}
 

@@ -93,8 +93,8 @@ public class CommandKillTheRNG extends CommandBase{
 		sender.sendMessage(new TextComponentString(clientRandom.getDescription()));
 		sender.sendMessage(new TextComponentString(""));
 		if(!clientRandom.isEnabled()) {
-			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, setting a seed will not do anything."));
-			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"You can still view some information"));
+			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, since it causes bugs or softlocks if it is not random."));
+			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"Setting a seed will not do anything, but you can still view some information"));
 		}
 		sender.sendMessage(seedTextComponentClient);
 		sender.sendMessage(seedTextComponentServer);
