@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FileHandler {
+	@SuppressWarnings("unused")
 	private List<String> umrlines=new ArrayList<String>();
 	
 	private File folder=new File(new File(".").getAbsolutePath(),"/mixin/ktrng/");
@@ -59,6 +60,7 @@ public class FileHandler {
 		out.write(line.getBytes());
 	}
 	
+	@SuppressWarnings("unused")
 	private int countObject(List<String> list, String string) {
 		int counter=0;
 		for(String listelement : list) {

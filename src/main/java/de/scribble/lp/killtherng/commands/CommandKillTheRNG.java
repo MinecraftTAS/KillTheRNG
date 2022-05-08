@@ -116,17 +116,20 @@ public class CommandKillTheRNG extends CommandBase{
 		return super.getTabCompletions(server, sender, args, targetPos);
 	}
 	
+	@SuppressWarnings("unused")
 	private boolean isNumeric(String strNum) {
 	    if (strNum == null) {
 	        return false;
 	    }
 	    try {
-	        long d = Long.parseLong(strNum);
+			long d = Long.parseLong(strNum);
 	    } catch (NumberFormatException nfe) {
 	        return false;
 	    }
 	    return true;
 	}
+	
+	@SuppressWarnings("unused")
 	private boolean isBoolean(String strNum) {
 	    if(strNum.equalsIgnoreCase("true")||strNum.equalsIgnoreCase("false")) {
 	    	return true;

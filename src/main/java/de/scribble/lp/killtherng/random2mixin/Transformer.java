@@ -36,6 +36,7 @@ public class Transformer implements IClassTransformer{
 	
 	public MethodVisitor methodVisitor(MethodVisitor writer, String className, String methodName, String methodDescriptor, int classAccess, int methodAccess) {
 		return new MethodVisitor(Opcodes.ASM5, writer) {
+			@SuppressWarnings("unused")
 			@Override
 			public void visitMethodInsn(int opcode, String targetOwner, String targetName, String targetDescriptor, boolean isInterface) {
 				if(opcode==Opcodes.INVOKEVIRTUAL&&false) {

@@ -12,7 +12,11 @@ import net.minecraft.util.text.TextFormatting;
 
 public class CustomRandom extends Random {
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2682222387413311282L;
+	private String name;
     private String description;
     
     private long timesCalled=0;
@@ -161,4 +165,5 @@ public class CustomRandom extends Random {
 		JRand thing=new JRand(getSeed()).combine(steps);
 		return thing.getSeed();
 	}
+	
 }

@@ -6,20 +6,13 @@ import org.apache.logging.log4j.Logger;
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
-import de.scribble.lp.killtherng.networking.ChangeSeedPacketHandler;
 import de.scribble.lp.killtherng.networking.NextSeedPacket;
-import de.scribble.lp.killtherng.networking.NextSeedPacketHandler;
 import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
-import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacketHandler;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
-import de.scribble.lp.killtherng.networking.SeedInfoPacketHandler;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
-import de.scribble.lp.killtherng.networking.SeedingModePacketHandler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -40,6 +33,11 @@ public class KillTheRNG {
     
     public static final Logger LOGGER = LogManager.getLogger("KillTheRNG");
     
+    /**
+     * Change this to true if you are using KTRNG with another mod
+     */
+    public static boolean isLibrary=false;
+    
     public static SeedingModes mode;
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
@@ -55,28 +53,20 @@ public class KillTheRNG {
     	mode=SeedingModes.PlayerInput;
     	int i = -1;
     	
-    	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);
-    	NETWORK.registerMessage(ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(ChangeSeedPacket.ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(ChangeSeedPacket.ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(SeedInfoPacketHandler.class, SeedInfoPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(SeedInfoPacket.SeedInfoPacketHandler.class, SeedInfoPacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(SeedingModePacketHandler.class, SeedingModePacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(SeedingModePacket.SeedingModePacketHandler.class, SeedingModePacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.SERVER);
-    	NETWORK.registerMessage(NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
-    	NETWORK.registerMessage(RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent event) {
-    }
-    
-    @EventHandler
-    public void postinit(FMLPostInitializationEvent event) {
-    }
-    
     @EventHandler
     public void onServerStart(FMLServerStartingEvent ev) {
     	ev.registerServerCommand(new CommandKillTheRNG());

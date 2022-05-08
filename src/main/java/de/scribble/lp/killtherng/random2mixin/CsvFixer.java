@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
  *
  */
 public class CsvFixer {
-
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// Loading in the file
 		File logfile = new File(".", "Randomness 1.12.2 extreme - Oh no.tsv");
@@ -96,6 +96,7 @@ public class CsvFixer {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private static int countObject(List<String> list, String string) {
 		int counter=0;
 		for(String listelement : list) {
