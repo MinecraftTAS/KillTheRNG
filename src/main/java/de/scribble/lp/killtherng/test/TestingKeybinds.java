@@ -7,11 +7,11 @@ import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 
 public class TestingKeybinds {
 	
-	private final NextSeedHandler nextSeedHandler=new NextSeedHandler();
-	
-	@SubscribeEvent
-	public void onKey(KeyInputEvent ev) {
-		if(KillTheRNG.testingKey.isPressed()) {
-		}
-	}
+//	private final NextSeedHandler nextSeedHandler=new NextSeedHandler();
+//	
+//	@SubscribeEvent
+//	public void onKey(KeyInputEvent ev) {
+//		if(KillTheRNG.testingKey.isPressed()) {
+//		}
+//	}
 }

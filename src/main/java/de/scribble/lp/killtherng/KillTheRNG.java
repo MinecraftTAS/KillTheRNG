@@ -48,7 +48,7 @@ public class KillTheRNG {
     
     public static SimpleNetworkWrapper NETWORK;
     
-    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
+//    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
