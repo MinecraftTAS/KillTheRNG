@@ -33,7 +33,13 @@ public class URToolsServer {
 	}
 	
 	public static long nextSeed() {
-		KillTheRNG.randomness.Global.nextLong();
+		return nextSeed(1);
+	}
+	
+	public static long nextSeed(int step) {
+		for (int i = 0; i < step; i++) {
+			KillTheRNG.randomness.Global.nextLong();
+		}
 		long seed=KillTheRNG.randomness.Global.getSeed();
 		CustomRandom.LIST.forEach(rand->{
 			if(rand.getName().equals("Global"))return;

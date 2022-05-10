@@ -2,6 +2,7 @@ package de.scribble.lp.killtherng;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.lwjgl.input.Keyboard;
 
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
@@ -10,6 +11,7 @@ import de.scribble.lp.killtherng.networking.NextSeedPacket;
 import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -45,6 +47,8 @@ public class KillTheRNG {
     public static EntityPlayerMP trackedPlayer;
     
     public static SimpleNetworkWrapper NETWORK;
+    
+    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {

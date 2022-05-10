@@ -18,7 +18,7 @@ plugins {
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
-version = "1.4"
+version = "1.5"
 group = "de.scribble.lp.killtherng" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "KillTheRNG-1.12.2"
 
