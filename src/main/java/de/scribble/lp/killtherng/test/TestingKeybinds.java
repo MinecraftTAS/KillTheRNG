@@ -1,17 +1,22 @@
 package de.scribble.lp.killtherng.test;
 
 import de.scribble.lp.killtherng.KillTheRNG;
-import de.scribble.lp.killtherng.NextSeedHandler;
+import de.scribble.lp.killtherng.custom.KTRNGEventHandler.KTRNGEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 
-public class TestingKeybinds {
+public class TestingKeybinds{
 	
-//	private final NextSeedHandler nextSeedHandler=new NextSeedHandler();
-//	
-//	@SubscribeEvent
-//	public void onKey(KeyInputEvent ev) {
-//		if(KillTheRNG.testingKey.isPressed()) {
-//		}
-//	}
+	@SubscribeEvent
+	public void onKey(KeyInputEvent ev) {
+		if(KillTheRNG.testingKey.isPressed()) {
+//			CustomRandom test=new CustomRandom("Test");
+//			CustomRandom test2=new CustomRandom("Test2");
+//			test.advance();
+//			System.out.println(test.getSeed());
+//			System.out.println(test2.getSeed());
+//			System.out.println(test.steps(test2));
+		}
+	}
+	
 }

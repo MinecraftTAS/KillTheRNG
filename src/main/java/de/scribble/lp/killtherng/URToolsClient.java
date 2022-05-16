@@ -36,6 +36,7 @@ public class URToolsClient {
 		CustomRandom.LIST.forEach(rand -> {
 			rand.setSeed(seed, true);
 		});
+		KillTheRNG.eventHandler.triggerEvents();
 	}
 
 	public static void nextSeedServer() {

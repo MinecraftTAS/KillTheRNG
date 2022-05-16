@@ -6,6 +6,7 @@ import java.util.Random;
 
 import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.SeedingModes;
+import kaptainwutax.seedutils.lcg.LCG;
 import kaptainwutax.seedutils.rand.JRand;
 import net.minecraft.util.text.TextFormatting;
 
@@ -23,16 +24,22 @@ public class CustomRandom extends Random {
     
     private boolean enabled;
     
+    /**
+     * List of all custom randoms
+     */
     public static final List<CustomRandom> LIST=new ArrayList<>();
     
     private JRand jrand=new JRand(0L);
     
-    public CustomRandom() {
+    /**
+     * Use this constructor to not add the created randomness to {@link #LIST}
+     * @param name
+     */
+    public CustomRandom(String name) {
     	super(0L);
         String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=nothing;
+        this.name=name;
         this.description=nothing;
-        LIST.add(this);
     }
     
     public CustomRandom(String name, String description) {
@@ -161,9 +168,26 @@ public class CustomRandom extends Random {
 		return value;
 	}
 	
+	public void advance() {
+		advance(1);
+	}
+	
+	public void advance(long i) {
+		JRand thing = JRand.ofInternalSeed(getSeed());
+		thing.advance(i);
+		setSeed(thing.getSeed());
+	}
+	
 	public long getSeedAt(int steps) {
 		JRand thing=new JRand(getSeed()).combine(steps);
 		return thing.getSeed();
 	}
 	
+	public long steps(CustomRandom random) {
+		return LCG.JAVA.distance(this.getSeed(), random.getSeed());
+	}
+	
+	public static long steps(CustomRandom random1, CustomRandom random2) {
+		return LCG.JAVA.distance(random1.getSeed(), random2.getSeed());
+	}
 }

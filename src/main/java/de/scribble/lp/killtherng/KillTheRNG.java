@@ -6,13 +6,17 @@ import org.lwjgl.input.Keyboard;
 
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
+import de.scribble.lp.killtherng.custom.KTRNGEventHandler;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.NextSeedPacket;
 import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
+import de.scribble.lp.killtherng.test.TestingKeybinds;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -48,7 +52,9 @@ public class KillTheRNG {
     
     public static SimpleNetworkWrapper NETWORK;
     
-//    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
+    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
+    
+    public static KTRNGEventHandler eventHandler = new KTRNGEventHandler();
 
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
@@ -69,6 +75,10 @@ public class KillTheRNG {
     	
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
+    	
+    	ClientRegistry.registerKeyBinding(testingKey);
+    	
+    	MinecraftForge.EVENT_BUS.register(new TestingKeybinds());
     }
 
     @EventHandler

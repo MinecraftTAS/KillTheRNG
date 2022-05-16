@@ -24,4 +24,8 @@ public class NextSeedHandler {
 			nextSeedCounter = 0;
 		}
 	}
+	
+	public int getNextSeedCounter() {
+		return nextSeedCounter;
+	}
 }
