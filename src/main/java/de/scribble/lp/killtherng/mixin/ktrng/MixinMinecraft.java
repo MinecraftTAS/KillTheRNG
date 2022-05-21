@@ -27,6 +27,7 @@ public class MixinMinecraft {
 		if(!KillTheRNG.isLibrary) {
 			nextSeedHandler.sendAndReset();
 		}
+		KillTheRNG.tickmodeClient.tick();
 	}
 	
 	@Inject(method = "runTickMouse", at = @At(value = "INVOKE", target = "Lorg/lwjgl/input/Mouse;getEventButton()I", remap = false, ordinal = 0))

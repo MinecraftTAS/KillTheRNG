@@ -6,6 +6,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
 	"ktrng.MixinPlayerList",
+	"ktrng.MixinMinecraftServer",
 
 	"ktrng.patches.MixinDefaultChannelId",
 	"ktrng.patches.MixinMacAddressUtil",

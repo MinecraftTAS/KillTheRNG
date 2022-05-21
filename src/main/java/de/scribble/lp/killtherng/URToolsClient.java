@@ -32,7 +32,21 @@ public class URToolsClient {
 		return out;
 	}
 
-	public static void nextSeedClient(long seed) {
+	public static long nextSeed() {
+		return nextSeed(1);
+	}
+	
+	public static long nextSeed(int step) {
+		KillTheRNG.randomness.Global.advance(step);
+		long seed=KillTheRNG.randomness.Global.getSeed();
+		CustomRandom.LIST.forEach(rand->{
+			if(rand.getName().equals("Global"))return;
+			rand.setSeed(seed, false);
+		});
+		return seed;
+	}
+	
+	public static void nextSeedClientFromServer(long seed) {
 		CustomRandom.LIST.forEach(rand -> {
 			rand.setSeed(seed, true);
 		});

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import de.scribble.lp.killtherng.KillTheRNG;
-import de.scribble.lp.killtherng.SeedingModes;
 import kaptainwutax.seedutils.lcg.LCG;
 import kaptainwutax.seedutils.rand.JRand;
 import net.minecraft.util.text.TextFormatting;
@@ -103,7 +102,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		long value=super.nextLong();
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)&&!this.name.equals("Global")) setSeed(seedstored, false);
+		if( KillTheRNG.mode.isNotChangeSeed() &&!this.name.equals("Global")) setSeed(seedstored, false);
 		
 		return value;
 	}
@@ -112,7 +111,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		double value=super.nextDouble();
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -120,7 +119,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		boolean value=super.nextBoolean();
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -128,7 +127,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt();
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -136,7 +135,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt(bound);
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -144,7 +143,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		float value=super.nextFloat();
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -152,14 +151,14 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		super.nextBytes(bytes);
-		if((KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput)) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 	}
 	@Override
 	public double nextGaussian() {
 		timesCalled++;
 		long seedstored=getSeed();
 		double value=0;
-		if(KillTheRNG.mode==SeedingModes.Fixed||KillTheRNG.mode==SeedingModes.PlayerInput) {
+		if(KillTheRNG.mode.isNotChangeSeed()) {
 			jrand.setSeed(seedstored);
 			value=jrand.nextGaussian();
 		}else {

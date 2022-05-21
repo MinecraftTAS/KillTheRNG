@@ -7,6 +7,21 @@ package de.scribble.lp.killtherng;
  */
 public enum SeedingModes {
 	None,
-	PlayerInput,
-	Fixed;
+	PlayerInput(true),
+	Fixed(true),
+	Tick(true);
+	
+	private boolean notChangeSeed;
+	
+	private SeedingModes() {
+		notChangeSeed=false;
+	}
+	
+	private SeedingModes(boolean dontChangeSeed) {
+		this.notChangeSeed=dontChangeSeed;
+	}
+	
+	public boolean isNotChangeSeed() {
+		return notChangeSeed;
+	}
 }

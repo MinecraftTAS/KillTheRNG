@@ -13,6 +13,8 @@ import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import de.scribble.lp.killtherng.test.TestingKeybinds;
+import de.scribble.lp.killtherng.tickmode.TickModeClient;
+import de.scribble.lp.killtherng.tickmode.TickModeServer;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,7 +46,7 @@ public class KillTheRNG {
      */
     public static boolean isLibrary=false;
     
-    public static SeedingModes mode;
+    public static SeedingModes mode=SeedingModes.Tick;
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
     
@@ -56,11 +58,14 @@ public class KillTheRNG {
     
     public static KTRNGEventHandler eventHandler = new KTRNGEventHandler();
 
+    public static final TickModeServer tickmodeServer = new TickModeServer();
+    
+    public static final TickModeClient tickmodeClient = new TickModeClient();
+    
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
 //    	Csv2Mixin.main(null);
     	NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("killtherng");
-    	mode=SeedingModes.PlayerInput;
     	int i = -1;
     	
     	NETWORK.registerMessage(ChangeSeedPacket.ChangeSeedPacketHandler.class, ChangeSeedPacket.class, i++, Side.SERVER);

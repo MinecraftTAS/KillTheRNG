@@ -4,8 +4,6 @@ import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.URToolsClient;
 import de.scribble.lp.killtherng.URToolsServer;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
@@ -52,7 +50,7 @@ public class NextSeedPacket implements IMessage{
 					KillTheRNG.NETWORK.sendToAll(new NextSeedPacket(seed));
 				}
 			} else {
-				URToolsClient.nextSeedClient(message.seed);
+				URToolsClient.nextSeedClientFromServer(message.seed);
 			}
 			return null;
 		}
