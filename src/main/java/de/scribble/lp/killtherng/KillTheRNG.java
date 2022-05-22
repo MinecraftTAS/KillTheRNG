@@ -54,8 +54,6 @@ public class KillTheRNG {
     
     public static SimpleNetworkWrapper NETWORK;
     
-    public static final KeyBinding testingKey= new KeyBinding("Testing", Keyboard.KEY_F12, "KTRNG");
-    
     public static KTRNGEventHandler eventHandler = new KTRNGEventHandler();
 
     public static final TickModeServer tickmodeServer = new TickModeServer();
@@ -80,8 +78,6 @@ public class KillTheRNG {
     	
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
-    	
-    	ClientRegistry.registerKeyBinding(testingKey);
     	
     	MinecraftForge.EVENT_BUS.register(new TestingKeybinds());
     }

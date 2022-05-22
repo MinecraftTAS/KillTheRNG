@@ -8,14 +8,6 @@ public class TestingKeybinds{
 	
 	@SubscribeEvent
 	public void onKey(KeyInputEvent ev) {
-		if(KillTheRNG.testingKey.isPressed()) {
-//			CustomRandom test=new CustomRandom("Test");
-//			CustomRandom test2=new CustomRandom("Test2");
-//			test.advance();
-//			System.out.println(test.getSeed());
-//			System.out.println(test2.getSeed());
-//			System.out.println(test.steps(test2));
-		}
 	}
 	
 }
