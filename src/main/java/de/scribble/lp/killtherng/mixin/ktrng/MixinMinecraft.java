@@ -7,6 +7,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.NextSeedHandler;
+import de.scribble.lp.killtherng.SeedingModes;
 import net.minecraft.client.Minecraft;
 
 @Mixin(Minecraft.class)
@@ -16,7 +17,7 @@ public class MixinMinecraft {
 	
 	@Inject(method = "runTickKeyboard", at = @At(value = "INVOKE", target = "Lorg/lwjgl/input/Keyboard;getEventKey()I", remap = false, ordinal = 0))
 	public void changeSeedKeyboard(CallbackInfo ci) {
-		if(!KillTheRNG.isLibrary) {
+		if(!KillTheRNG.isLibrary&&KillTheRNG.mode==SeedingModes.PlayerInput) {
 			nextSeedHandler.increaseNextSeedCounter();
 		}
 	}
@@ -24,15 +25,14 @@ public class MixinMinecraft {
 	
 	@Inject(method = "runTick", at = @At(value = "RETURN"))
 	public void inject_runTick(CallbackInfo ci) {
-		if(!KillTheRNG.isLibrary) {
+		if(!KillTheRNG.isLibrary&&KillTheRNG.mode==SeedingModes.PlayerInput) {
 			nextSeedHandler.sendAndReset();
 		}
-		KillTheRNG.tickmodeClient.tick();
 	}
 	
 	@Inject(method = "runTickMouse", at = @At(value = "INVOKE", target = "Lorg/lwjgl/input/Mouse;getEventButton()I", remap = false, ordinal = 0))
 	public void changeSeedMouse(CallbackInfo ci) {
-		if(!KillTheRNG.isLibrary) {
+		if(!KillTheRNG.isLibrary&&KillTheRNG.mode==SeedingModes.PlayerInput) {
 			nextSeedHandler.increaseNextSeedCounter();
 		}
 	}

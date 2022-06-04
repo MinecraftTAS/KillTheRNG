@@ -13,6 +13,6 @@ public class MixinMinecraftServer {
 	
 	@Inject(method = "runTick", at = @At("HEAD"))
 	public void inject_runTick(CallbackInfo ci) {
-		KillTheRNG.tickmodeServer.tick();
+		KillTheRNG.tickmodeServer.onTick();
 	}
 }

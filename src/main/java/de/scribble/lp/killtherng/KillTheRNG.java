@@ -2,7 +2,6 @@ package de.scribble.lp.killtherng;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lwjgl.input.Keyboard;
 
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
@@ -12,13 +11,11 @@ import de.scribble.lp.killtherng.networking.NextSeedPacket;
 import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
+import de.scribble.lp.killtherng.networking.UpdateClientSeedPacket;
 import de.scribble.lp.killtherng.test.TestingKeybinds;
-import de.scribble.lp.killtherng.tickmode.TickModeClient;
 import de.scribble.lp.killtherng.tickmode.TickModeServer;
-import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -58,8 +55,6 @@ public class KillTheRNG {
 
     public static final TickModeServer tickmodeServer = new TickModeServer();
     
-    public static final TickModeClient tickmodeClient = new TickModeClient();
-    
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
 //    	Csv2Mixin.main(null);
@@ -78,6 +73,8 @@ public class KillTheRNG {
     	
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
     	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
+    	
+    	NETWORK.registerMessage(UpdateClientSeedPacket.UpdateClientSeedPacketHandler.class, UpdateClientSeedPacket.class, i++, Side.CLIENT);
     	
     	MinecraftForge.EVENT_BUS.register(new TestingKeybinds());
     }
