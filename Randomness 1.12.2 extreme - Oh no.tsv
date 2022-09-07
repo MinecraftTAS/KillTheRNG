@@ -256,23 +256,23 @@ random_1365	null	Lnet/minecraft/client/audio/SoundEventAccessor;cloneEntry()Lnet
 portalSoundTrigger	Pitch of wooshing sounds when entering a nether portal	Lnet/minecraft/client/entity/EntityPlayerSP;onLivingUpdate()V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE	FALSE
 fontRendererObfuscation	Chooses a seed for the obfuscated text	Lnet/minecraft/client/gui/FontRenderer;renderStringAtPos(Ljava/lang/String;Z)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x2	FALSE	TRUE	FALSE
 chooseRandomSeed	Sets the world seed if nothing was put in	Lnet/minecraft/client/gui/GuiCreateWorld;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextLong()J	0	0x21	0x4	FALSE	TRUE	FALSE
-random_1474	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	0	0x21	0x4	FALSE	FALSE	FALSE
-random_1475	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	1	0x21	0x4	FALSE	FALSE	FALSE
-random_1476	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextBoolean()Z	0	0x21	0x4	FALSE	FALSE	FALSE
-random_1477	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	2	0x21	0x4	FALSE	FALSE	FALSE
-random_1478	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	3	0x21	0x4	FALSE	FALSE	FALSE
-random_1479	null	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextBoolean()Z	1	0x21	0x4	FALSE	FALSE	FALSE
-flipBookEnchant	Time when the Book in an Enchantment Gui should flip	Lnet/minecraft/client/gui/GuiEnchantment;tickBook()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
-flipBookEnchant	Time when the Book in an Enchantment Gui should flip	Lnet/minecraft/client/gui/GuiEnchantment;tickBook()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	0	0x21	0x4	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	1	0x21	0x4	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextBoolean()Z	0	0x21	0x4	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	2	0x21	0x4	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextFloat()F	3	0x21	0x4	FALSE	FALSE	FALSE
+customizeWorldGuiSliderPosition	Random position of sliders in customize world screen when clicking randomize	Lnet/minecraft/client/gui/GuiCustomizeWorldScreen;actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V	Ljava/util/Random;nextBoolean()Z	1	0x21	0x4	FALSE	FALSE	FALSE
+guiEnchantmentFlipBook	The amount of pages the book should flip	Lnet/minecraft/client/gui/GuiEnchantment;tickBook()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	TRUE	FALSE
+guiEnchantmentFlipBook	The amount of pages the book should flip	Lnet/minecraft/client/gui/GuiEnchantment;tickBook()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	TRUE	FALSE
 guiIngameSetRandomSeed	Sets the random seed in GuiIngame	Lnet/minecraft/client/gui/GuiIngame;renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V	Ljava/util/Random;setSeed(J)V	0	0x21	0x4	FALSE	TRUE	FALSE
 guiIngameShakeHearts	Pattern of hearts shaking	Lnet/minecraft/client/gui/GuiIngame;renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	TRUE	FALSE
 guiIngameShakeHunger	Pattern of hunger bars shaking	Lnet/minecraft/client/gui/GuiIngame;renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V	Ljava/util/Random;nextInt(I)I	1	0x21	0x4	FALSE	TRUE	FALSE
 splashTextIndex	Random splash text in the title screen	Lnet/minecraft/client/gui/GuiMainMenu;<init>()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
 minceraftRandom	Chance for 'Minceraft' to appear in the Title Screen	Lnet/minecraft/client/gui/GuiMainMenu;<init>()V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE	FALSE
-random_1467	null	Lnet/minecraft/client/gui/GuiWinGame;drawScreen(IIF)V	Ljava/util/Random;setSeed(J)V	0	0x21	0x1	FALSE	TRUE	FALSE
-random_1466	null	Lnet/minecraft/client/gui/GuiWinGame;initGui()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
-random_1375	null	Lnet/minecraft/client/model/ModelBase;getRandomModelBox(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;	Ljava/util/Random;nextInt(I)I	0	0x421	0x1	FALSE	FALSE	FALSE
-random_1378	null	Lnet/minecraft/client/model/ModelGhast;<init>()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
+fontRandomSetSeed	Set's the fontrandom seed in GuiWinGame	Lnet/minecraft/client/gui/GuiWinGame;drawScreen(IIF)V	Ljava/util/Random;setSeed(J)V	0	0x21	0x1	FALSE	TRUE	FALSE
+fontRandomObfuscation	The randomness of the obfuscation	Lnet/minecraft/client/gui/GuiWinGame;initGui()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	TRUE	FALSE
+modelBox	Returns a random model box from a list	Lnet/minecraft/client/model/ModelBase;getRandomModelBox(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;	Ljava/util/Random;nextInt(I)I	0	0x421	0x1	FALSE	FALSE	FALSE
+modelGhast	Length of a ghasts tentacles	Lnet/minecraft/client/model/ModelGhast;<init>()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
 ambienceTicks	Ticks after joining a new world, when the ambient sound should play	Lnet/minecraft/client/multiplayer/WorldClient;<init>(Lnet/minecraft/client/network/NetHandlerPlayClient;Lnet/minecraft/world/WorldSettings;ILnet/minecraft/world/EnumDifficulty;Lnet/minecraft/profiler/Profiler;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
 ambienceLightLevel	Maximal Light level for ambient sounds to play	Lnet/minecraft/client/multiplayer/WorldClient;playMoodSoundAndCheckLight(IILnet/minecraft/world/chunk/Chunk;)V	Ljava/util/Random;nextInt(I)I	0	0x21	0x4	FALSE	FALSE	FALSE
 ambienceVolume	Volume of an ambient sounds from 0 to 0.2	Lnet/minecraft/client/multiplayer/WorldClient;playMoodSoundAndCheckLight(IILnet/minecraft/world/chunk/Chunk;)V	Ljava/util/Random;nextFloat()F	0	0x21	0x4	FALSE	FALSE	FALSE
@@ -1281,9 +1281,9 @@ random_828	null	Lnet/minecraft/tileentity/MobSpawnerBaseLogic;updateSpawner()V	L
 random_395	null	Lnet/minecraft/tileentity/TileEntityChest;update()V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE	FALSE
 random_396	null	Lnet/minecraft/tileentity/TileEntityChest;update()V	Ljava/util/Random;nextFloat()F	1	0x21	0x1	FALSE	FALSE	FALSE
 random_333	null	Lnet/minecraft/tileentity/TileEntityDispenser;getDispenseSlot()I	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
-random_479	null	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
-random_480	null	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	FALSE	FALSE
-random_481	null	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	FALSE	FALSE
+enchantmentTableTileBookSpread	Whether the book on the enchanter should open	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	0	0x21	0x1	FALSE	FALSE	FALSE
+enchantmentTableTileFlipT	If the pages of the book should flip	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	1	0x21	0x1	FALSE	TRUE	FALSE
+enchantmentTableTileFlipT	If the pages of the book should flip	Lnet/minecraft/tileentity/TileEntityEnchantmentTable;update()V	Ljava/util/Random;nextInt(I)I	2	0x21	0x1	FALSE	TRUE	FALSE
 random_508	null	Lnet/minecraft/tileentity/TileEntityEnderChest;update()V	Ljava/util/Random;nextFloat()F	0	0x21	0x1	FALSE	FALSE	FALSE
 random_509	null	Lnet/minecraft/tileentity/TileEntityEnderChest;update()V	Ljava/util/Random;nextFloat()F	1	0x21	0x1	FALSE	FALSE	FALSE
 random_529	null	Lnet/minecraft/tileentity/TileEntityHopper;getInventoryAtPosition(Lnet/minecraft/world/World;DDD)Lnet/minecraft/inventory/IInventory;	Ljava/util/Random;nextInt(I)I	0	0x21	0x9	FALSE	FALSE	FALSE

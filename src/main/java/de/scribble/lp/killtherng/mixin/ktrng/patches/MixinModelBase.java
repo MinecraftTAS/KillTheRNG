@@ -13,12 +13,12 @@ import net.minecraft.client.model.ModelBase;
 public class MixinModelBase {
 
 	/**
-	* null
+	* Returns a random model box from a list
 	*/
 	@Redirect(method = "getRandomModelBox(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1375_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1375.nextInt(i);
-//		KillTheRNG.randomness.random_1375.nextInt(i);
+	public int redirect_modelBox_1(Random rand, int i) {
+		return KillTheRNG.randomness.modelBox.nextInt(i);
+//		KillTheRNG.randomness.modelBox.nextInt(i);
 //		return rand.nextInt(i);
 	}
 

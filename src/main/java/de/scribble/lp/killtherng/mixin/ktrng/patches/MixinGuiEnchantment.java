@@ -13,23 +13,23 @@ import net.minecraft.client.gui.GuiEnchantment;
 public class MixinGuiEnchantment {
 
 	/**
-	* Time when the Book in an Enchantment Gui should flip
+	* The amount of pages the book should flip
 	*/
 	@Redirect(method = "tickBook()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_flipBookEnchant_1(Random rand, int i) {
-		return KillTheRNG.randomness.flipBookEnchant.nextInt(i);
-//		KillTheRNG.randomness.flipBookEnchant.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_guiEnchantmentFlipBook_1(Random rand, int i) {
+//		return KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 	/**
-	* Time when the Book in an Enchantment Gui should flip
+	* The amount of pages the book should flip
 	*/
 	@Redirect(method = "tickBook()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_flipBookEnchant_2(Random rand, int i) {
-		return KillTheRNG.randomness.flipBookEnchant.nextInt(i);
-//		KillTheRNG.randomness.flipBookEnchant.nextInt(i);
-//		return rand.nextInt(i);
+	public int redirect_guiEnchantmentFlipBook_2(Random rand, int i) {
+//		return KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		return rand.nextInt(i);
 	}
 
 }

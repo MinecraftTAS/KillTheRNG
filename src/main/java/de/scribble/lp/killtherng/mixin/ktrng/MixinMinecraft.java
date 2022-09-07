@@ -22,7 +22,6 @@ public class MixinMinecraft {
 		}
 	}
 	
-	
 	@Inject(method = "runTick", at = @At(value = "RETURN"))
 	public void inject_runTick(CallbackInfo ci) {
 		if(!KillTheRNG.isLibrary&&KillTheRNG.mode==SeedingModes.PlayerInput) {

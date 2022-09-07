@@ -61,7 +61,6 @@ public class Csv2Mixin {
 	}
 	
 	public static void main(String[] args) {
-		
 		dirKTRNG=new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
 		
 		if(!dirKTRNG.exists()) {

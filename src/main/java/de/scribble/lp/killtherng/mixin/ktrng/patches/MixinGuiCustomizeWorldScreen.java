@@ -13,62 +13,62 @@ import net.minecraft.client.gui.GuiCustomizeWorldScreen;
 public class MixinGuiCustomizeWorldScreen {
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_1474_1(Random rand) {
-		return KillTheRNG.randomness.random_1474.nextFloat();
-//		KillTheRNG.randomness.random_1474.nextFloat();
+	public float redirect_customizeWorldGuiSliderPosition_1(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_1475_2(Random rand) {
-		return KillTheRNG.randomness.random_1475.nextFloat();
-//		KillTheRNG.randomness.random_1475.nextFloat();
+	public float redirect_customizeWorldGuiSliderPosition_2(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_random_1476_3(Random rand) {
-		return KillTheRNG.randomness.random_1476.nextBoolean();
-//		KillTheRNG.randomness.random_1476.nextBoolean();
+	public boolean redirect_customizeWorldGuiSliderPosition_3(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextBoolean();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextBoolean();
 //		return rand.nextBoolean();
 	}
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_random_1477_4(Random rand) {
-		return KillTheRNG.randomness.random_1477.nextFloat();
-//		KillTheRNG.randomness.random_1477.nextFloat();
+	public float redirect_customizeWorldGuiSliderPosition_4(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_random_1478_5(Random rand) {
-		return KillTheRNG.randomness.random_1478.nextFloat();
-//		KillTheRNG.randomness.random_1478.nextFloat();
+	public float redirect_customizeWorldGuiSliderPosition_5(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextFloat();
 //		return rand.nextFloat();
 	}
 
 	/**
-	* null
+	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
-	public boolean redirect_random_1479_6(Random rand) {
-		return KillTheRNG.randomness.random_1479.nextBoolean();
-//		KillTheRNG.randomness.random_1479.nextBoolean();
+	public boolean redirect_customizeWorldGuiSliderPosition_6(Random rand) {
+		return KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextBoolean();
+//		KillTheRNG.randomness.customizeWorldGuiSliderPosition.nextBoolean();
 //		return rand.nextBoolean();
 	}
 

@@ -13,12 +13,12 @@ import net.minecraft.client.model.ModelGhast;
 public class MixinModelGhast {
 
 	/**
-	* null
+	* Length of a ghasts tentacles
 	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_1378_1(Random rand, int i) {
-		return KillTheRNG.randomness.random_1378.nextInt(i);
-//		KillTheRNG.randomness.random_1378.nextInt(i);
+	public int redirect_modelGhast_1(Random rand, int i) {
+		return KillTheRNG.randomness.modelGhast.nextInt(i);
+//		KillTheRNG.randomness.modelGhast.nextInt(i);
 //		return rand.nextInt(i);
 	}
 
