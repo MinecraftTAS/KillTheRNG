@@ -12,6 +12,7 @@ import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import de.scribble.lp.killtherng.networking.UpdateClientSeedPacket;
+import de.scribble.lp.killtherng.random2mixin.csv2mixin.Csv2Mixin2;
 import de.scribble.lp.killtherng.test.TestingKeybinds;
 import de.scribble.lp.killtherng.tickmode.TickModeServer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -57,7 +58,7 @@ public class KillTheRNG {
     
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-//    	Csv2Mixin.main(null);
+    	Csv2Mixin2.main(null);
     	NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("killtherng");
     	int i = -1;
     	

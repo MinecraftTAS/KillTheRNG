@@ -1,4 +1,4 @@
-package de.scribble.lp.killtherng.random2mixin;
+package de.scribble.lp.killtherng.random2mixin.main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
