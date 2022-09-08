@@ -13,9 +13,12 @@ public class MixinStructureEndCityPieces{
 	*/
 	@Redirect(method = "recursiveChildren(Lnet/minecraft/world/gen/structure/template/TemplateManager;Lnet/minecraft/world/gen/structure/StructureEndCityPieces$IGenerator;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	private static int redirect_posRotTypeEndCity_1(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt();
-		return rand.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt();
+			return rand.nextInt();
+		}
 	}
 
 

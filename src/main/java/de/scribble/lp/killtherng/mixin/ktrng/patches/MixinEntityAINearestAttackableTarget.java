@@ -13,9 +13,12 @@ public class MixinEntityAINearestAttackableTarget{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiNearestAttackableTarget_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiNearestAttackableTarget.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiNearestAttackableTarget.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiNearestAttackableTarget.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiNearestAttackableTarget.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiNearestAttackableTarget.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

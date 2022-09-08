@@ -13,9 +13,12 @@ public class MixinBlockCrops{
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_cropDrop_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.cropDrop.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.cropDrop.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.cropDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.cropDrop.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.cropDrop.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockCrops{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_cropGrow_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.cropGrow.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.cropGrow.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.cropGrow.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.cropGrow.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.cropGrow.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

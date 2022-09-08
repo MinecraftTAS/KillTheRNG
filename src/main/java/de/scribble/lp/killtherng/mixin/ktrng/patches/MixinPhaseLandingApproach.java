@@ -13,9 +13,12 @@ public class MixinPhaseLandingApproach{
 	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseLandingApproachMoveToLocation_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingApproachMoveToLocation.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingApproachMoveToLocation.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingApproachMoveToLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingApproachMoveToLocation.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingApproachMoveToLocation.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

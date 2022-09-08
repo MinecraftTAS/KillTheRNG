@@ -13,9 +13,12 @@ public class MixinItemBow{
 	*/
 	@Redirect(method = "onPlayerStoppedUsing(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_572_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_572.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_572.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_572.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_572.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_572.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

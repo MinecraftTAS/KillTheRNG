@@ -13,9 +13,12 @@ public class MixinBlockCocoa{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_cocoaGrow_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.cocoaGrow.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.cocoaGrow.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.cocoaGrow.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.cocoaGrow.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.cocoaGrow.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

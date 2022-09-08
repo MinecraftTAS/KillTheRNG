@@ -13,9 +13,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1458_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1458.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1458.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1458.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1458.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1458.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1459_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1459.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1459.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1459.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1459.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1459.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1460_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1460.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1460.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1460.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1460.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1460.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_1461_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1461.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1461.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1461.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1461.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1461.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_random_1462_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1462.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1462.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1462.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1462.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1462.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_random_1463_6(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1463.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1463.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1463.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1463.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1463.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_random_1464_7(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1464.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1464.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1464.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1464.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1464.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -83,9 +104,12 @@ public class MixinParticleTotem{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_random_1465_8(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1465.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1465.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1465.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1465.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1465.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

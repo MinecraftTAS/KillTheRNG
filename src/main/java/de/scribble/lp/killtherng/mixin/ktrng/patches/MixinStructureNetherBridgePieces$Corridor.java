@@ -13,9 +13,12 @@ public class MixinStructureNetherBridgePieces$Corridor{
 	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeNetherBridge_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

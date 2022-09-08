@@ -13,7 +13,10 @@ public class MixinMapGenNetherBridge{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_netherBridgeSpawnPos_1(Random rand, long seed) {
-		de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.setSeed(seed, true);		rand.setSeed(seed);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.setSeed(seed, true);		} else {
+			rand.setSeed(seed);
+		}
 	}
 
 	/**
@@ -21,9 +24,12 @@ public class MixinMapGenNetherBridge{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	public int redirect_netherBridgeSpawnPos_2(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
-		return rand.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt();
+			return rand.nextInt();
+		}
 	}
 
 	/**
@@ -31,9 +37,12 @@ public class MixinMapGenNetherBridge{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_netherBridgeSpawnPos_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -41,9 +50,12 @@ public class MixinMapGenNetherBridge{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_netherBridgeSpawnPos_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -51,9 +63,12 @@ public class MixinMapGenNetherBridge{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_netherBridgeSpawnPos_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.netherBridgeSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinBlockChorusPlant{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_chorusQuantityDropped_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chorusQuantityDropped.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.chorusQuantityDropped.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

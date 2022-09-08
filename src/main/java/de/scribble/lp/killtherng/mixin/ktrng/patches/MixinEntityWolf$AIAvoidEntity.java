@@ -13,9 +13,12 @@ public class MixinEntityWolf$AIAvoidEntity{
 	*/
 	@Redirect(method = "avoidLlama(Lnet/minecraft/entity/passive/EntityLlama;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_972_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_972.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_972.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_972.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_972.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_972.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

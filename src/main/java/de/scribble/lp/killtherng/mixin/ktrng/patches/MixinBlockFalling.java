@@ -13,9 +13,12 @@ public class MixinBlockFalling{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fallingBlockParticleActivate_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticleActivate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticleActivate.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockFalling{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_fallingBlockParticlePos_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBlockFalling{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_fallingBlockParticlePos_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fallingBlockParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

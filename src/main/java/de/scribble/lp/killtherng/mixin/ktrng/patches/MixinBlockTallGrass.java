@@ -13,9 +13,12 @@ public class MixinBlockTallGrass{
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_random_346_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_346.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_346.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_346.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_346.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_346.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockTallGrass{
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_345_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_345.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_345.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_345.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_345.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_345.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

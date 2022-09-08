@@ -13,9 +13,12 @@ public class MixinGuiEnchantment{
 	*/
 	@Redirect(method = "tickBook()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_guiEnchantmentFlipBook_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinGuiEnchantment{
 	*/
 	@Redirect(method = "tickBook()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_guiEnchantmentFlipBook_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.guiEnchantmentFlipBook.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

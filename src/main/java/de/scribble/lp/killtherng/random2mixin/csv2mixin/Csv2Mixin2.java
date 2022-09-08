@@ -23,7 +23,9 @@ public class Csv2Mixin2 {
 
 	private static final File dirKTRNG = new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
 
-	private static final Map<String, MixinClassData> mixinData = new HashMap<>();
+	private static final Map<String, MixinClassData> mixinCommon = new HashMap<>();
+	private static final Map<String, MixinClassData> mixinClient = new HashMap<>();
+	
 	
 	private static final Logger LOGGER = LogManager.getLogger("Random2Mixin");
 	
@@ -91,20 +93,44 @@ public class Csv2Mixin2 {
 
 			MixinMethodData newData = new MixinMethodData(name, description, qualName, target, ordinal, classAccess, methodAccess, remap, enabled, client, className, classNameWithPath, methodName, staticmethod);
 			
-			MixinClassData classData = mixinData.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches", classNameWithPath, className, classAccess));
-			
-			classData.add(newData);
-			
-			mixinData.put(className, classData);
+			if(client) {
+				MixinClassData classData = mixinClient.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches.client", classNameWithPath, className, classAccess));
+				classData.add(newData);
+				mixinClient.put(className, classData);
+			} else {
+				MixinClassData classData = mixinCommon.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches", classNameWithPath, className, classAccess));
+				classData.add(newData);
+				mixinCommon.put(className, classData);
+			}
 			
 		}
 		
 //		createLogFile();
 		
-		mixinData.forEach((classname, classdata) -> {
-			LOGGER.info("Saving class {}", classname);
+		// Create mixin classes
+		mixinClient.forEach((classname, classdata)-> {
+			LOGGER.info("[CLIENT] Saving class {}", classname);
+			classdata.saveAs(new File(dirKTRNG, "client"), "de.scribble.lp.killtherng.KillTheRNG.randomness");
+		});
+		mixinCommon.forEach((classname, classdata) -> {
+			LOGGER.info("[COMMON] Saving class {}", classname);
 			classdata.saveAs(dirKTRNG, "de.scribble.lp.killtherng.KillTheRNG.randomness");
 		});
+		
+		// Create mixin config
+		MixinConfig config = new MixinConfig(new File(dir, "src/main/resources/mixins.killtherng.json"));
+		
+		mixinClient.forEach((classname, classdata)-> {
+			config.addToClient(classdata);
+		});
+		
+		mixinCommon.forEach((classname, classdata)-> {
+			config.addToCommon(classdata);
+		});
+		LOGGER.info("Create mixin config");
+		config.save();
+		
+		
 	}
 	
 	private static void createLogFile() {
@@ -117,7 +143,7 @@ public class Csv2Mixin2 {
 			return;
 		}
 		
-		Set<Entry<String, MixinClassData>> mixinSet = mixinData.entrySet();
+		Set<Entry<String, MixinClassData>> mixinSet = mixinCommon.entrySet();
 		
 		Iterator<Entry<String, MixinClassData>> split = mixinSet.iterator();
 		while(split.hasNext()) {

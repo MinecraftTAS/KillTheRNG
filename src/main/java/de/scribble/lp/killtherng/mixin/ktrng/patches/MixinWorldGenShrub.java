@@ -13,9 +13,12 @@ public class MixinWorldGenShrub{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_shrubGeneration_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.shrubGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.shrubGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.shrubGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.shrubGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.shrubGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

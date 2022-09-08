@@ -13,9 +13,12 @@ public class MixinBiome{
 	*/
 	@Redirect(method = "generateBiomeTerrain(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/chunk/ChunkPrimer;IID)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_genBaseNoiseValue_1(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genBaseNoiseValue.nextDouble();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genBaseNoiseValue.nextDouble();
-		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBaseNoiseValue.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBaseNoiseValue.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genBaseNoiseValue.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBiome{
 	*/
 	@Redirect(method = "generateBiomeTerrain(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/chunk/ChunkPrimer;IID)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genBedrockLayer_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genBedrockLayer.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genBedrockLayer.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBedrockLayer.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBedrockLayer.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genBedrockLayer.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBiome{
 	*/
 	@Redirect(method = "generateBiomeTerrain(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/chunk/ChunkPrimer;IID)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genSandstone_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genSandstone.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genSandstone.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genSandstone.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genSandstone.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genSandstone.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinBiome{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genBigOakTree_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigOakTree.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genBigOakTree.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBigOakTree.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigOakTree.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genBigOakTree.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinBiome{
 	*/
 	@Redirect(method = "pickRandomFlower(Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockFlower$EnumFlowerType;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genDifferentFlower_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDifferentFlower.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDifferentFlower.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDifferentFlower.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDifferentFlower.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDifferentFlower.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

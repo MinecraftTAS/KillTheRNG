@@ -13,9 +13,12 @@ public class MixinEntityItemFrame{
 	*/
 	@Redirect(method = "dropItemOrSelf(Lnet/minecraft/entity/Entity;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_itemFrameDropChance_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.itemFrameDropChance.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.itemFrameDropChance.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.itemFrameDropChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.itemFrameDropChance.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.itemFrameDropChance.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

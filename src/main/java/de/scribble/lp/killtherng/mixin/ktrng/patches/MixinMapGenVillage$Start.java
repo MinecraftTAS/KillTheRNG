@@ -13,9 +13,12 @@ public class MixinMapGenVillage$Start{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotVillage_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinMapGenVillage$Start{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Ljava/util/Random;III)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_posRotVillage_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

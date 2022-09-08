@@ -13,9 +13,12 @@ public class MixinForgeHooks$1{
 	*/
 	@Redirect(method = "getStack(Ljava/util/Random;I)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_wheatSeedRandom_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wheatSeedRandom.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wheatSeedRandom.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

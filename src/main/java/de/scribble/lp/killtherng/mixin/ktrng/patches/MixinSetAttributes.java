@@ -13,9 +13,12 @@ public class MixinSetAttributes{
 	*/
 	@Redirect(method = "apply(Lnet/minecraft/item/ItemStack;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_randomEquipmentSlot_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomEquipmentSlot.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.randomEquipmentSlot.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomEquipmentSlot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomEquipmentSlot.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.randomEquipmentSlot.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

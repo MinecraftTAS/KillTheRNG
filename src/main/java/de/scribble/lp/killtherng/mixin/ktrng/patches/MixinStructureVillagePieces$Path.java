@@ -13,9 +13,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeVillage_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_posRotTypeVillage_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_posRotTypeVillage_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_posRotTypeVillage_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_posRotTypeVillage_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinStructureVillagePieces$Path{
 	*/
 	@Redirect(method = "buildComponent(Lnet/minecraft/world/gen/structure/StructureComponent;Ljava/util/List;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_posRotTypeVillage_6(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

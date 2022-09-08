@@ -13,9 +13,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_lightningBoltVertex_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextLong();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextLong();
-//		return rand.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextLong();
+		} else {
+				de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextLong();
+				return rand.nextLong();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lightningBoltVertex_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_lightningBoltVertex_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_lightningBoltVertex_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_lightningBoltVertex_5(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltVertex.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_lightningBoltSound_6(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_lightningBoltSound_7(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -83,9 +104,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lightningBoltSound_8(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -93,9 +117,12 @@ public class MixinEntityLightningBolt{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_lightningBoltSound_9(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextLong();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextLong();
-//		return rand.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextLong();
+		} else {
+				de.scribble.lp.killtherng.KillTheRNG.randomness.lightningBoltSound.nextLong();
+				return rand.nextLong();
+		}
 	}
 
 

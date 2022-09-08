@@ -13,9 +13,12 @@ public class MixinEntityAIAttackRangedBow{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_aiAttackRangedBowStrafeClockwise_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityAIAttackRangedBow{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_aiAttackRangedBowStrafeClockwise_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiAttackRangedBowStrafeClockwise.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinNetHandlerLoginServer{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/network/NetworkManager;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBytes([B)V", ordinal = 0))
 	public void redirect_serverToken_1(Random rand, byte[] bytes) {
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.serverToken.nextBytes(bytes);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.serverToken.nextBytes(bytes);
-		rand.nextBytes(bytes);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.serverToken.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.serverToken.nextBytes(bytes);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.serverToken.nextBytes(bytes);
+			rand.nextBytes(bytes);
+		}
 	}
 
 

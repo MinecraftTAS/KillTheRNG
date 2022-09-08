@@ -13,9 +13,12 @@ public class MixinEntityAIEatGrass{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiEatGrassEatGrass_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiEatGrassEatGrass.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiEatGrassEatGrass.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiEatGrassEatGrass.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiEatGrassEatGrass.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiEatGrassEatGrass.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

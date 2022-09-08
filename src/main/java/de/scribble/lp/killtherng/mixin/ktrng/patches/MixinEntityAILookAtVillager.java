@@ -13,9 +13,12 @@ public class MixinEntityAILookAtVillager{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiLookAtVillagerLook_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookAtVillagerLook.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookAtVillagerLook.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookAtVillagerLook.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookAtVillagerLook.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookAtVillagerLook.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

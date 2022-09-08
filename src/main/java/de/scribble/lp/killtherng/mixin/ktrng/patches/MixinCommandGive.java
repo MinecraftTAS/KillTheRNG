@@ -13,9 +13,12 @@ public class MixinCommandGive{
 	*/
 	@Redirect(method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_commandGiveSound_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinCommandGive{
 	*/
 	@Redirect(method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_commandGiveSound_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.commandGiveSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

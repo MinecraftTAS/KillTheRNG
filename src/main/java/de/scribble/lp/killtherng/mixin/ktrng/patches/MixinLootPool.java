@@ -13,9 +13,12 @@ public class MixinLootPool{
 	*/
 	@Redirect(method = "createLootRoll(Ljava/util/Collection;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lootCreateRoll_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lootCreateRoll.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lootCreateRoll.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lootCreateRoll.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lootCreateRoll.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lootCreateRoll.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

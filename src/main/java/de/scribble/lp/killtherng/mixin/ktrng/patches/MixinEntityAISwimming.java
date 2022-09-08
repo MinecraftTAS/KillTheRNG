@@ -13,9 +13,12 @@ public class MixinEntityAISwimming{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_aiSwimmingSetJumping_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSwimmingSetJumping.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiSwimmingSetJumping.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiSwimmingSetJumping.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSwimmingSetJumping.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiSwimmingSetJumping.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

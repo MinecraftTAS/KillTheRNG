@@ -13,9 +13,12 @@ public class MixinParticleSweepAttack{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/client/renderer/texture/TextureManager;Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1457_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1457.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1457.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1457.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1457.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1457.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

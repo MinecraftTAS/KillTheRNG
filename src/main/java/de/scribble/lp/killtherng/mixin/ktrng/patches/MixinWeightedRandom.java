@@ -13,9 +13,12 @@ public class MixinWeightedRandom{
 	*/
 	@Redirect(method = "getRandomItem(Ljava/util/Random;Ljava/util/List;I)Lnet/minecraft/util/WeightedRandom$Item;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_random_1374_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1374.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1374.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1374.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1374.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1374.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

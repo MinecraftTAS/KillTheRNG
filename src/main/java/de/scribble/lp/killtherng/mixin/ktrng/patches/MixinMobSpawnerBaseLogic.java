@@ -13,9 +13,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "resetTimer()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_829_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_829.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_829.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_829.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_829.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_829.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_820_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_820.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_820.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_820.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_820.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_820.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_821_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_821.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_821.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_821.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_821.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_821.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_random_822_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_822.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_822.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_822.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_822.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_822.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_random_823_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_823.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_823.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_823.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_823.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_823.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_random_824_6(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_824.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_824.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_824.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_824.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_824.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_825_7(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_825.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_825.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_825.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_825.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_825.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -83,9 +104,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_random_826_8(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_826.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_826.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_826.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_826.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_826.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -93,9 +117,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_random_827_9(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_827.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_827.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_827.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_827.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_827.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -103,9 +130,12 @@ public class MixinMobSpawnerBaseLogic{
 	*/
 	@Redirect(method = "updateSpawner()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_random_828_10(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_828.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_828.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_828.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_828.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_828.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

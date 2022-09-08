@@ -13,9 +13,12 @@ public class MixinStructureOceanMonumentPieces$SimpleTopRoom{
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeOceanMonument_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinStructureOceanMonumentPieces$SimpleTopRoom{
 	*/
 	@Redirect(method = "addComponentParts(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_posRotTypeOceanMonument_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

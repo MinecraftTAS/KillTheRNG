@@ -13,7 +13,10 @@ public class MixinEntitySquid{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_squidIdioticSetSeed_1(Random rand, long seed) {
-		de.scribble.lp.killtherng.KillTheRNG.randomness.squidIdioticSetSeed.setSeed(seed, true);//		rand.setSeed(seed);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.squidIdioticSetSeed.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.squidIdioticSetSeed.setSeed(seed, true);		} else {
+			rand.setSeed(seed);
+		}
 	}
 
 	/**
@@ -21,9 +24,12 @@ public class MixinEntitySquid{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_squidInitRotationVelocity_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.squidInitRotationVelocity.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.squidInitRotationVelocity.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.squidInitRotationVelocity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.squidInitRotationVelocity.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.squidInitRotationVelocity.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -31,9 +37,12 @@ public class MixinEntitySquid{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_squidShouldChangeRotationVelocity_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -41,9 +50,12 @@ public class MixinEntitySquid{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_squidShouldChangeRotationVelocity_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.squidShouldChangeRotationVelocity.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

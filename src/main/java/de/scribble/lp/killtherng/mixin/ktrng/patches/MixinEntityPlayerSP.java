@@ -13,9 +13,12 @@ public class MixinEntityPlayerSP{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_portalSoundTrigger_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.portalSoundTrigger.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.portalSoundTrigger.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.portalSoundTrigger.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.portalSoundTrigger.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.portalSoundTrigger.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

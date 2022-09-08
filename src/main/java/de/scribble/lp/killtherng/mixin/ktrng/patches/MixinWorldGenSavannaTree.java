@@ -13,9 +13,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genAcasiaTreeHeight_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genAcasiaTreeHeight_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTreeHeight.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_genAcasiaCrown_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_genAcasiaCrown_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaCrown.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_genAcasiaTrunk_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinWorldGenSavannaTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_genAcasiaTrunk_6(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genAcasiaTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

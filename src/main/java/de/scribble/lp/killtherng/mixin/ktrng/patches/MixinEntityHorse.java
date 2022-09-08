@@ -13,9 +13,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_horseVariantChild_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_horseVariantChild_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_horseVariantChild_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "createChild(Lnet/minecraft/entity/EntityAgeable;)Lnet/minecraft/entity/EntityAgeable;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_horseVariantChild_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseVariantChild.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_horseInitialVariant_5(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_horseInitialVariant_6(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseInitialVariant.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinEntityHorse{
 	*/
 	@Redirect(method = "playGallopSound(Lnet/minecraft/block/SoundType;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_horseBreathSound_7(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.horseBreathSound.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.horseBreathSound.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseBreathSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseBreathSound.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.horseBreathSound.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

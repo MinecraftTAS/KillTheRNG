@@ -13,9 +13,12 @@ public class MixinRandomChanceWithLooting{
 	*/
 	@Redirect(method = "testCondition(Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_randomChanceWithLootingTestCondition_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceWithLootingTestCondition.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceWithLootingTestCondition.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceWithLootingTestCondition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceWithLootingTestCondition.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceWithLootingTestCondition.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

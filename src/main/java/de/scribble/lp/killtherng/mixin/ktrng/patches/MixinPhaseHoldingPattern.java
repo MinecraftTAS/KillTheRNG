@@ -13,9 +13,12 @@ public class MixinPhaseHoldingPattern{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_phaseHoldingPatternPerch_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinPhaseHoldingPattern{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_phaseHoldingPatternPerch_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinPhaseHoldingPattern{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_phaseHoldingPatternPerch_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinPhaseHoldingPattern{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_phaseHoldingPatternPerch_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternPerch.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinPhaseHoldingPattern{
 	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseHoldingPatternMoveToLocation_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternMoveToLocation.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternMoveToLocation.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternMoveToLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternMoveToLocation.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseHoldingPatternMoveToLocation.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

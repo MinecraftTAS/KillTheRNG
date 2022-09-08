@@ -13,9 +13,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genDarkOakTreeHeight_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genDarkOakTreeHeight_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeHeight.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_genDarkOakTreeTrunk_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_genDarkOakTreeTrunk_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_genDarkOakTreeExtraLeaves_5(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
-		return rand.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraLeaves.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraLeaves.nextBoolean();
+			return rand.nextBoolean();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_genDarkOakTreeExtraTrunk_6(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinWorldGenCanopyTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_genDarkOakTreeExtraTrunk_7(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genDarkOakTreeExtraTrunk.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

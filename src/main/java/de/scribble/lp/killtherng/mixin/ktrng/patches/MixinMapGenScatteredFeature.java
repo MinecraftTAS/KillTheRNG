@@ -13,9 +13,12 @@ public class MixinMapGenScatteredFeature{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_amplifiedStructureRng_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinMapGenScatteredFeature{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_amplifiedStructureRng_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.amplifiedStructureRng.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

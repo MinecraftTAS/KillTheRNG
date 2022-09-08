@@ -13,9 +13,12 @@ public class MixinEntityChicken{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_chickenLaysFirstEgg_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenLaysFirstEgg.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.chickenLaysFirstEgg.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chickenLaysFirstEgg.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenLaysFirstEgg.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.chickenLaysFirstEgg.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityChicken{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_chickenEggSound_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityChicken{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_chickenEggSound_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinEntityChicken{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_chickenEggSound_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.chickenEggSound.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

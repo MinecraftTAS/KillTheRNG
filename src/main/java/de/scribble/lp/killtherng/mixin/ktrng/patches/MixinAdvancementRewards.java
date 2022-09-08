@@ -13,9 +13,12 @@ public class MixinAdvancementRewards{
 	*/
 	@Redirect(method = "apply(Lnet/minecraft/entity/player/EntityPlayerMP;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_advancementRewardsLoot_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinAdvancementRewards{
 	*/
 	@Redirect(method = "apply(Lnet/minecraft/entity/player/EntityPlayerMP;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_advancementRewardsLoot_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.advancementRewardsLoot.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

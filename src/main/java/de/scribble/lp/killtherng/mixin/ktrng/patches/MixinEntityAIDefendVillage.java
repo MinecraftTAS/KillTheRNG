@@ -13,9 +13,12 @@ public class MixinEntityAIDefendVillage{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiDefendVillageCheckForEnemyPlayer_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiDefendVillageCheckForEnemyPlayer.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiDefendVillageCheckForEnemyPlayer.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiDefendVillageCheckForEnemyPlayer.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiDefendVillageCheckForEnemyPlayer.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiDefendVillageCheckForEnemyPlayer.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "getAmbientSound()Lnet/minecraft/util/SoundEvent;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_wolfAmbientSound_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfAmbientSound.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfAmbientSound.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfAmbientSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfAmbientSound.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfAmbientSound.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_wolfShakeSound_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_wolfShakeSound_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_wolfShakeSound_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_wolfShakeSound_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfShakeSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinEntityWolf{
 	*/
 	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_wolfTamingChance_6(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfTamingChance.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.wolfTamingChance.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.wolfTamingChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.wolfTamingChance.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.wolfTamingChance.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

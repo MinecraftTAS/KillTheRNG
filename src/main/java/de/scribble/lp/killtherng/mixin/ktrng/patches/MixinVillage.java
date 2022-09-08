@@ -13,9 +13,12 @@ public class MixinVillage{
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_villagerSpawnPos_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinVillage{
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_villagerSpawnPos_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinVillage{
 	*/
 	@Redirect(method = "findRandomSpawnPos(Lnet/minecraft/util/math/BlockPos;III)Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_villagerSpawnPos_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerSpawnPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinVillage{
 	*/
 	@Redirect(method = "removeDeadAndOutOfRangeDoors()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_villageResetDoorOpeningRestrictionCounter_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.villageResetDoorOpeningRestrictionCounter.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinVillage{
 	*/
 	@Redirect(method = "tick(I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_ironGolemSpawnVillage_5(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemSpawnVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemSpawnVillage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

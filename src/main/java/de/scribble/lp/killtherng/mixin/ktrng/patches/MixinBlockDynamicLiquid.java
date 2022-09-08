@@ -13,9 +13,12 @@ public class MixinBlockDynamicLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lavaFlow_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFlow.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFlow.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFlow.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFlow.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFlow.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

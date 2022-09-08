@@ -13,9 +13,12 @@ public class MixinBlockDoublePlant{
 	*/
 	@Redirect(method = "getItemDropped(Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;I)Lnet/minecraft/item/Item;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_seedFromDoublePlant_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.seedFromDoublePlant.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.seedFromDoublePlant.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinTileEntityDispenser{
 	*/
 	@Redirect(method = "getDispenseSlot()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_333_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_333.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_333.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_333.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_333.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_333.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

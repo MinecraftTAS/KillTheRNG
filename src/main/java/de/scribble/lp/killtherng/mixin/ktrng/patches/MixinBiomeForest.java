@@ -13,9 +13,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addDoublePlants(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_forestGenration_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addDoublePlants(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_forestGenration_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addDoublePlants(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_forestGenration_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addDoublePlants(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_forestGenration_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addMushrooms(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_forestGenration_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addMushrooms(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_forestGenration_6(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "addMushrooms(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_forestGenration_7(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -83,9 +104,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_forestGenration_8(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -93,9 +117,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_forestGenration_9(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -103,9 +130,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_forestGenration_10(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -113,9 +143,12 @@ public class MixinBiomeForest{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_forestGenration_11(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

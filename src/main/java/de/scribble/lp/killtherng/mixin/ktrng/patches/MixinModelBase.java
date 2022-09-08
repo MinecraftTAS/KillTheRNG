@@ -13,9 +13,12 @@ public class MixinModelBase{
 	*/
 	@Redirect(method = "getRandomModelBox(Ljava/util/Random;)Lnet/minecraft/client/model/ModelRenderer;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_modelBox_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.modelBox.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.modelBox.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.modelBox.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.modelBox.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.modelBox.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

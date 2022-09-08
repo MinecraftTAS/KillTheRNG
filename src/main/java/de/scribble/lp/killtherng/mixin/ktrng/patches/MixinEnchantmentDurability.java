@@ -13,9 +13,12 @@ public class MixinEnchantmentDurability{
 	*/
 	@Redirect(method = "negateDamage(Lnet/minecraft/item/ItemStack;ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	private static float redirect_itemNegateDamage_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEnchantmentDurability{
 	*/
 	@Redirect(method = "negateDamage(Lnet/minecraft/item/ItemStack;ILjava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_itemNegateDamage_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.itemNegateDamage.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

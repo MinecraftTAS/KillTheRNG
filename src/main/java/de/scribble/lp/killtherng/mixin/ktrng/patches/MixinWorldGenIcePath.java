@@ -13,9 +13,12 @@ public class MixinWorldGenIcePath{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_iceSpikeGeneration_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.iceSpikeGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.iceSpikeGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

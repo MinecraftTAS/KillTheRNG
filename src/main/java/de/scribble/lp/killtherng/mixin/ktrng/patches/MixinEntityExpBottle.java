@@ -13,9 +13,12 @@ public class MixinEntityExpBottle{
 	*/
 	@Redirect(method = "onImpact(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_657_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_657.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_657.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_657.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_657.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_657.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityExpBottle{
 	*/
 	@Redirect(method = "onImpact(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_658_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_658.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_658.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_658.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_658.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_658.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

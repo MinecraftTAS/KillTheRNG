@@ -13,9 +13,12 @@ public class MixinMapGenEndCity{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endCityPos_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinMapGenEndCity{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_endCityPos_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinMapGenEndCity{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_endCityPos_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinMapGenEndCity{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_endCityPos_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinMapGenEndCity{
 	*/
 	@Redirect(method = "getYPosForStructure(IILnet/minecraft/world/gen/ChunkGeneratorEnd;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_endCityPos_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endCityPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinEntityGhast{
 	*/
 	@Redirect(method = "getCanSpawnHere()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_ghastSpawning_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.ghastSpawning.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.ghastSpawning.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ghastSpawning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.ghastSpawning.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.ghastSpawning.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

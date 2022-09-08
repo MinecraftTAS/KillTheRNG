@@ -85,6 +85,17 @@ public class MixinClassData {
 		}
 	}
 	
+	public String getClassName() {
+		return className;
+	}
+	
+	public String getMixinPackage() {
+		return mixinPackage;
+	}
+	
+	public String getMixinClassName() {
+		return mixinClassName;
+	}
 //	private static void writeStream(FileOutputStream stream, String line) {
 //		line=line.concat("\n");
 //		try {

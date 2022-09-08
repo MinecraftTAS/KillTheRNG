@@ -13,9 +13,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_dungeonPos_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_dungeonPos_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_dungeonPos_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_dungeonPos_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_dungeonPos_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinWorldGenDungeons{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_dungeonPos_6(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextLong();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextLong();
-		return rand.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextLong();
+		} else {
+				de.scribble.lp.killtherng.KillTheRNG.randomness.dungeonPos.nextLong();
+				return rand.nextLong();
+		}
 	}
 
 

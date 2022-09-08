@@ -13,9 +13,12 @@ public class MixinEntityFireball{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_fireballRandomAccelleration_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityFireball{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_fireballRandomAccelleration_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityFireball{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/entity/EntityLivingBase;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_fireballRandomAccelleration_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fireballRandomAccelleration.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 

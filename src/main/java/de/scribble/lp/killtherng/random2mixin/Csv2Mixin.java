@@ -430,7 +430,7 @@ public class Csv2Mixin {
 	}
 	private static void startMixinConfig() throws IOException {
 		mixinConfigStream = new FileOutputStream(new File(dir, "src/main/resources/mixins.killtherng.json"));
-		writeLineMixinConf("{\r\n" + "  \"required\": true,\n" + "  \"minVersion\": \"0.7.10\",\n"
+		writeLineMixinConf("{\n" + "  \"required\": true,\n" + "  \"minVersion\": \"0.7.10\",\n"
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"

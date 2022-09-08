@@ -13,9 +13,12 @@ public class MixinEntityAIWander{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiWander_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiWander.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiWander.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiWander.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiWander.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiWander.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinEntityBlaze$AIFireballAttack{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_random_898_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_898.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_898.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_898.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_898.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_898.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityBlaze$AIFireballAttack{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_random_899_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_899.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_899.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_899.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_899.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_899.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 

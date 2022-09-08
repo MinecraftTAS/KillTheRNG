@@ -13,9 +13,12 @@ public class MixinMathHelper{
 	*/
 	@Redirect(method = "getInt(Ljava/util/Random;II)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_random_338_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_338.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_338.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_338.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_338.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_338.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinMathHelper{
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	private static long redirect_randomUUID_2(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
-		return rand.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
+		} else {
+				de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
+				return rand.nextLong();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinMathHelper{
 	*/
 	@Redirect(method = "getRandomUUID(Ljava/util/Random;)Ljava/util/UUID;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
 	private static long redirect_randomUUID_3(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
-		return rand.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
+		} else {
+				de.scribble.lp.killtherng.KillTheRNG.randomness.randomUUID.nextLong();
+				return rand.nextLong();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinMathHelper{
 	*/
 	@Redirect(method = "nextDouble(Ljava/util/Random;DD)D", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	private static double redirect_random_340_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_340.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_340.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_340.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_340.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_340.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinMathHelper{
 	*/
 	@Redirect(method = "nextFloat(Ljava/util/Random;FF)F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	private static float redirect_random_339_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_339.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_339.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_339.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_339.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_339.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

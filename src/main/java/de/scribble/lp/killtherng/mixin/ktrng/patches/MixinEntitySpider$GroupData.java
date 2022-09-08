@@ -13,9 +13,12 @@ public class MixinEntitySpider$GroupData{
 	*/
 	@Redirect(method = "setRandomEffect(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_spiderEffect_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.spiderEffect.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.spiderEffect.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spiderEffect.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.spiderEffect.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.spiderEffect.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

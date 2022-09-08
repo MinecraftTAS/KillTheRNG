@@ -13,9 +13,12 @@ public class MixinEntitySpider$AISpiderAttack{
 	*/
 	@Redirect(method = "shouldContinueExecuting()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_835_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_835.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_835.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_835.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_835.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_835.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

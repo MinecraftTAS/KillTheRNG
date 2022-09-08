@@ -13,9 +13,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_endRodParticlePos_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_endRodParticlePos_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_endRodParticlePos_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_endRodParticlePos_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_endRodParticlePos_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endRodParticlePosChance_6(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePosChance.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePosChance.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePosChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePosChance.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePosChance.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_endRodParticlePos_7(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -83,9 +104,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_endRodParticlePos_8(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -93,9 +117,12 @@ public class MixinBlockEndRod{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_endRodParticlePos_9(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endRodParticlePos.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 

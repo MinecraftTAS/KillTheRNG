@@ -13,9 +13,12 @@ public class MixinEnumFacing$Plane{
 	*/
 	@Redirect(method = "random(Ljava/util/Random;)Lnet/minecraft/util/EnumFacing;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_randomFacingPlane_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomFacingPlane.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.randomFacingPlane.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomFacingPlane.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomFacingPlane.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.randomFacingPlane.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

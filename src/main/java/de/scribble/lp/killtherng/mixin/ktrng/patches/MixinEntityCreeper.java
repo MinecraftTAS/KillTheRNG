@@ -13,9 +13,12 @@ public class MixinEntityCreeper{
 	*/
 	@Redirect(method = "onDeath(Lnet/minecraft/util/DamageSource;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_creeperDropRecord_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.creeperDropRecord.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.creeperDropRecord.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.creeperDropRecord.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.creeperDropRecord.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.creeperDropRecord.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityCreeper{
 	*/
 	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_creeperSoundPitch_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.creeperSoundPitch.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.creeperSoundPitch.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.creeperSoundPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.creeperSoundPitch.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.creeperSoundPitch.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

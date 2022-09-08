@@ -13,9 +13,12 @@ public class MixinStructureStrongholdPieces{
 	*/
 	@Redirect(method = "generatePieceFromSmallDoor(Lnet/minecraft/world/gen/structure/StructureStrongholdPieces$Stairs2;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureStrongholdPieces$Stronghold;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_posRotTypeStronghold_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

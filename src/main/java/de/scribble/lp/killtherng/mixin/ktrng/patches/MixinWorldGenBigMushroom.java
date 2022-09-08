@@ -13,9 +13,12 @@ public class MixinWorldGenBigMushroom{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_mushroomGeneration_1(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextBoolean();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextBoolean();
-		return rand.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextBoolean();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextBoolean();
+			return rand.nextBoolean();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenBigMushroom{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_mushroomGeneration_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinWorldGenBigMushroom{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_mushroomGeneration_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.mushroomGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

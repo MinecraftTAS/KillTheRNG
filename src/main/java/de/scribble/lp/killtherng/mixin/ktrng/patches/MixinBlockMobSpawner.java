@@ -13,9 +13,12 @@ public class MixinBlockMobSpawner{
 	*/
 	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_random_393_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_393.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_393.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_393.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_393.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_393.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockMobSpawner{
 	*/
 	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap = false)
 	public int redirect_random_394_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_394.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_394.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_394.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_394.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_394.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

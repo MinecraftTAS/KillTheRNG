@@ -13,9 +13,12 @@ public class MixinPhaseTakeoff{
 	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseTakeoffMoveToLocation_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseTakeoffMoveToLocation.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseTakeoffMoveToLocation.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseTakeoffMoveToLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseTakeoffMoveToLocation.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseTakeoffMoveToLocation.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

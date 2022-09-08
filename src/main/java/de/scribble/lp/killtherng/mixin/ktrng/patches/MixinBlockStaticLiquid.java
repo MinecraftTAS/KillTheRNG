@@ -13,9 +13,12 @@ public class MixinBlockStaticLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lavaFireSpreadChanceAndAmount_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadChanceAndAmount.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockStaticLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_lavaFireSpreadPos_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBlockStaticLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_lavaFireSpreadPos_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinBlockStaticLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_lavaFireSpreadPos_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinBlockStaticLiquid{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_lavaFireSpreadPos_5(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaFireSpreadPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

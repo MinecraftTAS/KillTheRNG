@@ -13,9 +13,12 @@ public class MixinWorldGenTaiga1{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_taigaGeneration_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenTaiga1{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_taigaGeneration_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinWorldGenTaiga1{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_taigaGeneration_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.taigaGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

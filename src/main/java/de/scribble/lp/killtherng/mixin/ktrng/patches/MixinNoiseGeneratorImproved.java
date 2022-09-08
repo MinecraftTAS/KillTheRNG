@@ -13,9 +13,12 @@ public class MixinNoiseGeneratorImproved{
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_noiseGeneration_1(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinNoiseGeneratorImproved{
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_noiseGeneration_2(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinNoiseGeneratorImproved{
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_noiseGeneration_3(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
-		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinNoiseGeneratorImproved{
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_noiseGeneration_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.noiseGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

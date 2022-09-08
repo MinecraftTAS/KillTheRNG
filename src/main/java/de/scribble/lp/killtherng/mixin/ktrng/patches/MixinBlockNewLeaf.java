@@ -13,9 +13,12 @@ public class MixinBlockNewLeaf{
 	*/
 	@Redirect(method = "dropApple(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_530_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_530.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_530.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_530.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_530.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_530.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

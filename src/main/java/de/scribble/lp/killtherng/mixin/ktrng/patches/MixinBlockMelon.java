@@ -13,9 +13,12 @@ public class MixinBlockMelon{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_melonDrop_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.melonDrop.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.melonDrop.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.melonDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.melonDrop.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.melonDrop.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBlockMelon{
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_bonusMelonDrop_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusMelonDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusMelonDrop.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

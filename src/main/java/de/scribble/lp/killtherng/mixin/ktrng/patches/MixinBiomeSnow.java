@@ -13,9 +13,12 @@ public class MixinBiomeSnow{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_snowGeneration_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinBiomeSnow{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_snowGeneration_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinBiomeSnow{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_snowGeneration_3(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinBiomeSnow{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_snowGeneration_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.snowGeneration.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

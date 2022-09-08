@@ -13,9 +13,12 @@ public class MixinEntitySlime$AISlimeFloat{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_855_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_855.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_855.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_855.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_855.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_855.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

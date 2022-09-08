@@ -13,9 +13,12 @@ public class MixinBlockDeadBush{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_deadBushDrop_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.deadBushDrop.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.deadBushDrop.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deadBushDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.deadBushDrop.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.deadBushDrop.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

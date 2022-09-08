@@ -13,9 +13,12 @@ public class MixinEnchantRandomly{
 	*/
 	@Redirect(method = "apply(Lnet/minecraft/item/ItemStack;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lootEnchantRandomly_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEnchantRandomly{
 	*/
 	@Redirect(method = "apply(Lnet/minecraft/item/ItemStack;Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Lnet/minecraft/item/ItemStack;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_lootEnchantRandomly_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.lootEnchantRandomly.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

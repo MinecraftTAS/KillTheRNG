@@ -13,9 +13,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "attackEntityWithRangedAttack(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_illuasionIllagerSound_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illuasionIllagerSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illuasionIllagerSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illuasionIllagerSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illuasionIllagerSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illuasionIllagerSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_illusionIllagerIllusionPosition_2(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_illusionIllagerIllusionPosition_3(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_illusionIllagerIllusionPosition_4(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_illusionIllagerIllusionPosition_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_illusionIllagerIllusionPosition_6(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 	/**
@@ -73,9 +91,12 @@ public class MixinEntityIllusionIllager{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_illusionIllagerIllusionPosition_7(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
-//		return rand.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.illusionIllagerIllusionPosition.nextDouble();
+			return rand.nextDouble();
+		}
 	}
 
 

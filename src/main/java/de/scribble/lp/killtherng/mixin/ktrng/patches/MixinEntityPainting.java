@@ -13,9 +13,12 @@ public class MixinEntityPainting{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_paintingDisplay_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.paintingDisplay.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.paintingDisplay.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.paintingDisplay.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.paintingDisplay.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.paintingDisplay.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

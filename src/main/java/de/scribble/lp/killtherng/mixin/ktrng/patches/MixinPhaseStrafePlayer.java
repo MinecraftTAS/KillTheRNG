@@ -13,9 +13,12 @@ public class MixinPhaseStrafePlayer{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_phaseStrafePlayerRotation_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinPhaseStrafePlayer{
 	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseStrafePlayerMoveToLocation_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

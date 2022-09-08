@@ -13,9 +13,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeEndCity_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_posRotTypeEndCity_2(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
-		return rand.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+			return rand.nextBoolean();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
 	public boolean redirect_posRotTypeEndCity_3(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
-		return rand.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextBoolean();
+			return rand.nextBoolean();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_posRotTypeEndCity_4(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_posRotTypeEndCity_5(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinStructureEndCityPieces$3{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/gen/structure/template/TemplateManager;ILnet/minecraft/world/gen/structure/StructureEndCityPieces$CityTemplate;Lnet/minecraft/util/math/BlockPos;Ljava/util/List;Ljava/util/Random;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_posRotTypeEndCity_6(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeEndCity.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

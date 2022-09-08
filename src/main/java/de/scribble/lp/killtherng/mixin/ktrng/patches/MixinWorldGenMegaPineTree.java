@@ -13,9 +13,12 @@ public class MixinWorldGenMegaPineTree{
 	*/
 	@Redirect(method = "createCrown(Lnet/minecraft/world/World;IIIILjava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genMegaSpruceCrownSize_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaSpruceCrownSize.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaSpruceCrownSize.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenMegaPineTree{
 	*/
 	@Redirect(method = "generateSaplings(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genPodzolPosOffset_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genPodzolPosOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.genPodzolPosOffset.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

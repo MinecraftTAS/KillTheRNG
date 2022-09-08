@@ -13,9 +13,12 @@ public class MixinPhaseSittingAttacking{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseSittingAttackingGrowlSound_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingAttackingGrowlSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingAttackingGrowlSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingAttackingGrowlSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingAttackingGrowlSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingAttackingGrowlSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

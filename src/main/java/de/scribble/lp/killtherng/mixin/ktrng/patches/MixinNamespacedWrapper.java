@@ -13,9 +13,12 @@ public class MixinNamespacedWrapper{
 	*/
 	@Redirect(method = "getRandomObject(Ljava/util/Random;)Lnet/minecraftforge/registries/IForgeRegistryEntry;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_randomRegistryObject_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.randomRegistryObject.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.randomRegistryObject.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomRegistryObject.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomRegistryObject.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.randomRegistryObject.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

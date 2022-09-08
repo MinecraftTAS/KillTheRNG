@@ -13,9 +13,12 @@ public class MixinParticleSpell$WitchFactory{
 	*/
 	@Redirect(method = "createParticle(ILnet/minecraft/world/World;DDDDDD[I)Lnet/minecraft/client/particle/Particle;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1432_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1432.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.random_1432.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1432.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1432.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1432.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

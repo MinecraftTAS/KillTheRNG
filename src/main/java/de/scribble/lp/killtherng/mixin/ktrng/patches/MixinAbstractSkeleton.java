@@ -13,9 +13,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "attackEntityWithRangedAttack(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_skeletonShootSound_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonShootSound.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonShootSound.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonShootSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonShootSound.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonShootSound.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_skeletonCanPickupLoot_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_skeletonCanPickupLoot_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -43,9 +52,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_skeletonCanPickupLoot_4(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonCanPickupLoot.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -53,9 +65,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_skeletonFireChance_5(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -63,9 +78,12 @@ public class MixinAbstractSkeleton{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_skeletonFireChance_6(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.skeletonFireChance.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

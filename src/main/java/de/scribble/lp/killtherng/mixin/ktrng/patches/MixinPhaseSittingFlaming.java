@@ -13,9 +13,12 @@ public class MixinPhaseSittingFlaming{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_phaseSittingFlamingParticle_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinPhaseSittingFlaming{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_phaseSittingFlamingParticle_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinPhaseSittingFlaming{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_phaseSittingFlamingParticle_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
-//		return rand.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseSittingFlamingParticle.nextGaussian();
+			return rand.nextGaussian();
+		}
 	}
 
 

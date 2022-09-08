@@ -13,9 +13,12 @@ public class MixinEntityAIPlay{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiPlay_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.aiPlay.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.aiPlay.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiPlay.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiPlay.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.aiPlay.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

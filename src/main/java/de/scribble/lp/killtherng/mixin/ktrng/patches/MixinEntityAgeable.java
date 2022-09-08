@@ -13,9 +13,12 @@ public class MixinEntityAgeable{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_ageableGrowUpParticle_1(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinEntityAgeable{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_ageableGrowUpParticle_2(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 	/**
@@ -33,9 +39,12 @@ public class MixinEntityAgeable{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_ageableGrowUpParticle_3(Random rand) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
-//		return rand.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.ageableGrowUpParticle.nextFloat();
+			return rand.nextFloat();
+		}
 	}
 
 

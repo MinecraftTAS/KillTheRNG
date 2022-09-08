@@ -13,9 +13,12 @@ public class MixinVillagerRegistry$VillagerProfession{
 	*/
 	@Redirect(method = "getRandomCareer(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_villagerProfession_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerProfession.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.villagerProfession.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerProfession.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerProfession.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerProfession.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

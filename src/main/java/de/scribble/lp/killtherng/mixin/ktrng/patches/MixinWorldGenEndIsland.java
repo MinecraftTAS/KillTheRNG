@@ -13,9 +13,12 @@ public class MixinWorldGenEndIsland{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endIslandPos_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinWorldGenEndIsland{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_endIslandPos_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.endIslandPos.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

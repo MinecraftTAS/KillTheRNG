@@ -13,9 +13,12 @@ public class MixinIntArrays{
 	*/
 	@Redirect(method = "shuffle([IIILjava/util/Random;)[I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	private static int redirect_fastutilArrayShuffle_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 	/**
@@ -23,9 +26,12 @@ public class MixinIntArrays{
 	*/
 	@Redirect(method = "shuffle([ILjava/util/Random;)[I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	private static int redirect_fastutilArrayShuffle_2(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.fastutilArrayShuffle.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

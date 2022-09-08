@@ -13,9 +13,12 @@ public class MixinBiomeForestMutated{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_forestGenration_1(Random rand) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextBoolean();
-		de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextBoolean();
-		return rand.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextBoolean();
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.forestGenration.nextBoolean();
+			return rand.nextBoolean();
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinResourceLeakDetector{
 	*/
 	@Redirect(method = "track0(Ljava/lang/Object;)Lio/netty/util/ResourceLeakDetector$DefaultResourceLeak;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_nettyLeakDetector_1(Random rand, int i) {
-//		return de.scribble.lp.killtherng.KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
-		de.scribble.lp.killtherng.KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
-		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.nettyLeakDetector.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.nettyLeakDetector.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 

@@ -13,9 +13,12 @@ public class MixinWorldType{
 	*/
 	@Redirect(method = "handleSlimeSpawnReduction(Ljava/util/Random;Lnet/minecraft/world/World;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_slimeSpawnModifier_1(Random rand, int i) {
-		return de.scribble.lp.killtherng.KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
-//		de.scribble.lp.killtherng.KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
-//		return rand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.randomness.slimeSpawnModifier.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
+		} else {
+			de.scribble.lp.killtherng.KillTheRNG.randomness.slimeSpawnModifier.nextInt(i);
+			return rand.nextInt(i);
+		}
 	}
 
 
