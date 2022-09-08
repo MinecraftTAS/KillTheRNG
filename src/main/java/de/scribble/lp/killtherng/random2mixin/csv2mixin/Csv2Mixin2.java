@@ -23,7 +23,7 @@ public class Csv2Mixin2 {
 
 	private static final File dirKTRNG = new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
 
-	private static final Map<String, List<RandomnessMixinData>> mixinData = new HashMap<>();
+	private static final Map<String, MixinClassData> mixinData = new HashMap<>();
 	
 	private static final Logger LOGGER = LogManager.getLogger("Random2Mixin");
 	
@@ -79,6 +79,8 @@ public class Csv2Mixin2 {
 			boolean enabled = split[8].equals("TRUE") ? false : true;
 			// If the mixin should be called on the client
 			boolean client = split[9].equals("TRUE") ? true : false;
+			// If the mixin should be set to private static
+			boolean staticmethod = split[10].equals("TRUE") ? true : false;
 
 			/**** Process qualified name ****/
 			String className = getClassName(qualName); // The actual class name to mix into without the package information: "World"
@@ -87,19 +89,21 @@ public class Csv2Mixin2 {
 			String methodName = getMethodName(qualName); // The method name plus descriptor:
 															// "<init>(Lnet/minecraft/world/storage/ISaveHandler;Lnet/minecraft/world/storage/WorldInfo;Lnet/minecraft/world/WorldProvider;Lnet/minecraft/profiler/Profiler;Z)V"
 
-			RandomnessMixinData newData = new RandomnessMixinData(name, description, qualName, target, ordinal, classAccess, methodAccess, remap, enabled, client, className, classNameWithPath, methodName);
+			MixinMethodData newData = new MixinMethodData(name, description, qualName, target, ordinal, classAccess, methodAccess, remap, enabled, client, className, classNameWithPath, methodName, staticmethod);
 			
-			List<RandomnessMixinData> classData = mixinData.getOrDefault(className, new ArrayList<>());
+			MixinClassData classData = mixinData.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches", classNameWithPath, className, classAccess));
 			
 			classData.add(newData);
 			
 			mixinData.put(className, classData);
+			
 		}
 		
-		createLogFile();
+//		createLogFile();
 		
 		mixinData.forEach((classname, classdata) -> {
-			MixinClass newClass = new MixinClass("de.scribble.lp.killtherng.mixin.ktrng.patches", classname, classdata);
+			LOGGER.info("Saving class {}", classname);
+			classdata.saveAs(dirKTRNG, "de.scribble.lp.killtherng.KillTheRNG.randomness");
 		});
 	}
 	
@@ -113,19 +117,14 @@ public class Csv2Mixin2 {
 			return;
 		}
 		
-		Set<Entry<String, List<RandomnessMixinData>>> mixinSet = mixinData.entrySet();
+		Set<Entry<String, MixinClassData>> mixinSet = mixinData.entrySet();
 		
-		Iterator<Entry<String, List<RandomnessMixinData>>> split = mixinSet.iterator();
+		Iterator<Entry<String, MixinClassData>> split = mixinSet.iterator();
 		while(split.hasNext()) {
-			Entry<String, List<RandomnessMixinData>> entry = split.next();
-			String className = entry.getKey();
-			List<RandomnessMixinData> classData = entry.getValue();
+			Entry<String, MixinClassData> entry = split.next();
+			MixinClassData classData = entry.getValue();
 			
-			writeStream(logfileStream, "==========================================================================");
-			writeStream(logfileStream, String.format("%s:", className));
-			for (RandomnessMixinData mixinData : classData) {
-				writeStream(logfileStream, String.format("\t\t%s", mixinData));
-			}
+			writeStream(logfileStream, classData.toString());
 		}
 		try {
 			logfileStream.close();

@@ -1,24 +1,20 @@
 package de.scribble.lp.killtherng.mixin.ktrng.patches;
-
 import java.util.Random;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import de.scribble.lp.killtherng.KillTheRNG;
-import net.minecraft.block.BlockEndPortal;
-
-@Mixin(BlockEndPortal.class)
-public class MixinBlockEndPortal {
+@Mixin(net.minecraft.block.BlockEndPortal.class)
+public class MixinBlockEndPortal{
 
 	/**
 	* Get the X of the end portal particle
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_endPortalParticlePosX_1(Random rand) {
-		return KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
-//		KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
+		return de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
+//		de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -27,9 +23,10 @@ public class MixinBlockEndPortal {
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_endPortalParticlePosZ_2(Random rand) {
-		return KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
-//		KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
+		return de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
+//		de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
 //		return rand.nextFloat();
 	}
+
 
 }

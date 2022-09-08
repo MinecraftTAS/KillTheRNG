@@ -15,6 +15,7 @@ import org.objectweb.asm.Opcodes;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
+@Deprecated
 public class Csv2Mixin {
 	
 	private static File dir=new File("../");
@@ -322,7 +323,6 @@ public class Csv2Mixin {
 		
 		writeLineMixin(String.format("%s\t\tKillTheRNG.randomness.%s.nextBytes(bytes);", !enabled? "" : "//", name));
 		writeLineMixin(String.format("%s\t\trand.nextBytes(bytes);", !enabled ? "" : "//"));
-		
 		writeLineMixin("\t}\n");
 	}
 
@@ -345,7 +345,6 @@ public class Csv2Mixin {
 		
 		writeLineMixin(String.format("%s\t\tKillTheRNG.randomness.%s.nextLong();", !enabled? "" : "//", name));
 		writeLineMixin(String.format("%s\t\treturn rand.nextLong();", !enabled ? "" : "//"));
-		
 		writeLineMixin("\t}\n");
 	}
 	

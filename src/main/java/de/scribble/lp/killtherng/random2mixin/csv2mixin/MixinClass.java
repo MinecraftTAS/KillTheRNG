@@ -1,17 +1,16 @@
 package de.scribble.lp.killtherng.random2mixin.csv2mixin;
 
-import java.io.IOException;
 import java.util.List;
 
 public class MixinClass {
 
 	String classContent;
 	
-	public MixinClass(String classPackage, String className, List<RandomnessMixinData> classData) {
+	public MixinClass(String classPackage, String className, List<MixinMethodData> classData) {
 		classContent = createClass(classPackage, className, classData);
 	}
 
-	private String createClass(String classPackage, String className, List<RandomnessMixinData> classData) {
+	private String createClass(String classPackage, String className, List<MixinMethodData> classData) {
 		// Start
 		String out=String.format("%s\n"
 				+ "import java.util.Random;\n"
@@ -28,5 +27,18 @@ public class MixinClass {
 		
 		return out;
 	}
+	
+//	private String writeMixinTag(int classAccess) {
+//		if(classAccess==0x30||classAccess==0x20||classAccess==0x420) {
+//			writeLineMixin("@Mixin(targets=\""+className2+"\")");
+//		}else {
+//			if(client) {
+//				writeLineMixin("@Mixin("+className.replace("$", ".").replace("2", "")+".class)");
+//			}else {
+//				writeLineMixin("@Mixin("+className.replace("$", ".")+".class)");
+//			}
+//			
+//		}
+//	}
 	
 }

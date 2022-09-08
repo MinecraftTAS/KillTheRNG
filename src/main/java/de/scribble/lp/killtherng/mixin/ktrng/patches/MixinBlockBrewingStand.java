@@ -1,24 +1,20 @@
 package de.scribble.lp.killtherng.mixin.ktrng.patches;
-
 import java.util.Random;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import de.scribble.lp.killtherng.KillTheRNG;
-import net.minecraft.block.BlockBrewingStand;
-
-@Mixin(BlockBrewingStand.class)
-public class MixinBlockBrewingStand {
+@Mixin(net.minecraft.block.BlockBrewingStand.class)
+public class MixinBlockBrewingStand{
 
 	/**
 	* Get the X of the position of a particle of a brewing stand
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_brewingStandParticlePositionX_1(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
+		return de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
+//		de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionX.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -27,8 +23,8 @@ public class MixinBlockBrewingStand {
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_brewingStandParticlePositionY_2(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
+		return de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
+//		de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionY.nextFloat();
 //		return rand.nextFloat();
 	}
 
@@ -37,9 +33,10 @@ public class MixinBlockBrewingStand {
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_brewingStandParticlePositionZ_3(Random rand) {
-		return KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
-//		KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
+		return de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
+//		de.scribble.lp.killtherng.KillTheRNG.randomness.brewingStandParticlePositionZ.nextFloat();
 //		return rand.nextFloat();
 	}
+
 
 }
