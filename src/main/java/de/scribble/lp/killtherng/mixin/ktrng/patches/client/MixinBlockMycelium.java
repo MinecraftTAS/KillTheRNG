@@ -9,40 +9,40 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockMycelium{
 
 	/**
-	* null
+	* Position of mycelium particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_469_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_469.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_469.nextInt(i);
+	public int redirect_myceliumParticles_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_469.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
 
 	/**
-	* null
+	* Position of mycelium particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_470_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_470.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_470.nextFloat();
+	public float redirect_myceliumParticles_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_470.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* null
+	* Position of mycelium particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_471_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_471.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_471.nextFloat();
+	public float redirect_myceliumParticles_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_471.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.myceliumParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}

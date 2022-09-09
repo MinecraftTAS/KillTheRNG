@@ -9,66 +9,66 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockRedstoneTorch{
 
 	/**
-	* null
+	* Sound of redstone torch burning out
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_410_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_410.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_410.nextFloat();
+	public float redirect_redstoneTorchBurnoutSound_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_410.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* null
+	* Sound of redstone torch burning out
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_411_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_411.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_411.nextFloat();
+	public float redirect_redstoneTorchBurnoutSound_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_411.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* null
+	* Particles of redstone torch burning out
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_412_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_412.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_412.nextDouble();
+	public double redirect_redstoneTorchBurnoutParticles_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_412.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* null
+	* Particles of redstone torch burning out
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_413_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_413.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_413.nextDouble();
+	public double redirect_redstoneTorchBurnoutParticles_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_413.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* null
+	* Particles of redstone torch burning out
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_414_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_414.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_414.nextDouble();
+	public double redirect_redstoneTorchBurnoutParticles_5(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_414.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.redstoneTorchBurnoutParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}

@@ -9,40 +9,40 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockNetherWart{
 
 	/**
-	* null
+	* Quantity of nether warts dropped
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
-	public int redirect_random_473_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_473.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_473.nextInt(i);
+	public int redirect_netherWartDrop_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDrop.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_473.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDrop.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
 
 	/**
-	* null
+	* Quantity of fortune bonus
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap = false)
-	public int redirect_random_474_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_474.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_474.nextInt(i);
+	public int redirect_netherWartDropFortuneBonus_2(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDropFortuneBonus.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDropFortuneBonus.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_474.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartDropFortuneBonus.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
 
 	/**
-	* null
+	* Chance of nether wart growing
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_472_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_472.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_472.nextInt(i);
+	public int redirect_netherWartGrowChance_3(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartGrowChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartGrowChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_472.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherWartGrowChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

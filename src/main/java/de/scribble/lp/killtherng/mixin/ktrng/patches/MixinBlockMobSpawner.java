@@ -9,27 +9,27 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockMobSpawner{
 
 	/**
-	* null
+	* Amount of xp dropped by a mob spawner
 	*/
 	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
-	public int redirect_random_393_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_393.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_393.nextInt(i);
+	public int redirect_mobspawnerXpAmount_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_393.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
 
 	/**
-	* null
+	* Amount of xp dropped by a mob spawner
 	*/
 	@Redirect(method = "getExpDrop(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap = false)
-	public int redirect_random_394_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_394.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_394.nextInt(i);
+	public int redirect_mobspawnerXpAmount_2(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_394.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobspawnerXpAmount.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

@@ -9,14 +9,14 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockPotato{
 
 	/**
-	* null
+	* Chance of posonous potato dropping
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
-	public int redirect_random_511_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.nextInt(i);
+	public int redirect_poisonousPotatoDrop_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.poisonousPotatoDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.poisonousPotatoDrop.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.poisonousPotatoDrop.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

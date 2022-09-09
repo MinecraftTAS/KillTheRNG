@@ -9,14 +9,14 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockNewLeaf{
 
 	/**
-	* null
+	* Chance of leaves dropping an apple on leaf break
 	*/
 	@Redirect(method = "dropApple(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_530_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_530.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_530.nextInt(i);
+	public int redirect_leafNewDropApple_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafNewDropApple.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafNewDropApple.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_530.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafNewDropApple.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

@@ -12,11 +12,11 @@ public class MixinBlockHugeMushroom{
 	* Quantity of huge mushroom drop
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_hugeMushroomDrop_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.hugeMushroomDrop.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.hugeMushroomDrop.nextInt(i);
+	public int redirect_mushroomHugeDrop_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomHugeDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomHugeDrop.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.hugeMushroomDrop.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomHugeDrop.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

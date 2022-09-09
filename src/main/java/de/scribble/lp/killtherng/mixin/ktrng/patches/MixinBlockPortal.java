@@ -9,14 +9,14 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockPortal{
 
 	/**
-	* null
+	* Chance of piglin spawning in the nether portal
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_random_438_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_438.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_438.nextInt(i);
+	public int redirect_netherPortalPiglin_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherPortalPiglin.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherPortalPiglin.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_438.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.netherPortalPiglin.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

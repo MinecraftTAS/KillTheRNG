@@ -25,11 +25,11 @@ public class MixinBlockGlowstone{
 	* Quantity of bonus glowstone drop
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_bonusGlowstoneDrop_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.nextInt(i);
+	public int redirect_glowstoneDropFortuneBonus_2(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDropFortuneBonus.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDropFortuneBonus.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDropFortuneBonus.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

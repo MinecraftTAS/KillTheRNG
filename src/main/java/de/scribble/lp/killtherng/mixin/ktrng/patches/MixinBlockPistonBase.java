@@ -9,27 +9,27 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockPistonBase{
 
 	/**
-	* null
+	* Pitch of piston extend sounds
 	*/
 	@Redirect(method = "eventReceived(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_random_343_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_343.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_343.nextFloat();
+	public float redirect_pistonSoundExtend_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundExtend.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundExtend.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_343.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundExtend.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* null
+	* Pitch of piston retract sounds
 	*/
 	@Redirect(method = "eventReceived(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_random_344_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_344.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_344.nextFloat();
+	public float redirect_pistonSoundRetract_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundRetract.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundRetract.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_344.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pistonSoundRetract.nextFloat();
 			return rand.nextFloat();
 		}
 	}

@@ -9,40 +9,40 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockRedstoneTorch{
 
 	/**
-	* null
+	* Particles of redstone torch
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_random_415_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_415.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_415.nextDouble();
+	public double redirect_redstoneTorchParticles_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_415.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* null
+	* Particles of redstone torch
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_random_416_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_416.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_416.nextDouble();
+	public double redirect_redstoneTorchParticles_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_416.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* null
+	* Particles of redstone torch
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_random_417_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_417.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_417.nextDouble();
+	public double redirect_redstoneTorchParticles_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_417.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.redstoneTorchParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
