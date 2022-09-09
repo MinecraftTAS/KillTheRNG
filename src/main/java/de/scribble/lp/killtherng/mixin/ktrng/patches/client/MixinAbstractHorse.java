@@ -13,10 +13,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_horseTamingParticles_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_horseTamingParticles_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_horseTamingParticles_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_horseTamingParticles_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_horseTamingParticles_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinAbstractHorse{
 	*/
 	@Redirect(method = "spawnHorseParticles(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_horseTamingParticles_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.horseTamingParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.horseTamingParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}

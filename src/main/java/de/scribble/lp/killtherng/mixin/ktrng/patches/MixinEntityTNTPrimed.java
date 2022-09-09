@@ -13,10 +13,10 @@ public class MixinEntityTNTPrimed{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/entity/EntityLivingBase;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_58_1() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_58.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_58.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_58.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_58.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_58.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_58.nextDouble();
 			return Math.random();
 		}
 	}

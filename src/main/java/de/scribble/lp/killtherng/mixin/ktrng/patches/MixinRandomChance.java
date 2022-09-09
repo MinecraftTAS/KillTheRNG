@@ -13,10 +13,10 @@ public class MixinRandomChance{
 	*/
 	@Redirect(method = "testCondition(Ljava/util/Random;Lnet/minecraft/world/storage/loot/LootContext;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_randomChanceTestCondition_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceTestCondition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceTestCondition.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.randomChanceTestCondition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.randomChanceTestCondition.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.randomChanceTestCondition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.randomChanceTestCondition.nextFloat();
 			return rand.nextFloat();
 		}
 	}

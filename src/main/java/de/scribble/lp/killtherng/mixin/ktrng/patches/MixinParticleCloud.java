@@ -13,10 +13,10 @@ public class MixinParticleCloud{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_68_1() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_68.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_68.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_68.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_68.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_68.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_68.nextDouble();
 			return Math.random();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinParticleCloud{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_math_random_69_2() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_69.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_69.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_69.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_69.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_69.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_69.nextDouble();
 			return Math.random();
 		}
 	}

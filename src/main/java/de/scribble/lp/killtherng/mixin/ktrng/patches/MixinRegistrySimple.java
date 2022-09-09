@@ -13,10 +13,10 @@ public class MixinRegistrySimple{
 	*/
 	@Redirect(method = "getRandomObject(Ljava/util/Random;)Ljava/lang/Object;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_registryGetRandomObject_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.registryGetRandomObject.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.registryGetRandomObject.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.registryGetRandomObject.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.registryGetRandomObject.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.registryGetRandomObject.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.registryGetRandomObject.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

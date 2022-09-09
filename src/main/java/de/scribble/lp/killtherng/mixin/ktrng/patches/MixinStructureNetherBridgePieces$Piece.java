@@ -13,10 +13,10 @@ public class MixinStructureNetherBridgePieces$Piece{
 	*/
 	@Redirect(method = "generatePiece(Lnet/minecraft/world/gen/structure/StructureNetherBridgePieces$Start;Ljava/util/List;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureNetherBridgePieces$Piece;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeNetherBridge_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeNetherBridge.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeNetherBridge.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeNetherBridge.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeNetherBridge.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

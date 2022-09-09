@@ -13,10 +13,10 @@ public class MixinEntityEvoker$AIWololoSpell{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_803_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_803.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_803.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_803.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_803.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_803.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_803.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

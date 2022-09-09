@@ -13,10 +13,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_fireworkMotion_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_fireworkMotion_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkMotion.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkMotion.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fireworkLifetime_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_fireworkLifetime_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkLifetime.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkLifetime.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_fireworkParticle_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityFireworkRocket{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_fireworkParticle_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireworkParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fireworkParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

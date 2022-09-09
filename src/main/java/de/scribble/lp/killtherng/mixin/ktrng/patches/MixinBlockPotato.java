@@ -13,10 +13,10 @@ public class MixinBlockPotato{
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_random_511_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_511.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_511.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_511.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_511.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

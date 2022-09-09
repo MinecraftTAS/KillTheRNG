@@ -13,10 +13,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_evokerFangCritParticles_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_evokerFangCritParticles_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_evokerFangCritParticles_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_evokerFangCritParticles_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
 	public double redirect_evokerFangCritParticles_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
 	public double redirect_evokerFangCritParticles_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangCritParticles.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.evokerFangCritParticles.nextDouble();
 			return rand.nextDouble();
 		}
 	}

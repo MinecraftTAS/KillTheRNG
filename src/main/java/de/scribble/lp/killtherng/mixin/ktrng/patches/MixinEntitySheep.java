@@ -13,10 +13,10 @@ public class MixinEntitySheep{
 	*/
 	@Redirect(method = "getDyeColorMixFromParents(Lnet/minecraft/entity/passive/EntityAnimal;Lnet/minecraft/entity/passive/EntityAnimal;)Lnet/minecraft/item/EnumDyeColor;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_random_950_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_950.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_950.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_950.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_950.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_950.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_950.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntitySheep{
 	*/
 	@Redirect(method = "getRandomSheepColor(Ljava/util/Random;)Lnet/minecraft/item/EnumDyeColor;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_random_947_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_947.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_947.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_947.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_947.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_947.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_947.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntitySheep{
 	*/
 	@Redirect(method = "getRandomSheepColor(Ljava/util/Random;)Lnet/minecraft/item/EnumDyeColor;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	private static int redirect_random_948_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_948.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_948.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_948.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_948.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_948.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_948.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntitySheep{
 	*/
 	@Redirect(method = "onSheared(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;I)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_random_949_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_949.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_949.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_949.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_949.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_949.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_949.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

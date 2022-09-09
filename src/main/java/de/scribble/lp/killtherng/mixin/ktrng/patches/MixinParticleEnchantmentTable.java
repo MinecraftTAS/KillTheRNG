@@ -13,10 +13,10 @@ public class MixinParticleEnchantmentTable{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1435_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1435.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1435.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1435.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1435.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1435.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1435.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinParticleEnchantmentTable{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_1436_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1436.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1436.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1436.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1436.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1436.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1436.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinParticleEnchantmentTable{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_54_3() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_54.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_54.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_54.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_54.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_54.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_54.nextDouble();
 			return Math.random();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinParticleEnchantmentTable{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_math_random_55_4() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_55.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_55.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_55.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_55.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_55.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_55.nextDouble();
 			return Math.random();
 		}
 	}

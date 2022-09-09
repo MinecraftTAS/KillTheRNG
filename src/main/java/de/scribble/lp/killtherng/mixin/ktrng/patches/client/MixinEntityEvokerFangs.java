@@ -13,10 +13,10 @@ public class MixinEntityEvokerFangs{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_evokerFangSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.evokerFangSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.evokerFangSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.evokerFangSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.evokerFangSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

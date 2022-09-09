@@ -13,10 +13,10 @@ public class MixinWorldGenBigTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_genBigTreeGenerateNextSeed_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeGenerateNextSeed.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeGenerateNextSeed.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeGenerateNextSeed.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeGenerateNextSeed.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeGenerateNextSeed.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeGenerateNextSeed.nextLong();
 				return rand.nextLong();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldGenBigTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genBigTreeHeightLimit_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeHeightLimit.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeHeightLimit.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeHeightLimit.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeHeightLimit.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeHeightLimit.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeHeightLimit.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldGenBigTree{
 	*/
 	@Redirect(method = "generateLeafNodeList()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_genBigTreeLeafNodes_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWorldGenBigTree{
 	*/
 	@Redirect(method = "generateLeafNodeList()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_genBigTreeLeafNodes_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBigTreeLeafNodes.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBigTreeLeafNodes.nextFloat();
 			return rand.nextFloat();
 		}
 	}

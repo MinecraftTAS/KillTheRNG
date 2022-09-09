@@ -13,10 +13,10 @@ public class MixinBlockOldLeaf{
 	*/
 	@Redirect(method = "dropApple(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_leafDropApple_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropApple.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropApple.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropApple.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropApple.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropApple.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropApple.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

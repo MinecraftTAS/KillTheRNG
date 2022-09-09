@@ -13,10 +13,10 @@ public class MixinPhaseLanding{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_phaseLandingParticle_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinPhaseLanding{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_phaseLandingParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinPhaseLanding{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_phaseLandingParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseLandingParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseLandingParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

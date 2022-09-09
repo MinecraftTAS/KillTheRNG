@@ -13,10 +13,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "attackEntityWithRangedAttack(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_witchWeaknessPotion_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "attackEntityWithRangedAttack(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_witchWeaknessPotion_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchWeaknessPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchWeaknessPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_witchDrinkPotion_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_witchDrinkPotion_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_witchDrinkPotion_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_witchDrinkPotion_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_witchDrinkPotion_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_witchDrinkPotion_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchDrinkPotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.witchDrinkPotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}

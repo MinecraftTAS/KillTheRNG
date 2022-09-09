@@ -13,10 +13,10 @@ public class MixinEntityShulker$AIPeek{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_944_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_944.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_944.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_944.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_944.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_944.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_944.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityShulker$AIPeek{
 	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_945_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_945.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_945.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_945.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_945.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_945.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_945.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

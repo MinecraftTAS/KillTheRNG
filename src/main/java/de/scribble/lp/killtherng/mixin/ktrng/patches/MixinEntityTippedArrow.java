@@ -13,10 +13,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "spawnPotionParticles(I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_tippedArrowParticle_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "spawnPotionParticles(I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_tippedArrowParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "spawnPotionParticles(I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_tippedArrowParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.tippedArrowParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}

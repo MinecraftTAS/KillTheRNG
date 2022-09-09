@@ -13,10 +13,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "adjustPosToNearbyEntity(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lightningAimForEntity_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningAimForEntity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningAimForEntity.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningAimForEntity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningAimForEntity.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningAimForEntity.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningAimForEntity.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createBonusChest()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_bonusChestPos_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createBonusChest()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_bonusChestPos_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createBonusChest()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_bonusChestPos_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createBonusChest()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_bonusChestPos_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusChestPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusChestPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_spawnPos_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_spawnPos_7(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_spawnPos_8(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "createSpawnPosition(Lnet/minecraft/world/WorldSettings;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_spawnPos_9(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "playerCheckLight()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_checkLightPlayer_10(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPlayer.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPlayer.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPlayer.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPlayer.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPlayer.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPlayer.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -143,10 +143,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "playerCheckLight()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_checkLightPosition_11(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -156,10 +156,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "playerCheckLight()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_checkLightPosition_12(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -169,10 +169,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "playerCheckLight()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_checkLightPosition_13(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.checkLightPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.checkLightPosition.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -182,10 +182,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "updateBlocks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_lightningChance_14(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lightningChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.lightningChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.lightningChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.lightningChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -195,10 +195,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "updateBlocks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_spawnSkeletonRiders_15(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnSkeletonRiders.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnSkeletonRiders.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnSkeletonRiders.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnSkeletonRiders.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnSkeletonRiders.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnSkeletonRiders.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -208,10 +208,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "updateBlocks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_addSnowBlocks_16(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.addSnowBlocks.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.addSnowBlocks.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.addSnowBlocks.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.addSnowBlocks.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.addSnowBlocks.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.addSnowBlocks.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

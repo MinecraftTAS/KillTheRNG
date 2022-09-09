@@ -13,10 +13,10 @@ public class MixinTeleporter{
 	*/
 	@Redirect(method = "makePortal(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_portalGenerationPosition_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.portalGenerationPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.portalGenerationPosition.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.portalGenerationPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.portalGenerationPosition.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.portalGenerationPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.portalGenerationPosition.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

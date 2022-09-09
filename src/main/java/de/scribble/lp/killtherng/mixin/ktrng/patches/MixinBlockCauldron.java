@@ -13,10 +13,10 @@ public class MixinBlockCauldron{
 	*/
 	@Redirect(method = "fillWithRain(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_cauldronFillWIthRain_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.cauldronFillWIthRain.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.cauldronFillWIthRain.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.cauldronFillWIthRain.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.cauldronFillWIthRain.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.cauldronFillWIthRain.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.cauldronFillWIthRain.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

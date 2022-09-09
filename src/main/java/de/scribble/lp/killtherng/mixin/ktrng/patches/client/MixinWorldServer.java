@@ -13,10 +13,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "setInitialSpawnLocation()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_initialSpawnLocation_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "setInitialSpawnLocation()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_initialSpawnLocation_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "setInitialSpawnLocation()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_initialSpawnLocation_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWorldServer{
 	*/
 	@Redirect(method = "setInitialSpawnLocation()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_initialSpawnLocation_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialSpawnLocation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.initialSpawnLocation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

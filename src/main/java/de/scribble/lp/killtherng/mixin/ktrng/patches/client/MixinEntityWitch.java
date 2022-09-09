@@ -13,10 +13,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_witchParticle_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_witchParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_witchParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityWitch{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_witchParticle_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.witchParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.witchParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

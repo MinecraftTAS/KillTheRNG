@@ -13,10 +13,10 @@ public class MixinStructureStrongholdPieces$RoomCrossing{
 	*/
 	@Redirect(method = "<init>(ILjava/util/Random;Lnet/minecraft/world/gen/structure/StructureBoundingBox;Lnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeStronghold_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

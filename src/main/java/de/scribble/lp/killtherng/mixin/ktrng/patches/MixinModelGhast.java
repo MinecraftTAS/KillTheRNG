@@ -13,10 +13,10 @@ public class MixinModelGhast{
 	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_modelGhast_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.modelGhast.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.modelGhast.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.modelGhast.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.modelGhast.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.modelGhast.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.modelGhast.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinWorldGenHugeTrees{
 	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genHugeTreeHeight_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldGenHugeTrees{
 	*/
 	@Redirect(method = "getHeight(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genHugeTreeExtraHeight_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeExtraHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeExtraHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeExtraHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeExtraHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genHugeTreeExtraHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genHugeTreeExtraHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

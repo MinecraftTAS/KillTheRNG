@@ -1,8 +1,11 @@
 package de.scribble.lp.killtherng;
 
+import java.util.HashMap;
+
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
 public class UltimateRandomness {
+
 
 public CustomRandom Global=new CustomRandom("Global", "The global randomness used in PlayerInput and Tick seedingmodes");
 

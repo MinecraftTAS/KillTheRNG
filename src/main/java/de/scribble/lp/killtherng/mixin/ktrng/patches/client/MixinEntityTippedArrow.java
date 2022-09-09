@@ -13,10 +13,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_tippedArrowParticleStatusUpdate_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_tippedArrowParticleStatusUpdate_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityTippedArrow{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_tippedArrowParticleStatusUpdate_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.tippedArrowParticleStatusUpdate.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.tippedArrowParticleStatusUpdate.nextDouble();
 			return rand.nextDouble();
 		}
 	}

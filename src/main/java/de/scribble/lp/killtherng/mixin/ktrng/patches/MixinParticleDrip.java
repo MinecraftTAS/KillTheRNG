@@ -13,10 +13,10 @@ public class MixinParticleDrip{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/block/material/Material;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_67_1() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_67.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_67.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_67.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_67.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_67.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_67.nextDouble();
 			return Math.random();
 		}
 	}

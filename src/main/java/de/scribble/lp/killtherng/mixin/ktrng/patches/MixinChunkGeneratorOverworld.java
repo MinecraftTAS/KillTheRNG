@@ -13,8 +13,8 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "generateChunk(II)Lnet/minecraft/world/chunk/Chunk;", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_populationGeneration_1(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -24,8 +24,8 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_populationGeneration_2(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -35,10 +35,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_populationGeneration_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextLong();
 				return rand.nextLong();
 		}
 	}
@@ -48,10 +48,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
 	public long redirect_populationGeneration_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextLong();
 				return rand.nextLong();
 		}
 	}
@@ -61,8 +61,8 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 1))
 	public void redirect_populationGeneration_5(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -72,10 +72,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_populationGeneration_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -85,10 +85,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_populationGeneration_7(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -98,10 +98,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_populationGeneration_8(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -111,10 +111,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_populationGeneration_9(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -124,10 +124,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_populationGeneration_10(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -137,10 +137,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_populationGeneration_11(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -150,10 +150,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
 	public int redirect_populationGeneration_12(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -163,10 +163,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
 	public int redirect_populationGeneration_13(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -176,10 +176,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
 	public int redirect_populationGeneration_14(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -189,10 +189,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 9))
 	public int redirect_populationGeneration_15(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -202,10 +202,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 10))
 	public int redirect_populationGeneration_16(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -215,10 +215,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 11))
 	public int redirect_populationGeneration_17(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -228,10 +228,10 @@ public class MixinChunkGeneratorOverworld{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 12))
 	public int redirect_populationGeneration_18(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.populationGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.populationGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

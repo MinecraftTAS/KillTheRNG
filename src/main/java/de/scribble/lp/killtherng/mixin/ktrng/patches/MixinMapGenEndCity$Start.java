@@ -13,10 +13,10 @@ public class MixinMapGenEndCity$Start{
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/ChunkGeneratorEnd;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posEndCity_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posEndCity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posEndCity.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posEndCity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posEndCity.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posEndCity.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posEndCity.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

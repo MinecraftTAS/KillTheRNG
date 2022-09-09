@@ -13,10 +13,10 @@ public class MixinEntitySquid$AIMoveRandom{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_957_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_957.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_957.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_957.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_957.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_957.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_957.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntitySquid$AIMoveRandom{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_958_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_958.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_958.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_958.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_958.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_958.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_958.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntitySquid$AIMoveRandom{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_959_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_959.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_959.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_959.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_959.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_959.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_959.nextFloat();
 			return rand.nextFloat();
 		}
 	}

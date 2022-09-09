@@ -13,10 +13,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_1_1() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_1.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_1.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_1.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_1.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_1.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_1.nextDouble();
 			return Math.random();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_math_random_2_2() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_2.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_2.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_2.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_2.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_2.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_2.nextDouble();
 			return Math.random();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
 	public double redirect_math_random_3_3() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_3.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_3.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_3.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_3.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_3.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_3.nextDouble();
 			return Math.random();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_damageHeadgearFromFallingBlock_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.damageHeadgearFromFallingBlock.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.damageHeadgearFromFallingBlock.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.damageHeadgearFromFallingBlock.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.damageHeadgearFromFallingBlock.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.damageHeadgearFromFallingBlock.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.damageHeadgearFromFallingBlock.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_4_5() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_4.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_4.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_4.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_4.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_4.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_4.nextDouble();
 			return Math.random();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_math_random_5_6() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_5.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_5.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_5.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_5.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_5.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_5.nextDouble();
 			return Math.random();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
 	public double redirect_math_random_6_7() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_6.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_6.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_6.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_6.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_6.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_6.nextDouble();
 			return Math.random();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 3))
 	public double redirect_math_random_7_8() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_7.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_7.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_7.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_7.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_7.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_7.nextDouble();
 			return Math.random();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 4))
 	public double redirect_math_random_8_9() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_8.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_8.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_8.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_8.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_8.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_8.nextDouble();
 			return Math.random();
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_entityTeleportParticle_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -143,10 +143,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_entityTeleportParticle_11(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -156,10 +156,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_entityTeleportParticle_12(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -169,10 +169,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_entityTeleportParticle_13(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -182,10 +182,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_entityTeleportParticle_14(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -195,10 +195,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "attemptTeleport(DDD)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_entityTeleportParticle_15(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.entityTeleportParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.entityTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -208,10 +208,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "collideWithNearbyEntities()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_crammingApplience_16(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.crammingApplience.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.crammingApplience.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.crammingApplience.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.crammingApplience.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.crammingApplience.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.crammingApplience.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -221,10 +221,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "decreaseAirSupply(I)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_respirationDecrementAirSupply_17(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.respirationDecrementAirSupply.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.respirationDecrementAirSupply.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.respirationDecrementAirSupply.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.respirationDecrementAirSupply.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.respirationDecrementAirSupply.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.respirationDecrementAirSupply.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -234,10 +234,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_soundPitchChild_18(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -247,10 +247,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_soundPitchChild_19(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitchChild.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitchChild.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -260,10 +260,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_soundPitch_20(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -273,10 +273,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_soundPitch_21(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -286,10 +286,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "knockBack(Lnet/minecraft/entity/Entity;FDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_knockBackResistance_22(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -299,10 +299,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "markVelocityChanged()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_knockBackResistance_23(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.knockBackResistance.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.knockBackResistance.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -312,10 +312,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_deathDustParticles_24(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -325,10 +325,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_deathDustParticles_25(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -338,10 +338,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_deathDustParticles_26(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -351,10 +351,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_deathDustParticles_27(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -364,10 +364,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_deathDustParticles_28(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -377,10 +377,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onDeathUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_deathDustParticles_29(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.deathDustParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.deathDustParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -390,10 +390,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_spawnWaterbubbleWhenDrowning_30(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -403,10 +403,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_spawnWaterbubbleWhenDrowning_31(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -416,10 +416,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_spawnWaterbubbleWhenDrowning_32(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -429,10 +429,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_spawnWaterbubbleWhenDrowning_33(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -442,10 +442,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_spawnWaterbubbleWhenDrowning_34(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -455,10 +455,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "onEntityUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_spawnWaterbubbleWhenDrowning_35(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnWaterbubbleWhenDrowning.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnWaterbubbleWhenDrowning.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -468,10 +468,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_brokenItemSound_36(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -481,10 +481,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_brokenItemParticles_37(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -494,10 +494,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_brokenItemParticles_38(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -507,10 +507,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_brokenItemParticles_39(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.brokenItemParticles.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brokenItemParticles.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -520,10 +520,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "renderBrokenItemStack(Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_9_40() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_9.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_9.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_9.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_9.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_9.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_9.nextDouble();
 			return Math.random();
 		}
 	}
@@ -533,10 +533,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_drinkAndEatSound_41(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -546,10 +546,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_drinkAndEatSound_42(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -559,10 +559,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_drinkAndEatSound_43(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -572,10 +572,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_drinkAndEatSound_44(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -585,10 +585,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_drinkAndEatSound_45(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -598,10 +598,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_drinkAndEatSound_46(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -611,10 +611,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_drinkAndEatSound_47(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.drinkAndEatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.drinkAndEatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -624,10 +624,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updateItemUse(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_10_48() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_10.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_10.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_10.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_10.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_10.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_10.nextDouble();
 			return Math.random();
 		}
 	}
@@ -637,10 +637,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_potionParticlesInvisible_49(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesInvisible.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesInvisible.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesInvisible.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesInvisible.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesInvisible.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesInvisible.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -650,10 +650,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_potionParticles_50(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticles.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticles.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticles.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticles.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticles.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticles.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -663,10 +663,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_potionParticlesHidden_51(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesHidden.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesHidden.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesHidden.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesHidden.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesHidden.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesHidden.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -676,10 +676,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_potionParticlesPosition_52(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -689,10 +689,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_potionParticlesPosition_53(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -702,10 +702,10 @@ public class MixinEntityLivingBase{
 	*/
 	@Redirect(method = "updatePotionEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_potionParticlesPosition_54(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.potionParticlesPosition.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.potionParticlesPosition.nextDouble();
 			return rand.nextDouble();
 		}
 	}

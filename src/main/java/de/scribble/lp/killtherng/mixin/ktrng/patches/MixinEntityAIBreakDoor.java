@@ -13,10 +13,10 @@ public class MixinEntityAIBreakDoor{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiBreakDoorSound_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiBreakDoorSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiBreakDoorSound.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBreakDoorSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBreakDoorSound.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiBreakDoorSound.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBreakDoorSound.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

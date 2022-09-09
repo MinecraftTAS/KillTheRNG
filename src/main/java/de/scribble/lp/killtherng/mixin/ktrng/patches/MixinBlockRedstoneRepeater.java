@@ -13,10 +13,10 @@ public class MixinBlockRedstoneRepeater{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_450_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_450.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_450.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_450.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_450.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_450.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_450.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockRedstoneRepeater{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_451_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_451.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_451.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_451.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_451.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_451.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_451.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockRedstoneRepeater{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_random_452_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_452.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_452.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_452.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_452.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_452.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_452.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBlockRedstoneRepeater{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_random_453_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_453.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_453.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_453.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_453.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_453.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_453.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}

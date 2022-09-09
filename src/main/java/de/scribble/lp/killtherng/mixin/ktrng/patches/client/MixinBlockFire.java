@@ -13,10 +13,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "onBlockAdded(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fireSpreading_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireSpreading.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireSpreading.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSpreading.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSpreading.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireSpreading.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSpreading.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fireSoundChance_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireSoundChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireSoundChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSoundChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSoundChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireSoundChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSoundChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_fireSound_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_fireSound_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_fireParticlePosX_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_fireParticlePosY_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_fireParticlePosZ_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_fireParticlePosX_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
 	public double redirect_fireParticlePosY_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
 	public double redirect_fireParticlePosZ_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -143,10 +143,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 6))
 	public double redirect_fireParticlePosX_11(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -156,10 +156,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 7))
 	public double redirect_fireParticlePosY_12(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -169,10 +169,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 8))
 	public double redirect_fireParticlePosZ_13(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -182,10 +182,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 9))
 	public double redirect_fireParticlePosX_14(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -195,10 +195,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 10))
 	public double redirect_fireParticlePosY_15(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -208,10 +208,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 11))
 	public double redirect_fireParticlePosZ_16(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -221,10 +221,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 12))
 	public double redirect_fireParticlePosX_17(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -234,10 +234,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 13))
 	public double redirect_fireParticlePosY_18(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -247,10 +247,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 14))
 	public double redirect_fireParticlePosZ_19(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -260,10 +260,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 15))
 	public double redirect_fireParticlePosX_20(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosX.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosX.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -273,10 +273,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 16))
 	public double redirect_fireParticlePosY_21(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosY.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosY.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -286,10 +286,10 @@ public class MixinBlockFire{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 17))
 	public double redirect_fireParticlePosZ_22(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fireParticlePosZ.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.fireParticlePosZ.nextDouble();
 			return rand.nextDouble();
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinStructureVillagePieces{
 	*/
 	@Redirect(method = "generateComponent(Lnet/minecraft/world/gen/structure/StructureVillagePieces$Start;Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;I)Lnet/minecraft/world/gen/structure/StructureVillagePieces$Village;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_posRotTypeVillage_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

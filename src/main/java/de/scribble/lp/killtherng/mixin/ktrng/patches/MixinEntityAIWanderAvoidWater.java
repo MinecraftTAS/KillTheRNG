@@ -13,10 +13,10 @@ public class MixinEntityAIWanderAvoidWater{
 	*/
 	@Redirect(method = "getPosition()Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_aiWanderAvoidWater_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiWanderAvoidWater.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiWanderAvoidWater.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWanderAvoidWater.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWanderAvoidWater.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiWanderAvoidWater.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWanderAvoidWater.nextFloat();
 			return rand.nextFloat();
 		}
 	}

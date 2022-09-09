@@ -13,10 +13,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_flowerGeneration_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_flowerGeneration_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_flowerGeneration_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_flowerGeneration_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_flowerGeneration_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinWorldGenFlowers{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_flowerGeneration_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.flowerGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.flowerGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

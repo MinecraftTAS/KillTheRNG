@@ -13,10 +13,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "damageShield(F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_playerShieldCooldown_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldCooldown.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldCooldown.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldCooldown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldCooldown.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldCooldown.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldCooldown.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "disableShield(Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_playerShieldDisablePitch_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldDisablePitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldDisablePitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldDisablePitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldDisablePitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerShieldDisablePitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerShieldDisablePitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_playerDropAroundWhenDyingMotion_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_playerDropAroundWhenDyingMotion_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_playerDropAroundWhenDyingMotion_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropAroundWhenDyingMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropAroundWhenDyingMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_playerDropItemMotion_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_playerDropItemMotion_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "dropItem(Lnet/minecraft/item/ItemStack;ZZ)Lnet/minecraft/entity/item/EntityItem;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_playerDropItemMotion_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerDropItemMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerDropItemMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "onEnchant(Lnet/minecraft/item/ItemStack;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	public int redirect_playerNextXpSeed_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerNextXpSeed.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerNextXpSeed.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerNextXpSeed.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerNextXpSeed.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerNextXpSeed.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerNextXpSeed.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinEntityPlayer{
 	*/
 	@Redirect(method = "readEntityFromNBT(Lnet/minecraft/nbt/NBTTagCompound;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	public int redirect_playerReadXpSeed_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.playerReadXpSeed.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.playerReadXpSeed.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerReadXpSeed.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerReadXpSeed.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.playerReadXpSeed.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.playerReadXpSeed.nextInt();
 			return rand.nextInt();
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinMacAddressUtil{
 	*/
 	@Redirect(method = "defaultMachineId()[B", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBytes([B)V", ordinal = 0), remap = false)
 	private static void redirect_con_1(Random rand, byte[] bytes) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.con.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextBytes(bytes);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextBytes(bytes);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextBytes(bytes);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextBytes(bytes);
 			rand.nextBytes(bytes);
 		}
 	}

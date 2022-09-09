@@ -13,10 +13,10 @@ public class MixinWorldProvider{
 	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_spawnPosWorldGen_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldProvider{
 	*/
 	@Redirect(method = "getRandomizedSpawnPoint()Lnet/minecraft/util/math/BlockPos;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap = false)
 	public int redirect_spawnPosWorldGen_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spawnPosWorldGen.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spawnPosWorldGen.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

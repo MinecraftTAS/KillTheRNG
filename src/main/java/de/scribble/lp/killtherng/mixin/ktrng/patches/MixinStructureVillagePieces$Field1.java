@@ -13,10 +13,10 @@ public class MixinStructureVillagePieces$Field1{
 	*/
 	@Redirect(method = "getRandomCropType(Ljava/util/Random;)Lnet/minecraft/block/Block;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeVillage_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeVillage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeVillage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

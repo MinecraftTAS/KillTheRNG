@@ -13,10 +13,10 @@ public class MixinEntitySlime$SlimeMoveHelper{
 	*/
 	@Redirect(method = "onUpdateMoveHelper()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_853_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_853.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_853.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_853.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_853.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_853.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_853.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntitySlime$SlimeMoveHelper{
 	*/
 	@Redirect(method = "onUpdateMoveHelper()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_854_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_854.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_854.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_854.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_854.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_854.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_854.nextFloat();
 			return rand.nextFloat();
 		}
 	}

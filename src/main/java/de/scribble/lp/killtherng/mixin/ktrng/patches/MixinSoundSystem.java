@@ -13,10 +13,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	public int redirect_soundId_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickPlay(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap = false)
 	public int redirect_soundId_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	public int redirect_soundId_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickPlay(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap = false)
 	public int redirect_soundId_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	public int redirect_soundId_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickStream(ZLjava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap = false)
 	public int redirect_soundId_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	public int redirect_soundId_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinSoundSystem{
 	*/
 	@Redirect(method = "quickStream(ZLjava/net/URL;Ljava/lang/String;ZFFFIF)Ljava/lang/String;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 1), remap = false)
 	public int redirect_soundId_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.soundId.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.soundId.nextInt();
 			return rand.nextInt();
 		}
 	}

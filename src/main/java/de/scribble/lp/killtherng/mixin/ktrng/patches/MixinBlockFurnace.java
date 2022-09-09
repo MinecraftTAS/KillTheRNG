@@ -13,10 +13,10 @@ public class MixinBlockFurnace{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_furnaceParticlePos_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockFurnace{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_furnaceParticlePos_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceParticlePos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceParticlePos.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockFurnace{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_furnaceSound_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceSound.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceSound.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.furnaceSound.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.furnaceSound.nextDouble();
 			return rand.nextDouble();
 		}
 	}

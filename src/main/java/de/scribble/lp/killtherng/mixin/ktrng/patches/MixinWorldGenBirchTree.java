@@ -13,10 +13,10 @@ public class MixinWorldGenBirchTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genBirchTreeHeight_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldGenBirchTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genBirchTreeExtraHeight_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeExtraHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeExtraHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeExtraHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeExtraHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeExtraHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeExtraHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldGenBirchTree{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_genBirchTreeCrown_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeCrown.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeCrown.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeCrown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeCrown.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genBirchTreeCrown.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genBirchTreeCrown.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

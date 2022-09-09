@@ -13,10 +13,10 @@ public class MixinEntityMinecartFurnace{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_816_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_816.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_816.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_816.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_816.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_816.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_816.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

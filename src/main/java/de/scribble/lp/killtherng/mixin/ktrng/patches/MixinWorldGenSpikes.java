@@ -13,10 +13,10 @@ public class MixinWorldGenSpikes{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_spikeGeneration_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spikeGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spikeGeneration.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spikeGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spikeGeneration.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spikeGeneration.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spikeGeneration.nextFloat();
 			return rand.nextFloat();
 		}
 	}

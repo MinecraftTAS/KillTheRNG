@@ -13,10 +13,10 @@ public class MixinBlockSeaLantern{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_531_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_531.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_531.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_531.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_531.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_531.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_531.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockSeaLantern{
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_532_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_532.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_532.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_532.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_532.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_532.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_532.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

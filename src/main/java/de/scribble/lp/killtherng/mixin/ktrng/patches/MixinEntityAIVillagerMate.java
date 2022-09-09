@@ -13,10 +13,10 @@ public class MixinEntityAIVillagerMate{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiVillagerMateStart_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateStart.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateStart.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateStart.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateStart.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateStart.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateStart.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAIVillagerMate{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiVillagerMateSetEntityState_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateSetEntityState.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateSetEntityState.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateSetEntityState.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateSetEntityState.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiVillagerMateSetEntityState.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiVillagerMateSetEntityState.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

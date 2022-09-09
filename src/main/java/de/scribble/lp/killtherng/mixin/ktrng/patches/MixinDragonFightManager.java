@@ -13,10 +13,10 @@ public class MixinDragonFightManager{
 	*/
 	@Redirect(method = "createNewDragon()Lnet/minecraft/entity/boss/EntityDragon;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_enderDragonYaw_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enderDragonYaw.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enderDragonYaw.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderDragonYaw.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderDragonYaw.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enderDragonYaw.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderDragonYaw.nextFloat();
 			return rand.nextFloat();
 		}
 	}

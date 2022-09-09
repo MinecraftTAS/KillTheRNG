@@ -13,10 +13,10 @@ public class MixinItemMonsterPlacer{
 	*/
 	@Redirect(method = "spawnCreature(Lnet/minecraft/world/World;Lnet/minecraft/util/ResourceLocation;DDD)Lnet/minecraft/entity/Entity;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	private static float redirect_random_655_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_655.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_655.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_655.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_655.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_655.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_655.nextFloat();
 			return rand.nextFloat();
 		}
 	}

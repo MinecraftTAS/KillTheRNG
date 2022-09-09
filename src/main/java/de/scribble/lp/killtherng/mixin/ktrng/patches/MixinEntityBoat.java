@@ -13,10 +13,10 @@ public class MixinEntityBoat{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_boatSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.boatSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.boatSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.boatSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.boatSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.boatSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.boatSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

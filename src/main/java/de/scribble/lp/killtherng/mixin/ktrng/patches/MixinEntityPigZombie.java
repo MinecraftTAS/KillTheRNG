@@ -13,10 +13,10 @@ public class MixinEntityPigZombie{
 	*/
 	@Redirect(method = "becomeAngryAt(Lnet/minecraft/entity/Entity;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_pigZombieAngerLevel_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityPigZombie{
 	*/
 	@Redirect(method = "becomeAngryAt(Lnet/minecraft/entity/Entity;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_pigZombieAngerLevel_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieAngerLevel.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieAngerLevel.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityPigZombie{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_pigZombieSound_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityPigZombie{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_pigZombieSound_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pigZombieSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigZombieSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

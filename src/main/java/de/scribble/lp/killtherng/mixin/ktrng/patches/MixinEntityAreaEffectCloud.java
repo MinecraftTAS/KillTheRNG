@@ -13,10 +13,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_areaEffectCloudStuff_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_areaEffectCloudStuff_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_areaEffectCloudStuff_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
 	public boolean redirect_areaEffectCloudStuff_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_areaEffectCloudStuff_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_areaEffectCloudStuff_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_areaEffectCloudStuff_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityAreaEffectCloud{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_areaEffectCloudStuff_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.areaEffectCloudStuff.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.areaEffectCloudStuff.nextDouble();
 			return rand.nextDouble();
 		}
 	}

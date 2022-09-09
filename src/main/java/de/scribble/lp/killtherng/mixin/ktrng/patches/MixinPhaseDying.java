@@ -13,10 +13,10 @@ public class MixinPhaseDying{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseDyingParticle_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinPhaseDying{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_phaseDyingParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinPhaseDying{
 	*/
 	@Redirect(method = "doClientRenderEffects()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_phaseDyingParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseDyingParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseDyingParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}

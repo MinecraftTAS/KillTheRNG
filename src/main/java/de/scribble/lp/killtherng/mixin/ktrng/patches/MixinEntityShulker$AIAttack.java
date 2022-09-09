@@ -13,10 +13,10 @@ public class MixinEntityShulker$AIAttack{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_941_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_941.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_941.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_941.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_941.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_941.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_941.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityShulker$AIAttack{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_942_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_942.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_942.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_942.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_942.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_942.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_942.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityShulker$AIAttack{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_943_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_943.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_943.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_943.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_943.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_943.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_943.nextFloat();
 			return rand.nextFloat();
 		}
 	}

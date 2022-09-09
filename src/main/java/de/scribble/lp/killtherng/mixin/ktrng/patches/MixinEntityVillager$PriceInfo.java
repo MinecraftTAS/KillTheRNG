@@ -13,10 +13,10 @@ public class MixinEntityVillager$PriceInfo{
 	*/
 	@Redirect(method = "getPrice(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1030_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1030.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1030.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1030.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1030.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1030.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1030.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

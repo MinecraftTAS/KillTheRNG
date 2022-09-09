@@ -13,10 +13,10 @@ public class MixinWoodlandMansion$Start{
 	*/
 	@Redirect(method = "create(Lnet/minecraft/world/World;Lnet/minecraft/world/gen/ChunkGeneratorOverworld;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_woodlandMansionRng_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

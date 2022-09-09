@@ -13,10 +13,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "applyEntityAttributes()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_zombieReinforcementsChance_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsChance.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsChance.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsChance.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsChance.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "attackEntityAsMob(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieIgniteOtherMobs_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieIgniteOtherMobs.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieIgniteOtherMobs.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieIgniteOtherMobs.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieIgniteOtherMobs.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieIgniteOtherMobs.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieIgniteOtherMobs.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieReinforcementsApply_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsApply.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsApply.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsApply.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsApply.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieReinforcementsApply.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieReinforcementsApply.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieCanPickupLoot_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_zombieCanPickupLoot_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_zombieCanPickupLoot_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_zombieCanPickupLoot_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
 	public float redirect_zombieCanPickupLoot_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 5))
 	public float redirect_zombieCanPickupLoot_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 6))
 	public float redirect_zombieCanPickupLoot_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -143,10 +143,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_zombieCanPickupLoot_11(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -156,10 +156,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_zombieCanPickupLoot_12(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -169,10 +169,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 7))
 	public float redirect_zombieCanPickupLoot_13(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -182,10 +182,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_zombieCanPickupLoot_14(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -195,10 +195,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_zombieCanPickupLoot_15(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieCanPickupLoot.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieCanPickupLoot.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -208,10 +208,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onKillEntity(Lnet/minecraft/entity/EntityLivingBase;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_zombieConvertToZombieVillager_16(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieConvertToZombieVillager.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieConvertToZombieVillager.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieConvertToZombieVillager.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieConvertToZombieVillager.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieConvertToZombieVillager.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieConvertToZombieVillager.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -221,10 +221,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieFireChance_17(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -234,10 +234,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_zombieFireChance_18(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieFireChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieFireChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -247,10 +247,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "setEquipmentBasedOnDifficulty(Lnet/minecraft/world/DifficultyInstance;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieSetEquipment_19(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -260,10 +260,10 @@ public class MixinEntityZombie{
 	*/
 	@Redirect(method = "setEquipmentBasedOnDifficulty(Lnet/minecraft/world/DifficultyInstance;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_zombieSetEquipment_20(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieSetEquipment.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieSetEquipment.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

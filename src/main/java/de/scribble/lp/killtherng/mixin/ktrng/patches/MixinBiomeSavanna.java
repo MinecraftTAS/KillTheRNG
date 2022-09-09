@@ -13,10 +13,10 @@ public class MixinBiomeSavanna{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_savannaGeneration_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBiomeSavanna{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_savannaGeneration_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBiomeSavanna{
 	*/
 	@Redirect(method = "decorate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_savannaGeneration_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBiomeSavanna{
 	*/
 	@Redirect(method = "getRandomTreeFeature(Ljava/util/Random;)Lnet/minecraft/world/gen/feature/WorldGenAbstractTree;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_savannaGeneration_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.savannaGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.savannaGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinCommandHelp{
 	*/
 	@Redirect(method = "execute(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/command/ICommandSender;[Ljava/lang/String;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1485_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1485.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1485.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1485.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1485.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1485.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1485.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

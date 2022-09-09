@@ -13,10 +13,10 @@ public class MixinEntityGhast$GhastMoveHelper{
 	*/
 	@Redirect(method = "onUpdateMoveHelper()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_859_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_859.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_859.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_859.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_859.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_859.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_859.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

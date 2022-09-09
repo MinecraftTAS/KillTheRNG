@@ -13,10 +13,10 @@ public class MixinEntityPig{
 	*/
 	@Redirect(method = "boost()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_pigBoostTime_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pigBoostTime.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pigBoostTime.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigBoostTime.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigBoostTime.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pigBoostTime.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pigBoostTime.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

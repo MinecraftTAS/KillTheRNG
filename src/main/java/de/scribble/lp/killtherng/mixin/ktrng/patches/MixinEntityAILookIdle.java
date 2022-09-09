@@ -13,10 +13,10 @@ public class MixinEntityAILookIdle{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_aiLookIdleStart_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleStart.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleStart.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleStart.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleStart.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleStart.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleStart.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAILookIdle{
 	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_aiLookIdleLookingDirection_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityAILookIdle{
 	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiLookIdleLookingDirection_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiLookIdleLookingDirection.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiLookIdleLookingDirection.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

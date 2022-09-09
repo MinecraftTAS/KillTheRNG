@@ -13,10 +13,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_villagerParticle_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_villagerParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_villagerParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_villagerParticle_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_villagerParticle_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "spawnParticles(Lnet/minecraft/util/EnumParticleTypes;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_villagerParticle_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerParticle.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.villagerParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}

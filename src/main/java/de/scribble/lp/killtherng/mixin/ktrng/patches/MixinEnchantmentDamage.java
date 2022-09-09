@@ -13,10 +13,10 @@ public class MixinEnchantmentDamage{
 	*/
 	@Redirect(method = "onEntityDamaged(Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/entity/Entity;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_enchantmentDamageArthropodSlownessDuration_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentDamageArthropodSlownessDuration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentDamageArthropodSlownessDuration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentDamageArthropodSlownessDuration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentDamageArthropodSlownessDuration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentDamageArthropodSlownessDuration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentDamageArthropodSlownessDuration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

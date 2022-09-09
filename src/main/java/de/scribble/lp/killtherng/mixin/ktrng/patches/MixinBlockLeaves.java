@@ -13,10 +13,10 @@ public class MixinBlockLeaves{
 	*/
 	@Redirect(method = "getDrops(Lnet/minecraft/util/NonNullList;Lnet/minecraft/world/IBlockAccess;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_leafDropSapling2_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling2.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling2.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling2.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling2.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling2.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling2.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockLeaves{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_leafDropSapling_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.leafDropSapling.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.leafDropSapling.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

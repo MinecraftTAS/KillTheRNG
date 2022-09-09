@@ -13,10 +13,10 @@ public class MixinEntitySnowman{
 	*/
 	@Redirect(method = "attackEntityWithRangedAttack(Lnet/minecraft/entity/EntityLivingBase;F)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_snowmanShootSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.snowmanShootSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.snowmanShootSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.snowmanShootSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.snowmanShootSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.snowmanShootSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.snowmanShootSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

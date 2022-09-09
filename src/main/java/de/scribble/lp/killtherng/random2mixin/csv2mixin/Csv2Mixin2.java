@@ -110,11 +110,11 @@ public class Csv2Mixin2 {
 		// Create mixin classes
 		mixinClient.forEach((classname, classdata)-> {
 			LOGGER.info("[CLIENT] Saving class {}", classname);
-			classdata.saveAs(new File(dirKTRNG, "client"), "de.scribble.lp.killtherng.KillTheRNG.randomness");
+			classdata.saveAs(new File(dirKTRNG, "client"), "de.scribble.lp.killtherng.KillTheRNG.clientRandom");
 		});
 		mixinCommon.forEach((classname, classdata) -> {
 			LOGGER.info("[COMMON] Saving class {}", classname);
-			classdata.saveAs(dirKTRNG, "de.scribble.lp.killtherng.KillTheRNG.randomness");
+			classdata.saveAs(dirKTRNG, "de.scribble.lp.killtherng.KillTheRNG.commonRandom");
 		});
 		
 		// Create mixin config
@@ -130,7 +130,15 @@ public class Csv2Mixin2 {
 		LOGGER.info("Create mixin config");
 		config.save();
 		
+		RandomnessFile clientFile = new RandomnessFile(mixinClient);
+		RandomnessFile commonFile = new RandomnessFile(mixinCommon);
 		
+		clientFile.addToList(0, "GlobalClient", "The global randomness every client random variable should have", true);
+		commonFile.addToList(0, "GlobalServer", "The global randomness every server random variable should have", true);
+		
+		LOGGER.info("Create Randomness Files");
+		clientFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessClient.java"), "de.scribble.lp.killtherng");
+		commonFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessCommon.java"), "de.scribble.lp.killtherng");
 	}
 	
 	private static void createLogFile() {

@@ -13,10 +13,10 @@ public class MixinStructureStrongholdPieces$Stones{
 	*/
 	@Redirect(method = "selectBlocks(Ljava/util/Random;IIIZ)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_posRotTypeStronghold_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeStronghold.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeStronghold.nextFloat();
 			return rand.nextFloat();
 		}
 	}

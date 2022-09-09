@@ -13,10 +13,10 @@ public class MixinEntityAIFleeSun{
 	*/
 	@Redirect(method = "findPossibleShelter()Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiFleeSun_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAIFleeSun{
 	*/
 	@Redirect(method = "findPossibleShelter()Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_aiFleeSun_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityAIFleeSun{
 	*/
 	@Redirect(method = "findPossibleShelter()Lnet/minecraft/util/math/Vec3d;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_aiFleeSun_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiFleeSun.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiFleeSun.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

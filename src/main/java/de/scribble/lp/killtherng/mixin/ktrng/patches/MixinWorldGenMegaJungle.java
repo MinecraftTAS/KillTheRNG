@@ -13,10 +13,10 @@ public class MixinWorldGenMegaJungle{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genMegaJungleHeight_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWorldGenMegaJungle{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_genMegaJungleCrown_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWorldGenMegaJungle{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_genMegaJungleHeight_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWorldGenMegaJungle{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_genMegaJungleCrown_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleCrown.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleCrown.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinWorldGenMegaJungle{
 	*/
 	@Redirect(method = "placeVine(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/properties/PropertyBool;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_genMegaJungleVine_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleVine.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleVine.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleVine.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleVine.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.genMegaJungleVine.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.genMegaJungleVine.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

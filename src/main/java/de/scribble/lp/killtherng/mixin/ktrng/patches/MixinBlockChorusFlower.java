@@ -13,10 +13,10 @@ public class MixinBlockChorusFlower{
 	*/
 	@Redirect(method = "growTreeRecursive(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_chorusGrow_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrow.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrow.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrow.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrow.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrow.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrow.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockChorusFlower{
 	*/
 	@Redirect(method = "growTreeRecursive(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	private static int redirect_chorusGrowDirection_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowDirection.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowDirection.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowDirection.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowDirection.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowDirection.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockChorusFlower{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_pointlessness_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pointlessness.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pointlessness.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pointlessness.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pointlessness.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pointlessness.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pointlessness.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBlockChorusFlower{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_chorusGrowHeight_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowHeight.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowHeight.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowHeight.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowHeight.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowHeight.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowHeight.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinBlockChorusFlower{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_chorusGrowSomething_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowSomething.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowSomething.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowSomething.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowSomething.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chorusGrowSomething.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chorusGrowSomething.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

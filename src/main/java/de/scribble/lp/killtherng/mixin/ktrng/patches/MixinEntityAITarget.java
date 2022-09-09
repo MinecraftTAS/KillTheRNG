@@ -13,10 +13,10 @@ public class MixinEntityAITarget{
 	*/
 	@Redirect(method = "canEasilyReach(Lnet/minecraft/entity/EntityLivingBase;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiTargetDelay_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiTargetDelay.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiTargetDelay.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiTargetDelay.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiTargetDelay.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiTargetDelay.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiTargetDelay.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

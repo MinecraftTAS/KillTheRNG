@@ -13,10 +13,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "attackEntityAsMob(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_ironGolemDamage_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemDamage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemDamage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemDamage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemDamage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemDamage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemDamage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "collideWithEntity(Lnet/minecraft/entity/Entity;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_golemSetAttackTarget_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.golemSetAttackTarget.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.golemSetAttackTarget.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.golemSetAttackTarget.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.golemSetAttackTarget.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.golemSetAttackTarget.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.golemSetAttackTarget.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_ironGolemParticlesEnabled_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_ironGolemParticlesEnabled_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_ironGolemParticlesEnabled_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_ironGolemParticlesEnabled_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_ironGolemParticlesEnabled_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemParticlesEnabled.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemParticlesEnabled.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityIronGolem{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_ironGolemHomeCheck_8(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemHomeCheck.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemHomeCheck.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemHomeCheck.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.ironGolemHomeCheck.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.ironGolemHomeCheck.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

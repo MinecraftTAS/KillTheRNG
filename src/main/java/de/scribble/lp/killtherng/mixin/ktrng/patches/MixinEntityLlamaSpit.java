@@ -13,10 +13,10 @@ public class MixinEntityLlamaSpit{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_spitInaccuracy_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityLlamaSpit{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_spitInaccuracy_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityLlamaSpit{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_spitInaccuracy_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.spitInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.spitInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

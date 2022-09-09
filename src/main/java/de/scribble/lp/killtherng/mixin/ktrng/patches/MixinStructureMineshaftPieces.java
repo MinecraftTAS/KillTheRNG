@@ -13,10 +13,10 @@ public class MixinStructureMineshaftPieces{
 	*/
 	@Redirect(method = "createRandomShaftPiece(Ljava/util/List;Ljava/util/Random;IIILnet/minecraft/util/EnumFacing;ILnet/minecraft/world/gen/structure/MapGenMineshaft$Type;)Lnet/minecraft/world/gen/structure/StructureMineshaftPieces$Peice;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	private static int redirect_posRotTypeMineshaft_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeMineshaft.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeMineshaft.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeMineshaft.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeMineshaft.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeMineshaft.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeMineshaft.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

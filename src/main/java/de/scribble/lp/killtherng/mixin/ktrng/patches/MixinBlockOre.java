@@ -13,10 +13,10 @@ public class MixinBlockOre{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_oreLapisAmount_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.oreLapisAmount.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.oreLapisAmount.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreLapisAmount.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreLapisAmount.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.oreLapisAmount.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreLapisAmount.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockOre{
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_oreFortuneBonus_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.oreFortuneBonus.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.oreFortuneBonus.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreFortuneBonus.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreFortuneBonus.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.oreFortuneBonus.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.oreFortuneBonus.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

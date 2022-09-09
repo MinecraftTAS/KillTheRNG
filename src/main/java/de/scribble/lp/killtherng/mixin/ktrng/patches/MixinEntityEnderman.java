@@ -13,10 +13,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "attackEntityFrom(Lnet/minecraft/util/DamageSource;F)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endermanTeleportAwayWhenEntityIsNearby_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportAwayWhenEntityIsNearby.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportAwayWhenEntityIsNearby.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportAwayWhenEntityIsNearby.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportAwayWhenEntityIsNearby.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportAwayWhenEntityIsNearby.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportAwayWhenEntityIsNearby.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_endermanParticle_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_endermanParticle_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_endermanParticle_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
 	public double redirect_endermanParticle_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 4))
 	public double redirect_endermanParticle_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "onLivingUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 5))
 	public double redirect_endermanParticle_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanParticle.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportRandomly()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_endermanTeleportRandomly_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportRandomly()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endermanTeleportRandomly_9(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportRandomly()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_endermanTeleportRandomly_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportRandomly.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportRandomly.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -143,10 +143,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportToEntity(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_endermanTeleportToEntity_11(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -156,10 +156,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportToEntity(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_endermanTeleportToEntity_12(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -169,10 +169,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "teleportToEntity(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_endermanTeleportToEntity_13(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanTeleportToEntity.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanTeleportToEntity.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -182,10 +182,10 @@ public class MixinEntityEnderman{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_endermanInitiateTeleportRandomly_14(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endermanInitiateTeleportRandomly.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endermanInitiateTeleportRandomly.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanInitiateTeleportRandomly.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanInitiateTeleportRandomly.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endermanInitiateTeleportRandomly.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endermanInitiateTeleportRandomly.nextFloat();
 			return rand.nextFloat();
 		}
 	}

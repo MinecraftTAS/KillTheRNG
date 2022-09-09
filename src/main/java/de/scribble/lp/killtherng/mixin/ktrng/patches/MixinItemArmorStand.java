@@ -13,10 +13,10 @@ public class MixinItemArmorStand{
 	*/
 	@Redirect(method = "applyRandomRotations(Lnet/minecraft/entity/item/EntityArmorStand;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_667_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_667.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_667.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_667.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_667.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_667.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_667.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinItemArmorStand{
 	*/
 	@Redirect(method = "applyRandomRotations(Lnet/minecraft/entity/item/EntityArmorStand;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_668_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_668.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_668.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_668.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_668.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_668.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_668.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinItemArmorStand{
 	*/
 	@Redirect(method = "applyRandomRotations(Lnet/minecraft/entity/item/EntityArmorStand;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_random_669_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_669.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_669.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_669.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_669.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_669.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_669.nextFloat();
 			return rand.nextFloat();
 		}
 	}

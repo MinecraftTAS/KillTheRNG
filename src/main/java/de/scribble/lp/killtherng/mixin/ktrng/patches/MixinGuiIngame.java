@@ -13,8 +13,8 @@ public class MixinGuiIngame{
 	*/
 	@Redirect(method = "renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_guiIngameSetRandomSeed_1(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameSetRandomSeed.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameSetRandomSeed.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameSetRandomSeed.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameSetRandomSeed.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -24,10 +24,10 @@ public class MixinGuiIngame{
 	*/
 	@Redirect(method = "renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_guiIngameShakeHearts_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHearts.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHearts.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHearts.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHearts.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHearts.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHearts.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -37,10 +37,10 @@ public class MixinGuiIngame{
 	*/
 	@Redirect(method = "renderPlayerStats(Lnet/minecraft/client/gui/ScaledResolution;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_guiIngameShakeHunger_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHunger.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHunger.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHunger.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHunger.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.guiIngameShakeHunger.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.guiIngameShakeHunger.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

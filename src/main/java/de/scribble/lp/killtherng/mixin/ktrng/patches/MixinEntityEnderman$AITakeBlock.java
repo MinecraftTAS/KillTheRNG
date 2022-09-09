@@ -13,10 +13,10 @@ public class MixinEntityEnderman$AITakeBlock{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_885_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_885.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_885.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_885.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_885.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_885.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_885.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityEnderman$AITakeBlock{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_random_886_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_886.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_886.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_886.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_886.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_886.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_886.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityEnderman$AITakeBlock{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
 	public double redirect_random_887_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_887.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_887.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_887.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_887.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_887.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_887.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityEnderman$AITakeBlock{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
 	public double redirect_random_888_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_888.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_888.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_888.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_888.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_888.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_888.nextDouble();
 			return rand.nextDouble();
 		}
 	}

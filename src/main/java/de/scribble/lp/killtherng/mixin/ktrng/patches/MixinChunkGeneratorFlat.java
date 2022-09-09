@@ -13,8 +13,8 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_initialStructureRandomSuperflat_1(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -24,10 +24,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_initialStructureRandomSuperflat_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextLong();
 				return rand.nextLong();
 		}
 	}
@@ -37,10 +37,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 1))
 	public long redirect_initialStructureRandomSuperflat_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextLong();
 				return rand.nextLong();
 		}
 	}
@@ -50,8 +50,8 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 1))
 	public void redirect_initialStructureRandomSuperflat_4(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -61,10 +61,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_initialStructureRandomSuperflat_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -74,10 +74,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_initialStructureRandomSuperflat_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -87,10 +87,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_initialStructureRandomSuperflat_7(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -100,10 +100,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_initialStructureRandomSuperflat_8(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -113,10 +113,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_initialStructureRandomSuperflat_9(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -126,10 +126,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_initialStructureRandomSuperflat_10(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -139,10 +139,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
 	public int redirect_initialStructureRandomSuperflat_11(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -152,10 +152,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
 	public int redirect_initialStructureRandomSuperflat_12(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -165,10 +165,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
 	public int redirect_initialStructureRandomSuperflat_13(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -178,10 +178,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 9))
 	public int redirect_initialStructureRandomSuperflat_14(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -191,10 +191,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 10))
 	public int redirect_initialStructureRandomSuperflat_15(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -204,10 +204,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 11))
 	public int redirect_initialStructureRandomSuperflat_16(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -217,10 +217,10 @@ public class MixinChunkGeneratorFlat{
 	*/
 	@Redirect(method = "populate(II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 12))
 	public int redirect_initialStructureRandomSuperflat_17(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.initialStructureRandomSuperflat.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.initialStructureRandomSuperflat.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

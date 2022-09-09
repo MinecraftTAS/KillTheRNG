@@ -13,10 +13,10 @@ public class MixinBlockGlowstone{
 	*/
 	@Redirect(method = "quantityDropped(Ljava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_glowstoneDrop_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.glowstoneDrop.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.glowstoneDrop.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDrop.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.glowstoneDrop.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.glowstoneDrop.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockGlowstone{
 	*/
 	@Redirect(method = "quantityDroppedWithBonus(ILjava/util/Random;)I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_bonusGlowstoneDrop_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.bonusGlowstoneDrop.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.bonusGlowstoneDrop.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.bonusGlowstoneDrop.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.bonusGlowstoneDrop.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

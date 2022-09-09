@@ -13,10 +13,10 @@ public class MixinDefaultChannelId{
 	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	public int redirect_con_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.con.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinDefaultChannelId{
 	*/
 	@Redirect(method = "defaultProcessId()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0), remap = false)
 	private static int redirect_con_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.con.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.con.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.con.nextInt();
 			return rand.nextInt();
 		}
 	}

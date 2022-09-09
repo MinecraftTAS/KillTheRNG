@@ -13,10 +13,10 @@ public class MixinParticleLava{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1443_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1443.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1443.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1443.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1443.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1443.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1443.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinParticleLava{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_1444_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1444.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1444.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1444.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1444.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1444.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1444.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinParticleLava{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDD)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_57_3() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_57.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_57.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_57.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_57.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_57.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_57.nextDouble();
 			return Math.random();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinParticleLava{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1445_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1445.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1445.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1445.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1445.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1445.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1445.nextFloat();
 			return rand.nextFloat();
 		}
 	}

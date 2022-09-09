@@ -13,10 +13,10 @@ public class MixinTileEntityEnchantmentTable{
 	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_enchantmentTableTileBookSpread_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileBookSpread.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileBookSpread.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileBookSpread.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileBookSpread.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileBookSpread.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileBookSpread.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinTileEntityEnchantmentTable{
 	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_enchantmentTableTileFlipT_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinTileEntityEnchantmentTable{
 	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_enchantmentTableTileFlipT_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enchantmentTableTileFlipT.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enchantmentTableTileFlipT.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

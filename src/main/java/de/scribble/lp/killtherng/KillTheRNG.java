@@ -48,6 +48,9 @@ public class KillTheRNG {
     
     public static final UltimateRandomness randomness = new UltimateRandomness();
     
+    public static final UltimateRandomnessClient clientRandom = new UltimateRandomnessClient();
+    public static final UltimateRandomnessCommon commonRandom = new UltimateRandomnessCommon();
+    
     public static EntityPlayerMP trackedPlayer;
     
     public static SimpleNetworkWrapper NETWORK;

@@ -13,10 +13,10 @@ public class MixinEntityAISkeletonRiders{
 	*/
 	@Redirect(method = "createSkeleton(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/passive/AbstractHorse;)Lnet/minecraft/entity/monster/EntitySkeleton;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAISkeletonRiders{
 	*/
 	@Redirect(method = "createSkeleton(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/passive/AbstractHorse;)Lnet/minecraft/entity/monster/EntitySkeleton;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_aiSkeletonRidersAddEnchantmentToMainhand_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddEnchantmentToMainhand.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityAISkeletonRiders{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_aiSkeletonRidersAddVelocity_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityAISkeletonRiders{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_aiSkeletonRidersAddVelocity_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiSkeletonRidersAddVelocity.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiSkeletonRidersAddVelocity.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

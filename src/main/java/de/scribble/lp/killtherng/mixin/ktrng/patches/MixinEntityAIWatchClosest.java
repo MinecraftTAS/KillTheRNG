@@ -13,10 +13,10 @@ public class MixinEntityAIWatchClosest{
 	*/
 	@Redirect(method = "shouldExecute()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_aiWatchClosestStart_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestStart.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestStart.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestStart.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestStart.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestStart.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestStart.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAIWatchClosest{
 	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiWatchClosestDuration_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestDuration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestDuration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestDuration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestDuration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiWatchClosestDuration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiWatchClosestDuration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

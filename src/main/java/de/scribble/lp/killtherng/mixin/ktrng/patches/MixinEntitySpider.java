@@ -13,10 +13,10 @@ public class MixinEntitySpider{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_832_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_832.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_832.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_832.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_832.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_832.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_832.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntitySpider{
 	*/
 	@Redirect(method = "onInitialSpawn(Lnet/minecraft/world/DifficultyInstance;Lnet/minecraft/entity/IEntityLivingData;)Lnet/minecraft/entity/IEntityLivingData;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_833_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_833.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_833.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_833.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_833.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_833.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_833.nextFloat();
 			return rand.nextFloat();
 		}
 	}

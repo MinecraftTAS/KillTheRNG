@@ -13,10 +13,10 @@ public class MixinGuiMainMenu{
 	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_splashTextIndex_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.splashTextIndex.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.splashTextIndex.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.splashTextIndex.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.splashTextIndex.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.splashTextIndex.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.splashTextIndex.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinGuiMainMenu{
 	*/
 	@Redirect(method = "<init>()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_minceraftRandom_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.minceraftRandom.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.minceraftRandom.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.minceraftRandom.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.minceraftRandom.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.minceraftRandom.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.minceraftRandom.nextFloat();
 			return rand.nextFloat();
 		}
 	}

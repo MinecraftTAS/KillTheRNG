@@ -13,10 +13,10 @@ public class MixinEntitySilverfish$AISummonSilverfish{
 	*/
 	@Redirect(method = "updateTask()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_random_889_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_889.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_889.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_889.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_889.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_889.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_889.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}

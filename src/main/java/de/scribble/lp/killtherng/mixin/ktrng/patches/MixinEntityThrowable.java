@@ -13,10 +13,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_throwableMotion_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_throwableMotion_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "onUpdate()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_throwableMotion_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableMotion.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableMotion.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_throwableInaccuracy_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_throwableInaccuracy_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityThrowable{
 	*/
 	@Redirect(method = "shoot(DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_throwableInaccuracy_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.throwableInaccuracy.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.throwableInaccuracy.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

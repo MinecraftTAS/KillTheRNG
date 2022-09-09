@@ -13,10 +13,10 @@ public class MixinGuiCreateWorld{
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextLong()J", ordinal = 0))
 	public long redirect_chooseRandomSeed_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chooseRandomSeed.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chooseRandomSeed.nextLong();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chooseRandomSeed.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chooseRandomSeed.nextLong();
 		} else {
-				de.scribble.lp.killtherng.KillTheRNG.randomness.chooseRandomSeed.nextLong();
+				de.scribble.lp.killtherng.KillTheRNG.commonRandom.chooseRandomSeed.nextLong();
 				return rand.nextLong();
 		}
 	}

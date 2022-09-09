@@ -13,10 +13,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1402_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1402.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1402.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1402.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1402.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1402.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1402.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_random_1403_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1403.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1403.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1403.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1403.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1403.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1403.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_random_1404_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1404.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1404.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1404.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1404.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1404.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1404.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_random_1405_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1405.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1405.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1405.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1405.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1405.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1405.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
 	public int redirect_random_1406_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1406.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1406.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1406.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1406.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1406.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1406.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinRenderLightningBolt{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/effect/EntityLightningBolt;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
 	public int redirect_random_1407_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1407.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1407.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1407.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1407.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1407.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1407.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

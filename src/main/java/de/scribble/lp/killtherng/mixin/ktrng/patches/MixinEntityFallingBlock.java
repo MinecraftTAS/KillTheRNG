@@ -13,10 +13,10 @@ public class MixinEntityFallingBlock{
 	*/
 	@Redirect(method = "fall(FF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_anvilFallingDamage_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.anvilFallingDamage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.anvilFallingDamage.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.anvilFallingDamage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.anvilFallingDamage.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.anvilFallingDamage.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.anvilFallingDamage.nextFloat();
 			return rand.nextFloat();
 		}
 	}

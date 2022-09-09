@@ -13,10 +13,10 @@ public class MixinParticleFallingDust{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDFFF)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_math_random_75_1() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_75.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_75.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_75.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_75.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_75.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_75.nextDouble();
 			return Math.random();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinParticleFallingDust{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDFFF)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_math_random_76_2() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_76.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_76.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_76.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_76.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_76.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_76.nextDouble();
 			return Math.random();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinParticleFallingDust{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDFFF)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 2))
 	public double redirect_math_random_77_3() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_77.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_77.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_77.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_77.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.math_random_77.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.math_random_77.nextDouble();
 			return Math.random();
 		}
 	}

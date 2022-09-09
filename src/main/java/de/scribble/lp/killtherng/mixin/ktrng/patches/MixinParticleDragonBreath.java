@@ -13,10 +13,10 @@ public class MixinParticleDragonBreath{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;DDDDDD)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_1455_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1455.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1455.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1455.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1455.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1455.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1455.nextFloat();
 			return rand.nextFloat();
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_animalHeartParticleStatusUpdate_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_animalHeartParticleStatusUpdate_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_animalHeartParticleStatusUpdate_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_animalHeartParticleStatusUpdate_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_animalHeartParticleStatusUpdate_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityAnimal{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_animalHeartParticleStatusUpdate_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.animalHeartParticleStatusUpdate.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.animalHeartParticleStatusUpdate.nextFloat();
 			return rand.nextFloat();
 		}
 	}

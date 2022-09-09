@@ -13,10 +13,10 @@ public class MixinTileEntityChest{
 	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_random_395_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_395.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_395.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_395.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_395.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_395.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_395.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinTileEntityChest{
 	*/
 	@Redirect(method = "update()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_random_396_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_396.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_396.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_396.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_396.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_396.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_396.nextFloat();
 			return rand.nextFloat();
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinFontRenderer{
 	*/
 	@Redirect(method = "renderStringAtPos(Ljava/lang/String;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fontRendererObfuscation_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fontRendererObfuscation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fontRendererObfuscation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRendererObfuscation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRendererObfuscation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fontRendererObfuscation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRendererObfuscation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

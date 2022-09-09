@@ -13,10 +13,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_villagerLookingForVillage_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_villagerLookingForVillage_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "updateAITasks()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_villagerLookingForVillage_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerLookingForVillage.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerLookingForVillage.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "useRecipe(Lnet/minecraft/village/MerchantRecipe;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_villagerTradingXp_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityVillager{
 	*/
 	@Redirect(method = "useRecipe(Lnet/minecraft/village/MerchantRecipe;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_villagerTradingXp_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.villagerTradingXp.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.villagerTradingXp.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

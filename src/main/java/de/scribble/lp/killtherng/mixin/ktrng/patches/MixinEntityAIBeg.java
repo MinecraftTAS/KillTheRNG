@@ -13,10 +13,10 @@ public class MixinEntityAIBeg{
 	*/
 	@Redirect(method = "startExecuting()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_aiBeg_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.aiBeg.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.aiBeg.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBeg.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBeg.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.aiBeg.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.aiBeg.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

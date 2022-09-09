@@ -13,10 +13,10 @@ public class MixinStructureOceanMonumentPieces$MonumentBuilding{
 	*/
 	@Redirect(method = "<init>(Ljava/util/Random;IILnet/minecraft/util/EnumFacing;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt()I", ordinal = 0))
 	public int redirect_posRotTypeOceanMonument_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt();
 			return rand.nextInt();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinStructureOceanMonumentPieces$MonumentBuilding{
 	*/
 	@Redirect(method = "generateRoomGraph(Ljava/util/Random;)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_posRotTypeOceanMonument_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinStructureOceanMonumentPieces$MonumentBuilding{
 	*/
 	@Redirect(method = "generateRoomGraph(Ljava/util/Random;)Ljava/util/List;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_posRotTypeOceanMonument_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.posRotTypeOceanMonument.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.posRotTypeOceanMonument.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

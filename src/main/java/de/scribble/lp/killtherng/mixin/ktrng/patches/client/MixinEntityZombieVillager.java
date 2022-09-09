@@ -13,10 +13,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieVillagerConvertionSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "handleStatusUpdate(B)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_zombieVillagerConvertionSound_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.zombieVillagerConvertionSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinEntityEnderCrystal{
 	*/
 	@Redirect(method = "<init>(Lnet/minecraft/world/World;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_enderCrystalRotationOffset_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.enderCrystalRotationOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.enderCrystalRotationOffset.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderCrystalRotationOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderCrystalRotationOffset.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.enderCrystalRotationOffset.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.enderCrystalRotationOffset.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

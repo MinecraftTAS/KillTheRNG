@@ -13,10 +13,10 @@ public class MixinAbstractChestHorse{
 	*/
 	@Redirect(method = "playChestEquipSound()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_chestHorseSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinAbstractChestHorse{
 	*/
 	@Redirect(method = "playChestEquipSound()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_chestHorseSound_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.chestHorseSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.chestHorseSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

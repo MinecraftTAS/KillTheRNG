@@ -13,10 +13,10 @@ public class MixinPhaseStrafePlayer{
 	*/
 	@Redirect(method = "findNewTarget()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_phaseStrafePlayerRotation_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerRotation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerRotation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerRotation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerRotation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinPhaseStrafePlayer{
 	*/
 	@Redirect(method = "navigateToNextPathNode()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_phaseStrafePlayerMoveToLocation_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerMoveToLocation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerMoveToLocation.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.phaseStrafePlayerMoveToLocation.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.phaseStrafePlayerMoveToLocation.nextFloat();
 			return rand.nextFloat();
 		}
 	}

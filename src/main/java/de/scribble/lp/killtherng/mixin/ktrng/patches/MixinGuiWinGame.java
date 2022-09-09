@@ -13,8 +13,8 @@ public class MixinGuiWinGame{
 	*/
 	@Redirect(method = "drawScreen(IIF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;setSeed(J)V", ordinal = 0))
 	public void redirect_fontRandomSetSeed_1(Random rand, long seed) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fontRandomSetSeed.isEnabled()) {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fontRandomSetSeed.setSeed(seed, true);		} else {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRandomSetSeed.isEnabled()) {
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRandomSetSeed.setSeed(seed, true);		} else {
 			rand.setSeed(seed);
 		}
 	}
@@ -24,10 +24,10 @@ public class MixinGuiWinGame{
 	*/
 	@Redirect(method = "initGui()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_fontRandomObfuscation_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.fontRandomObfuscation.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.fontRandomObfuscation.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRandomObfuscation.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRandomObfuscation.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.fontRandomObfuscation.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.fontRandomObfuscation.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

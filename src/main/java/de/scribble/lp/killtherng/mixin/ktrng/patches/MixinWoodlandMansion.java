@@ -13,10 +13,10 @@ public class MixinWoodlandMansion{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_woodlandMansionRng_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinWoodlandMansion{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_woodlandMansionRng_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinWoodlandMansion{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
 	public int redirect_woodlandMansionRng_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinWoodlandMansion{
 	*/
 	@Redirect(method = "canSpawnStructureAtCoords(II)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
 	public int redirect_woodlandMansionRng_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.woodlandMansionRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.woodlandMansionRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

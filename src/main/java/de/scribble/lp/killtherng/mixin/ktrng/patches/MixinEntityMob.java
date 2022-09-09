@@ -13,10 +13,10 @@ public class MixinEntityMob{
 	*/
 	@Redirect(method = "attackEntityAsMob(Lnet/minecraft/entity/Entity;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_mobPlayerShieldCooldown_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mobPlayerShieldCooldown.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.mobPlayerShieldCooldown.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobPlayerShieldCooldown.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobPlayerShieldCooldown.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.mobPlayerShieldCooldown.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobPlayerShieldCooldown.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityMob{
 	*/
 	@Redirect(method = "isValidLightLevel()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_mobSpawningLightLevel_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityMob{
 	*/
 	@Redirect(method = "isValidLightLevel()Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_mobSpawningLightLevel_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.mobSpawningLightLevel.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mobSpawningLightLevel.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

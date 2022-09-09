@@ -13,10 +13,10 @@ public class MixinBiomeHills$EmeraldGenerator{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0), remap = false)
 	public int redirect_hillsGeneration_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBiomeHills$EmeraldGenerator{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1), remap = false)
 	public int redirect_hillsGeneration_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBiomeHills$EmeraldGenerator{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2), remap = false)
 	public int redirect_hillsGeneration_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBiomeHills$EmeraldGenerator{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3), remap = false)
 	public int redirect_hillsGeneration_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.hillsGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.hillsGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

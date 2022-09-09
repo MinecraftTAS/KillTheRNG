@@ -13,10 +13,10 @@ public class MixinBlockMagma{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_magmaExtinguish_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockMagma{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_magmaExtinguish_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.magmaExtinguish.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.magmaExtinguish.nextFloat();
 			return rand.nextFloat();
 		}
 	}

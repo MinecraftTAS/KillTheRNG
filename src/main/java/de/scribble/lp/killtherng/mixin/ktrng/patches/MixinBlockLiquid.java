@@ -13,10 +13,10 @@ public class MixinBlockLiquid{
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_liquidExtinguishSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockLiquid{
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_liquidExtinguishSound_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.liquidExtinguishSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.liquidExtinguishSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockLiquid{
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 0))
 	public double redirect_lavaParticlePos_3() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.nextDouble();
 			return Math.random();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBlockLiquid{
 	*/
 	@Redirect(method = "triggerMixEffects(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/lang/Math;random()D", ordinal = 1))
 	public double redirect_lavaParticlePos_4() {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.lavaParticlePos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.lavaParticlePos.nextDouble();
 			return Math.random();
 		}
 	}

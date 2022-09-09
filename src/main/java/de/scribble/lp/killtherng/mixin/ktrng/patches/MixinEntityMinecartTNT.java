@@ -13,10 +13,10 @@ public class MixinEntityMinecartTNT{
 	*/
 	@Redirect(method = "explodeCart(D)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
 	public double redirect_random_819_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_819.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_819.nextDouble();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_819.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_819.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_819.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_819.nextDouble();
 			return rand.nextDouble();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityMinecartTNT{
 	*/
 	@Redirect(method = "killMinecart(Lnet/minecraft/util/DamageSource;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_minecartTNTFuse_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityMinecartTNT{
 	*/
 	@Redirect(method = "killMinecart(Lnet/minecraft/util/DamageSource;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_minecartTNTFuse_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.minecartTNTFuse.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.minecartTNTFuse.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

@@ -13,10 +13,10 @@ public class MixinEntityEgg{
 	*/
 	@Redirect(method = "onImpact(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_eggChickChance_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.eggChickChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.eggChickChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggChickChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggChickChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.eggChickChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggChickChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityEgg{
 	*/
 	@Redirect(method = "onImpact(Lnet/minecraft/util/math/RayTraceResult;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_eggFourChickChance_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.eggFourChickChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.eggFourChickChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggFourChickChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggFourChickChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.eggFourChickChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.eggFourChickChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

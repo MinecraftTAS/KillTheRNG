@@ -13,10 +13,10 @@ public class MixinWorldGenClay{
 	*/
 	@Redirect(method = "generate(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_clayGeneration_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.clayGeneration.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.clayGeneration.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.clayGeneration.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.clayGeneration.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.clayGeneration.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.clayGeneration.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

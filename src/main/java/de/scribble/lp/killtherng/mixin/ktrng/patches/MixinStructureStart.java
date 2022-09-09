@@ -13,10 +13,10 @@ public class MixinStructureStart{
 	*/
 	@Redirect(method = "markAvailableHeight(Lnet/minecraft/world/World;Ljava/util/Random;I)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_heightStructureRng_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinStructureStart{
 	*/
 	@Redirect(method = "setRandomHeight(Lnet/minecraft/world/World;Ljava/util/Random;II)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_heightStructureRng_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.heightStructureRng.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.heightStructureRng.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

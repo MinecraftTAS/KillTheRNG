@@ -13,10 +13,10 @@ public class MixinEntityMule{
 	*/
 	@Redirect(method = "playChestEquipSound()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_llamaChestEquipSound_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityMule{
 	*/
 	@Redirect(method = "playChestEquipSound()V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_llamaChestEquipSound_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.llamaChestEquipSound.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.llamaChestEquipSound.nextFloat();
 			return rand.nextFloat();
 		}
 	}

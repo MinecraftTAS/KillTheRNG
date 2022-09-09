@@ -13,10 +13,10 @@ public class MixinZombieProfToType{
 	*/
 	@Redirect(method = "fixTagCompound(Lnet/minecraft/nbt/NBTTagCompound;)Lnet/minecraft/nbt/NBTTagCompound;", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_random_1264_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.random_1264.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.random_1264.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1264.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1264.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.random_1264.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1264.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

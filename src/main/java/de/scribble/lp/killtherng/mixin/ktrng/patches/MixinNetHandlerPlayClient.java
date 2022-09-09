@@ -13,10 +13,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_pickupItemPitch_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_pickupItemPitch_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_pickupItemPitch_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleCollectItem(Lnet/minecraft/network/play/server/SPacketCollectItem;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_pickupItemPitch_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.pickupItemPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.pickupItemPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_incomingParticleOffset_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_incomingParticleOffset_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
 	public double redirect_incomingParticleOffset_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -104,10 +104,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 3))
 	public double redirect_incomingParticleOffset_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -117,10 +117,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 4))
 	public double redirect_incomingParticleOffset_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -130,10 +130,10 @@ public class MixinNetHandlerPlayClient{
 	*/
 	@Redirect(method = "handleParticles(Lnet/minecraft/network/play/server/SPacketParticles;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 5))
 	public double redirect_incomingParticleOffset_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.incomingParticleOffset.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.incomingParticleOffset.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

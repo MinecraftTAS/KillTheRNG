@@ -13,10 +13,10 @@ public class MixinBlockEndPortal{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_endPortalParticlePosX_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosX.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosX.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosX.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosX.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockEndPortal{
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_endPortalParticlePosZ_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosZ.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosZ.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.endPortalParticlePosZ.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.endPortalParticlePosZ.nextFloat();
 			return rand.nextFloat();
 		}
 	}

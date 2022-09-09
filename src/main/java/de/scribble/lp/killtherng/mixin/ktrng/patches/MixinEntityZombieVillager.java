@@ -13,10 +13,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getConversionProgress()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieVillagerConvertionSpeedup_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getConversionProgress()I", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_zombieVillagerConvertionSpeedup_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionSpeedup.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionSpeedup.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_zombieVillagerChildrenPitch_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
 	public float redirect_zombieVillagerChildrenPitch_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
 	public float redirect_zombieVillagerChildrenPitch_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -78,10 +78,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "getSoundPitch()F", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
 	public float redirect_zombieVillagerChildrenPitch_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerChildrenPitch.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerChildrenPitch.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -91,10 +91,10 @@ public class MixinEntityZombieVillager{
 	*/
 	@Redirect(method = "processInteract(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/util/EnumHand;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_zombieVillagerConvertionTime_7(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionTime.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionTime.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionTime.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionTime.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.zombieVillagerConvertionTime.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.zombieVillagerConvertionTime.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

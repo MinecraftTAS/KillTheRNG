@@ -13,10 +13,10 @@ public class MixinBlockSapling{
 	*/
 	@Redirect(method = "canUseBonemeal(Lnet/minecraft/world/World;Ljava/util/Random;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;)Z", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
 	public float redirect_boneMealSapling_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.boneMealSapling.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.boneMealSapling.nextFloat();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.boneMealSapling.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.boneMealSapling.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.boneMealSapling.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.boneMealSapling.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinBlockSapling{
 	*/
 	@Redirect(method = "generateTree(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_growBigOakTreeFromSapling_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.growBigOakTreeFromSapling.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.growBigOakTreeFromSapling.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.growBigOakTreeFromSapling.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.growBigOakTreeFromSapling.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.growBigOakTreeFromSapling.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.growBigOakTreeFromSapling.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -39,10 +39,10 @@ public class MixinBlockSapling{
 	*/
 	@Redirect(method = "generateTree(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
 	public boolean redirect_megaSpruceTreeCrownSizeFromSapling_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.megaSpruceTreeCrownSizeFromSapling.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.megaSpruceTreeCrownSizeFromSapling.nextBoolean();
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.megaSpruceTreeCrownSizeFromSapling.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.megaSpruceTreeCrownSizeFromSapling.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.megaSpruceTreeCrownSizeFromSapling.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.megaSpruceTreeCrownSizeFromSapling.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -52,10 +52,10 @@ public class MixinBlockSapling{
 	*/
 	@Redirect(method = "generateTree(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
 	public int redirect_jungleMinimumTreeHeightFromSapling_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.jungleMinimumTreeHeightFromSapling.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.jungleMinimumTreeHeightFromSapling.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.jungleMinimumTreeHeightFromSapling.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.jungleMinimumTreeHeightFromSapling.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.jungleMinimumTreeHeightFromSapling.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.jungleMinimumTreeHeightFromSapling.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -65,10 +65,10 @@ public class MixinBlockSapling{
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
 	public int redirect_growTreeChance_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.randomness.growTreeChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.randomness.growTreeChance.nextInt(i);
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.growTreeChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.growTreeChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.randomness.growTreeChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.growTreeChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
