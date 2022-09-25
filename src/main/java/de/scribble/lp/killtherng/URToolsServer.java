@@ -1,35 +1,27 @@
 package de.scribble.lp.killtherng;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
-import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
-
+import de.scribble.lp.killtherng.exceptions.RandomNotFoundException;
+@Deprecated
 public class URToolsServer {
-	public static CustomRandom getRandomFromString(String name) {
-		for(CustomRandom rand: CustomRandom.LIST) {
-			if(rand.getName().equalsIgnoreCase(name)) {
-				return rand;
-			}
-		}
-		return null;
-	}
 	
 	public static void setSeedAll(long seed) {
-		CustomRandom.LIST.forEach(rand->{
+		KillTheRNG.commonRandom.REGISTRY.forEach((name, rand)->{
 			rand.setSeed(seed);
 		});
-		KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(seed));
 	}
 	
-	public static boolean isRandomInList(String name) {
-		return getRandomFromString(name)!=null;
+	public static CustomRandom getRandom(String name) throws RandomNotFoundException {
+		CustomRandom rand = KillTheRNG.commonRandom.REGISTRY.get(name);
+		if(rand!=null) {
+			return rand;
+		}else {
+			throw new RandomNotFoundException("The random "+name+" was not found");
+		}
 	}
 	
 	public static String[] getNames() {
-		String[] out=new String[CustomRandom.LIST.size()];
-		for (int i = 0; i < out.length; i++) {
-			out[i]=CustomRandom.LIST.get(i).getName();
-		}
-		return out;
+		return (String[]) KillTheRNG.commonRandom.REGISTRY.keySet().toArray();
 	}
 	
 	public static long nextSeed() {
@@ -37,9 +29,12 @@ public class URToolsServer {
 	}
 	
 	public static long nextSeed(int step) {
-		KillTheRNG.randomness.Global.advance(step);
-		long seed=KillTheRNG.randomness.Global.getSeed();
-		CustomRandom.LIST.forEach(rand->{
+		//Advancing global variable
+		KillTheRNG.commonRandom.GlobalServer.advance(step);
+		//Getting the seed of the global variable
+		long seed=KillTheRNG.commonRandom.GlobalServer.getSeed();
+		//Setting the seed for every other global variable
+		KillTheRNG.commonRandom.REGISTRY.forEach((name, rand)->{
 			if(rand.getName().equals("Global"))return;
 			rand.setSeed(seed, false);
 		});

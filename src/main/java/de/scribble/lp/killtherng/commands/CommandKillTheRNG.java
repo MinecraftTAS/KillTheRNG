@@ -6,8 +6,7 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
 import de.scribble.lp.killtherng.KillTheRNG;
-import de.scribble.lp.killtherng.URToolsClient;
-import de.scribble.lp.killtherng.URToolsServer;
+import de.scribble.lp.killtherng.UltimateRandomness;
 import de.scribble.lp.killtherng.custom.CustomRandom;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
@@ -45,26 +44,39 @@ public class CommandKillTheRNG extends CommandBase{
 	@Override
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		if(sender instanceof EntityPlayer) {
+			
 			if(args.length==0) {
 				sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-----------------------Help-----------------------\n"+ChatFormatting.RESET
-						+ "Sets all or individual rng seeds.\n"
+						+ "This mod transforms all randomness in the game to something predictable. \n"
+						+ "Just like a Minecraft world, every randomvariable has a 'seed'.\n"
+						+ "Based on this seed, a random number will be generated, when the game needs randomness to occur\n"
+						+ "The game generates a new number and uses that for it's new seed and for its number\n"
+						+ "This makes it so if you have a start seed, every number generated after that will be the same\n\n"
 						+ String.format("%s/killtherng %s<seed>%s - Set the seed for every RNG value\n", ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.RESET)
 						+ String.format("%s/killtherng %s<RNG-Value> %s<seed>%s - Set the RNG seed for that value\n", ChatFormatting.AQUA, ChatFormatting.YELLOW, ChatFormatting.GREEN, ChatFormatting.RESET)
-						+ ChatFormatting.GRAY+"Current Global Seed: "+ChatFormatting.YELLOW+URToolsServer.getRandomFromString("Global").getSeed()));
+						+ ChatFormatting.GRAY+"Current Global Seed: " + ChatFormatting.YELLOW + KillTheRNG.commonRandom.getRandom("GlobalServer").getSeed()));
 				return;
 			}
+			
+			CustomRandom rand = null;
+			rand = UltimateRandomness.getRandomBothSides(args[0]);
+			
+			if(rand==null) {
+				throw new CommandException("The specified random doesn't exist: ", args[0]);
+			}
+			
 			if(isNumeric(args[0])) {
-				URToolsServer.setSeedAll(Long.parseLong(args[0]));
+//				UltimateRandomness.setSeedAll(Long.parseLong(args[0]));
 				notifyCommandListener(sender, this, "Set seed %s for everything",  new Object[] {args[0]});
 			}
-			else if(URToolsServer.isRandomInList(args[0])) {
+			else if(rand != null) {
 				if(args.length==1) {
-					KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(URToolsServer.getRandomFromString(args[0])), (EntityPlayerMP)sender);
+					KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(rand), (EntityPlayerMP)sender);
 					return;
 				}
 				if(isNumeric(args[1])) {
 					long seed=Long.parseLong(args[1]);
-					URToolsServer.getRandomFromString(args[0]).setSeed(seed);
+					rand.setSeed(seed);
 					KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(args[0], seed));
 					notifyCommandListener(sender, this, "Set seed %s for %s",  new Object[] {args[1],args[0]});
 				}
@@ -76,41 +88,31 @@ public class CommandKillTheRNG extends CommandBase{
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public static void sendHelp(String name, long timesCalled, long seed) {
-		CustomRandom clientRandom=URToolsClient.getRandomFromString(name);
+	public static void sendHelp(CustomRandom randomToDisplay){
 		EntityPlayerSP sender=Minecraft.getMinecraft().player;
 		
 		//Setting a clickable component in chat
-		TextComponentString seedTextComponentClient = new TextComponentString(ChatFormatting.GRAY+"Current Seed (Client): "+ChatFormatting.YELLOW+clientRandom.getSeed());
-		String style ="/killtherng "+clientRandom.getName()+" "+clientRandom.getSeed();
-		seedTextComponentClient.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
+		TextComponentString seedTextComponent = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+randomToDisplay.getSeed());
+		String style ="/killtherng "+randomToDisplay.getName()+" "+randomToDisplay.getSeed();
+		seedTextComponent.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
 		
-		//Setting a clickable component in chat
-		TextComponentString seedTextComponentServer = new TextComponentString(ChatFormatting.GRAY+"Current Seed (Server): "+ChatFormatting.YELLOW+seed);
-		seedTextComponentServer.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
-		
-		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+clientRandom.getName()+"-------------"));
-		sender.sendMessage(new TextComponentString(clientRandom.getDescription()));
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+randomToDisplay.getName()+"-------------"));
+		sender.sendMessage(new TextComponentString(randomToDisplay.getDescription()));
 		sender.sendMessage(new TextComponentString(""));
-		if(!clientRandom.isEnabled()) {
+		if(!randomToDisplay.isEnabled()) {
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, since it causes bugs or softlocks if it is not random."));
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"Setting a seed will not do anything, but you can still view some information"));
 		}
-		sender.sendMessage(seedTextComponentClient);
-		sender.sendMessage(seedTextComponentServer);
-		if(Minecraft.getMinecraft().isSingleplayer()) {
-			sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+clientRandom.getTimesCalled()+" times"));
-		}else {
-			sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+clientRandom.getTimesCalled()+" times on the client and "+timesCalled+" on the server"));
-		}
+		sender.sendMessage(seedTextComponent);
+		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+ randomToDisplay.getTimesCalled() +" times"));
 	}
 	
 	@Override
 	public List<String> getTabCompletions(MinecraftServer server, ICommandSender sender, String[] args,
 			BlockPos targetPos) {
 		if(args.length==1) {
-			return getListOfStringsMatchingLastWord(args, URToolsServer.getNames());
-		}else if(URToolsServer.isRandomInList(args[0])) {
+			return getListOfStringsMatchingLastWord(args, UltimateRandomness.getNames());
+		} else if (UltimateRandomness.getRandomBothSides(args[0]) != null) {
 			return getListOfStringsMatchingLastWord(args, "help");
 		}
 		return super.getTabCompletions(server, sender, args, targetPos);

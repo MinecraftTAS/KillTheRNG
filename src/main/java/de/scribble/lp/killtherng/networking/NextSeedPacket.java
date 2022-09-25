@@ -50,7 +50,7 @@ public class NextSeedPacket implements IMessage{
 					KillTheRNG.NETWORK.sendToAll(new NextSeedPacket(seed));
 				}
 			} else {
-				URToolsClient.nextSeedClientFromServer(message.seed);
+				URToolsClient.setSeedAll(message.seed);
 			}
 			return null;
 		}

@@ -10,41 +10,34 @@ import org.apache.commons.io.FileUtils;
 
 public class RandomnessFile {
 	
-	private ArrayList<TriSet<String, String, Boolean>> tris = new ArrayList<>();
+	private ArrayList<RandomData> data = new ArrayList<>();
 	
 	public RandomnessFile(Map<String, MixinClassData> data) {
 		for(MixinClassData classData : data.values()) {
 			for(MixinMethodData methodData : classData.randomData) {
-				addToList(methodData.name, methodData.description, methodData.enabled);
+				addToList(methodData.name, methodData.description, methodData.enabled, methodData.client);
 			}
 		}
 	}
 	
-	public void addToList(String name, String description, boolean enabled) {
-		addToList(tris.size(), name, description, enabled);
+	public void addToList(String name, String description, boolean enabled, boolean client) {
+		addToList(data.size(), name, description, enabled, client);
 	}
 	
-	public void addToList(int index, String name, String description, boolean enabled) {
-		TriSet<String, String, Boolean> newTri = new TriSet<String, String, Boolean>(name, description, enabled);
-		if(!tris.contains(newTri)) {
-			tris.add(index, newTri);
+	public void addToList(int index, String name, String description, boolean enabled, boolean client) {
+		RandomData newData = new RandomData(name, description, enabled, client);
+		if(!data.contains(newData)) {
+			data.add(index, newData);
 		}
 	}
 	
 	public void saveAs(File file, String packagename) {
 		String out = "package "+packagename+";\n\n"
-				+ "import de.scribble.lp.killtherng.custom.CustomRandom;\n"
-				+ "import java.util.HashMap;\n\n"
-				+ "public class "+file.getName().replace(".java", "")+" {\n\n"
-				+ "\tprivate HashMap<String, CustomRandom> REGISTRY = new HashMap<>();\n\n"
-				+ "\tprivate CustomRandom registerRandom(String name, String description, boolean enabled) {\n"
-				+ "\t\tCustomRandom newRandom = new CustomRandom(name, description, enabled);\n"
-				+ "\t\tREGISTRY.put(name, newRandom);\n"
-				+ "\t\treturn newRandom;\n"
-				+ "\t}\n\n";
+				+ "import de.scribble.lp.killtherng.custom.CustomRandom;\n\n"
+				+ "public class "+file.getName().replace(".java", "")+" extends UltimateRandomness {\n\n";
 		
-		for(TriSet<String, String, Boolean> tri : tris) {
-			out = out.concat(String.format("\tpublic CustomRandom %s = registerRandom(\"%s\", \"%s\", %b);\n", tri.getLeft(), tri.getLeft(), tri.getMiddle(), tri.getRight()));
+		for(RandomData oneData : data) {
+			out = out.concat(String.format("\tpublic CustomRandom %s = registerRandom(\"%s\", \"%s\", %b, %b);\n", oneData.name, oneData.name, oneData.description, oneData.enabled, oneData.client));
 		}
 		
 		out = out.concat("}\n");
@@ -56,35 +49,25 @@ public class RandomnessFile {
 		}
 	}
 	
-	public class TriSet<L, M, R>{
-		L left;
-		M middle;
-		R right;
+	private class RandomData{
+		private String name;
+		private String description;
+		private boolean enabled;
+		private boolean client;
 		
-		public TriSet(L left, M middle, R right) {
-			this.left = left;
-			this.middle = middle;
-			this.right = right;
-		}
-		
-		public L getLeft() {
-			return left;
-		}
-		
-		public M getMiddle() {
-			return middle;
-		}
-		
-		public R getRight() {
-			return right;
+		public RandomData(String name, String description, boolean enabled, boolean client) {
+			this.name = name;
+			this.description = description;
+			this.enabled = enabled;
+			this.client = client;
 		}
 		
 		@SuppressWarnings("unchecked")
 		@Override
 		public boolean equals(Object obj) {
-			if(obj instanceof TriSet<?, ?, ?>) {
-				TriSet<L, M, R> tri = (TriSet<L, M, R>) obj;
-				return left.equals(tri.getLeft());
+			if(obj instanceof RandomData) {
+				RandomData data = (RandomData) obj;
+				return name.equals(data.name);
 			}else {
 				return super.equals(obj);
 			}

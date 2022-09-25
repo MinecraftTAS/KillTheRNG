@@ -8,7 +8,7 @@ import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import de.scribble.lp.killtherng.custom.KTRNGEventHandler;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.NextSeedPacket;
-import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
+import de.scribble.lp.killtherng.networking.UpdateGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import de.scribble.lp.killtherng.networking.UpdateClientSeedPacket;
@@ -47,8 +47,6 @@ public class KillTheRNG {
     
     public static SeedingModes mode=SeedingModes.Tick;
     
-    public static final UltimateRandomness randomness = new UltimateRandomness();
-    
     public static final UltimateRandomnessClient clientRandom = new UltimateRandomnessClient();
     public static final UltimateRandomnessCommon commonRandom = new UltimateRandomnessCommon();
     
@@ -76,8 +74,8 @@ public class KillTheRNG {
     	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.SERVER);
     	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.CLIENT);
-    	NETWORK.registerMessage(RequestGlobalSeedPacket.RequestGlobalSeedPacketHandler.class, RequestGlobalSeedPacket.class, i++, Side.SERVER);
+    	NETWORK.registerMessage(UpdateGlobalSeedPacket.UpdateGlobalSeedPacketHandler.class, UpdateGlobalSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(UpdateGlobalSeedPacket.UpdateGlobalSeedPacketHandler.class, UpdateGlobalSeedPacket.class, i++, Side.SERVER);
     	
     	NETWORK.registerMessage(UpdateClientSeedPacket.UpdateClientSeedPacketHandler.class, UpdateClientSeedPacket.class, i++, Side.CLIENT);
     	

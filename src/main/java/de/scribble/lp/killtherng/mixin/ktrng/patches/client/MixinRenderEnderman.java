@@ -1,4 +1,4 @@
-package de.scribble.lp.killtherng.mixin.ktrng.patches;
+package de.scribble.lp.killtherng.mixin.ktrng.patches.client;
 import java.util.Random;
 
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,10 +13,10 @@ public class MixinRenderEnderman{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/monster/EntityEnderman;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
 	public double redirect_random_1376_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1376.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1376.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1376.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1376.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1376.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1376.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
@@ -26,10 +26,10 @@ public class MixinRenderEnderman{
 	*/
 	@Redirect(method = "doRender(Lnet/minecraft/entity/monster/EntityEnderman;DDDFF)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
 	public double redirect_random_1377_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1377.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1377.nextGaussian();
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1377.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1377.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.random_1377.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.random_1377.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

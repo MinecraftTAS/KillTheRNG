@@ -22,39 +22,16 @@ public class CustomRandom extends Random {
     private long timesCalled=0;
     
     private boolean enabled;
-    
-    /**
-     * List of all custom randoms
-     */
-    public static final List<CustomRandom> LIST=new ArrayList<>();
+    private boolean client;
     
     private JRand jrand=new JRand(0L);
     
-    /**
-     * Use this constructor to not add the created randomness to {@link #LIST}
-     * @param name
-     */
-    public CustomRandom(String name) {
-    	super(0L);
-        String nothing=TextFormatting.GRAY+""+TextFormatting.ITALIC+"Nothing here yet :(";
-        this.name=name;
-        this.description=nothing;
-    }
-    
-    public CustomRandom(String name, String description) {
-    	super(0L);
+	public CustomRandom(String name, String description, boolean enabled, boolean client) {
+		super(0L);
 		this.name = name;
 		this.description = description;
-		enabled=true;
-		LIST.add(this);
-	}
-    
-    public CustomRandom(String name, String description, boolean enabled) {
-    	super(0);
-		this.name = name;
-		this.description = description;
-		this.enabled=enabled;
-		LIST.add(this);
+		this.enabled = enabled;
+		this.client = client;
 	}
 
 	public void setSeed(long seedIn) {
@@ -97,12 +74,17 @@ public class CustomRandom extends Random {
 		return enabled;
 	}
 	
+	public boolean isClient() {
+		return client;
+	}
+	
 	@Override
 	public long nextLong() {
 		timesCalled++;
 		long seedstored=getSeed();
 		long value=super.nextLong();
-		if( KillTheRNG.mode.isNotChangeSeed() &&!this.name.equals("Global")) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed() &&!this.name.equals("Global"))
+			setSeed(seedstored, false);
 		
 		return value;
 	}
@@ -111,7 +93,8 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		double value=super.nextDouble();
-		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed()) 
+			setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -119,7 +102,8 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		boolean value=super.nextBoolean();
-		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed())
+			setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -127,7 +111,8 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt();
-		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed())
+			setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -135,7 +120,8 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt(bound);
-		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
+		if(KillTheRNG.mode.isNotChangeSeed())
+			setSeed(seedstored, false);
 		return value;
 	}
 	@Override
@@ -188,5 +174,20 @@ public class CustomRandom extends Random {
 	
 	public static long steps(CustomRandom random1, CustomRandom random2) {
 		return LCG.JAVA.distance(random1.getSeed(), random2.getSeed());
+	}
+	
+	@Override
+	public String toString() {
+		return name+": "+enabled;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof CustomRandom) {
+			CustomRandom custom = (CustomRandom) obj;
+			return custom.name.equals(name);
+		}else {
+			return super.equals(obj);
+		}
 	}
 }

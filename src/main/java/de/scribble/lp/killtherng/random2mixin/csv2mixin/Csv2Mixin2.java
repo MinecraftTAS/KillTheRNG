@@ -133,8 +133,8 @@ public class Csv2Mixin2 {
 		RandomnessFile clientFile = new RandomnessFile(mixinClient);
 		RandomnessFile commonFile = new RandomnessFile(mixinCommon);
 		
-		clientFile.addToList(0, "GlobalClient", "The global randomness every client random variable should have", true);
-		commonFile.addToList(0, "GlobalServer", "The global randomness every server random variable should have", true);
+		clientFile.addToList(0, "GlobalClient", "The global randomness every client random variable should have", true, true);
+		commonFile.addToList(0, "GlobalServer", "The global randomness every server random variable should have", true, false);
 		
 		LOGGER.info("Create Randomness Files");
 		clientFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessClient.java"), "de.scribble.lp.killtherng");

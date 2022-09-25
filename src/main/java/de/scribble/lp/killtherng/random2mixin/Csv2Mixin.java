@@ -400,7 +400,7 @@ public class Csv2Mixin {
 	private static void addRandomnessUR(String name, String description, boolean enabled) {
 		try {
 			if(!isRandomInList(name)) {
-				processed.add(new CustomRandom(name, description));
+//				processed.add(new CustomRandom(name, description));
 				writeLineUR(String.format("public CustomRandom %s=new CustomRandom(\"%s\", \"%s\", %b);", name, name, description, enabled));
 			}
 		} catch (IOException e) {

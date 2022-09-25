@@ -13,7 +13,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 
 import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.SeedingModes;
-import de.scribble.lp.killtherng.networking.RequestGlobalSeedPacket;
+import de.scribble.lp.killtherng.networking.UpdateGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.NetHandlerPlayServer;
@@ -38,7 +38,7 @@ public abstract class MixinPlayerList {
 		if(playerEntityList.size()==1) {
 			KillTheRNG.LOGGER.info("Setting tracked player to {}", playerIn.getName());
 			KillTheRNG.trackedPlayer=playerIn;
-			KillTheRNG.NETWORK.sendTo(new RequestGlobalSeedPacket(), playerIn);
+			KillTheRNG.NETWORK.sendTo(new UpdateGlobalSeedPacket(), playerIn);
 		}
 		if(KillTheRNG.mode==SeedingModes.PlayerInput&&KillTheRNG.trackedPlayer!=null) {
 			if(mcServer.isDedicatedServer()) {
