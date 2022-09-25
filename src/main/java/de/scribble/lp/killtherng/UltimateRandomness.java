@@ -1,7 +1,10 @@
 package de.scribble.lp.killtherng;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
 
@@ -50,10 +53,10 @@ public class UltimateRandomness {
 		return seed;
 	}
 	
-	public static String[] getNames() {
-		Set<String> mergedRegistry = KillTheRNG.commonRandom.getAllKeys();
-		mergedRegistry.addAll(KillTheRNG.clientRandom.getAllKeys());
-		return (String[]) mergedRegistry.toArray();
+	public static List<String> getNames() {
+		List<String> mergedRegistry = Stream.concat(KillTheRNG.commonRandom.getAllKeys().stream(), KillTheRNG.clientRandom.getAllKeys().stream())
+                .collect(Collectors.toList());
+		return mergedRegistry;
 	}
 	
 	public static CustomRandom getRandomBothSides(String name) {

@@ -1,13 +1,10 @@
 package de.scribble.lp.killtherng.custom;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import de.scribble.lp.killtherng.KillTheRNG;
 import kaptainwutax.seedutils.lcg.LCG;
 import kaptainwutax.seedutils.rand.JRand;
-import net.minecraft.util.text.TextFormatting;
 
 
 public class CustomRandom extends Random {

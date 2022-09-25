@@ -8,10 +8,10 @@ import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import de.scribble.lp.killtherng.custom.KTRNGEventHandler;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.NextSeedPacket;
-import de.scribble.lp.killtherng.networking.UpdateGlobalSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
 import de.scribble.lp.killtherng.networking.UpdateClientSeedPacket;
+import de.scribble.lp.killtherng.networking.UpdateGlobalSeedPacket;
 import de.scribble.lp.killtherng.random2mixin.csv2mixin.Csv2Mixin2;
 import de.scribble.lp.killtherng.test.TestingKeybinds;
 import de.scribble.lp.killtherng.tickmode.TickModeServer;
@@ -24,7 +24,6 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(
         modid = KillTheRNG.MOD_ID,
@@ -60,7 +59,7 @@ public class KillTheRNG {
     
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
-    	Csv2Mixin2.main(null);
+//    	Csv2Mixin2.main(null);
     	NETWORK = NetworkRegistry.INSTANCE.newSimpleChannel("killtherng");
     	int i = -1;
     	

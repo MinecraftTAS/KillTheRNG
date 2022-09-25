@@ -7,6 +7,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import de.scribble.lp.killtherng.KillTheRNG;
 import de.scribble.lp.killtherng.UltimateRandomness;
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
+import de.scribble.lp.killtherng.commands.CommandKillTheRNG.RandomData;
 import de.scribble.lp.killtherng.custom.CustomRandom;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
@@ -26,14 +27,21 @@ public class SeedInfoPacket implements IMessage {
 
 	private long seed;
 
+	private boolean enabled;
+
+	public SeedInfoPacket() {
+	}
+	
 	public SeedInfoPacket(String name) {
-		
+		this.name = name;
+		request = true;
 	}
 	
 	public SeedInfoPacket(CustomRandom rand) {
 		name = rand.getName();
 		timesCalled = rand.getTimesCalled();
 		seed = rand.getSeed();
+		enabled = rand.isEnabled();
 	}
 
 	@Override
@@ -44,6 +52,7 @@ public class SeedInfoPacket implements IMessage {
 		if(!request) {
 			timesCalled = buf.readLong();
 			seed = buf.readLong();
+			enabled = buf.readBoolean();
 		}
 	}
 
@@ -55,6 +64,7 @@ public class SeedInfoPacket implements IMessage {
 		if(!request) {
 			buf.writeLong(timesCalled);
 			buf.writeLong(seed);
+			buf.writeBoolean(enabled);
 		}
 	}
 
@@ -66,21 +76,34 @@ public class SeedInfoPacket implements IMessage {
 				if(message.request) {
 					CustomRandom inforand = UltimateRandomness.getRandomBothSides(message.name);
 					
-					if(inforand != null) {
+					if(!inforand.isClient()) {
 						KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(inforand), ctx.getServerHandler().player);
 					} else {
 						KillTheRNG.NETWORK.sendTo(message, ctx.getServerHandler().player);
 					}
 				}
 			} else if (ctx.side.isClient()) {
-				CustomRandom randToDisplay = null;
+				
+				CommandKillTheRNG.RandomData data = null;
+				
 				if(message.request) {
+					CustomRandom randToDisplay;
 					randToDisplay = KillTheRNG.clientRandom.getRandom(message.name);
+					
+					if(randToDisplay!=null) {
+						data = new RandomData(randToDisplay);
+					}
+					
 				} else {
-					randToDisplay = KillTheRNG.commonRandom.getRandom(message.name);
+					CustomRandom randToDisplay = UltimateRandomness.getRandomBothSides(message.name);
+					
+					if(randToDisplay!=null) {
+						data = new RandomData(randToDisplay, message.seed, message.timesCalled, message.enabled);
+					}
 				}
-				if(randToDisplay!=null) {
-					CommandKillTheRNG.sendHelp(randToDisplay);
+				
+				if (data!=null) {
+					CommandKillTheRNG.sendHelp(data);
 				} else {
 					Minecraft.getMinecraft().ingameGUI.addChatMessage(ChatType.CHAT, new TextComponentString(ChatFormatting.RED + "The randomness you specified doesn't exist"));
 				}

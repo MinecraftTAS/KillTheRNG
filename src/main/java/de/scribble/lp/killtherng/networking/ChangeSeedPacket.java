@@ -34,6 +34,13 @@ public class ChangeSeedPacket implements IMessage{
 	private String name;
 	
 	/**
+	 * Forge needs this, do not use
+	 */
+	@Deprecated
+	public ChangeSeedPacket() {
+	}
+	
+	/**
 	 * Change every seed on server and client
 	 * @param seed The seed to change it to
 	 */

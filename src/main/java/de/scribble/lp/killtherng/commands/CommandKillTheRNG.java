@@ -49,8 +49,8 @@ public class CommandKillTheRNG extends CommandBase{
 				sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-----------------------Help-----------------------\n"+ChatFormatting.RESET
 						+ "This mod transforms all randomness in the game to something predictable. \n"
 						+ "Just like a Minecraft world, every randomvariable has a 'seed'.\n"
-						+ "Based on this seed, a random number will be generated, when the game needs randomness to occur\n"
-						+ "The game generates a new number and uses that for it's new seed and for its number\n"
+						+ "Based on this seed, a random number will be generated, when the game needs randomness to occur.\n"
+						+ "The game generates a new number and uses that for it's new seed and for its number.\n"
 						+ "This makes it so if you have a start seed, every number generated after that will be the same\n\n"
 						+ String.format("%s/killtherng %s<seed>%s - Set the seed for every RNG value\n", ChatFormatting.AQUA, ChatFormatting.GREEN, ChatFormatting.RESET)
 						+ String.format("%s/killtherng %s<RNG-Value> %s<seed>%s - Set the RNG seed for that value\n", ChatFormatting.AQUA, ChatFormatting.YELLOW, ChatFormatting.GREEN, ChatFormatting.RESET)
@@ -61,17 +61,19 @@ public class CommandKillTheRNG extends CommandBase{
 			CustomRandom rand = null;
 			rand = UltimateRandomness.getRandomBothSides(args[0]);
 			
-			if(rand==null) {
-				throw new CommandException("The specified random doesn't exist: ", args[0]);
-			}
-			
 			if(isNumeric(args[0])) {
-//				UltimateRandomness.setSeedAll(Long.parseLong(args[0]));
+				long seed = Long.parseLong(args[0]);
+				KillTheRNG.commonRandom.setSeedAll(seed);
+				KillTheRNG.NETWORK.sendToAll(new ChangeSeedPacket(seed));
 				notifyCommandListener(sender, this, "Set seed %s for everything",  new Object[] {args[0]});
 			}
 			else if(rand != null) {
 				if(args.length==1) {
-					KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(rand), (EntityPlayerMP)sender);
+					if(rand.isClient()) {
+						KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(args[0]), (EntityPlayerMP)sender);
+					}else {
+						KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(rand), (EntityPlayerMP)sender);
+					}
 					return;
 				}
 				if(isNumeric(args[1])) {
@@ -84,27 +86,82 @@ public class CommandKillTheRNG extends CommandBase{
 					throw new CommandException("Can't understand what you just typed in...", new Object[] {});
 				}
 			}
+			else {
+				throw new CommandException("Can't understand what you just typed in...", new Object[] {});
+			}
 		}
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public static void sendHelp(CustomRandom randomToDisplay){
+	public static void sendHelp(RandomData data){
 		EntityPlayerSP sender=Minecraft.getMinecraft().player;
 		
 		//Setting a clickable component in chat
-		TextComponentString seedTextComponent = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+randomToDisplay.getSeed());
-		String style ="/killtherng "+randomToDisplay.getName()+" "+randomToDisplay.getSeed();
+		TextComponentString seedTextComponent = new TextComponentString(ChatFormatting.GRAY+"Current Seed: "+ChatFormatting.YELLOW+data.getSeed());
+		String style ="/killtherng "+data.getName()+" "+data.getSeed();
 		seedTextComponent.getStyle().setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, style));
 		
-		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+randomToDisplay.getName()+"-------------"));
-		sender.sendMessage(new TextComponentString(randomToDisplay.getDescription()));
+		sender.sendMessage(new TextComponentString(ChatFormatting.GOLD+"-------------"+data.getName()+"-------------"));
+		sender.sendMessage(new TextComponentString(data.getDescription()));
 		sender.sendMessage(new TextComponentString(""));
-		if(!randomToDisplay.isEnabled()) {
+		if(!data.isEnabled()) {
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"This variable has been disabled, since it causes bugs or softlocks if it is not random."));
 			sender.sendMessage(new TextComponentString(ChatFormatting.RED+"Setting a seed will not do anything, but you can still view some information"));
 		}
 		sender.sendMessage(seedTextComponent);
-		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+ randomToDisplay.getTimesCalled() +" times"));
+		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+"The random variable has been called "+ data.getTimescalled() +" times"));
+		sender.sendMessage(new TextComponentString(ChatFormatting.DARK_GRAY+(data.isClient() ? "Side: CLIENT" : "Side: SERVER")));
+	}
+	
+	public static class RandomData {
+		private String name;
+		private long seed;
+		private String description;
+		private boolean enabled;
+		private long timescalled;
+		private boolean client;
+		
+		public RandomData(CustomRandom rand) {
+			this.name = rand.getName();
+			this.seed = rand.getSeed();
+			this.description = rand.getDescription();
+			this.enabled = rand.isEnabled();
+			this.timescalled = rand.getTimesCalled();
+			this.client = rand.isClient();
+		}
+
+		public RandomData(CustomRandom rand, long seed, long timescalled, boolean enabled) {
+			this.name = rand.getName();
+			this.seed = seed;
+			this.description = rand.getDescription();
+			this.enabled = enabled;
+			this.timescalled = timescalled;
+			this.client = rand.isClient();
+		}
+		
+		public String getName() {
+			return name;
+		}
+
+		public long getSeed() {
+			return seed;
+		}
+
+		public String getDescription() {
+			return description;
+		}
+
+		public boolean isEnabled() {
+			return enabled;
+		}
+
+		public long getTimescalled() {
+			return timescalled;
+		}
+
+		public boolean isClient() {
+			return client;
+		}
 	}
 	
 	@Override

@@ -1,7 +1,6 @@
 package de.scribble.lp.killtherng;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
-import de.scribble.lp.killtherng.exceptions.RandomNotFoundException;
 @Deprecated
 public class URToolsServer {
 	
@@ -11,12 +10,12 @@ public class URToolsServer {
 		});
 	}
 	
-	public static CustomRandom getRandom(String name) throws RandomNotFoundException {
+	public static CustomRandom getRandom(String name) {
 		CustomRandom rand = KillTheRNG.commonRandom.REGISTRY.get(name);
 		if(rand!=null) {
 			return rand;
 		}else {
-			throw new RandomNotFoundException("The random "+name+" was not found");
+			return null;
 		}
 	}
 	

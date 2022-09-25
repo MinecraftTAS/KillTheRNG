@@ -1,7 +1,6 @@
 package de.scribble.lp.killtherng;
 
 import de.scribble.lp.killtherng.custom.CustomRandom;
-import de.scribble.lp.killtherng.exceptions.RandomNotFoundException;
 
 @Deprecated
 public class URToolsClient {
@@ -17,6 +16,7 @@ public class URToolsClient {
 		if(rand!=null) {
 			return rand;
 		}else {
+			return null;
 		}
 	}
 	
