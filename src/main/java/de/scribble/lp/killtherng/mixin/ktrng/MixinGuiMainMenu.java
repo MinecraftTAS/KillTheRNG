@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import de.scribble.lp.killtherng.URToolsClient;
+import de.scribble.lp.killtherng.KillTheRNG;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
 
@@ -96,7 +96,7 @@ public abstract class MixinGuiMainMenu extends GuiScreen {
 			Clipboard c =Toolkit.getDefaultToolkit().getSystemClipboard();
 			c.setContents(selection, selection);
 		}
-		URToolsClient.setSeedAll(Long.parseLong(currentSeed.isEmpty() ? "0" : currentSeed));
+		KillTheRNG.clientRandom.setSeedAll(Long.parseLong(currentSeed.isEmpty() ? "0" : currentSeed));
 		super.keyTyped(typedChar, keyCode);
 	}
 	

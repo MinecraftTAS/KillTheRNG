@@ -25,11 +25,11 @@ public class MixinBlock{
 	* Where the spawned item should spawn
 	*/
 	@Redirect(method = "spawnAsEntity(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	private static float redirect_blockDropPosition_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+	private static float redirect_blockDropPos_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -38,11 +38,11 @@ public class MixinBlock{
 	* Where the spawned item should spawn
 	*/
 	@Redirect(method = "spawnAsEntity(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	private static float redirect_blockDropPosition_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+	private static float redirect_blockDropPos_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -51,11 +51,11 @@ public class MixinBlock{
 	* Where the spawned item should spawn
 	*/
 	@Redirect(method = "spawnAsEntity(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/item/ItemStack;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	private static float redirect_blockDropPosition_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+	private static float redirect_blockDropPos_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.blockDropPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}

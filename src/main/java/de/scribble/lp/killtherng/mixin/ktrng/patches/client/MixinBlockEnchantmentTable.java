@@ -22,40 +22,40 @@ public class MixinBlockEnchantmentTable{
 	}
 
 	/**
-	* Get the X of the enchantment table particle
+	* The position of enchantment table particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_enchantementTableParticlePosX_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosX.nextFloat();
+	public float redirect_enchantementTableParticlePos_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosX.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Get the Y of the enchantment table particle
+	* The position of enchantment table particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_enchantementTableParticlePosY_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosY.nextFloat();
+	public float redirect_enchantementTableParticlePos_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosY.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Get the Z of the enchantment table particle
+	* The position of enchantment table particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_enchantementTableParticlePosZ_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosZ.nextFloat();
+	public float redirect_enchantementTableParticlePos_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePosZ.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enchantementTableParticlePos.nextFloat();
 			return rand.nextFloat();
 		}
 	}

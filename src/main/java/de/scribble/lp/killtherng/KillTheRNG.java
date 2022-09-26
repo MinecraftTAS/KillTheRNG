@@ -7,23 +7,22 @@ import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
 import de.scribble.lp.killtherng.custom.KTRNGEventHandler;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
-import de.scribble.lp.killtherng.networking.NextSeedPacket;
+import de.scribble.lp.killtherng.networking.InitialSeedPacket;
 import de.scribble.lp.killtherng.networking.SeedInfoPacket;
 import de.scribble.lp.killtherng.networking.SeedingModePacket;
-import de.scribble.lp.killtherng.networking.UpdateClientSeedPacket;
-import de.scribble.lp.killtherng.networking.UpdateGlobalSeedPacket;
-import de.scribble.lp.killtherng.random2mixin.csv2mixin.Csv2Mixin2;
 import de.scribble.lp.killtherng.test.TestingKeybinds;
-import de.scribble.lp.killtherng.tickmode.TickModeServer;
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
+import net.minecraftforge.fml.common.event.FMLServerStoppingEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @Mod(
         modid = KillTheRNG.MOD_ID,
@@ -44,14 +43,14 @@ public class KillTheRNG {
      */
     public static boolean isLibrary=false;
     
-    public static SeedingModes mode=SeedingModes.Tick;
+    public static SeedingModes mode=SeedingModes.TickChange;
     
     public static final UltimateRandomnessClient clientRandom = new UltimateRandomnessClient();
     public static final UltimateRandomnessCommon commonRandom = new UltimateRandomnessCommon();
     
-    public static EntityPlayerMP trackedPlayer;
-    
     public static SimpleNetworkWrapper NETWORK;
+    
+    public static ServerPlayerManager playerManager;
     
     public static KTRNGEventHandler eventHandler = new KTRNGEventHandler();
 
@@ -70,13 +69,7 @@ public class KillTheRNG {
     	
     	NETWORK.registerMessage(SeedingModePacket.SeedingModePacketHandler.class, SeedingModePacket.class, i++, Side.CLIENT);
     	
-    	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.SERVER);
-    	NETWORK.registerMessage(NextSeedPacket.NextSeedPacketHandler.class, NextSeedPacket.class, i++, Side.CLIENT);
-    	
-    	NETWORK.registerMessage(UpdateGlobalSeedPacket.UpdateGlobalSeedPacketHandler.class, UpdateGlobalSeedPacket.class, i++, Side.CLIENT);
-    	NETWORK.registerMessage(UpdateGlobalSeedPacket.UpdateGlobalSeedPacketHandler.class, UpdateGlobalSeedPacket.class, i++, Side.SERVER);
-    	
-    	NETWORK.registerMessage(UpdateClientSeedPacket.UpdateClientSeedPacketHandler.class, UpdateClientSeedPacket.class, i++, Side.CLIENT);
+    	NETWORK.registerMessage(InitialSeedPacket.InitialSeedPacketHandler.class, InitialSeedPacket.class, i++, Side.SERVER);
     	
     	MinecraftForge.EVENT_BUS.register(new TestingKeybinds());
     }
@@ -85,6 +78,22 @@ public class KillTheRNG {
     public void onServerStart(FMLServerStartingEvent ev) {
     	ev.registerServerCommand(new CommandKillTheRNG());
     	ev.registerServerCommand(new CommandSeedingMode());
+    	playerManager = new ServerPlayerManager();
     }
+    
+    @EventHandler
+    public void onServerClose(FMLServerStoppingEvent ev) {
+    	playerManager = null;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    public static void onPlayerJoinedClientSide(EntityPlayerSP player) {
+    	NETWORK.sendToServer(new InitialSeedPacket(clientRandom.GlobalClient.getSeed()));
+    }
+
+	public static void onPlayerLeaveServerSide(EntityPlayerMP playerIn) {
+		if(playerManager!=null)
+			playerManager.free(playerIn);
+	}
     
 }

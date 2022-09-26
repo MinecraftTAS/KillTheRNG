@@ -42,12 +42,12 @@ public class UltimateRandomness {
 	
 	public long nextSeed(int step) {
 		//Advancing global variable
-		KillTheRNG.clientRandom.GlobalClient.advance(step);
+		KillTheRNG.commonRandom.GlobalServer.advance(step);
 		//Getting the seed of the global variable
-		long seed=KillTheRNG.clientRandom.GlobalClient.getSeed();
+		long seed=KillTheRNG.commonRandom.GlobalServer.getSeed();
 		//Setting the seed for every other global variable
 		KillTheRNG.clientRandom.REGISTRY.forEach((name, rand)->{
-			if(rand.getName().equals("Global"))return;
+			if(rand.getName().startsWith("Global"))return;
 			rand.setSeed(seed, false);
 		});
 		return seed;

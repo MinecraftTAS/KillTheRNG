@@ -62,7 +62,6 @@ public class RandomnessFile {
 			this.client = client;
 		}
 		
-		@SuppressWarnings("unchecked")
 		@Override
 		public boolean equals(Object obj) {
 			if(obj instanceof RandomData) {

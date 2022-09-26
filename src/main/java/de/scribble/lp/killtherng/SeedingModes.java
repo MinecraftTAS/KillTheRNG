@@ -6,10 +6,22 @@ package de.scribble.lp.killtherng;
  *
  */
 public enum SeedingModes {
+	/**
+	 * True vanilla experience,
+	 */
 	None,
-	PlayerInput(true),
+	/**
+	 * The seed won't change automatically
+	 */
 	Fixed(true),
-	Tick(true);
+	/**
+	 * The seed will change every new tick, but will not change during the tick
+	 */
+	TickNoChange(true),
+	/**
+	 * The seed will change every new tick, and can be changed during the tick
+	 */
+	TickChange(false);
 	
 	private boolean notChangeSeed;
 	

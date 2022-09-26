@@ -19,8 +19,8 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class SeedInfoPacket implements IMessage {
 
-	private boolean request=false;
-	
+	private boolean client = false;
+
 	private String name;
 
 	private long timesCalled;
@@ -31,12 +31,12 @@ public class SeedInfoPacket implements IMessage {
 
 	public SeedInfoPacket() {
 	}
-	
+
 	public SeedInfoPacket(String name) {
 		this.name = name;
-		request = true;
+		client = true;
 	}
-	
+
 	public SeedInfoPacket(CustomRandom rand) {
 		name = rand.getName();
 		timesCalled = rand.getTimesCalled();
@@ -48,8 +48,8 @@ public class SeedInfoPacket implements IMessage {
 	public void fromBytes(ByteBuf buf) {
 		int length = buf.readInt();
 		name = (String) buf.readCharSequence(length, StandardCharsets.UTF_8);
-		request = buf.readBoolean();
-		if(!request) {
+		client = buf.readBoolean();
+		if (!client) {
 			timesCalled = buf.readLong();
 			seed = buf.readLong();
 			enabled = buf.readBoolean();
@@ -60,8 +60,8 @@ public class SeedInfoPacket implements IMessage {
 	public void toBytes(ByteBuf buf) {
 		buf.writeInt(name.length());
 		buf.writeCharSequence(name, StandardCharsets.UTF_8);
-		buf.writeBoolean(request);
-		if(!request) {
+		buf.writeBoolean(client);
+		if (!client) {
 			buf.writeLong(timesCalled);
 			buf.writeLong(seed);
 			buf.writeBoolean(enabled);
@@ -72,37 +72,37 @@ public class SeedInfoPacket implements IMessage {
 
 		@Override
 		public IMessage onMessage(SeedInfoPacket message, MessageContext ctx) {
-			if(ctx.side.isServer()) {
-				if(message.request) {
+			if (ctx.side.isServer()) {
+				if (message.client) {
 					CustomRandom inforand = UltimateRandomness.getRandomBothSides(message.name);
-					
-					if(!inforand.isClient()) {
+
+					if (!inforand.isClient()) {
 						KillTheRNG.NETWORK.sendTo(new SeedInfoPacket(inforand), ctx.getServerHandler().player);
 					} else {
 						KillTheRNG.NETWORK.sendTo(message, ctx.getServerHandler().player);
 					}
 				}
 			} else if (ctx.side.isClient()) {
-				
+
 				CommandKillTheRNG.RandomData data = null;
-				
-				if(message.request) {
+
+				if (message.client) {
 					CustomRandom randToDisplay;
 					randToDisplay = KillTheRNG.clientRandom.getRandom(message.name);
-					
-					if(randToDisplay!=null) {
+
+					if (randToDisplay != null) {
 						data = new RandomData(randToDisplay);
 					}
-					
+
 				} else {
 					CustomRandom randToDisplay = UltimateRandomness.getRandomBothSides(message.name);
-					
-					if(randToDisplay!=null) {
+
+					if (randToDisplay != null) {
 						data = new RandomData(randToDisplay, message.seed, message.timesCalled, message.enabled);
 					}
 				}
-				
-				if (data!=null) {
+
+				if (data != null) {
 					CommandKillTheRNG.sendHelp(data);
 				} else {
 					Minecraft.getMinecraft().ingameGUI.addChatMessage(ChatType.CHAT, new TextComponentString(ChatFormatting.RED + "The randomness you specified doesn't exist"));

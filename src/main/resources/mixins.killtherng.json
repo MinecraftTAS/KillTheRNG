@@ -5,8 +5,8 @@
   "refmap": "mixins.killtherng.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-	"ktrng.MixinPlayerList",
-	"ktrng.MixinMinecraftServer",
+	 "ktrng.MixinPlayerList",
+	 "ktrng.MixinMinecraftServer",
 
 	"ktrng.patches.MixinEntity",
 	"ktrng.patches.MixinBiomeMesa",
@@ -366,7 +366,7 @@
 	"ktrng.patches.MixinEntityXPOrb"
   ],
   "client": [
-	"ktrng.MixinMinecraft",
+	"ktrng.MixinNetHandlerPlayClient",
 	"ktrng.MixinGuiMainMenu",
 
 	"ktrng.patches.client.MixinAbstractHorse",

@@ -12,11 +12,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_customizeWorldGuiSliderPosition_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+	public float redirect_customizeWorldGuiSliderPos_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -25,11 +25,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_customizeWorldGuiSliderPosition_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+	public float redirect_customizeWorldGuiSliderPos_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -38,11 +38,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 0))
-	public boolean redirect_customizeWorldGuiSliderPosition_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextBoolean();
+	public boolean redirect_customizeWorldGuiSliderPos_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}
@@ -51,11 +51,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_customizeWorldGuiSliderPosition_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+	public float redirect_customizeWorldGuiSliderPos_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -64,11 +64,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_customizeWorldGuiSliderPosition_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+	public float redirect_customizeWorldGuiSliderPos_5(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -77,11 +77,11 @@ public class MixinGuiCustomizeWorldScreen{
 	* Random position of sliders in customize world screen when clicking randomize
 	*/
 	@Redirect(method = "actionPerformed(Lnet/minecraft/client/gui/GuiButton;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextBoolean()Z", ordinal = 1))
-	public boolean redirect_customizeWorldGuiSliderPosition_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextBoolean();
+	public boolean redirect_customizeWorldGuiSliderPos_6(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextBoolean();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPosition.nextBoolean();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.customizeWorldGuiSliderPos.nextBoolean();
 			return rand.nextBoolean();
 		}
 	}

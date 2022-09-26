@@ -1,6 +1,5 @@
 package de.scribble.lp.killtherng.networking;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 import com.mojang.realmsclient.gui.ChatFormatting;

@@ -9,40 +9,40 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockBrewingStand{
 
 	/**
-	* Get the X of the position of a particle of a brewing stand
+	* The position of brewing stand particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_brewingStandParticlePositionX_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionX.nextFloat();
+	public float redirect_brewingStandParticle_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionX.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Get the Y of the position of a particle of a brewing stand
+	* The position of brewing stand particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_brewingStandParticlePositionY_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionY.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionY.nextFloat();
+	public float redirect_brewingStandParticle_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionY.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Get the Z of the position of a particle of a brewing stand
+	* The position of brewing stand particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_brewingStandParticlePositionZ_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionZ.nextFloat();
+	public float redirect_brewingStandParticle_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticlePositionZ.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.brewingStandParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}

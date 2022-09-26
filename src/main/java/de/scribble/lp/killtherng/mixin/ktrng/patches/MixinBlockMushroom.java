@@ -25,11 +25,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_mushroomSpreadPosition_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_2(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -38,11 +38,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_mushroomSpreadPosition_3(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_3(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -51,11 +51,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 2))
-	public int redirect_mushroomSpreadPosition_4(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_4(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -64,11 +64,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 3))
-	public int redirect_mushroomSpreadPosition_5(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_5(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -77,11 +77,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 4))
-	public int redirect_mushroomSpreadPosition_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_6(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -90,11 +90,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 5))
-	public int redirect_mushroomSpreadPosition_7(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_7(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -103,11 +103,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 6))
-	public int redirect_mushroomSpreadPosition_8(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_8(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -116,11 +116,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 7))
-	public int redirect_mushroomSpreadPosition_9(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_9(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -129,11 +129,11 @@ public class MixinBlockMushroom{
 	* Position of the next mushroom around the current one
 	*/
 	@Redirect(method = "updateTick(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/state/IBlockState;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 8))
-	public int redirect_mushroomSpreadPosition_10(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+	public int redirect_mushroomSpreadPos_10(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPosition.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.mushroomSpreadPos.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}

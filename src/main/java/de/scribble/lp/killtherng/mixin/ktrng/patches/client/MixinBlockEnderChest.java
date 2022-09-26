@@ -12,11 +12,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_enderChestParticlePos_1(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextInt(i);
+	public int redirect_enderChestParticle_1(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -25,11 +25,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 1))
-	public int redirect_enderChestParticlePos_2(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextInt(i);
+	public int redirect_enderChestParticle_2(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
@@ -38,11 +38,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_enderChestParticlePos_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+	public float redirect_enderChestParticle_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -51,11 +51,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_enderChestParticlePos_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+	public float redirect_enderChestParticle_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -64,11 +64,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_enderChestParticlePos_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+	public float redirect_enderChestParticle_5(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -77,11 +77,11 @@ public class MixinBlockEnderChest{
 	* Where the ender chest particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_enderChestParticlePos_6(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+	public float redirect_enderChestParticle_6(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.enderChestParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}

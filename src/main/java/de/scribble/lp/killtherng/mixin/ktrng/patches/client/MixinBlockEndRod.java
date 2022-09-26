@@ -9,66 +9,66 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockEndRod{
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_endRodParticlePos_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+	public float redirect_endRodParticle_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_endRodParticlePos_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+	public float redirect_endRodParticle_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_endRodParticlePos_3(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+	public float redirect_endRodParticle_3(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 3))
-	public float redirect_endRodParticlePos_4(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+	public float redirect_endRodParticle_4(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 4))
-	public float redirect_endRodParticlePos_5(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+	public float redirect_endRodParticle_5(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
@@ -77,50 +77,50 @@ public class MixinBlockEndRod{
 	* Chance for the end rod particle to spawn
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextInt(I)I", ordinal = 0))
-	public int redirect_endRodParticlePosChance_6(Random rand, int i) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePosChance.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePosChance.nextInt(i);
+	public int redirect_endRodParticleChance_6(Random rand, int i) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticleChance.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticleChance.nextInt(i);
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePosChance.nextInt(i);
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticleChance.nextInt(i);
 			return rand.nextInt(i);
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 0))
-	public double redirect_endRodParticlePos_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+	public double redirect_endRodParticle_7(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 1))
-	public double redirect_endRodParticlePos_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+	public double redirect_endRodParticle_8(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}
 
 	/**
-	* Where the end rod particle spawns
+	* The position of end rod particle spawns
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextGaussian()D", ordinal = 2))
-	public double redirect_endRodParticlePos_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+	public double redirect_endRodParticle_9(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticlePos.nextGaussian();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endRodParticle.nextGaussian();
 			return rand.nextGaussian();
 		}
 	}

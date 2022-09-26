@@ -9,27 +9,27 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public class MixinBlockEndPortal{
 
 	/**
-	* Get the X of the end portal particle
+	* The position of end portal particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_endPortalParticlePosX_1(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosX.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosX.nextFloat();
+	public float redirect_endPortalParticle_1(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosX.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* Get the X of the end portal particle
+	* The position of end portal particles
 	*/
 	@Redirect(method = "randomDisplayTick(Lnet/minecraft/block/state/IBlockState;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Ljava/util/Random;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_endPortalParticlePosZ_2(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosZ.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosZ.nextFloat();
+	public float redirect_endPortalParticle_2(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticlePosZ.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.clientRandom.endPortalParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}

@@ -11,8 +11,8 @@ import net.minecraft.server.MinecraftServer;
 @Mixin(MinecraftServer.class)
 public class MixinMinecraftServer {
 	
-	@Inject(method = "runTick", at = @At("HEAD"))
-	public void inject_runTick(CallbackInfo ci) {
+	@Inject(method = "tick", at = @At("HEAD"))
+	public void inject_tick(CallbackInfo ci) {
 		KillTheRNG.tickmodeServer.onTick();
 	}
 }

@@ -36,8 +36,8 @@ public class MixinConfig {
 				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"
-				+ "\t\"ktrng.MixinPlayerList\",\n"
-				+ "\t\"ktrng.MixinMinecraftServer\",\n\n";
+				+ "	 \"ktrng.MixinPlayerList\",\n"
+				+ "	 \"ktrng.MixinMinecraftServer\",\n\n";
 		
 		for (int i = 0; i < common.size(); i++) {
 			String commonstring = common.get(i);
@@ -45,7 +45,7 @@ public class MixinConfig {
 		}
 		out = out.concat("  ],\n"
 				+ "  \"client\": [\n"
-				+ "\t\"ktrng.MixinMinecraft\",\n"
+				+ "\t\"ktrng.MixinNetHandlerPlayClient\",\n"
 				+ "\t\"ktrng.MixinGuiMainMenu\",\n\n");
 		
 		for (int i = 0; i < client.size(); i++) {

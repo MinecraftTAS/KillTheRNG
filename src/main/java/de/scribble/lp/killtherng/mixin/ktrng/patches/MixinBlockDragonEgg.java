@@ -87,92 +87,92 @@ public class MixinBlockDragonEgg{
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 0))
-	public double redirect_dragoneggTeleportPos_7(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+	public double redirect_dragoneggTeleportParticle_7(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 0))
-	public float redirect_dragoneggTeleportPos_8(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+	public float redirect_dragoneggTeleportParticle_8(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 1))
-	public float redirect_dragoneggTeleportPos_9(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+	public float redirect_dragoneggTeleportParticle_9(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextFloat()F", ordinal = 2))
-	public float redirect_dragoneggTeleportPos_10(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+	public float redirect_dragoneggTeleportParticle_10(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextFloat();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextFloat();
 			return rand.nextFloat();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 1))
-	public double redirect_dragoneggTeleportPos_11(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+	public double redirect_dragoneggTeleportParticle_11(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 2))
-	public double redirect_dragoneggTeleportPos_12(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+	public double redirect_dragoneggTeleportParticle_12(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}
 
 	/**
-	* The position of the dragon egg after the player interacts with it
+	* The position of portal particles after a tregon egg teleported
 	*/
 	@Redirect(method = "teleport(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)V", at = @At(value = "INVOKE", target = "Ljava/util/Random;nextDouble()D", ordinal = 3))
-	public double redirect_dragoneggTeleportPos_13(Random rand) {
-		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.isEnabled()) {
-			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+	public double redirect_dragoneggTeleportParticle_13(Random rand) {
+		if (de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.isEnabled()) {
+			return de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 		} else {
-			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportPos.nextDouble();
+			de.scribble.lp.killtherng.KillTheRNG.commonRandom.dragoneggTeleportParticle.nextDouble();
 			return rand.nextDouble();
 		}
 	}

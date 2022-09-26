@@ -141,6 +141,8 @@ public class Csv2Mixin2 {
 		commonFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessCommon.java"), "de.scribble.lp.killtherng");
 	}
 	
+	
+	@SuppressWarnings("unused")
 	private static void createLogFile() {
 		LOGGER.info("Creating random2mixinLog.txt");
 		FileOutputStream logfileStream = null;

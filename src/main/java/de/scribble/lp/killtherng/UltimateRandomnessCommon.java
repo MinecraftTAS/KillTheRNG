@@ -131,6 +131,7 @@ public class UltimateRandomnessCommon extends UltimateRandomness {
 	public CustomRandom batHangingRandomHeadRotation = registerRandom("batHangingRandomHeadRotation", "Chance of rotating the bats head when it's hanging from a block", true, false);
 	public CustomRandom lootTableShuffleItems = registerRandom("lootTableShuffleItems", "Shuffles items?", true, false);
 	public CustomRandom dragoneggTeleportPos = registerRandom("dragoneggTeleportPos", "The position of the dragon egg after the player interacts with it", true, false);
+	public CustomRandom dragoneggTeleportParticle = registerRandom("dragoneggTeleportParticle", "The position of portal particles after a tregon egg teleported", true, false);
 	public CustomRandom posRotTypeOceanMonument = registerRandom("posRotTypeOceanMonument", "Position, Rotation and Type of next Ocean Monument Piece", false, false);
 	public CustomRandom enderCrystalRotationOffset = registerRandom("enderCrystalRotationOffset", "Offsetting the crystal animation", true, false);
 	public CustomRandom random_1261 = registerRandom("random_1261", "null", true, false);
@@ -263,7 +264,7 @@ public class UltimateRandomnessCommon extends UltimateRandomness {
 	public CustomRandom random_1374 = registerRandom("random_1374", "null", true, false);
 	public CustomRandom aiWanderAvoidWater = registerRandom("aiWanderAvoidWater", "If the entity looks for a place outside the water or just a random position", true, false);
 	public CustomRandom mushroomSpreadChance = registerRandom("mushroomSpreadChance", "Chance of a mushroom spreading to surrounding blocks", true, false);
-	public CustomRandom mushroomSpreadPosition = registerRandom("mushroomSpreadPosition", "Position of the next mushroom around the current one", true, false);
+	public CustomRandom mushroomSpreadPos = registerRandom("mushroomSpreadPos", "Position of the next mushroom around the current one", true, false);
 	public CustomRandom desertGeneration = registerRandom("desertGeneration", "Desert Generation", false, false);
 	public CustomRandom tallgrassGeneration = registerRandom("tallgrassGeneration", "Tallgrass Generation", false, false);
 	public CustomRandom random_856 = registerRandom("random_856", "null", true, false);
@@ -425,9 +426,7 @@ public class UltimateRandomnessCommon extends UltimateRandomness {
 	public CustomRandom villagerProfession = registerRandom("villagerProfession", "What profession the villager should have", true, false);
 	public CustomRandom aiBreakDoorSound = registerRandom("aiBreakDoorSound", "If the zombie break door sound should be played", true, false);
 	public CustomRandom scatterynessIgloo = registerRandom("scatterynessIgloo", "Igloo scatteryness", false, false);
-	public CustomRandom brewingStandParticlePositionX = registerRandom("brewingStandParticlePositionX", "Get the X of the position of a particle of a brewing stand", true, false);
-	public CustomRandom brewingStandParticlePositionY = registerRandom("brewingStandParticlePositionY", "Get the Y of the position of a particle of a brewing stand", true, false);
-	public CustomRandom brewingStandParticlePositionZ = registerRandom("brewingStandParticlePositionZ", "Get the Z of the position of a particle of a brewing stand", true, false);
+	public CustomRandom brewingStandParticle = registerRandom("brewingStandParticle", "The position of brewing stand particles", true, false);
 	public CustomRandom bonemealGrassFlower = registerRandom("bonemealGrassFlower", "If a flower should be added when bonemealing grass", true, false);
 	public CustomRandom bonemealGrassPos = registerRandom("bonemealGrassPos", "The position where the grass should grow", true, false);
 	public CustomRandom grassSpreadPos = registerRandom("grassSpreadPos", "Determines the next block position for grass to spread", true, false);
@@ -575,7 +574,7 @@ public class UltimateRandomnessCommon extends UltimateRandomness {
 	public CustomRandom genBigTreeLeafNodes = registerRandom("genBigTreeLeafNodes", "Some leaf generation", false, false);
 	public CustomRandom lilypadGeneration = registerRandom("lilypadGeneration", "Lilypad Generation", false, false);
 	public CustomRandom blockDropItemChance = registerRandom("blockDropItemChance", "If a drop should be dropped", true, false);
-	public CustomRandom blockDropPosition = registerRandom("blockDropPosition", "Where the spawned item should spawn", true, false);
+	public CustomRandom blockDropPos = registerRandom("blockDropPos", "Where the spawned item should spawn", true, false);
 	public CustomRandom snowmanSpawnParticles = registerRandom("snowmanSpawnParticles", "Position of snow particles when spawning a snowman", true, false);
 	public CustomRandom ironGolemSpawnParticles = registerRandom("ironGolemSpawnParticles", "Position of snowball particles when spawning an iron golem", true, false);
 	public CustomRandom magmaExtinguish = registerRandom("magmaExtinguish", "Pitch of the sound when water flows over magma", true, false);
