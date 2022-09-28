@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import de.scribble.lp.killtherng.commands.CommandKillTheRNG;
 import de.scribble.lp.killtherng.commands.CommandSeedingMode;
+import de.scribble.lp.killtherng.custom.EventAnnotations;
 import de.scribble.lp.killtherng.custom.KTRNGEventHandler;
 import de.scribble.lp.killtherng.networking.ChangeSeedPacket;
 import de.scribble.lp.killtherng.networking.InitialSeedPacket;
@@ -56,6 +57,10 @@ public class KillTheRNG {
 
     public static final TickModeServer tickmodeServer = new TickModeServer();
     
+    public static EventAnnotations annotations = new EventAnnotations();
+    
+    public static TestingKeybinds keys = new TestingKeybinds();
+    
     @EventHandler
     public void preinit(FMLPreInitializationEvent event) {
 //    	Csv2Mixin2.main(null);
@@ -79,6 +84,7 @@ public class KillTheRNG {
     	ev.registerServerCommand(new CommandKillTheRNG());
     	ev.registerServerCommand(new CommandSeedingMode());
     	playerManager = new ServerPlayerManager();
+    	annotations.register(keys);
     }
     
     @EventHandler
@@ -95,5 +101,5 @@ public class KillTheRNG {
 		if(playerManager!=null)
 			playerManager.free(playerIn);
 	}
-    
+	
 }

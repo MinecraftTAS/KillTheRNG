@@ -21,6 +21,8 @@ public class CustomRandom extends Random {
     private boolean enabled;
     private boolean client;
     
+    private boolean fired;
+    
     private JRand jrand=new JRand(0L);
     
 	public CustomRandom(String name, String description, boolean enabled, boolean client) {
@@ -39,6 +41,8 @@ public class CustomRandom extends Random {
 	public void setSeed(long seedIn, boolean shouldIncrease) {
 		if(shouldIncrease) {
 			timesCalled++;
+		} else {
+			fired = false;
 		}
 		super.setSeed(seedIn ^ 0x5deece66dL);
 	}
@@ -80,16 +84,19 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		long value=super.nextLong();
-		if(KillTheRNG.mode.isNotChangeSeed() &&!this.name.equals("Global"))
+		fireEvent(seedstored, Long.toString(value));
+		if(KillTheRNG.mode.isNotChangeSeed() &&!this.name.startsWith("Global"))
 			setSeed(seedstored, false);
 		
 		return value;
 	}
+	
 	@Override	
 	public double nextDouble() {
 		timesCalled++;
 		long seedstored=getSeed();
 		double value=super.nextDouble();
+		fireEvent(seedstored, Double.toString(value));
 		if(KillTheRNG.mode.isNotChangeSeed()) 
 			setSeed(seedstored, false);
 		return value;
@@ -99,6 +106,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		boolean value=super.nextBoolean();
+		fireEvent(seedstored, Boolean.toString(value));
 		if(KillTheRNG.mode.isNotChangeSeed())
 			setSeed(seedstored, false);
 		return value;
@@ -108,6 +116,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt();
+		fireEvent(seedstored, Integer.toString(value));
 		if(KillTheRNG.mode.isNotChangeSeed())
 			setSeed(seedstored, false);
 		return value;
@@ -117,6 +126,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		int value=super.nextInt(bound);
+		fireEvent(seedstored, Integer.toString(value));
 		if(KillTheRNG.mode.isNotChangeSeed())
 			setSeed(seedstored, false);
 		return value;
@@ -126,6 +136,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		float value=super.nextFloat();
+		fireEvent(seedstored, Float.toString(value));
 		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 		return value;
 	}
@@ -134,6 +145,7 @@ public class CustomRandom extends Random {
 		timesCalled++;
 		long seedstored=getSeed();
 		super.nextBytes(bytes);
+		fireEvent(seedstored, "");
 		if(KillTheRNG.mode.isNotChangeSeed()) setSeed(seedstored, false);
 	}
 	@Override
@@ -147,6 +159,7 @@ public class CustomRandom extends Random {
 		}else {
 			value=super.nextGaussian();
 		}
+		fireEvent(seedstored, Double.toString(value));
 		return value;
 	}
 	
@@ -185,6 +198,13 @@ public class CustomRandom extends Random {
 			return custom.name.equals(name);
 		}else {
 			return super.equals(obj);
+		}
+	}
+	
+	private void fireEvent(long seedstored, String value) {
+		if(!fired) {
+			fired = true;
+			KillTheRNG.annotations.fireRandomnessEvents(name, seedstored, value);
 		}
 	}
 }

@@ -32,12 +32,12 @@ public class UltimateRandomness {
 		return REGISTRY.keySet();
 	}
 	
-	public long nextSeed() {
-		return nextSeed(1);
-	}
-	
 	public boolean exists(String randomName) {
 		return getRandom(randomName) != null;
+	}
+	
+	public long nextSeed() {
+		return nextSeed(1);
 	}
 	
 	public long nextSeed(int step) {
@@ -46,7 +46,7 @@ public class UltimateRandomness {
 		//Getting the seed of the global variable
 		long seed=KillTheRNG.commonRandom.GlobalServer.getSeed();
 		//Setting the seed for every other global variable
-		KillTheRNG.clientRandom.REGISTRY.forEach((name, rand)->{
+		KillTheRNG.commonRandom.REGISTRY.forEach((name, rand)->{
 			if(rand.getName().startsWith("Global"))return;
 			rand.setSeed(seed, false);
 		});
