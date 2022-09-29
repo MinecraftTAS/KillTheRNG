@@ -104,16 +104,14 @@ public class ChangeSeedPacket implements IMessage{
 				}
 			/*======Client side======*/
 			} else {
-				Minecraft.getMinecraft().addScheduledTask(() -> {
-					UltimateRandomnessClient clientrandom = KillTheRNG.clientRandom;
-					/*If every randomness should be changed*/
-					if (message.name.isEmpty()) {
-						clientrandom.setSeedAll(message.seed);
-					/*If only one randomness should be changed*/
-					} else {
-						clientrandom.getRandom(message.name).setSeed(message.seed);
-					}
-				});
+				UltimateRandomnessClient clientrandom = KillTheRNG.clientRandom;
+				/* If every randomness should be changed */
+				if (message.name.isEmpty()) {
+					clientrandom.setSeedAll(message.seed);
+					/* If only one randomness should be changed */
+				} else {
+					clientrandom.getRandom(message.name).setSeed(message.seed);
+				}
 			}
 			return null;
 		}
