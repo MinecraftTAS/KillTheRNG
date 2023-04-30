@@ -52,7 +52,7 @@ public abstract class MixinGuiMainMenu extends GuiScreen {
 		drawString(mc.fontRenderer, "[DEL] to clear the seed.", 1, 2, 0xFFFFFF);
 		
 		// Draw Seeds
-		drawString(mc.fontRenderer, "Seed: " + currentSeed + ((blinkCursor % 20 < 10) ? "_" : ""), 1, 14, 0xFFFFFF);
+		drawString(mc.fontRenderer, "Seed: " + KillTheRNG.clientRandom.GlobalClient.getSeed() + ((blinkCursor % 20 < 10) ? "_" : ""), 1, 14, 0xFFFFFF);
 	}
 	
 	/**

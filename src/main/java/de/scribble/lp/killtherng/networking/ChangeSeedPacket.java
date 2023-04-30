@@ -10,7 +10,6 @@ import de.scribble.lp.killtherng.UltimateRandomnessClient;
 import de.scribble.lp.killtherng.UltimateRandomnessCommon;
 import de.scribble.lp.killtherng.custom.CustomRandom;
 import io.netty.buffer.ByteBuf;
-import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;

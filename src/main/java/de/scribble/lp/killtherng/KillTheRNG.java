@@ -98,8 +98,8 @@ public class KillTheRNG {
     }
 
 	public static void onPlayerLeaveServerSide(EntityPlayerMP playerIn) {
-		if(playerManager!=null)
-			playerManager.free(playerIn);
+//		if(playerManager!=null)
+//			playerManager.free(playerIn);
 	}
 	
 }

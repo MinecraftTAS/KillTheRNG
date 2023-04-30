@@ -35,7 +35,7 @@ public class InitialSeedPacket implements IMessage{
 			if(ctx.side.isServer()) {
 				ServerPlayerManager manager = KillTheRNG.playerManager;
 				if(manager != null) {
-					manager.reserve(ctx.getServerHandler().player, message.seed);
+//					manager.reserve(ctx.getServerHandler().player, message.seed);
 				} else {
 					KillTheRNG.LOGGER.error("The player manager is null!");
 				}
