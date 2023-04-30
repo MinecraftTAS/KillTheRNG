@@ -23,3 +23,5 @@ run
 
 logs/
 random2mixinLog.txt
+
+gradle.properties

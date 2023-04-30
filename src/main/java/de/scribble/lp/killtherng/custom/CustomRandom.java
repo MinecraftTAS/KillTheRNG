@@ -178,12 +178,20 @@ public class CustomRandom extends Random {
 		return thing.getSeed();
 	}
 	
-	public long steps(CustomRandom random) {
-		return LCG.JAVA.distance(this.getSeed(), random.getSeed());
+	public long distance(CustomRandom random) {
+		return CustomRandom.distance(this.getSeed(), random.getSeed());
 	}
 	
-	public static long steps(CustomRandom random1, CustomRandom random2) {
-		return LCG.JAVA.distance(random1.getSeed(), random2.getSeed());
+	public long distance(long seed) {
+		return CustomRandom.distance(this.getSeed(), seed);
+	}
+	
+	public static long distance(CustomRandom random1, CustomRandom random2) {
+		return CustomRandom.distance(random1.getSeed(), random2.getSeed());
+	}
+	
+	public static long distance(long seed, long seed2) {
+		return LCG.JAVA.distance(seed, seed2);
 	}
 	
 	@Override

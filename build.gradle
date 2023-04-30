@@ -14,16 +14,17 @@ buildscript {
 plugins {
     id 'com.github.johnrengelman.shadow' version '1.2.4'
     id 'java'
+    id 'maven-publish'
 }
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
-version = "2.0-WIP"
-group = "de.scribble.lp.killtherng" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "KillTheRNG-1.12.2"
+version = "2.0-SNAPSHOT"
+group = "com.minecrafttas" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "KillTheRNG"
 
 minecraft {
-    version = project.forgeVersion
+    version = "1.12.2-14.23.5.2847"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
@@ -31,7 +32,7 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = project.mcpVersion
+    mappings = "snapshot_20171003"
     //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace '${version}':project.version,'${mcversion}':project.minecraft.version
     clientRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
@@ -79,10 +80,29 @@ sourceSets {
         ext.refMap = "mixins.killtherng.refmap.json"
     }
 }
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier 'deobf'
+    manifest.attributes(
+            'MixinConfigs': 'mixins.killtherng.json',
+            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
+            'FMLCorePluginContainsFMLMod': 'true',
+            'ForceLoadAsMod': 'true'
+    )
+    exclude 'dummyThing'
+    exclude 'de/scribble/lp/killtherng/random2mixin/**'
+    
+    doLast {
+    	delete("${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-deobf.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    }
+}
+
 shadowJar {
     mainSpec.sourcePaths.clear()
 
-    dependsOn reobfJar
+    dependsOn deobfJar
 
     configurations = [project.configurations.compile]
     relocate 'org.msgpack', 'de.scribble.lp.killtherng.repack.org.msgpack'
@@ -97,17 +117,6 @@ shadowJar {
     
 }
 
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
-    manifest.attributes(
-            'MixinConfigs': 'mixins.killtherng.json',
-            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-            'FMLCorePluginContainsFMLMod': 'true',
-            'ForceLoadAsMod': 'true'
-    )
-}
-
 mixin {
     // Specify "notch" or "searge" here
     defaultObfuscationEnv searge
@@ -116,5 +125,36 @@ mixin {
 
 artifacts {
     archives deobfJar 
-    archives jar
+    archives shadowJar
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/MinecraftTAS/KillTheRNG")
+            credentials {
+                username = project.findProperty("gpr.user")
+                password = project.findProperty("gpr.key")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+        	from(components.java)
+            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}.jar", sourceJar]
+            artifactId = "killtherng"
+	        pom {
+		        name = "killtherng"
+		        description = "Library for making Minecraft RNG deterministic"
+		        url = "https://github.com/MinecraftTAS/KillTheRNG"
+		        licenses {
+					license {
+			        	name = "GNU General Public License v3.0"
+			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
+		        	}
+		    	}
+	        }
+        }
+    }
 }
