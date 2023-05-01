@@ -62,7 +62,7 @@ public class Csv2Mixin {
 	}
 	
 	public static void main(String[] args) {
-		dirKTRNG=new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
+		dirKTRNG=new File(dir, "src/main/java/com/minecrafttas/killtherng/mixin/ktrng/patches");
 		
 		if(!dirKTRNG.exists()) {
 			dirKTRNG.mkdirs();
@@ -180,7 +180,7 @@ public class Csv2Mixin {
 		}
 		counter=0;
 		mixinStream=new FileOutputStream(new File(dirKTRNG, "Mixin"+className+".java"));
-		writeLineMixin("package de.scribble.lp.killtherng.mixin.ktrng.patches;\n");
+		writeLineMixin("package com.minecrafttas.killtherng.mixin.ktrng.patches;\n");
 		writeLineMixin("import java.util.Random;\n");
 		
 		writeHardCodedImports(className);
@@ -388,9 +388,9 @@ public class Csv2Mixin {
 	//======================================================================
 	
 	private static void startURFile() throws IOException, FileNotFoundException {
-		urStream=new FileOutputStream(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomness.java"));
-		writeLineUR("package de.scribble.lp.killtherng;\n");
-		writeLineUR("import de.scribble.lp.killtherng.custom.CustomRandom;\n");
+		urStream=new FileOutputStream(new File(dir, "src/main/java/com/minecrafttas/killtherng/UltimateRandomness.java"));
+		writeLineUR("package com.minecrafttas.killtherng;\n");
+		writeLineUR("import com.minecrafttas.killtherng.custom.CustomRandom;\n");
 		writeLineUR("public class UltimateRandomness {\n");
 		writeLineUR("public CustomRandom Global=new CustomRandom(\"Global\", \"The global randomness used in PlayerInput and Tick seedingmodes\");\n");
 		startMixinConfig();
@@ -431,7 +431,7 @@ public class Csv2Mixin {
 	private static void startMixinConfig() throws IOException {
 		mixinConfigStream = new FileOutputStream(new File(dir, "src/main/resources/mixins.killtherng.json"));
 		writeLineMixinConf("{\n" + "  \"required\": true,\n" + "  \"minVersion\": \"0.7.10\",\n"
-				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
+				+ "  \"package\": \"com.minecrafttas.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"
 				+ "\t\"ktrng.MixinPlayerList\",\n"

@@ -20,12 +20,12 @@ public class MixinConfig {
 	}
 
 	public void addToClient(MixinClassData data) {
-		String packages = data.getMixinPackage().replace("de.scribble.lp.killtherng.mixin.", "");
+		String packages = data.getMixinPackage().replace("com.minecrafttas.killtherng.mixin.", "");
 		client.add(packages+"."+data.getMixinClassName());
 	}
 	
 	public void addToCommon(MixinClassData data) {
-		String packages = data.getMixinPackage().replace("de.scribble.lp.killtherng.mixin.", "");
+		String packages = data.getMixinPackage().replace("com.minecrafttas.killtherng.mixin.", "");
 		common.add(packages+"."+data.getMixinClassName());
 	}
 	
@@ -33,7 +33,7 @@ public class MixinConfig {
 		String out="{\n" 
 				+ "  \"required\": true,\n" 
 				+ "  \"minVersion\": \"0.7.10\",\n"
-				+ "  \"package\": \"de.scribble.lp.killtherng.mixin\",\n"
+				+ "  \"package\": \"com.minecrafttas.killtherng.mixin\",\n"
 				+ "  \"refmap\": \"mixins.killtherng.refmap.json\",\n" + "  \"compatibilityLevel\": \"JAVA_8\",\n"
 				+ "  \"mixins\": [\n"
 				+ "	 \"ktrng.MixinPlayerList\",\n"

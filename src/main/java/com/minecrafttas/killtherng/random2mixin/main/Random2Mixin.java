@@ -9,7 +9,7 @@ public class Random2Mixin implements IFMLLoadingPlugin{
 	@Override
 	public String[] getASMTransformerClass() {
 		String[] out=null;
-//		out=new String[] {"de.scribble.lp.killtherng.random2mixin.Transformer"};
+//		out=new String[] {"com.minecrafttas.killtherng.random2mixin.Transformer"};
 		return out;
 	}
 

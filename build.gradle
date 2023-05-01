@@ -91,12 +91,7 @@ task deobfJar(type: Jar) {
             'ForceLoadAsMod': 'true'
     )
     exclude 'dummyThing'
-    exclude 'de/scribble/lp/killtherng/random2mixin/**'
-    
-    doLast {
-    	delete("${buildDir}/libs/${archivesBaseName}-${version}.jar")
-    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-deobf.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}.jar")
-    }
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
 }
 
 shadowJar {
@@ -105,16 +100,21 @@ shadowJar {
     dependsOn deobfJar
 
     configurations = [project.configurations.compile]
-    relocate 'org.msgpack', 'de.scribble.lp.killtherng.repack.org.msgpack'
-    relocate 'com.fasterxml', 'de.scribble.lp.killtherng.repack.com.fasterxml'
+    relocate 'org.msgpack', 'com.minecrafttas.killtherng.repack.org.msgpack'
+    relocate 'com.fasterxml', 'com.minecrafttas.killtherng.repack.com.fasterxml'
     classifier "shadow"
     exclude 'dummyThing'
-    exclude 'de/scribble/lp/killtherng/random2mixin/**'
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
 
     afterEvaluate {
         from zipTree(reobfJar.jar)
     }
     
+    doLast {
+    	delete("${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-deobf.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-shadow.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}-full.jar")
+    }
 }
 
 mixin {

@@ -19,7 +19,7 @@ public class MixinClass {
 				+ "import org.spongepowered.asm.mixin.injection.At;\n"
 				+ "import org.spongepowered.asm.mixin.injection.Redirect;\n"
 				+ "\n"
-				+ "import de.scribble.lp.killtherng.KillTheRNG;\n"
+				+ "import com.minecrafttas.killtherng.KillTheRNG;\n"
 				+ "\n" //TODO Add import for class e.g. net.minecraft.world.biome.Biome
 				+ "\n"
 				, classPackage);
