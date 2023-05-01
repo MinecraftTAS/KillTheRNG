@@ -23,6 +23,10 @@ version = "2.0-SNAPSHOT"
 group = "com.minecrafttas" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "KillTheRNG"
 
+repositories {
+	maven { url 'https://jitpack.io' }
+}
+
 minecraft {
     version = "1.12.2-14.23.5.2847"
     runDir = "run"
@@ -33,7 +37,7 @@ minecraft {
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "snapshot_20171003"
-    //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace '${version}':project.version,'${mcversion}':project.minecraft.version
     clientRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
     serverRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
@@ -49,7 +53,7 @@ dependencies {
     }
     compile 'org.msgpack:msgpack-core:0.8.16'
     compile 'org.msgpack:jackson-dataformat-msgpack:0.8.16'
-    compile files('libs/SeedUtils.jar', 'libs/MathUtils.jar')
+    compile 'com.github.KaptainWutax:SeedUtils:b6a383113c'
 }
 
 jar {
@@ -85,13 +89,23 @@ task deobfJar(type: Jar) {
     from sourceSets.main.output
     classifier 'deobf'
     manifest.attributes(
-            'MixinConfigs': 'mixins.killtherng.json',
-            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-            'FMLCorePluginContainsFMLMod': 'true',
-            'ForceLoadAsMod': 'true'
+            'FMLCorePluginContainsFMLMod': 'false',
+            'ForceLoadAsMod': 'false'
     )
     exclude 'dummyThing'
     exclude 'com/minecrafttas/killtherng/random2mixin/**'
+    //exclude 'com/minecrafttas/killtherng/mixin/**'
+    exclude 'mixins.killtherng.json'
+    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.class'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
+    //exclude 'com/minecrafttas/killtherng/mixin/**'
+    exclude 'mixins.killtherng.json'
+    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.java'
 }
 
 shadowJar {
@@ -126,27 +140,44 @@ mixin {
 artifacts {
     archives deobfJar 
     archives shadowJar
+    archives sourcesJar
 }
 
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/MinecraftTAS/KillTheRNG")
+            name = "mgnetwork"
+            url = "https://maven.mgnet.work/main"
             credentials {
-                username = project.findProperty("gpr.user")
-                password = project.findProperty("gpr.key")
+                username = project.findProperty("mgnetworkUsername")
+                password = project.findProperty("mgnetworkPassword")
             }
         }
     }
     publications {
-        gpr(MavenPublication) {
+        main(MavenPublication) {
         	from(components.java)
             artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}.jar", sourceJar]
             artifactId = "killtherng"
 	        pom {
 		        name = "killtherng"
 		        description = "Library for making Minecraft RNG deterministic"
+		        url = "https://github.com/MinecraftTAS/KillTheRNG"
+		        licenses {
+					license {
+			        	name = "GNU General Public License v3.0"
+			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
+		        	}
+		    	}
+	        }
+        }
+        full(MavenPublication) {
+        	from(components.java)
+            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}-full.jar"]
+            artifactId = "killtherng-full"
+	        pom {
+		        name = "killtherng-full"
+		        description = "Library for making Minecraft RNG deterministic. This is with all dependencies"
 		        url = "https://github.com/MinecraftTAS/KillTheRNG"
 		        licenses {
 					license {
