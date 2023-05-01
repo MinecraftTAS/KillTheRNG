@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.minecrafttas.killtherng.KillTheRNG;
+import com.minecrafttas.killtherng.KillTheRNGContainer;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.network.NetHandlerPlayClient;
@@ -18,7 +18,7 @@ public class MixinNetHandlerPlayClient {
 
 	@Inject(method = "handleJoinGame", at = @At(value = "RETURN"))
 	public void clientJoinServerEvent(CallbackInfo ci) {
-		KillTheRNG.onPlayerJoinedClientSide(gameController.player);
+		KillTheRNGContainer.onPlayerJoinedClientSide(gameController.player);
 	}
 
 }
