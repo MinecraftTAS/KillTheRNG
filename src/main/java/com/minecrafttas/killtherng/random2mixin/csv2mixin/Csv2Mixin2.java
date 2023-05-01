@@ -21,7 +21,7 @@ public class Csv2Mixin2 {
 
 	private static final File dir = new File("../");
 
-	private static final File dirKTRNG = new File(dir, "src/main/java/de/scribble/lp/killtherng/mixin/ktrng/patches");
+	private static final File dirKTRNG = new File(dir, "src/main/java/com/minecrafttas/killtherng/mixin/ktrng/patches");
 
 	private static final Map<String, MixinClassData> mixinCommon = new HashMap<>();
 	private static final Map<String, MixinClassData> mixinClient = new HashMap<>();
@@ -94,11 +94,11 @@ public class Csv2Mixin2 {
 			MixinMethodData newData = new MixinMethodData(name, description, qualName, target, ordinal, classAccess, methodAccess, remap, enabled, client, className, classNameWithPath, methodName, staticmethod);
 			
 			if(client) {
-				MixinClassData classData = mixinClient.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches.client", classNameWithPath, className, classAccess));
+				MixinClassData classData = mixinClient.getOrDefault(className, new MixinClassData("com.minecrafttas.killtherng.mixin.ktrng.patches.client", classNameWithPath, className, classAccess));
 				classData.add(newData);
 				mixinClient.put(className, classData);
 			} else {
-				MixinClassData classData = mixinCommon.getOrDefault(className, new MixinClassData("de.scribble.lp.killtherng.mixin.ktrng.patches", classNameWithPath, className, classAccess));
+				MixinClassData classData = mixinCommon.getOrDefault(className, new MixinClassData("com.minecrafttas.killtherng.mixin.ktrng.patches", classNameWithPath, className, classAccess));
 				classData.add(newData);
 				mixinCommon.put(className, classData);
 			}
@@ -110,11 +110,11 @@ public class Csv2Mixin2 {
 		// Create mixin classes
 		mixinClient.forEach((classname, classdata)-> {
 			LOGGER.info("[CLIENT] Saving class {}", classname);
-			classdata.saveAs(new File(dirKTRNG, "client"), "de.scribble.lp.killtherng.KillTheRNG.clientRandom");
+			classdata.saveAs(new File(dirKTRNG, "client"), "com.minecrafttas.killtherng.KillTheRNG.clientRandom");
 		});
 		mixinCommon.forEach((classname, classdata) -> {
 			LOGGER.info("[COMMON] Saving class {}", classname);
-			classdata.saveAs(dirKTRNG, "de.scribble.lp.killtherng.KillTheRNG.commonRandom");
+			classdata.saveAs(dirKTRNG, "com.minecrafttas.killtherng.KillTheRNG.commonRandom");
 		});
 		
 		// Create mixin config
@@ -137,8 +137,8 @@ public class Csv2Mixin2 {
 		commonFile.addToList(0, "GlobalServer", "The global randomness every server random variable should have", true, false);
 		
 		LOGGER.info("Create Randomness Files");
-		clientFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessClient.java"), "de.scribble.lp.killtherng");
-		commonFile.saveAs(new File(dir, "src/main/java/de/scribble/lp/killtherng/UltimateRandomnessCommon.java"), "de.scribble.lp.killtherng");
+		clientFile.saveAs(new File(dir, "src/main/java/com/minecrafttas/killtherng/UltimateRandomnessClient.java"), "com.minecrafttas.killtherng");
+		commonFile.saveAs(new File(dir, "src/main/java/com/minecrafttas/killtherng/UltimateRandomnessCommon.java"), "com.minecrafttas.killtherng");
 	}
 	
 	

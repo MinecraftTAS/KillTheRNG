@@ -33,7 +33,7 @@ public class RandomnessFile {
 	
 	public void saveAs(File file, String packagename) {
 		String out = "package "+packagename+";\n\n"
-				+ "import de.scribble.lp.killtherng.custom.CustomRandom;\n\n"
+				+ "import com.minecrafttas.killtherng.custom.CustomRandom;\n\n"
 				+ "public class "+file.getName().replace(".java", "")+" extends UltimateRandomness {\n\n";
 		
 		for(RandomData oneData : data) {
