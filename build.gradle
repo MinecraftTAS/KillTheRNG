@@ -14,16 +14,21 @@ buildscript {
 plugins {
     id 'com.github.johnrengelman.shadow' version '1.2.4'
     id 'java'
+    id 'maven-publish'
 }
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: 'org.spongepowered.mixin'
-version = "1.3"
-group = "de.scribble.lp.killtherng" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "KillTheRNG-1.12.2"
+version = "2.0-SNAPSHOT"
+group = "com.minecrafttas" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "KillTheRNG"
+
+repositories {
+	maven { url 'https://jitpack.io' }
+}
 
 minecraft {
-    version = project.forgeVersion
+    version = "1.12.2-14.23.5.2847"
     runDir = "run"
 
     // the mappings can be changed at any time, and must be in the following format.
@@ -31,8 +36,8 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = project.mcpVersion
-    //makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    mappings = "snapshot_20171003"
+    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace '${version}':project.version,'${mcversion}':project.minecraft.version
     clientRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
     serverRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
@@ -48,7 +53,7 @@ dependencies {
     }
     compile 'org.msgpack:msgpack-core:0.8.16'
     compile 'org.msgpack:jackson-dataformat-msgpack:0.8.16'
-    compile files('libs/SeedUtils.jar', 'libs/MathUtils.jar')
+    compile 'com.github.KaptainWutax:SeedUtils:b6a383113c'
 }
 
 jar {
@@ -79,33 +84,51 @@ sourceSets {
         ext.refMap = "mixins.killtherng.refmap.json"
     }
 }
+
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+    classifier 'deobf'
+    manifest.attributes(
+            'FMLCorePluginContainsFMLMod': 'false',
+            'ForceLoadAsMod': 'false'
+    )
+    exclude 'dummyThing'
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
+    //exclude 'com/minecrafttas/killtherng/mixin/**'
+    exclude 'mixins.killtherng.json'
+    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.class'
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
+    //exclude 'com/minecrafttas/killtherng/mixin/**'
+    exclude 'mixins.killtherng.json'
+    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.java'
+}
+
 shadowJar {
     mainSpec.sourcePaths.clear()
 
-    dependsOn reobfJar
+    dependsOn deobfJar
 
     configurations = [project.configurations.compile]
-    relocate 'org.msgpack', 'de.scribble.lp.killtherng.repack.org.msgpack'
-    relocate 'com.fasterxml', 'de.scribble.lp.killtherng.repack.com.fasterxml'
+    relocate 'org.msgpack', 'com.minecrafttas.killtherng.repack.org.msgpack'
+    relocate 'com.fasterxml', 'com.minecrafttas.killtherng.repack.com.fasterxml'
     classifier "shadow"
     exclude 'dummyThing'
-    exclude 'de/scribble/lp/killtherng/random2mixin/**'
+    exclude 'com/minecrafttas/killtherng/random2mixin/**'
 
     afterEvaluate {
         from zipTree(reobfJar.jar)
     }
     
-}
-
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
-    manifest.attributes(
-            'MixinConfigs': 'mixins.killtherng.json',
-            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-            'FMLCorePluginContainsFMLMod': 'true',
-            'ForceLoadAsMod': 'true'
-    )
+    doLast {
+    	delete("${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-deobf.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}.jar")
+    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-shadow.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}-full.jar")
+    }
 }
 
 mixin {
@@ -116,5 +139,53 @@ mixin {
 
 artifacts {
     archives deobfJar 
-    archives jar
+    archives shadowJar
+    archives sourcesJar
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "mgnetwork"
+            url = "https://maven.mgnet.work/main"
+            credentials {
+                username = project.findProperty("mgnetworkUsername")
+                password = project.findProperty("mgnetworkPassword")
+            }
+        }
+    }
+    publications {
+        main(MavenPublication) {
+        	from(components.java)
+            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}.jar", sourceJar]
+            artifactId = "killtherng"
+	        pom {
+		        name = "killtherng"
+		        description = "Library for making Minecraft RNG deterministic"
+		        url = "https://github.com/MinecraftTAS/KillTheRNG"
+		        licenses {
+					license {
+			        	name = "GNU General Public License v3.0"
+			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
+		        	}
+		    	}
+	        }
+        }
+        full(MavenPublication) {
+        	from(components.java)
+            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}-full.jar"]
+            artifactId = "killtherng-full"
+	        pom {
+		        name = "killtherng-full"
+		        description = "Library for making Minecraft RNG deterministic. This is with all dependencies"
+		        url = "https://github.com/MinecraftTAS/KillTheRNG"
+		        licenses {
+					license {
+			        	name = "GNU General Public License v3.0"
+			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
+		        	}
+		    	}
+	        }
+        }
+    }
 }
