@@ -1,191 +1,84 @@
-buildscript {
-    repositories {
-        maven { url = "https://sizableshrimp.me/maven" }
-        maven { url = "https://maven.minecraftforge.net" }
-        maven { url = "https://repo.spongepowered.org/maven" }
-        maven { url = "https://maven.latticg.com/"}
-    }
-    dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
-        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
-        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
-    }
-}
 plugins {
-    id 'com.github.johnrengelman.shadow' version '1.2.4'
-    id 'java'
-    id 'maven-publish'
+	// loom plugin
+    id 'fabric-loom' version "${loom_version}"
+    // legacy looming (loom plugin improvements)
+    id 'legacy-looming' version "${loom_version}"
+	id "maven-publish"
 }
 
-apply plugin: "net.minecraftforge.gradle.forge"
-apply plugin: 'org.spongepowered.mixin'
-version = "2.0-SNAPSHOT"
-group = "com.minecrafttas" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "KillTheRNG"
+// set basic properties
+version = project.version
+group = project.group
+
+// compile for java 8
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+loom {
+	// set access widener
+	accessWidenerPath = file('src/main/resources/killtherng.accesswidener')
+	// add log4jconfig
+	log4jConfigs.from(file('src/main/resources/log4j.xml'))
+}
 
 repositories {
-	maven { url 'https://jitpack.io' }
-}
-
-minecraft {
-    version = "1.12.2-14.23.5.2847"
-    runDir = "run"
-
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "snapshot_20171003"
-    makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-    replace '${version}':project.version,'${mcversion}':project.minecraft.version
-    clientRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
-    serverRunArgs += "--mixin mixins.killtherng.json --tweakClass org.spongepowered.asm.launch.MixinTweaker"
+    mavenCentral()
+    maven { url = 'https://raw.githubusercontent.com/BleachDev/cursed-mappings/main/' }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://maven.mgnet.work/main" }
+    maven { url = 'https://repo.spongepowered.org/maven' }
 }
 
 dependencies {
-    compile('org.spongepowered:mixin:0.8.2') {
-        exclude module: 'launchwrapper'
-        exclude module: 'guava'
-        exclude module: 'gson'
-        exclude module: 'commons-io'
-        exclude module: 'log4j-core'
-    }
-    compile 'org.msgpack:msgpack-core:0.8.16'
-    compile 'org.msgpack:jackson-dataformat-msgpack:0.8.16'
-    compile 'com.github.KaptainWutax:SeedUtils:b6a383113c'
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.legacyfabric:yarn:${project.minecraft_version}+build.mcp"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 }
-
-jar {
-    manifest.attributes(
-            'MixinConfigs': 'mixins.killtherng.json',
-            'TweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
-            'FMLCorePluginContainsFMLMod': 'true',
-            'ForceLoadAsMod': 'true'
-    )
-}
-
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+    inputs.property "mcversion", project.minecraft_version
 
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
-    }
-}
-sourceSets {
-    main {
-        ext.refMap = "mixins.killtherng.refmap.json"
+    filesMatching("fabric.mod.json") {
+        expand 'mod_url': project.mod_url, 'name': project.mod_name, 'mod_version': project.version, 'mod_description': project.mod_description, 'mod_sources': project.mod_sources, 'mod_email': project.mod_email
     }
 }
 
-task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier 'deobf'
-    manifest.attributes(
-            'FMLCorePluginContainsFMLMod': 'false',
-            'ForceLoadAsMod': 'false'
-    )
-    exclude 'dummyThing'
-    exclude 'com/minecrafttas/killtherng/random2mixin/**'
-    //exclude 'com/minecrafttas/killtherng/mixin/**'
-    exclude 'mixins.killtherng.json'
-    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.class'
+tasks.withType(JavaCompile).configureEach {
+	// Ensure that the encoding is set to UTF-8, no matter what the system default is
+	// this fixes some edge cases with special characters not displaying correctly
+	// see http://yodaconditions.net/blog/fix-for-java-file-encoding-problems-with-gradle.html
+	it.options.encoding = "UTF-8"
+
+	if (JavaVersion.current().isJava9Compatible()) {
+		it.options.release = 8
+	}
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-    exclude 'com/minecrafttas/killtherng/random2mixin/**'
-    //exclude 'com/minecrafttas/killtherng/mixin/**'
-    exclude 'mixins.killtherng.json'
-    exclude 'com/minecrafttas/killtherng/KillTheRNGContainer.java'
+java {
+
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
 }
 
-shadowJar {
-    mainSpec.sourcePaths.clear()
-
-    dependsOn deobfJar
-
-    configurations = [project.configurations.compile]
-    relocate 'org.msgpack', 'com.minecrafttas.killtherng.repack.org.msgpack'
-    relocate 'com.fasterxml', 'com.minecrafttas.killtherng.repack.com.fasterxml'
-    classifier "shadow"
-    exclude 'dummyThing'
-    exclude 'com/minecrafttas/killtherng/random2mixin/**'
-
-    afterEvaluate {
-        from zipTree(reobfJar.jar)
-    }
-    
-    doLast {
-    	delete("${buildDir}/libs/${archivesBaseName}-${version}.jar")
-    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-deobf.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}.jar")
-    	ant.move(file:"${buildDir}/libs/${archivesBaseName}-${version}-shadow.jar", tofile:"${buildDir}/libs/${archivesBaseName}-${version}-full.jar")
-    }
+jar {
+	from("LICENSE") {
+		rename { "${it}_${base.archivesName.get()}" }
+	}
 }
 
-mixin {
-    // Specify "notch" or "searge" here
-    defaultObfuscationEnv searge
-    add sourceSets.main, "mixins.killtherng.refmap.json"
-}
-
-artifacts {
-    archives deobfJar 
-    archives shadowJar
-    archives sourcesJar
-}
-
+// Configure the maven publication
 publishing {
-    repositories {
-        maven {
-            name = "mgnetwork"
-            url = "https://maven.mgnet.work/main"
-            credentials {
-                username = project.findProperty("mgnetworkUsername")
-                password = project.findProperty("mgnetworkPassword")
-            }
-        }
-    }
-    publications {
-        main(MavenPublication) {
-        	from(components.java)
-            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}.jar", sourceJar]
-            artifactId = "killtherng"
-	        pom {
-		        name = "killtherng"
-		        description = "Library for making Minecraft RNG deterministic"
-		        url = "https://github.com/MinecraftTAS/KillTheRNG"
-		        licenses {
-					license {
-			        	name = "GNU General Public License v3.0"
-			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
-		        	}
-		    	}
-	        }
-        }
-        full(MavenPublication) {
-        	from(components.java)
-            artifacts = ["${buildDir}/libs/${archivesBaseName}-${version}-full.jar"]
-            artifactId = "killtherng-full"
-	        pom {
-		        name = "killtherng-full"
-		        description = "Library for making Minecraft RNG deterministic. This is with all dependencies"
-		        url = "https://github.com/MinecraftTAS/KillTheRNG"
-		        licenses {
-					license {
-			        	name = "GNU General Public License v3.0"
-			        	url = "https://www.gnu.org/licenses/gpl-3.0.de.html"
-		        	}
-		    	}
-	        }
-        }
-    }
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+
+	// Select the repositories you want to publish to
+	repositories {
+		// Uncomment to publish to the local maven
+		// mavenLocal()
+	}
 }

@@ -19,11 +19,6 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Mod(
-        modid = KillTheRNG.MOD_ID,
-        name = KillTheRNG.MOD_NAME,
-        version = KillTheRNG.VERSION
-)
 public class KillTheRNGContainer {
 	 @EventHandler
 	    public void preinit(FMLPreInitializationEvent event) {

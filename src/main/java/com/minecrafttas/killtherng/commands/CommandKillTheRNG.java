@@ -10,6 +10,8 @@ import com.minecrafttas.killtherng.networking.ChangeSeedPacket;
 import com.minecrafttas.killtherng.networking.SeedInfoPacket;
 import com.mojang.realmsclient.gui.ChatFormatting;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.command.CommandBase;
@@ -92,7 +94,7 @@ public class CommandKillTheRNG extends CommandBase{
 		}
 	}
 	
-	@SideOnly(Side.CLIENT)
+	@Environment(EnvType.CLIENT)
 	public static void sendHelp(RandomData data){
 		EntityPlayerSP sender=Minecraft.getMinecraft().player;
 		

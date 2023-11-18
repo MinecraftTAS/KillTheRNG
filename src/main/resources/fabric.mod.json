@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "tasmod",
+	"version": "${mod_version}",
+	"name": "${name}",
+	"description": "${mod_description}",
+	"authors": ["Scribble"],
+	"contributors": ["Pancake", "Lud"],
+	"contact": {
+		"homepage": "${mod_url}",
+		"sources": "${mod_sources}",
+		"issues": "${mod_sources}/issues",
+		"email": "${mod_email}"
+	},
+
+	"license": "GPLv3",
+	"accessWidener": "tasmod.accesswidener",
+	"icon": "assets/tasmod/textures/potion.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.minecrafttas.killtherng.KillTheRNG"
+		],
+		"client": [ 
+			"com.minecrafttas.killtherng.KillTheRNGClient"
+		]
+	},
+	"mixins": [
+		"tasmod.mixin.json",
+		"common.mixin.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "1.12.2",
+		"java": ">=8"
+	}
+}
