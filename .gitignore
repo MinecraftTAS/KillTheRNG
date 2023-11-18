@@ -19,9 +19,6 @@ build
 
 # other
 eclipse
-run
-
+run/
 logs/
-random2mixinLog.txt
-
-gradle.properties
+/.apt_generated_tests/

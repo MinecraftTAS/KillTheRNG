@@ -61,7 +61,7 @@ public abstract class MixinGuiMainMenu extends GuiScreen {
 	 * And watch for all digits and add them to the current seed
 	 */
 	@Override
-	protected void keyTyped(char typedChar, int keyCode) throws IOException {
+	protected void keyTyped(char typedChar, int keyCode) {
 		if (keyCode == 14) {
 			if (currentSeed.length() != 0) {
 				currentSeed = currentSeed.substring(0, currentSeed.length() - 1);
